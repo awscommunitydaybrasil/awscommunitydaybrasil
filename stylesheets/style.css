@@ -1888,7 +1888,7 @@ ul.circle li {
   font-size: 0;
   height: 100px;
   background-position: center;
-  background-size: 65%;
+  background-size: 55%;
   background-repeat: no-repeat;
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) a {
@@ -1904,7 +1904,7 @@ ul.circle li {
   }
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
-  background-image: url(../images/spons/awsugsp.jpeg);
+  background-image: url(../images/spons/awsugsp.svg);
 }
 @media only screen and (min-width: 992px) {
   #page .section-5 .sponsors .cats .flex-it .f1:nth-child(6n) ~ .f1 {
