@@ -1,8 +1,5 @@
 $(function() {
   tableScroll();
-  if ($(window).width() < 996) {
-    toastScroll();
-  }
   $(document).on("click", ".scroll", function() {
     $("html, body").animate(
       {

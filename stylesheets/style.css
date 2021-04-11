@@ -2041,6 +2041,7 @@ ul.circle li {
   flex-direction: column;
   padding: 15px;
   margin: 10px 0;
+  color: #232f3f;
 }
 @media only screen and (min-width: 992px) {
   #page .section-6 .volunteers .vl-i .person.push {
