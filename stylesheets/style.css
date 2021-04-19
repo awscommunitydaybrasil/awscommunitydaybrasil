@@ -1906,6 +1906,9 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.svg);
 }
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggo {
+    background-image: url(../images/spons/awsuggo.svg);
+}
 @media only screen and (min-width: 992px) {
   #page .section-5 .sponsors .cats .flex-it .f1:nth-child(6n) ~ .f1 {
     margin-top: 15px;
@@ -2132,6 +2135,9 @@ ul.circle li {
 }
 #page .section-6 .volunteers .vl-i .person[data-lname="Palladino"] .img {
   background-image: url(../images/vols/palladino.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Paiva"] .img {
+    background-image: url(../images/vols/paiva.png);
 }
 #page .section-7 {
   margin: -50px auto 100px;
