@@ -2139,6 +2139,9 @@ ul.circle li {
 #page .section-6 .volunteers .vl-i .person[data-lname="Paiva"] .img {
     background-image: url(../images/vols/paiva.png);
 }
+#page .section-6 .volunteers .vl-i .person[data-lname="Moura"] .img {
+    background-image: url(../images/vols/moura.jpg);
+}
 #page .section-7 {
   margin: -50px auto 100px;
 }
