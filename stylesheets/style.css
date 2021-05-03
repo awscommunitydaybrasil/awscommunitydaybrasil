@@ -1888,7 +1888,7 @@ ul.circle li {
   font-size: 0;
   height: 100px;
   background-position: center;
-  background-size: 55%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) a {
@@ -1904,10 +1904,10 @@ ul.circle li {
   }
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
-  background-image: url(../images/spons/awsugsp.svg);
+  background-image: url(../images/spons/awsugsp.jpg);
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggo {
-    background-image: url(../images/spons/awsuggo.svg);
+    background-image: url(../images/spons/awsuggo.jpg);
 }
 @media only screen and (min-width: 992px) {
   #page .section-5 .sponsors .cats .flex-it .f1:nth-child(6n) ~ .f1 {
