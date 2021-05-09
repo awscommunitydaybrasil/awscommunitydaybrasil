@@ -1906,8 +1906,26 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.jpg);
 }
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugrj {
+  background-image: url(../images/spons/awsugrj.jpg);
+}
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggo {
     background-image: url(../images/spons/awsuggo.jpg);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugblu {
+  background-image: url(../images/spons/awsugblu.jpg);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugcampinas {
+  background-image: url(../images/spons/awsugcampinas.jpg);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugce {
+  background-image: url(../images/spons/awsugce.jpg);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugfloripa {
+  background-image: url(../images/spons/awsugfloripa.jpg);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggametech {
+  background-image: url(../images/spons/awsuggametech.jpg);
 }
 @media only screen and (min-width: 992px) {
   #page .section-5 .sponsors .cats .flex-it .f1:nth-child(6n) ~ .f1 {
@@ -2141,6 +2159,36 @@ ul.circle li {
 }
 #page .section-6 .volunteers .vl-i .person[data-lname="Moura"] .img {
     background-image: url(../images/vols/moura.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Cunha"] .img {
+  background-image: url(../images/vols/ana.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Alexandre"] .img {
+  background-image: url(../images/vols/diego.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Edilton"] .img {
+  background-image: url(../images/vols/francisco.jpeg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Galba"] .img {
+  background-image: url(../images/vols/galba.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Cristian"] .img {
+  background-image: url(../images/vols/juliano.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Nery"] .img {
+  background-image: url(../images/vols/nery.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Pimenta"] .img {
+  background-image: url(../images/vols/pimenta.png);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Santos"] .img {
+  background-image: url(../images/vols/vanessa.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Caridá"] .img {
+  background-image: url(../images/vols/vini.jpg);
+}
+#page .section-6 .volunteers .vl-i .person[data-lname="Barreto"] .img {
+  background-image: url(../images/vols/filipe.jpeg);
 }
 #page .section-7 {
   margin: -50px auto 100px;
