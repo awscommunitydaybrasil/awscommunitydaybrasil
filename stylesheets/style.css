@@ -2196,6 +2196,9 @@ ul.circle li {
 #page .section-6 .volunteers .vl-i .person[data-lname="Lataliza"] .img {
   background-image: url(../images/vols/paloma.jpg);
 }
+#page .section-6 .volunteers .vl-i .person[data-lname="Rescia Dias"] .img {
+  background-image: url(../images/vols/rescia.jpg);
+}
 #page .section-7 {
   margin: -50px auto 100px;
 }
