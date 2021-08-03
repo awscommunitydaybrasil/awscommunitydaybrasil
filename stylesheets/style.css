@@ -2193,6 +2193,9 @@ ul.circle li {
 #page .section-6 .volunteers .vl-i .person[data-lname="Almeida"] .img {
   background-image: url(../images/vols/almeida.jpg);
 }
+#page .section-6 .volunteers .vl-i .person[data-lname="Lataliza"] .img {
+  background-image: url(../images/vols/paloma.jpg);
+}
 #page .section-7 {
   margin: -50px auto 100px;
 }
