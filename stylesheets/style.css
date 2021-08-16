@@ -1927,7 +1927,7 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggametech {
   background-image: url(../images/spons/awsuggametech.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugmg {
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugmg{
   background-image: url(../images/spons/awsugmg.png);
 }
 @media only screen and (min-width: 992px) {
