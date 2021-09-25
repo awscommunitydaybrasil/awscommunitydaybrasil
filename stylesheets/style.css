@@ -1054,9 +1054,6 @@ ul.circle li {
   }
 }
 
-#page .section-1 {
-  color: #fff;
-}
 
 #page .section-2 {
   color: #232f3f;
@@ -1141,6 +1138,8 @@ ul.circle li {
   text-align: center;
   padding-top: 0;
   position: relative;
+  color: #fff;
+  font-size: large;
 }
 @media only screen and (max-width: 991px) {
 
@@ -1902,6 +1901,9 @@ ul.circle li {
   #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) {
     background-size: 80%;
   }
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).hybri {
+  background-image: url(../images/spons/hybri.png);
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.jpg);
