@@ -982,19 +982,19 @@ ul.circle li {
   }
 
   .table .tbody > .tr .td:nth-child(2) > div:before {
-    content: "Room 1";
+    content: "Sala Iniciante";
   }
 
   .table .tbody > .tr .td:nth-child(3) > div:before {
-    content: "Room 2";
+    content: "Sala Experiente";
   }
 
   .table .tbody > .tr .td:nth-child(4) > div:before {
-    content: "Room 3";
+    content: "Sala Avançado";
   }
 
   .table .tbody > .tr .td:nth-child(5) > div:before {
-    content: "Room 4";
+    content: "";
   }
 
   .table .tbody > .tr .td[colspan="4"] > div {
