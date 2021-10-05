@@ -484,6 +484,10 @@ ion-icon {
   line-height: 1.5;
 }
 
+#page .section-4.inv .container .sponsors h4.main-heading-ttl {
+  color: #fff;
+}
+
 .heading-ttl.deco,
 .med-heading-ttl.deco,
 .main-heading-ttl.deco {
