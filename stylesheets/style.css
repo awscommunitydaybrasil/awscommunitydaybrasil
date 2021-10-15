@@ -488,6 +488,10 @@ ion-icon {
   color: #fff;
 }
 
+#page .section-6.inv .container .volunteers h4.main-heading-ttl {
+  color: #fff;
+}
+
 .heading-ttl.deco,
 .med-heading-ttl.deco,
 .main-heading-ttl.deco {
@@ -1943,18 +1947,36 @@ ul.circle li {
 }
 #page .section-8 {
   padding: 100px 0;
-  color: #fff;
-  background: #232f3f;
+  color: #232f3f;
+  background: #fff;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
 }
+
 @media only screen and (max-width: 991px) {
   #page .section-8 {
     padding: 50px 0;
   }
 }
 #page .section-8 h4 {
+  color: #232f3f;
+}
+
+#page .section-9 {
+  padding: 100px 0;
+  color: #fff;
+  background: #232f3f;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 991px) {
+  #page .section-9 {
+    padding: 50px;
+  }
+}
+#page .section-9 h4 {
   color: #fff;
 }
+
 @media only screen and (min-width: 992px) {
   #page .section-8 .announcing {
     font-size: 100px;
@@ -2021,7 +2043,7 @@ ul.circle li {
   justify-content: center;
   padding: 0 15px;
   padding-left: 55px;
-  border: dashed 2px #fff;
+  border: dashed 2px #232f3f;
   margin-left: 40px;
   width: calc(100% - 65px);
 }
@@ -2029,7 +2051,7 @@ ul.circle li {
   #page .section-8 .speakers .spk_itm .namenid {
     min-height: 100px;
     border: 0;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(35, 47, 63, 0.1);
     padding-left: 85px;
   }
 }
@@ -2048,7 +2070,8 @@ ul.circle li {
 }
 #page .section-6 {
   padding: 100px 0 200px;
-  background: #fff;
+  color: #fff;
+  background: #232f3f;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
 }
 @media only screen and (max-width: 991px) {
@@ -2059,6 +2082,8 @@ ul.circle li {
 #page .section-6.inv {
   background: transparent;
   box-shadow: none;
+  color: #fff;
+  background: #232f3f;
 }
 #page .section-6 .volunteers .vl-i {
   flex-wrap: wrap;
@@ -2071,7 +2096,7 @@ ul.circle li {
   flex-direction: column;
   padding: 15px;
   margin: 10px 0;
-  color: #232f3f;
+  color: #fff;
 }
 @media only screen and (min-width: 992px) {
   #page .section-6 .volunteers .vl-i .person.push {
