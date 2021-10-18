@@ -479,7 +479,7 @@ ion-icon {
   margin: 0 0 15px;
   font-size: 18px;
   text-transform: uppercase;
-  color: #232f3f;
+  color: #252f3e;
   font-weight: 900;
   line-height: 1.5;
 }
@@ -896,13 +896,13 @@ ul.circle li {
 .table .thead .tr .th > div,
 .table .tbody .tr .th > div {
   color: #ff9900 !important;
-  background: #232f3f !important;
+  background: #252f3e !important;
 }
 
 .table .thead .tr.gap .td > div,
 .table .tbody .tr.gap .td > div {
   background: #ff9900 !important;
-  color: #232f3f;
+  color: #252f3e;
 }
 @media only screen and (min-width: 992px) {
 
@@ -1064,12 +1064,12 @@ ul.circle li {
 
 
 #page .section-2 {
-  color: #232f3f;
+  color: #252f3e;
 }
 
 
 #page .section-1 .content {
-  background: #232f3f;
+  background: #252f3e;
   position: fixed;
   top: 0;
   left: 0;
@@ -1162,7 +1162,7 @@ ul.circle li {
 
 #page .section-1 .content .container > div .left_in .txt h4 {
   padding: 0 15px;
-  background: #232f3f;
+  background: #252f3e;
   display: inline-block;
   margin: 0;
   transform: translateY(-60%);
@@ -1283,7 +1283,7 @@ ul.circle li {
     transition: all 0.25s;
     bottom: 0;
     transform: translateX(-100%);
-    background: #232f3f;
+    background: #252f3e;
   }
 
   #page .section-1 #nav-bar > ul li {
@@ -1449,7 +1449,7 @@ ul.circle li {
 #page .section-2 .right {
   position: relative;
   z-index: 3;
-  background: #232f3f;
+  background: #252f3e;
   color: #fff;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
   border-top: solid 10px #ff9900;
@@ -1504,8 +1504,8 @@ ul.circle li {
 }
 
 #page .section-3 .left .headin-ttl {
-  color: #232f3f;
-  color: #232f3f;
+  color: #252f3e;
+  color: #252f3e;
   font-size: 30px;
   text-align: center;
 }
@@ -1585,7 +1585,7 @@ ul.circle li {
   left: 0;
   top: 0%;
   right: 0;
-  background: #232f3f;
+  background: #252f3e;
   z-index: 1;
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
@@ -1608,12 +1608,12 @@ ul.circle li {
   bottom: 0;
   margin: auto;
   border: solid 20px;
-  border-color: transparent #232f3f transparent transparent;
+  border-color: transparent #252f3e transparent transparent;
 }
 @media only screen and (max-width: 991px) {
 
   #page .section-3 .right .right_in .marked:after {
-    border-color: transparent transparent #232f3f;
+    border-color: transparent transparent #252f3e;
     top: -25px;
     left: 0;
     right: 0;
@@ -1720,7 +1720,7 @@ ul.circle li {
 
 #page .section-4.inv {
   box-shadow: none;
-  background: #232f3f;
+  background: #252f3e;
 }
 
 #page .section-4.inv .table {
@@ -1947,7 +1947,7 @@ ul.circle li {
 }
 #page .section-8 {
   padding: 100px 0;
-  color: #232f3f;
+  color: #252f3e;
   background: #fff;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
 }
@@ -1958,13 +1958,13 @@ ul.circle li {
   }
 }
 #page .section-8 h4 {
-  color: #232f3f;
+  color: #252f3e;
 }
 
 #page .section-9 {
   padding: 100px 0;
   color: #fff;
-  background: #232f3f;
+  background: #252f3e;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
 }
 
@@ -2043,7 +2043,7 @@ ul.circle li {
   justify-content: center;
   padding: 0 15px;
   padding-left: 55px;
-  border: dashed 2px #232f3f;
+  border: dashed 2px #252f3e;
   margin-left: 40px;
   width: calc(100% - 65px);
 }
@@ -2059,7 +2059,7 @@ ul.circle li {
   text-align: center;
   padding-left: 15px;
   padding-top: 25px;
-  color: #232f3f;
+  color: #252f3e;
   background: #fff;
 }
 #page .section-8 .speakers .spk_itm:hover .prod_im {
@@ -2071,7 +2071,7 @@ ul.circle li {
 #page .section-6 {
   padding: 100px 0 200px;
   color: #fff;
-  background: #232f3f;
+  background: #252f3e;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.4);
 }
 @media only screen and (max-width: 991px) {
@@ -2083,7 +2083,7 @@ ul.circle li {
   background: transparent;
   box-shadow: none;
   color: #fff;
-  background: #232f3f;
+  background: #252f3e;
 }
 #page .section-6 .volunteers .vl-i {
   flex-wrap: wrap;
@@ -2269,7 +2269,7 @@ ul.circle li {
 }
 #page .section-7 .foot-fk {
   position: relative;
-  background: #232f3f;
+  background: #252f3e;
   padding: 50px;
   color: #fff;
   line-height: 1.5;
@@ -2344,7 +2344,7 @@ ul.circle li {
 }
 #page .section-7 .foot-fk .input-group input {
   padding: 0 15px;
-  color: #232f3f;
+  color: #252f3e;
 }
 #page .section-7 .foot-fk .input-group button,
 #page .section-7 .foot-fk .input-group input {
@@ -2506,7 +2506,7 @@ ul.circle li {
   bottom: 0;
   z-index: 999999;
   left: 0;
-  background: #232f3f;
+  background: #252f3e;
   align-items: center;
   justify-content: center;
   transition: all 0.25s;
@@ -2607,7 +2607,7 @@ i.icon.large {
 }
 @media only screen and (max-width: 991px) {
   .card h4.headin-ttl {
-    color: #232f3f;
+    color: #252f3e;
   }
 }
 .card p {
