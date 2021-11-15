@@ -1174,6 +1174,30 @@ ul.circle li {
   }
 }
 
+#page .section-1 .content .container > div .right .gal .ims.im1 {
+  background-image: url(../images/gal/1.jpg);
+}
+
+#page .section-1 .content .container > div .right .gal .ims.im2 {
+  background-image: url(../images/gal/2.jpg);
+}
+
+#page .section-1 .content .container > div .right .gal .ims.im3 {
+  background-image: url(../images/gal/3.jpg);
+}
+
+#page .section-1 .content .container > div .right .gal .ims.im4 {
+  background-image: url(../images/gal/4.jpg);
+}
+
+#page .section-1 .content .container > div .right .gal .ims.im5 {
+  background-image: url(../images/gal/5.jpg);
+}
+
+#page .section-1 .content .container > div .right .gal .ims.im6 {
+  background-image: url(../images/gal/6.jpg);
+}
+
 #page .section-1 .content .container > div .right {
   position: relative;
 }
