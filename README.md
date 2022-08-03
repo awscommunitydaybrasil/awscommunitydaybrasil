@@ -1,1 +1,1 @@
-# AWS Community Day Brasil, Brasil 2021
+# AWS Community Day Brasil, Brasil 2022
