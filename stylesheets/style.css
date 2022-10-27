@@ -1934,8 +1934,17 @@ ul.circle li {
     background-size: 80%;
   }
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).hybri {
-  background-image: url(../images/spons/hybri.png);
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).fourevents {
+  background-image: url(../images/spons/4events.png);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).dati {
+  background-image: url(../images/spons/dati.png);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).darede {
+  background-image: url(../images/spons/darede.png);
+}
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).novatec {
+  background-image: url(../images/spons/novatec.png);
 }
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.jpg);
