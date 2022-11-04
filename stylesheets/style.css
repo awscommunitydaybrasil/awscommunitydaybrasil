@@ -1940,6 +1940,9 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).dati {
   background-image: url(../images/spons/dati.png);
 }
+#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).solvimm {
+  background-image: url(../images/spons/solvimm.png);
+}
 #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).darede {
   background-image: url(../images/spons/darede.png);
 }
