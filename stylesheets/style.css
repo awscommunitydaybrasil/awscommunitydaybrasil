@@ -2290,6 +2290,10 @@ ul.circle li {
 #page .section-6 .volunteers .vl-i .person[data-lname="Felipe"] .img {
   background-image: url(../images/vols/felpz.jpeg);
 }
+#page .section-6 .volunteers .vl-i .person[data-lname="Araújo"] .img {
+  background-image: url(../images/vols/psant.jpg);
+}
+
 #page .section-7 {
   margin: -50px auto 100px;
 }
