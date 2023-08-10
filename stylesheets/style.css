@@ -1373,6 +1373,16 @@ ul.circle li {
   color: #ff9900;
   justify-content: center;
 }
+
+#page .section-1 #nav-bar li.spec1 a {
+  height: 100%;
+  white-space: nowrap;
+  padding: 0 25px;
+  background: #f28005;
+  color: #fff;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 400px) {
 
   #page .section-1 #nav-bar li.spec a {
