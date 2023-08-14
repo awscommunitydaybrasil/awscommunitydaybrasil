@@ -15,7 +15,7 @@ Todas as pessoas são bem vindas para colaborar e fazer parte desta jornada de c
 
 Ajude a construir um evento melhor para todas as pessoas. As atividades do AWS Community Day Brasil são guiadas pelo Código de conduta.</div>
 
-<hr> <hr>
+<hr>
 
 ### O QUE ESPERAR DO AWS COMMUNITY DAY BRASIL?</h1>
 
