@@ -2528,6 +2528,10 @@ ul.circle li {
 #page .section-tickets .card.with_icon.tick_work_2 .bg_img {
   background-image: url(../images/tick_work_2.svg);
 }
+#page .section-tickets .card.with_icon.people .bg_img {
+  background-image: url(../images/people.svg);
+}
+
 @media only screen and (max-width: 400px) {
   #page .section-tickets .card.with_icon.combo .bg_img {
     width: 120px;
