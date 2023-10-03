@@ -779,6 +779,14 @@ ul.circle li {
 }
 
 
+.table .tbody .tr.mn > div {
+  background: #252f3e !important;
+  color: #ff9900;
+  border: solid 2px #ff9900;
+}
+
+
+
 .table .thead .tr {
   border: solid 2px #ff9900;
 }
@@ -901,9 +909,21 @@ ul.circle li {
 
 .table .thead .tr.gap .td > div,
 .table .tbody .tr.gap .td > div {
+
   background: #ff9900 !important;
   color: #252f3e;
 }
+
+.table .thead .tr.gapx .td > div,
+.table .tbody .tr.gapx .td > div {
+  
+  background: #252f3e !important;
+  color:  #ff9900;
+  border: solid 2px #ff9900;
+}
+
+
+
 @media only screen and (min-width: 992px) {
 
   .table .thead .tr.last,
@@ -1764,6 +1784,7 @@ ul.circle li {
 #page .section-4.inv .table .thead .tr .td > div, #page .section-4.inv .table .thead .tr .th > div, #page .section-4.inv .table .tbody .tr .td > div, #page .section-4.inv .table .tbody .tr .th > div {
   background: #fff;
 }
+
 @media only screen and (max-width: 991px) {
 
   #page .section-4 {
@@ -2560,6 +2581,22 @@ ul.circle li {
   margin: auto;
   animation: swing 2s infinite alternate ease-in-out;
   transform-origin: top center;
+}
+
+.keynote-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.keynote {
+  flex: 0 0 48%; /* Isto garante que cada keynote ocupe aproximadamente metade do espaço, com um pouco de espaço entre eles. */
+}
+
+.keynote-image {
+  width:  350px;  
+  height: 350px;  
+  object-fit: cover;
+  border-radius: 50%; 
 }
 
 @keyframes swing {
