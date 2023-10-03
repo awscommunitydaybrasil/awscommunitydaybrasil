@@ -1010,8 +1010,7 @@ ul.circle li {
   }
 
   .table .tbody > .tr .td:nth-child(2) > div:before {
-    /*content: "Sala Iniciante";*/
-    content: "Palestras";
+    content: "Sala Iniciante";
   }
 
   .table .tbody > .tr .td:nth-child(3) > div:before {
@@ -2588,13 +2587,13 @@ ul.circle li {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;  /* Distância entre os keynotes */
+  gap: 20px;  
 }
 
 .keynote {
-  flex-basis: 45%;  /* Largura base de cada keynote, ligeiramente menor que 50% para acomodar espaços */
+  flex-basis: 45%; 
   box-sizing: border-box; 
-  text-align: center; /* Centralizar o conteúdo textual */
+  text-align: center; /
 }
 
 .keynote-image {
