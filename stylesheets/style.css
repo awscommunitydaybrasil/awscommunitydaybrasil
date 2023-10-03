@@ -1010,7 +1010,8 @@ ul.circle li {
   }
 
   .table .tbody > .tr .td:nth-child(2) > div:before {
-    content: "Sala Iniciante";
+    /*content: "Sala Iniciante";*/
+    content: "Palestras";
   }
 
   .table .tbody > .tr .td:nth-child(3) > div:before {
@@ -2586,18 +2587,30 @@ ul.circle li {
 .keynote-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;  /* Distância entre os keynotes */
 }
 
 .keynote {
-  flex: 0 0 48%; /* Isto garante que cada keynote ocupe aproximadamente metade do espaço, com um pouco de espaço entre eles. */
+  flex-basis: 45%;  /* Largura base de cada keynote, ligeiramente menor que 50% para acomodar espaços */
+  box-sizing: border-box; 
+  text-align: center; /* Centralizar o conteúdo textual */
 }
 
 .keynote-image {
-  width:  350px;  
-  height: 350px;  
-  object-fit: cover;
-  border-radius: 50%; 
+  width: 100%;
+  max-width: 350px; /* Largura máxima que a imagem pode ter */
+  height: auto; 
+  border-radius: 50%;
 }
+
+@media only screen and (max-width: 768px) {
+  .keynote {
+      flex-basis: 100%; /* O keynote ocupará a largura total */
+      margin-bottom: 20px; /* Adiciona um espaço entre os keynotes quando eles são empilhados */
+  }
+}
+
 
 @keyframes swing {
   from {
