@@ -1814,7 +1814,7 @@ ul.circle li {
   box-shadow: none;
 }
 
-#page .section-5.inv .sponsors .cats .flex-it .f1 > div:not(.head) {
+#page .section-5.inv .sponsors .cats .flex-itt .f11 > div:not(.head) {
   background-color: #fff;
 }
 @media only screen and (max-width: 991px) {
@@ -1829,13 +1829,14 @@ ul.circle li {
   }
 }
 
-#page .section-5 .sponsors .cats .flex-it {
+#page .section-5 .sponsors .cats .flex-itt {
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 @media only screen and (min-width: 992px) {
 
-  #page .section-5 .sponsors .cats .flex-it {
+  #page .section-5 .sponsors .cats .flex-itt {
     flex-wrap: wrap;
     position: relative;
     padding-left: 7%;
@@ -1843,13 +1844,13 @@ ul.circle li {
 }
 @media only screen and (max-width: 991px) {
 
-  #page .section-5 .sponsors .cats .flex-it {
+  #page .section-5 .sponsors .cats .flex-itt {
     margin-top: 50px;
     overflow: auto;
   }
 }
 
-#page .section-5 .sponsors .cats .flex-it .fhf {
+#page .section-5 .sponsors .cats .flex-itt .fhf {
   z-index: 1;
   flex-grow: unset;
   flex-basis: unset;
@@ -1859,7 +1860,7 @@ ul.circle li {
 }
 @media only screen and (min-width: 992px) {
 
-  #page .section-5 .sponsors .cats .flex-it .fhf {
+  #page .section-5 .sponsors .cats .flex-itt .fhf {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1869,13 +1870,13 @@ ul.circle li {
 }
 @media only screen and (max-width: 991px) {
 
-  #page .section-5 .sponsors .cats .flex-it .fhf {
+  #page .section-5 .sponsors .cats .flex-itt .fhf {
     margin-left: 5%;
     min-width: 10%;
     margin-right: 5%;
   }
 
-  #page .section-5 .sponsors .cats .flex-it .fhf:after {
+  #page .section-5 .sponsors .cats .flex-itt .fhf:after {
     content: "";
     position: absolute;
     left: -75px;
@@ -1890,7 +1891,7 @@ ul.circle li {
   }
 }
 
-#page .section-5 .sponsors .cats .flex-it .fhf .head::before {
+#page .section-5 .sponsors .cats .flex-itt .fhf .head::before {
   content: "";
   left: 0;
   position: absolute;
@@ -1900,11 +1901,11 @@ ul.circle li {
   background: #ddd;
 }
 @media only screen and (max-width: 991px) {
-  #page .section-5 .sponsors .cats .flex-it .fhf .head::before {
+  #page .section-5 .sponsors .cats .flex-itt .fhf .head::before {
     width: 15px;
   }
 }
-#page .section-5 .sponsors .cats .flex-it .fhf .head span {
+#page .section-5 .sponsors .cats .flex-itt .fhf .head span {
   font-size: 23px;
   text-transform: uppercase;
   width: 100%;
@@ -1923,27 +1924,27 @@ ul.circle li {
   align-items: flex-end;
 }
 @media only screen and (max-width: 991px) {
-  #page .section-5 .sponsors .cats .flex-it .fhf .head span {
+  #page .section-5 .sponsors .cats .flex-itt .fhf .head span {
     font-size: 14px;
   }
 }
-#page .section-5 .sponsors .cats .flex-it .f1 {
+#page .section-5 .sponsors .cats .flex-itt .f11 {
   flex-grow: unset;
   flex-basis: unset;
   width: 18.6%;
   padding: 0 7.5px;
 }
 @media only screen and (max-width: 991px) {
-  #page .section-5 .sponsors .cats .flex-it .f1 {
+  #page .section-5 .sponsors .cats .flex-itt .f11 {
     min-width: 50%;
     padding: 0;
   }
-  #page .section-5 .sponsors .cats .flex-it .f1:last-child {
+  #page .section-5 .sponsors .cats .flex-itt .f11:last-child {
     min-width: calc(50% + 50px);
     padding-right: 50px;
   }
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head) {
   position: relative;
   z-index: 2;
   display: flex;
@@ -1953,65 +1954,65 @@ ul.circle li {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) a {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head) a {
   height: 100%;
   width: 100%;
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).sq {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).sq {
   background-size: auto 65%;
 }
 @media only screen and (max-width: 991px) {
-  #page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head) {
+  #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head) {
     background-size: 80%;
   }
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).fourevents {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).fourevents {
   background-image: url(../images/spons/4events.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).dati {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).dati {
   background-image: url(../images/spons/dati.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).solvimm {
-  background-image: url(../images/spons/solvimm.png);
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).ecore {
+  background-image: url(../images/spons/ecore.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).darede {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).darede {
   background-image: url(../images/spons/darede.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).novatec {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).novatec {
   background-image: url(../images/spons/novatec.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugsp {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugrj {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugrj {
   background-image: url(../images/spons/awsugrj.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggo {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsuggo {
     background-image: url(../images/spons/awsuggo.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugblu {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugblu {
   background-image: url(../images/spons/awsugblu.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugcampinas {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugcampinas {
   background-image: url(../images/spons/awsugcampinas.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugce {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugce {
   background-image: url(../images/spons/awsugce.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugfloripa {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugfloripa {
   background-image: url(../images/spons/awsugfloripa.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsuggametech {
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsuggametech {
   background-image: url(../images/spons/awsuggametech.jpg);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugmg{
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugmg{
   background-image: url(../images/spons/awsugmg.png);
 }
-#page .section-5 .sponsors .cats .flex-it .f1 > div:not(.head).awsugcri{
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugcri{
   background-image: url(../images/spons/awsugcri.jpg);
 }
 @media only screen and (min-width: 992px) {
-  #page .section-5 .sponsors .cats .flex-it .f1:nth-child(6n) ~ .f1 {
+  #page .section-5 .sponsors .cats .flex-itt .f11:nth-child(6n) ~ .f11 {
     margin-top: 15px;
   }
 }
@@ -2746,4 +2747,38 @@ i.icon.large {
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.cmnty {
+  margin: 20px;
+}
+
+.flex-itt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.fhf .head span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+
+.f11 a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.f11 a:hover {
+  color: #0056b3;
+}
+
+
+@media (max-width: 600px) {
+  .flex-itt {
+      flex-direction: column; 
+  }
 }
