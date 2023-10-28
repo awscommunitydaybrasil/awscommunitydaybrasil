@@ -1969,12 +1969,19 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).fourevents {
   background-image: url(../images/spons/4events.png);
 }
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).prefeituraribeirao {
+  background-image: url(../images/spons/prefeituraribeirao.png);
+} 
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).onovo {
+  background-image: url(../images/spons/onovo.jpeg);
+} 
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).dati {
   background-image: url(../images/spons/dati.png);
 }
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).ecore {
   background-image: url(../images/spons/ecore.png);
 }
+
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).darede {
   background-image: url(../images/spons/darede.png);
 }
