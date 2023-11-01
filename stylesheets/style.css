@@ -1988,6 +1988,9 @@ ul.circle li {
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).novatec {
   background-image: url(../images/spons/novatec.png);
 }
+#page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).select {
+  background-image: url(../images/spons/select.png);
+}
 #page .section-5 .sponsors .cats .flex-itt .f11 > div:not(.head).awsugsp {
   background-image: url(../images/spons/awsugsp.jpg);
 }
