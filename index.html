@@ -1,1101 +1,875 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <title>AWS Community Day Brasil 2024</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
+    <title>AWS COMMUNITY DAY</title>
 
-  <meta property="og:url" content="https://communitydaybrasil.com.br" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="AWS Community Day Brasil 2024" />
-  <meta property="og:description"
-    content="O AWS Community Day Brasil 2024 é organizado pelos grupos de usuários AWS do Brasil." />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+  </head>
+  <body>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/site.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/mystyles.css" />
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-</head>
-
-<body>
-  <div id="page">
-
-
-    <div class="section section-1 hdr" id="home" style="padding-top: 867px;">
-      <div class="content">
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
         <div class="container">
-          <div>
-            <div wid="50%" class="left">
-              
-              <div class="left_in">
-                <img src="images/logo.png">
-                <div class="txt">
-                  <h4 class="headin-ttl">
-                    09 de novembro de 2024.<br>Edições Presenciais em 2 cidades diferentes.
-                  </h4>
-                  <p>
-                    Nesse ano você poderá escolher estar presente em <br/><b>Goiânia/GO ou Florianópolis/SC</b>.
-                    <br/><br/>
-                    Os grupos de usuários AWS do Brasil estão de novamente disponíveis para apresentar os maiores e melhores AWS Community Days Brasil de todos os tempos. Vamos compartilhar histórias de sucesso, casos de uso do dia a dia dos negócios, conceitos avançados e apresentações preparadas especialmente para quem está iniciando em AWS.                  
-                  </p>
+          <!-- Brand and toggle get grouped for better mobile display -->    
+          <a href="index.html" class="navbar-brand"><img src="assets/img/logo2.png" alt=""></a>   
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#header-wrap">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">
+                  AWS Community Day
+                </a>
+              </li>
+             <!-- <li class="nav-item">
+                <a class="nav-link" href="#schedules">
+                  Programação
+                </a>
+              </li>-->
+             
+            
 
-                  <div class="btn-register-section">
-                    <!-- <button class="btn btn-outline" data-toggle="modal" data-target="#register"> Register</button> -->
-                     
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div wid="50%" class="right">
-              <div class="gal flex-it col">
-                <div class="top f1 flex-it">
-                  <div class="f2 ims im1"></div>
-                  <div class="f1 ims im2"></div>
-                </div>
-                <div class="bot f1 flex-it">
-                  <div class="f1 ims im3"></div>
-                  <div class="f2 flex-it col">
-                    <div class="f1 flex-it">
-                      <div class="f1 ims im4"></div>
-                      <div class="f1 ims im5"></div>
-                    </div>
-                    <div class="f1 ims im6"></div>
-                  </div>
-                </div>
-              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="#hero-area-2">
+                  INSCRIÇÕES
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://sessionize.com/aws-community-day-brasil-2024/" target="_blank">
+                  CALL FOR PAPERS
+                </a>
+              </li>
+             <!-- <li class="nav-item">
+                <a class="nav-link" href="#sponsors">
+                  Sponsors
+                </a>
+              </li>-->
+
+              <li class="nav-item">
+                <a class="nav-link" href="#team">
+                  Organizadores
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Hero Area Start -->
+      <div id="hero-area" class="hero-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-9 col-sm-12">
+              <div class="contents text-center">
+               <img class="img-logo-content" src="assets/img/logo.png" alt="">
+                <p class="banner-info">09 de Novembro de 2024</p>
+                <p class="banner-info">Este ano duas edições acontecerão no mesmo dia, uma em Goiânia e outra em Floripa</p>
+                <p align="justify" class="banner-desc">
+                  Os grupos de usuários AWS do Brasil estão de volta para apresentar o maior e melhor AWS Community Day Brasil de todos os tempos. Vamos compartilhar histórias de sucesso, casos de uso do dia a dia, histórias de sucessos, fundamentos, conceitos avançados, com apresentações para todos os níveis de conhecimento na cloud AWS.</p>
               
-               <div class="right_in">
-                <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                  
-              </div> 
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="nav-bar">
-        <p id="toggle"><span></span></p>
+      <!-- Hero Area End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- Count Bar Start -->
+    <section id="count">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="count-wrapper text-center">
+              <div class="time-countdown wow fadeInUp" data-wow-delay="0.2s">
+                <div id="clock" class="time-count"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Count Bar End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="img-thumb">
+              <img class="img-fluid" src="assets/img/about/img.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="about-content">
+              <div>
+                <div class="about-text">  
+                  <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
+                  <p align="justify">Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
+
+                    Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma equalitária, segura, justa e acessível.
+                    
+                    Todas as pessoas são bem vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento. Escolha um grupo de usuários perto de você e venha nos ajudar a tornar as comunidades AWS do Brasil maiores e melhores!
+                    
+                    Ajude a construir um evento melhor para todas as pessoas. As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.</p>
+                </div>
         
-        <li class="spec">
-          <a class="buy-ticket-link button" href="https://forms.gle/9efkvj14zuyUE2px6"
-            target="_blank">INSCRIÇÕES EM BREVE</a>
-        </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+    <!-- Information Bar Start -->
+    <section id="information-bar">
+      <div class="container">
+        <div class="row inforation-wrapper">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <ul>
+              <li>
+                <i class="lni-map-marker"></i>
+              </li>
+              <br>  <br> 
+              <li><span><b>Local da Edição Goiânia</b> CASA DA INDÚSTRIA <br>  Av. Araguaia c/ 200-C - St. Leste Vila Nova</span></li>
+
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <ul>
+              <li>
+                <i class="lni-map-marker"></i>
+              </li>
+              <br>  <br> 
+              <li><span><b>Local da Edição Floripa</b> em breve</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <ul>
+              <li>
+                <i class="lni-calendar"></i>
+              </li>
+              <br>  <br> 
+              <li><span><b>Data e Hora</b> Início às 9:00h e encerramento às 18:00 <br> 09 de Novembro 2024</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <ul>
+              <li>
+                <i class="lni-ticket"></i>
+              </li>
+              <br>  <br> 
+              <li><span><b>inscrições</b> As inscrições serão abertas em breve</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Information Bar End -->
+
+
+     <!-- intro Section Start -->
+    <section id="intro" class="intro section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">O QUE ESPERAR DO NOSSO EVENTO?</h2>
+              <p class="paragph" data-wow-delay="0.2s">Renove seus conhecimentos em AWS no AWS Community Day Brasil! Aprenda sobre as últimas tendências e inovações, conecte-se com usuários AWS, DevOps, desenvolvedores e arquitetos de soluções, e crie contatos valiosos. Este evento é ideal para todos os níveis de experiência e oferece histórias inspiradoras de usuários AWS. Além disso, concorra a brindes, incluindo créditos para sua conta AWS.</p>
+            </div>
+
+            <br><br>
+          </div>
+        </div>
+        <div class="row intro-wrapper">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70">
+               <i class="lni-heart"></i>
+               <h3>Inspiração</h3>
+               <br><br>
+               <p>
+                Encontre inspiração nas histórias dos membros que enfrentaram desafios e alcançaram sucesso. Sua história inspira 
+               </p>
+              
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70">
+               <i class="lni-cup"></i>
+               <h3>Networking</h3>
+               <br><br>
+               <p>
+                É uma oportunidade para conectar-se, trocar ideias e criar relacionamentos profissionais e até oportunidades de carreira.
+               </p>
+              
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70">
+               <i class="lni-library"></i>
+               <h3>Conteúdo para Todos</h3>
+               <br>
+               <p>
+                Teremos atividades para pessoas que estão iniciando, que tem conhecimento intermediário e também quem já é especialista.
+               </p>
+               
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70">
+               <i class="lni-gallery"></i>
+               <h3>Responsabilidade Social</h3>
+               <br>
+               <p>
+                Todo o dinheiro arrecadado com a venda dos ingressos será doado a uma instituição de caridade. 
+               </p>
+               <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- intro Section End -->
+  
+
+
+    <!-- Schedule Section Start -->
+    <!-- 
+    <section id="schedules" class="schedule section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">NOSSA PROGRAMAÇÃO DE PALESTRAS</h2>
+              <p class="wow fadeInDown" data-wow-delay="0.2s">Confira aqui a grade de palestras das duas edições.</p>
+            </div>
+          </div>
+        </div>
         
-        <li class="spec1">
-          <a class="buy-ticket-link button" href="https://sessionize.com/aws-community-day-brasil-2024/"
-            target="_blank">SUBMETA SUA PALESTRA</a>
-        </li>
-        <ul>
-          <li>
-            <a href="#com_info">Sobre o AWS Community Day Brasil</a>
-          </li>
-          <!-- <li>
-            <a href="#cfp">CFP</a>
-          </li> -->
-          <!-- <li>
-            <a href="#agenda">Agenda</a>
-          </li>
-          <li>
-            <a href="#keynote">Keynote</a>
-          </li>  -->
-          <!--
-            <a href="#speakers">Palestrantes</a>
-          </li> -->
-          <!-- <li>
-            <a href="#sponsors">Apoiadores</a>
-          </li>  -->
-          <li>
-            <a href="#volunteers">Voluntários</a>
-          </li>
-          <li>
-            <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta" target="_blank">Código de conduta</a>
-          </li>
-        </ul>
+        <div class="row">
+          <div class="col-12 mb-5 text-center">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="goiania-tab" data-toggle="tab" href="#goiania" role="tab" aria-controls="goiania" aria-expanded="true">
+                  <div class="item-text">
+                    <h4>PALESTRAS DA EDIÇÃO GOIÂNIA</h4>
+                    <h5>09 de Novembro de 2024</h5>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="floripa-tab" data-toggle="tab" href="#floripa" role="tab" aria-controls="floripa">
+                  <div class="item-text">
+                    <h4>PALESTRAS DA EDIÇÃO FLORIPA</h4>
+                    <h5>09 de Novembro de 2024</h5>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12">
+            <div class="schedule-area row wow fadeInDown" data-wow-delay="0.3s">
+              <div class="schedule-tab-content col-12 clearfix">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="goiania" role="tabpanel" aria-labelledby="goiania-tab">
+                    <div id="accordion">
+                      <div class="card">
+                        <div id="headingOne">
+                          <div class="schedule-slot-time">
+                            <span> 9.30 - 10.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
+                            </div>                     
+                            <h4>GOIANIA</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingTwo">
+                          <div class="schedule-slot-time">
+                            <span> 10.30 - 11.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-2.jpg" alt="">
+                            </div>
+                            <h4>GOIANIA</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingThree">
+                          <div class="schedule-slot-time">
+                            <span> 11.30 - 12.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-3.jpg" alt="">
+                            </div>
+                            <h4>GOIANIA</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>-->
+
+                  <!-- GRADE FLORIPA-->
+                 <!--  
+                  <div class="tab-pane fade" id="floripa" role="tabpanel" aria-labelledby="floripa-tab">
+                    <div id="accordion4">
+                      <div class="card">
+                        <div id="headingOne">
+                          <div class="schedule-slot-time">
+                            <span> 9.30 - 10.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-2.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseOne4" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion4">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingTwo">
+                          <div class="schedule-slot-time">
+                            <span> 10.30 - 11.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseTwo4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion4">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingThree4">
+                          <div class="schedule-slot-time">
+                            <span> 11.30 - 12.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree4" aria-expanded="false" aria-controls="collapseThree4">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-3.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseThree4" class="collapse" aria-labelledby="headingThree" data-parent="#accordion4">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="friday-tab">
+                    <div id="accordion">
+                      <div class="card">
+                        <div id="headingOne">
+                          <div class="schedule-slot-time">
+                            <span> 9.30 - 10.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-2.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingTwo">
+                          <div class="schedule-slot-time">
+                            <span> 10.30 - 11.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id="headingThree">
+                          <div class="schedule-slot-time">
+                            <span> 11.30 - 12.30 AM</span>
+                            Workshop
+                          </div>
+                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="images-box">
+                              <img class="img-fluid" src="assets/img/speaker/speakers-3.jpg" alt="">
+                            </div>
+                            <h4>Web Design Principles and Best Practices</h4>
+                            <h5 class="name">David Warner</h5>
+                          </div>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                          <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium, necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
+                            <div class="location">
+                              <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- Schedule Section End -->
+
+    <div id="hero-area-2" class="hero-area-bg-2">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 col-sm-12">
+            <div class="contents text-center">
+              <div class="section-title-header text-center">
+                <h2 class="section-title-w">CALL FOR PAPERS ABERTO!</h2>
+                <p class="paragph">Estamos em busca de palestrantes para as duas edições do AWS Community Day Brasil 2024! Se você trabalha ou é um especialista em cloud, arquiteto de soluções, gerente de produtos ou projetos, desenvolvedor ou tem paixão por tecnologia, convidamos você a compartilhar suas ideias e experiências </p> </div>
+                <div class="container">
+                  <a href="https://sessionize.com/aws-community-day-brasil-2024/" target="_blank">
+                  <img src="https://sessionize.com/landing/images/brand/banners/sessionize-banner-medium.png"
+                    alt="Sessionize.com — The smart way to manage Call for Papers, Speakers and Agenda for your conference."
+                    width="220" height="80">
+                </a>
+              </div>
+              <br><br><br><br>
+
+              <div class="section-title-header text-center">
+                <h2 class="section-title-w">INSCRIÇÕES</h2>
+                <p class="paragph">Em breve as inscrições serão abertas com um valor simbólico <br> Todo o valor arrecadado com os ingressoes serão doados para uma instituição de caridade</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebpRmrGWqFoUD76qLN2Ljc6LMosKQhT8-jyKdTdBVu33kEiA/viewform" target="_blank" class="btn btn-common">ME AVISEM QUANDO ABRIR</a>
+              
+              </div>
+            
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
 
-      
-      <div class="section section-2">
-        <div class="container flex-it">
-          <div class="f1 left" id="com_info">
-            <div class="left_in">
-              <h4 class="headin-ttl">
-                Quem somos nós?
-              </h4>
-              <p>
-                Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o
-                objetivo de proporcionar discussões e demonstrações
-                de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
-              </p>
-              <p>
-                Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em
-                conceitos se conectando a pessoas com um objetivo comum:
-                aprender e compartilhar conhecimento de forma <b>equalitária, segura, justa e acessível</b>.
-              </p>
-              <p>
-                Todas as pessoas são bem vindas para colaborar e fazer parte desta jornada de conhecimento e
-                compartilhamento. Escolha um grupo de usuários perto de você e venha nos ajudar a tornar
-                as comunidades AWS do Brasil maiores e melhores!
-              </p>
-              <p>
-                Ajude a construir um evento melhor para todas as pessoas. As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta" target="_blank">Código de conduta.</a>
-              </p>
-            </div>
-          </div>
-          <div class="f1 right" id="even_info">
-            <div class="right_in">
-              <h4 class="heading-ttl">
-                O que esperar do AWS Community Day Brasil?
-              </h4>
-              <ul class="circle">
-                <li>
-                  Renove e revitalize seus conhecimentos em AWS
-                </li>
-                <li>
-                  Aprenda sobre as tendências da indústria e sobre inovações implementadas por especialistas em AWS
-                </li>
-                <li>
-                  Faça contato com centenas de usuários AWS, DevOps, desenvolvedores e arquitetos de soluções
-                </li>
-                <li>
-                  Crie contatos com pessoas da comunidade e da AWS
-                </li>
-                <li>
-                  Quer seja você uma pessoa iniciante ou experiente, certamente está na busca para aprender algo novo. O
-                  AWS Community Day Brasil é o evento para ouvir histórias incríveis de usuários AWS. Temos certeza que
-                  uma será perfeita para você e para o seu negócio
-                </li>
-                <li>
-                  Concorra a brindes como créditos para serem utilizados em sua conta AWS.
-                </li>
-              </ul>
+    <!-- Ticket Pricing Area Start -->
+    <!-- <section id="pricing" class="section-padding-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">INSCRIÇÕES</h2>
+              <p class="paragph" data-wow-delay="0.2s">Em breve as inscrições serão abertas com um valor simbólico <br> Todo o valor arrecadado com os ingressoes serão doados para uma instituição de caridade</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSebpRmrGWqFoUD76qLN2Ljc6LMosKQhT8-jyKdTdBVu33kEiA/viewform" target="_blank" class="btn btn-common">ME AVISEM QUANDO AS INSCRIÇÕES FOREM ABERTAS</a>
+            
             </div>
           </div>
         </div>
-      </div>
-      <div class="section section-tickets text-center" id="ticktes">
-        <div class="container">
-          <h4 class="main-heading-ttl text-center">Reserve seu lugar</h4>
-          <div class="row flex-it">
-            <div class="col-md-3">
-              <div class="card people with_icon border">
-                <h4 class="heading-ttl">Conteúdo Para Todos</h4>
-                <div class="bg_img"></div>
-                <p align="justify">
-                  O Nosso evento contará com vários conteúdos técnicos estrategicamente organizados para atender para todos os níveis de conhecimento</p>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card tick_conf with_icon border dark">
-                <h4 class="heading-ttl">Conteúdo iniciante</h4>
-                <div class="bg_img"></div>
-                <p align="justify">Se você está começando e quer apresentações detalhadas sobre os conceitos básicos de uso dos serviços</p>
-
-              </div>
-             </div>
-            <div class="col-md-3">
-              <div class="card tick_work_1 with_icon border dark">
-                <h4 class="heading-ttl">Conteúdo moderado</h4>
-                <div class="bg_img"></div>
-                <p align="justify" >Você já é usuário(a) AWS e quer se aprofundar em temas que são úteis para o seu dia a dia e para seu
-                  negócio</p>
-
-              </div>
-             </div>
-            <div class="col-md-3">
-              <div class="card tick_work_2 with_icon border">
-                <h4 class="heading-ttl">Conteúdo avançado</h4>
-                <div class="bg_img"></div>
-                <p align="justify">Você é usuário(a) AWS avançado(a) e está interssado(a) em histórias e casos de uso de empresas que
-                  tiram o máximo da nuvem</p>
-              </div>
-            </div>
-          </div> 
-          <div class="buy-wrapper row flex-it">
-            <div class="f1">
-              <a class="button large buy-ticket-link"
-                href="https://forms.gle/9efkvj14zuyUE2px6" target="_blank">ME AVISE QUANDO LIBERAREM AS INSCRIÇÕES</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="section section-talk text-center" id="cfp">
-        <div class="container">
-            <a href="https://sessionize.com/aws-community-day-br-2024" target="_blank">
-            <img src="https://sessionize.com/landing/images/brand/banners/sessionize-banner-medium.png"
-              alt="Sessionize.com — The smart way to manage Call for Papers, Speakers and Agenda for your conference."
-              width="220" height="80">
-          </a>
-          
-          <div class="cfp">
-            <a href="https://sessionize.com/aws-community-day-brasil-2024" target="_blank">
-            <h4 class="main-heading-ttl">Submeta sua palestra até 30/09/2024!</h4>
-            <div class="buy-wrapper row flex-it">
-              <div class="f1">
-                <a class="button large buy-ticket-link"
-                  href="https://sessionize.com/aws-community-day-brasil-2024/" target="_blank">CLIQUE AQUI PARA ENVIAR SUA TALK</a>
-              </div>
-            </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    
-      <div class="section section-4 inv" id="agenda">
-        <div class="container">
-          <div class="sponsors">
-            <h4 class="main-heading-ttl text-center">grade de palestras</h4>
-            <div class="text-center agenda">
-              <div class="table">
-                <!--USE ESSE MODELO ABAIXO SE TIVER VARIAS TRILHAS -->
-                <!--
-                <div class="thead">
-                  <div class="tr">
-                    <div class="th idx">
-                      <div>
-                        <p>Horário</p>
-                      </div>
-                    </div>
-                    <div class="th">
-                      <div>
-                        <p>Talks</p>
-                      </div>
-                    </div>
-                    <div class="th">
-                      <div>
-                       
-                      </div>
-                    </div>
-                    <div class="th">
-                      <div>
-                        
-                      </div>
-                    </div>
-                    <div class="th">
-                      <div>
-                        <p>&nbsp;</p>
-                      </div>
-                    </div> 
-                  </div>
-                </div>-->
-                <div class="tbody">
-
-                  <div class="tr gapx">
-                    <div class="td">
-                      <div>
-                        <b><p>HORÁRIO</p></b>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <b><p> PALESTRAS</p></b>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--Em Construção -->
-                  <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>09:00 AM - 19:00 PM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                      <b><p>Em construção</p></b>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--CREDENCIAMENTO -->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>08:00 AM - 09:00 AM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                      <b><p>Credenciamento | Networking | Café de Boas Vindas</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-                  
-                  <!--ABERTURA -->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>09:00 AM - 09:30 AM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                      <b><p>ABERTURA</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!--KEYNOTE 01 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>09:30 AM - 10:30 AM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>KEYNOTE DE ABERTURA - JORNADA DE LIDERANÇA DE ENGENHARIA</b></p>
-                        <p> <a href="https://www.linkedin.com/in/gabydias/" target="_blank"> Gabriela Dias - Diretora de Engenharia na Unico IDTech</a></p>
-                      </div>
-                    </div>
-                  </div>   -->
-                  
-                  <!--BREAK -->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>10:30 AM - 10:45 AM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                      <b><p>BREAK E NETWORKING</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                    <!-- TALK 01 -->
-                    <!-- <div class="tr">
-
-                      <div class="td idx">
-                        <div>
-                          <p>10:45 AM - 11:30 AM</p>
-                        </div>
-                      </div>
-  
-                      <div class="td" colspan="4">
-                        <div>
-                          <p><b>FERRAMENTAS QUE IRÃO TE AJUDAR A ENTRAR NO MUNDO DE DEVOPS/CLOUD</b></p>
-                          <p> <a href="linkedin.com/in/oismaelash/" target="_blank"> Ismael Ash  - Consultor TI |Senior Software Developer | React.js | Node.js | .Net Core | AWS | GCP | Unity | Mentor | MBA</a></p>
-                        </div>
-                      </div>
-                    </div>  -->
-
-
-                      <!--TALK 02 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>11:30 AM - 12:15 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>S3 STORAGE LENS: VISIBILIDADE DE DADOS E OTIMIZAÇÃO DE CUSTOS</b></p>
-                        <p> <a href="linkedin.com/in/bmarangoni" target="_blank"> Bruno Marangoni  - Solutions Architect @ DXC Technology | Cloud Solution Architect | AWS | Hybrid Cloud | Azure | VMware | AWS Community Builder</a></p>
-                      </div>
-                    </div>
-                  </div>  -->
-
-                   <!--ALMOÇO -->
-                   <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>12:15 PM - 14:00 PM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                      <b><p>ALMOÇO</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!-- TALK 03 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>14:00 PM - 14:45 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>CONSTRUINDO ESTRADAS E PONTES EM UMA DÉCADA DE COMPUTAÇÃO EM NUVEM </b></p>
-                        <p> <a href="linkedin.com/in/heitorlessa" target="_blank"> Heitor Lessa -  Principal Architect at Amazon Web Services</a></p>
-                      </div>
-                    </div>
-                  </div>  -->
-
-
-                  <!--TALK 04 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>14:45 PM - 15:30 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>A IMPORTÂNCIA DE FINOPS NA MIGRAÇÃO PARA A NUVEM</b></p>
-                        <p> <a href="https://www.linkedin.com/in/jessicacardozo-cloudcomputing/" target="_blank"> Jéssica Cardozo - Cloud Specialist na Darede | FinOps | Cloud Cost Optimization | Mentora de Carreira e Fundadora do Projeto Cloud Women</a></p>
-                      </div>
-                    </div>
-                  </div>  -->
-
-                  <!--BREAK -->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>15:30 PM - 15:45 PM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>BREAK E NETWORKING</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!-- TALK 05 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>15:45 PM - 16:30 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>DESCOBRINDO E DESVENDANDO O AMAZON VPC LATTICE</b>
-                        </p>
-                        <p> <a href="https://www.linkedin.com/in/carlosaugustoscarvalho/" target="_blank"> Carlos Augusto Souza Carvalho - Cloud Architect at Claro Brasil - Microsoft MCT | 20x Azure | 9x AWS | 2x GCP | 6x Oracle Cloud | 3x Fortinet NSE | 1x Aviatrix | Lifelong Learner | Cloud Computing Mentor</a></p>
-                      </div>
-                    </div>
-                  </div>  -->
-
-
-                  <!--TALK 06 -->
-                  <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>16:30 PM - 17:15 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>O QUE É IAC & IAC NA PRÁTICA COM TERRAFORM </b>
-                        </p>
-                        <p> <a href="https://www.linkedin.com/in/mslombardi/" target="_blank"> Maria Eduarda Lombardi  -  DevOps Jr. at Darede l 3x AWS Certified l 3x HashiCorp Certified l Vault Associate Certified l Terraform Associate Certified & Terraform CHIP Certified</a></p>
-                      </div>
-                    </div>
-                  </div>  -->
-
-                   <!--KEYNOTE 02 -->
-                   <!-- <div class="tr">
-
-                    <div class="td idx">
-                      <div>
-                        <p>17:15 PM - 18:15 PM</p>
-                      </div>
-                    </div>
-
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>KEYNOTE DE ENCERRAMENTO</b></p>
-                        <p> <a href="https://www.linkedin.com/in/jjota/" target="_blank"> Jota Sousa - Cloud Architecture Manager | FinOps | Cloud Operations Manager | Cloud Excellence | Infraestrutura de TI | DevOps | Projetos |</a></p>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!--SORTEIOS E ENCERRAMENTO-->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>18:15 PM - 18:45 PM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>SORTEIOS E ENCERRAMENTO</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!--SORTEIOS E ENCERRAMENTO-->
-                  <!-- <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>18:45 PM - 20:00 PM</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p><b>HAPPY HOUR</p></b>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!--USE ESSE MODELO ABAIXO SE TIVER VARIAS TRILHAS -->
-                  <!--
-                  <div class="tr">
-                    <div class="td idx">
-                      <div>
-                        <p>11:00</p>
-                      </div>
-                    </div>
-                    <div class="td">
-                      <div>
-                        <p>Como construir uma carreira na área de Dados</p>
-                        <p> <a href="https://www.linkedin.com/in/patriciazago/" target="_blank"> Patty Zago,
-                            Data Manager - @PicPay | AWS Community Builder</a></p>
-                      </div>
-                    </div>
-                    <div class="td">
-                      <div>
-                        <p>Mensageria na AWS - Imersão do Conceito à Prática</p>
-                        <p><a href="https://www.linkedin.com/in/viniciusclimaco" target="_blank"> Vinicius Climaco,
-                            Arquiteto de soluções no Itaú </a></p>
-                        <p><a href="https://www.linkedin.com/in/hsouzaeduardo/" target="_blank"> Henrique Eduardo,
-                          Gerente de Arquitetura na Avanade </a></p>
-                      </div>
-                    </div>
-                    <div class="td">
-                      <div>
-                        <p>Configuração de DNS é fundamental para sistemas de alta disponibilidade</p>
-                        <p> <a href="https://www.linkedin.com/in/pedropisa/" target="_blank"> Pedro Pisa,
-                            Cloud Service Delivery Leader, E-Core </a></p>
-                      </div>
-                    </div>
-                    <div class="td">
-                      <div>
-                        <p>
-                          &nbsp;
-                        </p>
-                      </div>
-                    </div>
-                  </div>        
-                  <div class="tr">
-                    <div class="td idx">
-                    <div>
-                        <p>12:00</p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Certificações AWS - Por onde começar e qual a importancia delas</p>
-                        <p> <a href="https://www.linkedin.com/in/murilo-santana/" target="_blank"> Murilo Santana,
-                            Gerente de SRE & DevOps na Rede D'or.</a></p>
-                        <p> <a href="https://www.linkedin.com/in/alison-pecin/" target="_blank"> Alison Pecin,
-                            DevOps Engineer na Claro Brasil.</a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Como procurar e otimizar seus custos de rede na AWS</p>
-                        <p><a href="https://www.linkedin.com/in/felipekiko/" target="_blank"> Felipe KiKo,
-                            Especialista FinOps na Wildlife Studios </a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Construindo soluções de Software como Serviço (SaaS) na AWS</p>
-                        <p> <a href="https://www.linkedin.com/in/cdiegocom" target="_blank"> Carlos Diego C. P.,
-                            Valcann, Chief Technology Officer </a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>
-                        &nbsp;
-                        </p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>13:00</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p>Dinâmica de perguntas e respostas com distribuição de créditos AWS.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>13:30</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p>Almoço</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tr">
-                      <div class="td idx">
-                      <div>
-                          <p>15:00</p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>Containers na AWS - Principais serviços</p>
-                          <p> <a href="https://www.linkedin.com/in/nandopena/" target="_blank"> Fernando Pena,
-                              Solutions Architect at Numen, AWS Community Builder</a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>Plataforma Machine Learning Will Bank - SageMaker </p>
-                          <p><a href="https://www.linkedin.com/in/danilosousadba/" target="_blank"> Danilo Sousa,
-                              Gerente de MLOps </a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>Como montar uma pipeline de dados em tempo real na AWS</p>
-                          <p> <a href="https://www.linkedin.com/in/neylsoncrepalde/" target="_blank"> Neylson Crepalde,
-                              CDO @ A3Data | Professor | Podcaster</a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>
-                          &nbsp;
-                          </p>
-                      </div>
-                      </div>
-                  </div>
-                  <div class="tr">
-                      <div class="td idx">
-                      <div>
-                          <p>16:00</p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>Criando a melhor pipeline para seu contexto tecnológico</p>
-                          <p> <a href="https://www.linkedin.com/in/oismaelash/" target="_blank"> Ismael Ash,
-                              Consultor TI</a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>A Cloud e sistemas assincronos monitoráveis </p>
-                          <p><a href="https://www.linkedin.com/in/ramondomingos/" target="_blank"> Ramon Domingos,
-                              Software Engineer na OLX Brasil </a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>Implementando Istio Gateway no EKS usando AWS ALB</p>
-                          <p> <a href="https://www.linkedin.com/in/lanaymarques/?locale=en_US" target="_blank"> Lanay Marques,
-                              DevOps Engineer na Claro</a></p>
-                      </div>
-                      </div>
-                      <div class="td">
-                      <div>
-                          <p>
-                          &nbsp;
-                          </p>
-                      </div>
-                      </div>
-                  </div>
-                  <div class="tr">
-                    <div class="td idx">
-                    <div>
-                        <p>17:00</p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Hospedando uma aplicação WEB usando o Amazon Amplify</p>
-                        <p> <a href="https://www.linkedin.com/in/rodrigokamada" target="_blank"> Rodrigo Kamada,
-                            IT Specialist at Zenvia </a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Escalando com segurança o acesso a múltiplas contas AWS</p>
-                        <p><a href="https://linkedin.com/in/bmarangoni" target="_blank"> Bruno Marangoni,
-                            Solutions Architect na DXC </a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                    <div>
-                        <p>Cloud Wan - O novo jeito de lidar com redes na AWS</p>
-                        <p> <a href="https://www.linkedin.com/in/flaviorescia" target="_blank"> Flávio Rescia,
-                            CTO & Co-Fundador da Darede, Fundador da Escola da Nuvem, AWS Black&Belt e Embaixador AWS </a></p>
-                    </div>
-                    </div>
-                    <div class="td">
-                      <div>
-                          <p>
-                          &nbsp;
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>18:00</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p>Dinâmica de perguntas e respostas com distribuição de créditos AWS.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tr gap">
-                    <div class="td idx">
-                      <div>
-                        <p>18:30</p>
-                      </div>
-                    </div>
-                    <div class="td" colspan="4">
-                      <div>
-                        <p> Encerramento :/</p>
-                      </div>
-                    </div>
-                  </div> 
-                -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        <!--
-      <div class="section section-5" id="sponsors">
-        <div class="container">
-          <div class="sponsors">
-            <h4 class="main-heading-ttl text-center">Nossos apoiadores</h4>
-            <div class="cats">
-              <div class="cmnty">
-
-                <div class="flex-itt">
-                  <div class="f11">
-                    <div class="select">
-                      <a href="https://www.selectsolucoes.com.br/" target="_blank">Select</a>
-                    </div>
-                  </div> 
-                  <div class="f11">
-                    <div class="fourevents">
-                      <a href="https://4.events/" target="_blank">4events</a>
-                    </div>
-                  </div>
-                  <div class="f11">
-                    <div class="prefeituraribeirao">
-                      <a href="https://ribeiraopreto.sp.gov.br/" target="_blank">Prefeitura de Ribeirão Preto</a>
-                    </div>
-                  </div>
-                  <div class="f11">
-                    <div class="novatec">
-                      <a href="https://www.novatec.com.br/" target="_blank">Editora Novatec</a>
-                    </div>
-                  </div>
-                  <div class="f11">
-                    <div class="darede">
-                      <a href="https://www.darede.com.br/" target="_blank">Da rede à nuvem</a>
-                    </div>
-                  </div>
-                  <div class="f11">
-                    <div class="ecore">
-                      <a href="https://www.e-core.com/lt-pt/" target="_blank">E-Core</a>
-                    </div>
-                  </div>   
-                  <div class="f11">
-                    <div class="onovo">
-                      <a href="https://onovolab.com/" target="_blank">ONovoLab</a>
-                    </div>
-                  </div>              
-                </div>
-              </div>
-              <div class="cmnty">
-
-                <div class="flex-it">
-                  <div class="fhf">
-                    <div class="head"><span>Comunidades</span></div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugsp">
-                      <a href="https://www.meetup.com/pt-BR/awsusergroupsp/" target="_blank">AWS User Group São
-                        Paulo</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugrj">
-                      <a href="https://www.meetup.com/pt-BR/AWS-User-Group-Rio-de-Janeiro/" target="_blank">AWS User
-                        Group Rio de Janeiro</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugce">
-                      <a href="https://www.meetup.com/pt-BR/AWS-Users-Group-CE/" target="_blank">AWS User Group
-                        Ceará</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsuggo">
-                      <a href="https://www.meetup.com/pt-BR/aws-go/" target="_blank">AWS User Group Goiânia</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugcampinas">
-                      <a href="https://www.meetup.com/awscampinas/" target="_blank">AWS User Group Campinas</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugblu">
-                      <a href="https://www.meetup.com/pt-BR/aws-usergroup-blumenau/" target="_blank">AWS User Group
-                        Blumenau</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsuggametech">
-                      <a href="https://www.meetup.com/gametech/" target="_blank">Game Tech Sul Brasil</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugfloripa">
-                      <a href="https://www.meetup.com/awsusergroupfln/" target="_blank">AWS User Group Florianópolis</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugmg">
-                      <a href="https://www.meetup.com/awsusergroupmg/" target="_blank">AWS User Group Minas Gerais</a>
-                    </div>
-                  </div>
-                  <div class="f1">
-                    <div class="awsugcri">
-                      <a href="https://www.meetup.com/pt-BR/criciumaops/" target="_blank">AWS User Group CriciúmaOps</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        -->
-      <!--
-      <div class="section-9" id="keynote">
-        <div class="container">
-            <div class="keynote-container">
-                <div class="keynote">
-                    <h4 class="main-heading-ttl text-center">Keynote de abertura</h4>
-                    <h4 class="main-heading-ttl text-center">Gabriela Dias</h4>
-
-                    <div class="vl-i flex-it hcenter">
-                      <a href="https://www.linkedin.com/in/gabydias/" target="_blank">
-                          <img class="keynote-image" src="images/keynote/01.jpeg">
-                      </a>
-                  </div>
-                
-                  <div class="vl-i flex-it hcenter">
-                      <br>
-                      
-                      <br>
-                  </div>
-                </div>
-    
-                <div class="keynote">
-                    <h4 class="main-heading-ttl text-center">Keynote de Encerramento</h4>
-                    <h4 class="main-heading-ttl text-center">Jota Sousa</h4>
-                    <div class="vl-i flex-it hcenter">
-                        <a href="https://www.linkedin.com/in/jjota/" target="_blank">
-                            <img class="keynote-image" src="images/keynote/02.jpeg">
-                        </a>
-                    </div>
-                  
-                    <div class="vl-i flex-it hcenter">
-                        <br>
-                        
-                        <br>
-                    </div>
-                </div>
-    
-            </div>
-      </div>
-    </div>-->
-
      
+      </div>
+    </section>-->
+    <!-- Ticket Pricing Area End -->
 
-      <!--
-        <div class="section-8" id="speakers">
-          <div class="container">
-            <div class="speakers">
-              <h4 class="main-heading-ttl text-center">Palestrantes</h4>
-              <div class="spk_lst flex-it ">
-                <div class="spk_itm_col">
+    <!-- CFP Area Start -->
+ 
+    <!-- Ticket Pricing Area End -->
 
-                  <div class="spk_itm flex-it">
-                    <div class="prod_im"><img src="images/speakers/bruno_marangoni.jpg" alt=""></div>
-                    <div class="namenid">
-                      <p>
-                        <b>Em definição</b>
-                        <br>
-                        <small> -- </small>
-                      </p>
-                      <a target="_blank" style="position: absolute; top: 10px; right: 44px;"
-                        href="https://linkedin.com/in/bmarangoni"><i
-                          class="icon large ion-logo-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
+    <!-- Blog Section Start 
+    <section id="blog" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">MAIS SOBRE A NOSSA COMUNIDADE</h2>
+ 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="blog-item">
+              <div class="blog-image">
+                <a href="https://aws.amazon.com/developer/community/usergroups/?community-user-groups-cards.sort-by=item.additionalFields.ugName&community-user-groups-cards.sort-order=asc&awsf.location=*all&awsf.category=*all&community-user-groups-cards.q=brazil&community-user-groups-cards.q_operator=AND">
+                  <img class="img-fluid" src="assets/img/blog/ug.png" alt="">
+                </a>
+              </div>
+              <div class="descr">
+
+                <h3 class="title">
+                  <a href="https://aws.amazon.com/developer/community/usergroups/?community-user-groups-cards.sort-by=item.additionalFields.ugName&community-user-groups-cards.sort-order=asc&awsf.location=*all&awsf.category=*all&community-user-groups-cards.q=brazil&community-user-groups-cards.q_operator=AND">
+                    Conecte-se com um AWS User Group
+                  </a>
+                </h3>
+                <p align="justify">Conecte-se com a comunidade AWS Brasileira para networking, aprendizado contínuo e troca de experiências valiosas com outros usuários e especialistas.</p>
+              </div>
+              <div class="meta-tags">
+                
               </div>
             </div>
           </div>
-        </div> -->
-
-
-
-
-        
-          <div class="section-6 inv" id="volunteers">
-            <div class="container">
-              <div class="volunteers">
-                <h4 class="main-heading-ttl text-center">Pessoas voluntárias</h4>
-                <div class="vl-row-list">
-                  <div class="vl-i  flex-it hcenter">
-
-                    <div class="person" data-fname="Ana" data-lname="Cunha">
-                      <div class="img">
-                        <a target="_blank" href="https://twitter.com/mcunhaana">
-                          <i class="icon large ion-logo-twitter"></i>@mcunhaana
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Flavio" data-lname="Pimenta">
-                      <div class="img">
-                        <a target="_blank" href="https://twitter.com/pimentaflavio">
-                          <i class="icon large ion-logo-twitter"></i>@pimentaflavio
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Marcelo" data-lname="Palladino">
-                      <div class="img">
-                        <a target="_blank" href="https://twitter.com/mfpalladino">
-                          <i class="icon large ion-logo-twitter"></i>@mfpalladino
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Vanessa" data-lname="Santos">
-                      <div class="img">
-                        <a target="_blank" href="https://twitter.com/colors4ideas">
-                          <i class="icon large ion-logo-twitter"></i>@colors4ideas
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Paloma" data-lname="Lataliza"> 
-                      <div class="img">
-                        <a target="_blank" href="https://twitter.com/shescloud_">
-                           <i class="icon large ion-logo-twitter"></i>@shescloud_
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Christiano" data-lname="Linuxmen">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/linuxmen/">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Jefferson" data-lname="Machado">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/jeffersonfernandesmachado/">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Luisa" data-lname="Brandt">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/luisabrandt/">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Luiz" data-lname="Felipe">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/ofelpz/">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Priscila" data-lname="Araújo">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/priscila-araujo-santos/">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="person" data-fname="Matheus" data-lname="Moreira">
-                      <div class="img">
-                        <a target="_blank" href="https://www.linkedin.com/in/matheus07">
-                          <i class="icon large ion-logo-linkedin"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="blog-item">
+              <div class="blog-image">
+                <a href="https://sessionize.com/aws-community-day-brasil-2024/">
+                  <img class="img-fluid" src="assets/img/blog/call.png" alt="">
+                </a>
               </div>
-            </div>
+              <div class="descr">
 
-          </div>
-          <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <iframe src="" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
-                    msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
-                    webkitallowfullscreen="webkitallowfullscreen"></iframe>
-                </div>
+                <h3 class="title">
+                  <a href="https://sessionize.com/aws-community-day-brasil-2024/">
+                    Call for Speakers
+                  </a>
+                </h3>
+                <p align="justify"> Seja um palestrante do AWS Community Day Brasil e compartilhe seu conhecimento com a comunidade. Inspire outros profissionais, mostre suas habilidades e contribua para o crescimento e aprendizado coletivo. </p>
+              </div>
+              <div class="meta-tags">
+               
               </div>
             </div>
           </div>
-          <script>
-            $(".buy-ticket-link").on("click", () => {
-              //FAZER!
-            });
-          </script>
-</body>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="blog-item">
+              <div class="blog-image">
+                <a href="#blog">
+                  <img class="img-fluid" src="assets/img/blog/sponsor.png" alt="">
+                </a>
+              </div>
+              <div class="descr">
 
+                <h3 class="title">
+                  <a href="#blog">
+                    Apoie Nosso Evento
+                  </a>
+                </h3>
+                <p align="justify">Seja apoiador do AWS Community Day Brasil e conecte sua marca com líderes e especialistas da indústria. Aproveite essa oportunidade para aumentar sua visibilidade, reter talentos e apoiar a comunidade.</p>
+              </div>
+              <div class="meta-tags">
+               
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>-->
+    <!-- Blog Section End -->
+
+    <!-- Sponsors Section Start -->
+     
+    <!-- 
+    <section id="sponsors" class="section-padding">
+        <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2>PATROCINADORES E APOIADORES</h2>
+              <p class="paragph">Conheça os patrocinadores e apoiadores deste ano. Estamos animados em apresentar as empresas/comunidades cujo apoio tornam nosso evento possível. Cada um deles é fundamental para nos ajudar a criar uma experiência inesquecível para todos os participantes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
+          <div class="col-lg-12">
+            <div class="sponsors-logo text-center">
+               <a href=""><img src="assets/img/sponsors/logo-1.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-2.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-3.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-4.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-5.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-6.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-7.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-8.png" alt=""></a>
+               <a href=""><img src="assets/img/sponsors/logo-9.png" alt=""></a>
+            </div>
+         </div>
+        </div>
+      </div>
+    </section>  -->
+    <!-- Sponsors Section End -->
+
+
+    <!-- Team Section Start -->
+    <section id="team" class="section-padding text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header-2 text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">ORGANIZADORES</h2>
+
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-bt">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+              <div class="team-img">
+                <a href="https://x.com/shescloud_" target="_blank"> <img class="img-fluid" src="assets/img/team/team-01.jpg" alt=""> </a>
+
+              </div>
+              <div class="info-text">
+                <h3><a href="https://x.com/shescloud_" target="_blank">PALOMA LATALIZA</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+              <div class="team-img">
+               <a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-02.jpg" alt=""></a>
+
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank">JEFFERSON MACHADO</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-03.jpg" alt=""></a>
+
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank">RAFAELA VIDOTTI</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/epiresdasilva/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-04.jpg" alt=""> </a>
+
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/epiresdasilva/" target="_blank">EVANDRO PIRES</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="1s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-05.jpg" alt=""> </a>
+               
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank">MARCELO PAIVA</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="1.2s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-06.jpg" alt=""> </a>
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank">PRISCILA ARAUJO</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="1.2s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/deividveras" target="_blank"> <img class="img-fluid" src="assets/img/team/team-08.jpg" alt=""> </a>
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="1.3s">
+              <div class="team-img">
+                <a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-07.jpg" alt=""> </a>
+              </div>
+              <div class="info-text">
+                <h3><a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank">ROGÉRIO FONTES</a></h3>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+        </div>
+       
+      </div>
+    </section>
+    <!-- Team Section End -->
+
+
+    <footer>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 col-xs-12">
+           
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+    	<i class="lni-chevron-up"></i>
+    </a>
+
+    <div id="preloader">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/main.js"></script>          
+  </body>
 </html>
