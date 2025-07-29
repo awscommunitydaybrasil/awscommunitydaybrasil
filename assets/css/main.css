@@ -1,6 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:500,700");
+
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Fallback for fixed header */
+}
+
+/* Dynamic scroll padding for different screen sizes */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    scroll-padding-top: 110px;
+  }
 }
 
 body {
@@ -582,6 +604,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 .navbar-brand {
   position: relative;
   padding: 10px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .navbar-brand img {
@@ -679,7 +702,82 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 .navbar {
   padding: 10px;
+}
 
+/* Center menu when logo is hidden */
+.navbar .container {
+  position: relative;
+  transition: justify-content 0.3s ease;
+}
+
+.navbar-brand.logo-hidden + .navbar-toggler ~ .navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-brand.logo-hidden ~ .navbar-collapse .navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Desktop menu centering when logo is hidden */
+@media (min-width: 992px) {
+  .navbar .container.center-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar .container.center-menu .navbar-collapse {
+    flex-grow: 0;
+  }
+  
+  .navbar .container.center-menu .navbar-nav {
+    margin: 0;
+  }
+}
+
+/* Mobile navbar improvements */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px;
+    min-height: 60px;
+  }
+  
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .navbar-toggler {
+    position: relative;
+    z-index: 1001;
+    padding: 6px 10px;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
 }
 
 .navbar li.active a.nav-link {
@@ -1352,7 +1450,7 @@ h1 {
 #information-bar {
   background: #F6F9F9;
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
   padding: 70px;
 }
 
@@ -1395,7 +1493,7 @@ h1 {
 /* Services Item */
 .intro {
   background: #fff;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
 .single-intro-text {
@@ -1413,6 +1511,10 @@ h1 {
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .single-intro-text:hover {
@@ -1434,10 +1536,14 @@ h1 {
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: 700;
+  margin-top: 10px;
 }
 
 .single-intro-text p {
   margin-bottom: 0;
+  flex-grow: 1;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .single-intro-text .count-number {
@@ -2353,6 +2459,7 @@ footer {
   color: #fff;
   overflow: hidden;
   position: relative;
+  margin-top: -50px;
 }
 
 #hero-area-2 .overlay {

@@ -154,14 +154,40 @@
     font-size: 12px;
   }
   .time-entry {
-    width: 50%;
-    font-size: 14px;
+    width: 25%;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 0 2px;
   }
   .time-entry span {
-    font-size: 30px;
+    font-size: 24px;
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
   .time-entry b {
-    display: none;
+    display: none !important;
+  }
+  
+  /* Force countdown container to stay in one line */
+  .time-count {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .time-count .time-entry {
+    flex: 1;
+    margin: 0 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 60px;
   }
   .counter-section .counter {
     margin-bottom: 30px;
@@ -229,5 +255,231 @@
   .btn {
     padding: 5px 7px;
     font-size: 13px;
+  }
+}
+
+/* Desktop navbar logo size control */
+@media (min-width: 769px) {
+  .navbar-brand {
+    padding: 15px 10px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  
+  .navbar-brand img {
+    height: 55px !important;
+    max-width: 280px !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .navbar {
+    min-height: 85px !important;
+    padding: 12px 0 !important;
+  }
+  
+  /* Override main.css rules that cause issues */
+  .navbar-brand img {
+    width: auto !important;
+  }
+}
+
+/* Mobile fixes for better experience */
+@media (max-width: 768px) {
+  /* Fix navbar logo centering on mobile */
+  .navbar-brand {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+  }
+  
+  .navbar-brand img {
+    height: 40px !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 200px !important;
+    display: block !important;
+  }
+  
+  /* Fix navbar toggler position */
+  .navbar-toggler {
+    position: relative;
+    z-index: 1001;
+    border: none;
+    padding: 4px 8px;
+  }
+  
+  /* Ensure navbar has proper height for mobile logo */
+  .navbar {
+    min-height: 68px !important;
+    padding: 0 !important;
+  }
+  
+  .navbar .container {
+    position: relative;
+    height: 68px !important;
+  }
+  
+  /* Improve mobile menu */
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navbar-nav .nav-link {
+    color: #232F3E !important;
+    font-size: 16px !important;
+    padding: 12px 0 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus,
+  .navbar-nav .active .nav-link {
+    background: linear-gradient(65deg, #FF9900 0, #FF9900 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* Clean team photos on mobile - no borders, padding or backgrounds */
+  .team-item .team-img img {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .team-item .team-img {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .team-item {
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+  }
+  
+  .team-item .info-text {
+    padding: 0 !important;
+    margin-top: 8px !important;
+  }
+  
+  /* Improve section spacing on mobile */
+  .section-padding {
+    padding: 40px 0 !important;
+  }
+  
+  /* Minimal spacing for team section */
+  #team.section-padding {
+    padding: 20px 0 !important;
+  }
+  
+  #team .container {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  
+  #team .row {
+    margin: 0 !important;
+  }
+  
+  #team .col-lg-3 {
+    padding: 0 5px !important;
+  }
+  
+  /* Better scroll padding for mobile */
+  html {
+    scroll-padding-top: 80px !important;
+  }
+  
+  /* Fix intro section cards on mobile */
+  .single-intro-text {
+    height: auto !important;
+    min-height: 280px !important;
+    padding: 30px 20px 25px 45px !important;
+  }
+  
+  .single-intro-text h3 {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .single-intro-text p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .single-intro-text i {
+    font-size: 45px !important;
+    left: -5px !important;
+  }
+  
+  /* Fix container padding on very small screens */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Improve hero area on mobile */
+  #hero-area .contents {
+    padding: 80px 0 !important;
+  }
+  
+  .banner-info {
+    font-size: 16px !important;
+    margin-bottom: 10px;
+  }
+  
+  /* Fix information bar on mobile */
+  #information-bar {
+    padding: 40px 20px !important;
+    margin-bottom: 60px !important;
+  }
+  
+  #information-bar ul li span {
+    font-size: 14px !important;
+  }
+  
+  #information-bar ul li span b {
+    font-size: 18px !important;
+  }
+  
+  /* Better intro section on mobile */
+  .single-intro-text {
+    margin-bottom: 40px !important;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .single-intro-text h3 {
+    font-size: 20px !important;
+    margin-bottom: 15px;
+  }
+  
+  .single-intro-text p {
+    font-size: 14px !important;
+    line-height: 1.6;
   }
 }

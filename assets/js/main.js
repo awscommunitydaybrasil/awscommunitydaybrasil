@@ -8,6 +8,25 @@
     ========================================================*/
     $('#preloader').fadeOut();
 
+  // Initialize navbar logo visibility on page load
+    function initNavbarLogo() {
+        var scrollPos = $(window).scrollTop();
+        var heroSectionHeight = $('#hero-area').outerHeight();
+        var navbarHeight = $('.scrolling-navbar').outerHeight();
+        var $navbarContainer = $('.navbar .container');
+        
+        if (scrollPos < heroSectionHeight - navbarHeight) {
+            $('.navbar-brand').hide();
+            $navbarContainer.addClass('center-menu');
+        } else {
+            $('.navbar-brand').show();
+            $navbarContainer.removeClass('center-menu');
+        }
+    }
+    
+    // Call the function on page load
+    initNavbarLogo();
+
   // Sticky Nav
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 200) {
@@ -20,7 +39,7 @@
     /* ==========================================================================
        countdown timer
        ========================================================================== */
-     jQuery('#clock').countdown('2024/11/09',function(event){
+     jQuery('#clock').countdown('2025/09/27',function(event){
       var $this=jQuery(this).html(event.strftime(''
       +'<div class="time-entry days"><span>%-D</span> <b>:</b> Days</div> '
       +'<div class="time-entry hours"><span>%H</span> <b>:</b> Hours</div> '
@@ -58,9 +77,64 @@
         keyboardNav: true,
       });
 
-    // one page navigation 
-    $('.navbar-nav').onePageNav({
-            currentClass: 'active'
+    // Custom smooth scroll navigation with dynamic offset
+    $('.navbar-nav a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        
+        var target = $(this).attr('href');
+        var $target = $(target);
+        
+        if ($target.length) {
+            var navbarHeight = $('.scrolling-navbar').outerHeight();
+            var offsetTop = $target.offset().top - navbarHeight - 20;
+            
+            $('html, body').animate({
+                scrollTop: offsetTop
+            }, 800, 'easeInOutQuart');
+            
+            // Update active class
+            $('.navbar-nav a').removeClass('active');
+            $(this).addClass('active');
+            
+            // Close mobile menu if open
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('.navbar-collapse').collapse('hide');
+            }
+        }
+    });
+    
+    // Update active menu item on scroll and control navbar logo visibility
+    $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop();
+        var navbarHeight = $('.scrolling-navbar').outerHeight();
+        var heroSectionHeight = $('#hero-area').outerHeight();
+        var $navbarContainer = $('.navbar .container');
+        
+        // Hide/show navbar logo based on scroll position
+        if (scrollPos < heroSectionHeight - navbarHeight) {
+            // We're in the hero section, hide the logo and center menu
+            $('.navbar-brand').fadeOut(300);
+            $navbarContainer.addClass('center-menu');
+        } else {
+            // We're past the hero section, show the logo and restore normal layout
+            $('.navbar-brand').fadeIn(300);
+            $navbarContainer.removeClass('center-menu');
+        }
+        
+        $('.navbar-nav a[href^="#"]').each(function() {
+            var target = $(this).attr('href');
+            var $target = $(target);
+            
+            if ($target.length) {
+                var sectionTop = $target.offset().top - navbarHeight - 50;
+                var sectionBottom = sectionTop + $target.outerHeight();
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                    $('.navbar-nav a').removeClass('active');
+                    $(this).addClass('active');
+                }
+            }
+        });
     }); 
 
     /* Counter
