@@ -5,7 +5,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px; /* Fallback for fixed header */
 }
-
 /* Dynamic scroll padding for different screen sizes */
 @media (max-width: 768px) {
   html {
