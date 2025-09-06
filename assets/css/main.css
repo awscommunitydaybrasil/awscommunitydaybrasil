@@ -352,6 +352,10 @@ button:focus {
   object-fit: contain;
 }
 
+.sponsor-logo.platina img {
+  max-height: 160px;
+}
+
 /* Specific sponsor sizes based on category */
 .sponsor-logo.platina {
   width: 300px;
