@@ -347,13 +347,9 @@ button:focus {
 .sponsor-logo img {
   max-width: 100%;
   height: auto;
-  max-height: 120px;
+  max-height: 140%;
   width: auto;
   object-fit: contain;
-}
-
-.sponsor-logo.platina img {
-  max-height: 160px;
 }
 
 /* Specific sponsor sizes based on category */
