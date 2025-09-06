@@ -296,6 +296,103 @@ button:focus {
   margin-top: 30px;
 }
 
+/* Sponsors Section */
+.sponsors-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.sponsor-category {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sponsor-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Specific sponsor sizes based on category */
+.sponsor-logo.platina {
+  width: 300px;
+  height: 180px;
+  padding: 30px;
+}
+
+.sponsor-logo.ouro {
+  width: 250px;
+  height: 150px;
+  padding: 25px;
+}
+
+.sponsor-logo.prata {
+  width: 200px;
+  height: 120px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .sponsor-logos {
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .sponsor-logo.platina {
+    width: 250px;
+    height: 150px;
+  }
+  
+  .sponsor-logo.ouro {
+    width: 200px;
+    height: 120px;
+  }
+  
+  .sponsor-logo.prata {
+    width: 160px;
+    height: 100px;
+  }
+}
+
 /* ScrollToTop */
 a.back-to-top {
   display: none;
