@@ -296,6 +296,24 @@ button:focus {
   margin-top: 30px;
 }
 
+/* Speaker Images */
+.images-box {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.images-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Sponsors Section */
 .sponsors-section {
   padding: 40px 0;
@@ -1424,26 +1442,32 @@ h1 {
   background: #f3f4f3;
 }
 
+.schedule .card > div[id^="heading"] {
+  display: flex;
+}
+
 .schedule .card .schedule-slot-time {
   background-image: linear-gradient(65deg, #FF9900 0, #FF9900 100%);
   color: #fff;
   padding: 38px 28px;
-  float: left;
   font-size: 18px;
   font-weight: 700;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 18%;
   flex: 0 0 18%;
-  max-width: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .schedule .card-header {
   position: relative;
-  padding: 35px 40px 35px 224px;
+  padding: 35px 40px;
   border-bottom: 1px dashed #e5e5e5;
   cursor: pointer;
-  border-left: none;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .schedule .card-header .images-box {
