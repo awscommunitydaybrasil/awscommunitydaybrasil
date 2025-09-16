@@ -19,7 +19,128 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-
+    
+    <style>
+      /* Information Section Styles */
+      .info-section {
+        padding: 60px 0;
+        background: #f8f9fa;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .info-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #FF9900, #FF6B00);
+      }
+      
+      .info-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+      
+      .info-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #eee;
+      }
+      
+      .info-card.highlight-card {
+        border: 2px solid #FF9900;
+        transform: translateY(-5px);
+      }
+      
+      .info-icon {
+        font-size: 40px;
+        color: #FF9900;
+        margin-bottom: 20px;
+      }
+      
+      .info-card.highlight-card .info-icon {
+        color: #FF6B00;
+      }
+      
+      .info-content h3 {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      
+      .info-content p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      
+      .registration-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #FF9900, #FF6B00);
+        color: white !important;
+        font-weight: 700;
+        padding: 15px 35px !important;
+        border-radius: 50px !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: none !important;
+        font-size: 15px !important;
+        text-decoration: none !important;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .registration-button i {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+      }
+      
+      .registration-button:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4) !important;
+        background: linear-gradient(45deg, #FF6B00, #FF9900) !important;
+      }
+      
+      .registration-button:hover i {
+        transform: translateX(5px);
+      }
+      
+      .registration-button:active {
+        transform: translateY(1px) !important;
+        box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3) !important;
+      }
+      
+      @media (max-width: 991px) {
+        .info-card {
+          min-width: 100%;
+        }
+        
+        .info-card.highlight-card {
+          transform: none;
+          order: -1;
+        }
+      }
+    </style>
   </head>
   <body>
 
@@ -142,38 +263,40 @@
     </section>
     <!-- About Section End -->
     <!-- Information Bar Start -->
-    <section id="information-bar">
+    <section id="information-bar" class="info-section">
       <div class="container">
-        <div class="row inforation-wrapper justify-content-center">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-map-marker"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Local</b> Expo Dom Pedro - Campinas<br></span></li>
-
-            </ul>
+        <div class="info-cards-wrapper">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="lni-map-marker"></i>
+            </div>
+            <div class="info-content">
+              <h3>Local</h3>
+              <p>Expo Dom Pedro<br>Campinas/SP</p>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-calendar"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Data e Hora</b> Início às 9:00h e encerramento às 19:00 <br> 27 de Setembro de 2025</span></li>
-            </ul>
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="lni-calendar"></i>
+            </div>
+            <div class="info-content">
+              <h3>Data e Hora</h3>
+              <p>27 de Setembro de 2025<br>9:00h às 19:00h</p>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-ticket"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Inscrições</b><a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank" class="btn btn-common">AQUI</a></span></li>
-            </ul>
+          <div class="info-card highlight-card">
+            <div class="info-icon">
+              <i class="lni-ticket"></i>
+            </div>
+            <div class="info-content">
+              <h3>Garanta sua vaga</h3>
+              <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank" class="registration-button">
+                INSCREVA-SE AGORA
+                <i class="lni-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
