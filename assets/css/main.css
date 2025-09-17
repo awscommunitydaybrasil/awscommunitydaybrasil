@@ -78,6 +78,23 @@ ul li, ol li {
   list-style: none;
 }
 
+.schedule .card .schedule-slot-time span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.schedule .card .schedule-slot-time.talk-stage {
+  background-image: linear-gradient(65deg, #544494 0, #544494 100%) !important;
+}
+
+.schedule .card .schedule-slot-time.hands-on-stage {
+  background-image: linear-gradient(65deg, #584494 0, #584494 100%) !important;
+}
+
 .hero-heading {
   font-size: 40px;
   font-weight: 700;

@@ -214,12 +214,26 @@
     padding: 15px;
     font-size: 16px;
     border-bottom: 1px solid #ffc87c;
-    background-image: linear-gradient(65deg, #FF9900 0, #FF9900 100%);
     color: white;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 10px;
+  }
+  
+  /* Style for Palco Talk */
+  .schedule .card .schedule-slot-time:contains('Palco Talk') {
+    background-color: #544494;
+  }
+  
+  /* Style for Palco Hands-On */
+  .schedule .card .schedule-slot-time:contains('Palco Hands-On') {
+    background-color: #584494;
+  }
+  
+  /* Fallback for other stages */
+  .schedule .card .schedule-slot-time:not(:contains('Palco Talk')):not(:contains('Palco Hands-On')) {
+    background-image: linear-gradient(65deg, #FF9900 0, #FF9900 100%);
   }
   .schedule .card-header {
     padding: 30px;
