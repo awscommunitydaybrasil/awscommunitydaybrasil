@@ -221,6 +221,10 @@
     gap: 10px;
   }
   
+  .schedule .card .schedule-slot-time span{
+    margin: 0;
+  }
+
   /* Style for Palco Talk */
   .schedule .card .schedule-slot-time:contains('Palco Talk') {
     background-color: #544494;
@@ -228,7 +232,7 @@
   
   /* Style for Palco Hands-On */
   .schedule .card .schedule-slot-time:contains('Palco Hands-On') {
-    background-color: #584494;
+    background-color: #322F5A;
   }
   
   /* Fallback for other stages */
