@@ -204,8 +204,22 @@
   .schedule .card-body {
     padding: 15px;
   }
+  .schedule .card > div[id^="heading"] {
+    flex-direction: column;
+  }
+
   .schedule .card .schedule-slot-time {
-    display: none;
+    display: flex;
+    flex: 1 1 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ffc87c;
+    background-image: linear-gradient(65deg, #FF9900 0, #FF9900 100%);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
   }
   .schedule .card-header {
     padding: 30px;
