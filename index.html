@@ -1,969 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>AWS COMMUNITY DAY</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
-    <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
-    <!-- Nivo Lightbox -->
-    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <title>AWS COMMUNITY DAY</title>
 
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- Icon -->
+  <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+  <!-- Nivo Lightbox -->
+  <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
-    <!-- Header Area wrapper Starts -->
-    <header id="header-wrap">
-      <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->    
-          <a href="index.html" class="navbar-brand"><img src="assets/img/aws-community-day-logo-new.png" alt="AWS Community Day Brasil"></a>   
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="lni-menu"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#header-wrap">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">
-                  AWS Community Day
-                </a>
-              </li>
-              <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#schedules">
-                  PROGRAMAÇÃO
-                </a>
-              </li> -->
-              <li class="nav-item">
+  <style>
+    /* Information Section Styles */
+    .info-section {
+      padding: 60px 0;
+      background: #f8f9fa;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FF9900, #FF6B00);
+    }
+
+    .info-cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+
+    .info-card.highlight-card {
+      border: 2px solid #FF9900;
+      transform: translateY(-5px);
+    }
+
+    .info-icon {
+      font-size: 40px;
+      color: #FF9900;
+      margin-bottom: 20px;
+    }
+
+    .info-card.highlight-card .info-icon {
+      color: #FF6B00;
+    }
+
+    .info-content h3 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .info-content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .registration-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FF9900;
+      color: white !important;
+      font-weight: 700;
+      padding: 15px 35px !important;
+      border-radius: 50px !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: none !important;
+      font-size: 15px !important;
+      text-decoration: none !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .registration-button i {
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .registration-button:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 25px rgba(255, 149, 0, 0.4) !important;
+      background: #FF8500 !important;
+    }
+
+    .registration-button:hover i {
+      transform: translateX(5px);
+    }
+
+    .registration-button:active {
+      transform: translateY(1px) !important;
+      box-shadow: 0 3px 10px rgba(255, 153, 0, 0.3) !important;
+    }
+
+    @media (max-width: 991px) {
+      .info-card {
+        min-width: 100%;
+      }
+
+      .info-card.highlight-card {
+        transform: none;
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a href="index.html" class="navbar-brand"><img src="assets/img/aws-community-day-logo-new.png"
+            alt="AWS Community Day Brasil"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="lni-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#header-wrap">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">
+                AWS Community Day
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#schedules">
+                PROGRAMAÇÃO
+              </a>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#hero-area-2">
                   INSCRIÇÕES E C4S
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#sponsors">
-                  PATROCINADORES
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">
-                  Organizadores
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar End -->
-
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-9 col-sm-12">
-              <div class="contents text-center">
-               <img class="img-logo-content" src="assets/img/logo.png" alt="">
-                <p class="banner-info">27 de Setembro de 2025</p>
-                <p class="banner-info">Esta edição acontecerá na cidade de Campinas </p>
-                <p align="justify" class="banner-desc">
-                  Os grupos de usuários AWS do Brasil estão de volta para apresentar o maior e melhor AWS Community Day Brasil de todos os tempos. Vamos compartilhar histórias de sucesso, casos de uso do dia a dia, histórias de sucessos, fundamentos, conceitos avançados, com apresentações para todos os níveis de conhecimento na cloud AWS.</p>
-              
-              </div>
-            </div>
-          </div>
+              </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#sponsors">
+                PATROCINADORES
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">
+                Organizadores
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <!-- Hero Area End -->
+    </nav>
+    <!-- Navbar End -->
 
-    </header>
-    <!-- Header Area wrapper End -->
-
-    <!-- Count Bar Start -->
-    <section id="count">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-10">
-            <div class="count-wrapper text-center">
-              <div class="time-countdown wow fadeInUp" >
-                <div id="clock" class="time-count"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Count Bar End -->
-
-    <!-- About Section Start -->
-    <section id="about" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <div class="img-thumb">
-              <img class="img-fluid" src="assets/img/about/img.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <div class="about-content">
-              <div>
-                <div class="about-text">  
-                  <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
-                  <p align="justify">Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
-
-                    Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma equalitária, segura, justa e acessível.
-                    
-                    Todas as pessoas são bem vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento. Escolha um grupo de usuários perto de você e venha nos ajudar a tornar as comunidades AWS do Brasil maiores e melhores!
-                    
-                    Ajude a construir um evento melhor para todas as pessoas. As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.</p>
-                </div>
-        
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- About Section End -->
-    <!-- Information Bar Start -->
-    <section id="information-bar">
-      <div class="container">
-        <div class="row inforation-wrapper justify-content-center">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-map-marker"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Local</b> Expo Dom Pedro - Campinas<br></span></li>
-
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-calendar"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Data e Hora</b> Início às 9:00h e encerramento às 19:00 <br> 27 de Setembro de 2025</span></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <ul>
-              <li>
-                <i class="lni-ticket"></i>
-              </li>
-              <br>  <br> 
-              <li><span><b>Inscrições</b><a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank" class="btn btn-common">AQUI</a></span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Information Bar End -->
-
-
-     <!-- intro Section Start -->
-    <section id="intro" class="intro section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" >O QUE ESPERAR DO NOSSO EVENTO?</h2>
-              <p class="paragph" >Renove seus conhecimentos em AWS no AWS Community Day Brasil! Aprenda sobre as últimas tendências e inovações, conecte-se com usuários AWS, DevOps, desenvolvedores e arquitetos de soluções, e crie contatos valiosos. Este evento é ideal para todos os níveis de experiência e oferece histórias inspiradoras de usuários AWS. Além disso, concorra a brindes, incluindo créditos para sua conta AWS.</p>
-            </div>
-
-            <br><br>
-          </div>
-        </div>
-        <div class="row intro-wrapper">
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-heart"></i>
-               <h3>Inspiração</h3>
-               <br><br>
-               <p>
-                Encontre inspiração nas histórias dos membros que enfrentaram desafios e alcançaram sucesso. Sua história inspira 
-               </p>
-              
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-cup"></i>
-               <h3>Networking</h3>
-               <br><br>
-               <p>
-                É uma oportunidade para conectar-se, trocar ideias e criar relacionamentos profissionais e até oportunidades de carreira.
-               </p>
-              
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-library"></i>
-               <h3>Conteúdo para Todos</h3>
-               <br>
-               <p>
-                Teremos atividades para pessoas que estão iniciando, que tem conhecimento intermediário e também quem já é especialista.
-               </p>
-               
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-gallery"></i>
-               <h3>Responsabilidade Social</h3>
-               <br>
-               <p>
-                Todo o dinheiro arrecadado com a venda dos ingressos será doado a uma instituição de caridade. 
-               </p>
-               <br>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- intro Section End -->
-  
-
-
-    <!-- Schedule Section Start -->
-        <!-- 
-    <section id="schedules" class="schedule section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" >NOSSA PROGRAMAÇÃO DE PALESTRAS</h2>
-              <p class="wow fadeInDown" >Confira aqui a grade de palestras das duas edições. (Sujeita a alterações)</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-12 mb-5 text-center">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="goiania-tab" data-toggle="tab" href="#goiania" role="tab" aria-controls="goiania" aria-expanded="true">
-                  <div class="item-text">
-                    <h4>EDIÇÃO GOIÂNIA</h4>
-                    <h5>09 de Novembro de 2025</h5>
-                  </div>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="floripa-tab" data-toggle="tab" href="#floripa" role="tab" aria-controls="floripa">
-                  <div class="item-text">
-                    <h4>EDIÇÃO FLORIPA</h4>
-                    <h5>09 de Novembro de 2025</h5>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12">
-            <div class="schedule-area row wow fadeInDown" data-wow-delay="0.3s">
-              <div class="schedule-tab-content col-12 clearfix">
-                <div class="tab-content" id="myTabContent">
-
-                 
-
-                  <div class="tab-pane fade show active" id="goiania" role="tabpanel" aria-labelledby="goiania-tab">
-                    <div id="accordion">
-                      <div class="card">
-                        <div id="headingOne">
-                          <div class="schedule-slot-time">
-                            <span> 08:30h - 09:00h </span>
-                            Credenciamento
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <h4>Credenciamento & Welcome Coffee</h4>
-                            <h5 class="name">Organização</h5>
-                          </div>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                          <div class="card-body">
-                            <p></p>
-                            <div class="location">
-                              <span>Local:</span> Hall do Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="headingTwo">
-                          <div class="schedule-slot-time">
-                            <span> 09:00h - 09:15h </span>
-                            Abertura
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">                            
-                            <h4>Abertura do Community Day</h4>
-                            <h5 class="name">Comunidades AWS User Groups</h5>
-                          </div>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                          <div class="card-body">
-                            <p></p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="headingThree">
-                          <div class="schedule-slot-time">
-                            <span> 09:15h - 10:00h </span>
-                            Keynote
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/pallaepaiva.png" alt="">
-                            </div>
-                            <h4>Construindo o futuro juntos: A Colaboração global na nuvem</h4>
-                            <h5 class="name">Marcelo Palladino - AWS Developer Advocate  &  Marcelo Paiva - AWS Community Builder</h5>
-                          </div>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Na era da tecnologia em nuvem, o verdadeiro poder não está apenas nos recursos que ela oferece, mas nas pessoas que a utilizam para transformar o mundo. Esta sessão explora como a nuvem se tornou a plataforma definitiva para colaboração global, permitindo que comunidades ao redor do planeta, muitas delas formadas por voluntários, trabalhem juntas para enfrentar os maiores desafios da nossa geração. Através de histórias inspiradoras de inovação, exploraremos como a colaboração na nuvem está democratizando o acesso à tecnologia, unindo culturas e ideias, e construindo soluções que estão mudando o curso da humanidade. Juntos, estamos criando um futuro mais inclusivo, criativo e conectado. Este é o poder da nuvem - e o poder das pessoas.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="heading4">
-                          <div class="schedule-slot-time">
-                            <span> 10:00h - 10:40h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/erika-nagamine.jpeg" alt="">
-                            </div>
-                            <h4>Padrões de arquitetura de dados + IA Generativa</h4>
-                            <h5 class="name">Erika Nagamine - Analytics Specialist SA na AWS</h5>
-                          </div>
-                        </div>
-                        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nessa sessão vamos discutir e apresentar casos práticos para que você possa utilizar dados na sua empresa e consolidar seus projetos com IA Generativa</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading5">
-                          <div class="schedule-slot-time">
-                            <span> 10:45h - 11:15h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/jose-vicente.jpeg" alt="">
-                            </div>
-                            <h4>Case Auramind.ai</h4>
-                            <h5 class="name">José Vicente França - Senior Cloud Solutions Architect</h5>
-                          </div>
-                        </div>
-                        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Descubra a arquitetura cloud-native da Auramind, uma plataforma que integra de forma segura e escalável múltiplos modelos de IA, incluindo Claude, Llama, Mistral e Titan, utilizando a infraestrutura da AWS. Junte-se a nós para uma exploração técnica dessa solução inovadora e veja como ela demonstra o uso da inteligência artificial em nuvem.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading6">
-                          <div class="schedule-slot-time">
-                            <span> 11:15h - 11:55h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/carlos-alberto-marangon.png" alt="">
-                            </div>
-                            <h4>Professor Digital - GenAI</h4>
-                            <h5 class="name">Carlos Alberto Marangon - AWS Senior Tech Lead</h5>
-                          </div>
-                        </div>
-                        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta palestra, exploraremos uma arquitetura inovadora que oferece respostas personalizadas e de conteúdo específico, garantindo interações rápidas e de baixa latência. Você verá como essa solução foi aplicada no setor de educação, transformando a experiência de professores e alunos ao fornecer suporte ágil e inteligente. Venha conhecer esse case de sucesso e inspirar-se para revolucionar suas próprias soluções com a tecnologia GenAI!</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading7">
-                          <div class="schedule-slot-time">
-                            <span> 12:00h - 12:40h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/rodrigofernandes.png" alt="">
-                            </div>
-                            <h4>Provisionamento de infraestrutura AWS utilizando Crossplane</h4>
-                            <h5 class="name">Rodrigo Fernandes - Cloud Solutions Architect/DevOps na GFT</h5>
-                          </div>
-                        </div>
-                        <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta apresentação, vamos explorar o Crossplane, uma poderosa ferramenta que permite gerenciar e provisionar recursos AWS diretamente por meio de um controle centralizado. Descubra como simplificar a gestão de infraestrutura em nuvem, automatizar processos e obter maior flexibilidade ao utilizar o Crossplane para integrar e orquestrar serviços na AWS.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading17">
-                          <div class="schedule-slot-time">
-                            <span> 12:45h - 13:30h </span>
-                            Lunch
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
-                            <h4>Lunch - Networking</h4>
-                            <h5 class="name">Será servido no local</h5>
-                          </div>
-                        </div>
-                        <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Será servido um lanche reforçado para você não precisar sair do local e aproveitar para um network muito legal.</p>
-                            <div class="location">
-                              <span>Local:</span> HALL de Entrada - Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading8">
-                          <div class="schedule-slot-time">
-                            <span> 13:30h - 14:10h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/luiz-machado.jpg" alt="">
-                            </div>
-                            <h4>Da Identificação à Ação: Automatizando a Correção de Vulnerabilidades</h4>
-                            <h5 class="name">Luiz Machado - Head Cloud, Cilia Tecnologia</h5>
-                          </div>
-                        </div>
-                        <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta palestra, exploraremos as melhores práticas, ferramentas e estratégias para implementar soluções automatizadas que não apenas identificam, mas também corrigem vulnerabilidades de forma rápida e eficaz, usando AWS CodeGuru e Amazon Bedrock.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading9">
-                          <div class="schedule-slot-time">
-                            <span> 14:15h - 14:45h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/raphael-moura.jpg" alt="">
-                            </div>
-                            <h4>AWS AppSync: Simplificando o Desenvolvimento de APIs com GraphQL</h4>
-                            <h5 class="name">Raphael Moura - Sr. Serverless Developer @ Serverless Guru</h5>
-                          </div>
-                        </div>
-                        <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta palestra imersiva, mergulharemos nas capacidades e vantagens do AWS AppSync, um serviço gerenciado que facilita a criação de APIs escaláveis utilizando GraphQL. Exploraremos como o AppSync permite que desenvolvedores criem APIs poderosas e integradas com diversos serviços da AWS, promovendo uma comunicação eficiente entre múltiplas fontes de dados, suportando sincronização em tempo real e a gestão de dados offline.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading11">
-                          <div class="schedule-slot-time">
-                            <span> 14:45h - 15:15h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/paloma.jpg" alt="">
-                            </div>
-                            <h4>ECS Fargate com Terraform: Estruturando Aplicações Containerizadas na AWS</h4>
-                            <h5 class="name">Paloma Lataliza - Cloud Engineer na Claro Brasil</h5>
-                          </div>
-                        </div>
-                        <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta palestra, você verá como estruturar estruturar suas aplicações usando containers na AWS de forma simples e eficiente, combinando ECS Fargate e Terraform. Abordaremos o provisionamento de infraestrutura usando código, garantindo consistência e facilidade no gerenciamento de ambientes. Ideal para quem quer aprender a organizar suas aplicações na AWS com uma abordagem direta e acessível!</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>                      
-
-                      <div class="card">
-                        <div id="heading10">
-                          <div class="schedule-slot-time">
-                            <span>  15:15h - 15:30h </span>
-                            Networking
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                            <h4>Networking Coffee</h4>
-                            <h5 class="name"></h5>
-                          </div>
-                        </div>
-                        <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Hora de um folêgo e aquele café pra segurar até o final, confia que vai dar certo.</p>
-                            <div class="location">
-                              <span>Local:</span> HALL de Entrada - Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading12">
-                          <div class="schedule-slot-time">
-                            <span> 15:30h - 16:10h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/leo-ciccone.jpg" alt="">
-                            </div>
-                            <h4>Construindo aplicações de IA Generativa utilizando bancos de dados não relacionais na AWS</h4>
-                            <h5 class="name">Leo Ciccone - Especialista em Bancos de dados na AWS</h5>
-                          </div>
-                        </div>
-                        <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Nesta sessão nos aprofundamos na interseção dos serviços de banco de dados gerenciados da AWS e das tecnologias de IA generativa (GenAI), explorando como essas ferramentas poderosas podem ser combinadas para impulsionar soluções inovadoras e aprimorar a tomada de decisões baseada em dados. À medida que a IA generativa continua a evoluir, as suas aplicações requerem soluções de base de dados robustas, escaláveis ​​e flexíveis para gerir eficientemente grandes quantidades de dados.                              Junte-se a nós para descobrir como os bancos de dados gerenciados da AWS, como o Amazon DocumentDB, podem ser aproveitados para oferecer suporte à cargas de trabalho de IA generativa.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading13">
-                          <div class="schedule-slot-time">
-                            <span> 16:15h - 16:55h </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/gyn/dan-rezende.png" alt="">
-                            </div>
-                            <h4>IA Generativa na AWS - Zero to Hero</h4>
-                            <h5 class="name">Dan Rezende - Arquiteto de Soluções - CloudFaster</h5>
-                          </div>
-                        </div>
-                        <div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Existem diversas formas e serviços que nos permitem implementar IA Generativa nos dias de hoje, mas por onde começar, como definir um caso de uma na empresa que realmente vai agregar valor ao negócio. Vamos cobrir em 40min o básico dos serviços de IA Generativa, até exemplos de caso de uso reais para apoiar os interessados em começar com IA na AWS.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="heading14">
-                          <div class="schedule-slot-time">
-                            <span> 17:00h - 17:15h </span>
-                            End Game
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
-                            <h4>Encerramento</h4>
-                            <h5 class="name"></h5>
-                          </div>
-                        </div>
-                        <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Hora dos sorteios e encerramento.</p>
-                            <div class="location">
-                              <span>Local:</span> Auditório CASA DA INDÚSTRIA (Fieg)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                
-                  
-                  <div class="tab-pane fade" id="floripa" role="tabpanel" aria-labelledby="floripa-tab">
-                    <div id="accordion4">
-                      <div class="card">
-                        <div id="headingFlnOne">
-                          <div class="schedule-slot-time">
-                            <span> 09:30 - 10:00 </span>
-                            Check-in
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnOne" aria-expanded="false" aria-controls="collapseFlnOne">
-                            <h4>Credenciamento & Welcome Coffee</h4>
-                            <h5 class="name">Organização</h5>
-                          </div>
-                        </div>
-                        <div id="collapseFlnOne" class="collapse show" aria-labelledby="headingFlnOne" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Essa é a hora de aquecer os motores e já começar fazer networking.</p>
-                            <div class="location">
-                              <span>Local:</span> SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnTwo">
-                          <div class="schedule-slot-time">
-                            <span> 10:00 - 10:15</span>
-                            Abertura
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnTwo" aria-expanded="false" aria-controls="collapseFlnTwo">
-                            <h4>Abertura do Community Day</h4>
-                            <h5 class="name">Comunidade AWS User Groups</h5><br/><br/>
-                          </div>
-                          <div id="collapseFlnTwo" class="collapse show" aria-labelledby="headingFlnOne" data-parent="#accordion4">
-                            <div class="card-body">
-                              <p>Essa é a hora de aquecer os motores e já começar fazer networking.</p>
-                              <div class="location">
-                                <span>Local: SEBRAE</span> 
-                              </div>
-                            </div>
-                          </div> -
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="headingFlnThree">
-                          <div class="schedule-slot-time">
-                            <span> 10:15 - 11:00 </span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnThree" aria-expanded="false" aria-controls="collapseFlnThree">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/gustavo-cunha.jpg" alt="">
-                            </div>
-                            <h4>Descomplicando IA: Fundamentos práticos para propor soluções realistas em IA</h4>
-                            <h5 class="name">Gustavo Cunha | Cientista de dados na Hotmart</h5><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnThree" class="collapse" aria-labelledby="headingFlnThree" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Vamos desvendar o universo da Inteligência Artificial de forma acessível e descomplicada através de exemplos do cotidiano para ilustrar conceitos complexos. Os seguintes tópicos serão discutidos: o que é IA, o que NÃO é IA, o que a IA faz, o que a IA NÃO faz, como as IAs são treinadas, como criar soluções de IA (incluindo AWS Sagemaker e Bedrock), quais os riscos da IA, quais os cuidados na utilização da IA. O objetivo é capacitar a audiência a ter pensamento crítico e analítico ao decidir onde e como aplicar soluções de IA.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnFour">
-                          <div class="schedule-slot-time">
-                            <span> 11:00 - 11:45 AM</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnFour" aria-expanded="false" aria-controls="collapseFlnFour">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/thiago-finardi.jpg" alt="">
-                            </div>
-                            <h4>Resiliência sob pressão: Chaos Engineering e AWS em ação</h4>
-                            <h5 class="name">Thiago Finardi | Staff Engineer - IT Architecture Specialist no Itaú</h5><br/><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnFour" class="collapse" aria-labelledby="headingFlnFour" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Em um mundo onde a resiliência é fundamental para garantir a continuidade dos negócios, entender como as aplicações se comportam diante de falhas é mais importante do que nunca. Nesta apresentação, exploraremos como a combinação de práticas de Chaos Engineering e as ferramentas da AWS, como o AWS Fault Injection Service (FIS) e o AWS Resilience Hub, podem transformar a maneira como você testa e melhora a robustez dos seus sistemas na nuvem.<br/>
-Com uma demo prática, veremos como essas soluções trabalham em harmonia para preparar suas aplicações para o inesperado, garantindo resiliência e continuidade nos negócios.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                     
-                      <div class="card">
-                        <div id="headingFlnFive">
-                          <div class="schedule-slot-time">
-                            <span> 11.45 - 12.30</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnFive" aria-expanded="false" aria-controls="collapseFlnFive">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/pedro-e-laura.png" alt="">
-                            </div>
-                            <h4>PisqueAI: Comunicação Acessível para Pacientes com ELA Usando Inteligência Artificial</h4>
-                            <h5 class="name">Laura Esther e Pedro Costa | Estudantes & Devs </h5><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnFive" class="collapse" aria-labelledby="headingFlnFive" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Imagine não poder se comunicar, estar preso em seu próprio corpo. Essa é a realidade de milhares de pacientes com Esclerose Lateral Amiotrófica (ELA). Se tivermos a oportunidade, faremos uma palestra que apresentará o “PisqueAI”, uma solução simples, porém inovadora, que utiliza de visão computacional e inteligência artificial para auxiliar a comunicação de pacientes com ELA (ou demais doenças que impossibilitem a comunicação) por meio de um teclado virtual de baixo custo controlado por um simples piscar de olhos. Nosso projeto, inicialmente desenvolvido como parte de uma iniciativa educacional durante nosso ensino médio, está se tornando um produto que permite que pacientes se comuniquem usando apenas os movimentos oculares capturados por uma webcam comum em seus próprios computadores pessoais, permitindo ser algo mais acessível do que as demais ferramentas disponíveis no mercado. Discutiremos como a IA pode transformar a vida de pessoas com limitações motoras graves, oferecendo uma solução acessível e gratuita que supera as barreiras financeiras impostas por tecnologias existentes. Na apresentação, compartilharemos os desafios enfrentados, os resultados do nosso protótipo, e como a tecnologia pode ser utilizada para criar soluções inclusivas e de baixo custo que impactam diretamente a qualidade de vida. Esse será um momento para refletir sobre o papel essencial da pesquisa científica e tecnológica para uma melhor qualidade de visão aos pacientes e na promoção de inovações na área da saúde, além da importância do ensino médio técnico no Brasil.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnSix">
-                          <div class="schedule-slot-time">
-                            <span> 12:30 - 14:00 </span>
-                            Almoço
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnSix" aria-expanded="false" aria-controls="collapseFlnSix">
-                            
-                            <h4>Alimentação externa</h4>
-                            <h5 class="name">Individual</h5>
-                          </div>
-                        </div>
-                        <div id="collapseFlnSix" class="collapse show" aria-labelledby="headingFlnSix" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Não será servido almoço no local.</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnSeven">
-                          <div class="schedule-slot-time">
-                            <span> 14:00 - 14.45</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnSeven" aria-expanded="false" aria-controls="collapseFlnSeven">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/ana-cunha.jpg" alt="">
-                            </div>
-                            <h4>Elevando o suporte da comunidade com automação de IA</h4>
-                            <h5 class="name">Ana Cunha | Senior Developer Advocate na AWS</h5><br/><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnSeven" class="collapse" aria-labelledby="headingFlnSeven" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Nesta sessão aprenderemos como estamos melhorando o suporte às comunidades utilizando agentes inteligentes que aprendem com nossos documentos e bancos de dados. Durante o processo de desenvolvimento, você aprenderá como múltiplas tarefas podem ser automatizadas com ferramentas amigáveis a quem desenvolve, mesmo que você não tenha experiência em IA/ML.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                     
-                      <div class="card">
-                        <div id="headingFlnEight">
-                          <div class="schedule-slot-time">
-                            <span> 14:45 - 15:30</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnEight" aria-expanded="false" aria-controls="collapseFlnEight">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/alan-casagrande.jpg" alt="">
-                            </div>
-                            <h4>SoundCloud: Migrando de REST On-Premise para GraphQL Federado na Cloud</h4>
-                            <h5 class="name">Alan Casagrande | Software Engineer na SoundCloud</h5><br/><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnEight" class="collapse" aria-labelledby="headingFlnEight" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Desde sua fundação em 2007, o SoundCloud se baseava em um monolito Ruby on Rails que suportou o serviço em seus primeiros anos de operação. Com o crescimento da plataforma, uma transição gradual para uma arquitetura Backend for Frontend (BFF) com Scala permitiu maior agilidade para as equipes de iOS, Android e Web, que podiam evoluir independentemente. No entanto, esse modelo apresentou novos desafios, como a dificuldade de manter a paridade de funcionalidades entre plataformas e a duplicação de código.<br/>Para superar essas limitações, introduzimos uma API GraphQL federada, capaz de oferecer novas funcionalidades a todos os clientes, promovendo maior consistência e flexibilidade. Com o sucesso dessa fase inicial, migramos essa API de uma infraestrutura Kubernetes on-premise para a AWS ECS/Fargate, permitindo maior escalabilidade e eficiência. Nesta palestra, exploraremos os desafios enfrentados nessa jornada, especialmente em relação à descoberta, comunicação e monitoramento entre os serviços que ainda operam on-premise, e as soluções que adotamos para garantir uma transição bem-sucedida.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="headingFlnNine">
-                          <div class="schedule-slot-time">
-                            <span> 15:30 - 16.15</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnNine" aria-expanded="false" aria-controls="collapseFlnNine">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/bruno-marangoni.jpg" alt="">
-                            </div>
-                            <h4>Além do Firewall: Estratégias avançadas de segurança para blindar seu ambiente AWS</h4>
-                            <h5 class="name">Bruno Marangoni | Solutions Architect na DXC</h5><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnNine" class="collapse" aria-labelledby="headingFlnNine" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Nessa apresentação vou falar um pouco mais sobre a importancia de proteção dos ambientes web com o WAF, Shield, GuardDuty, CloudFront e Global Accelerator.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnTen">
-                          <div class="schedule-slot-time">
-                            <span> 16:15 - 17:15 </span>
-                            Networking
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnTen" aria-expanded="false" aria-controls="collapseFlnTen">
-                            
-                            <h4>Networking Coffee</h4>
-                            <h5 class="name">Organização</h5><br/><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnTen" class="collapse show" aria-labelledby="headingFlnTen" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Hora de um folêgo e aquele café pra segurar até o final, confia que vai dar certo.</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnEleven">
-                          <div class="schedule-slot-time">
-                            <span> 17:15 - 18:00</span>
-                            Talk
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnEleven" aria-expanded="false" aria-controls="collapseFlnEleven">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/guilherme-dalla-rosa.png" alt="">
-                            </div>
-                            <h4>Garantindo a Segurança e Isolamento de Dados em Plataformas SaaS com AWS Serverless</h4>
-                            <h5 class="name">Guilherme Dalla Rosa | CTO na MerCloud </h5><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnEleven" class="collapse" aria-labelledby="headingFlnEleven" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Como podemos construir plataformas SaaS seguras e eficientes na AWS utilizando Serverless? Nesta palestra, vamos explorar como arquiteturas multi-tenant podem ser implementadas, garantindo segurança robusta e isolamento de dados entre os tenants. Abordaremos como o Cognito pode ser usado para autenticação e gerenciamento de usuários, e como integrá-lo com o API Gateway e Lambda para configurar o isolamento de dados e recursos baseado em políticas do IAM, evitando vazamento de dados e assegurando que cada execução esteja vinculada ao tenant correto. Ao final desta sessão, você terá adquirido conhecimentos práticos e insights valiosos do AWS Well-Architected SaaS Lens, permitindo que construa aplicações SaaS Serverless na AWS com confiança e excelência.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div id="headingFlnTwelve">
-                          <div class="schedule-slot-time">
-                            <span> 18:00 - 18:50</span>
-                            Keynote
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnTwelve" aria-expanded="false" aria-controls="collapseFlnTwelve">
-                            <div class="images-box">
-                              <img class="img-fluid" src="assets/img/speaker/fln/daniel-abib.jpeg" alt="">
-                            </div>
-                            <h4>O que seria um expert prompt engineering?</h4>
-                            <h5 class="name">Daniel Abib | Arquiteto especialista de soluções para GenAI & Serverless na AWS </h5><br/><br/>
-                          </div>
-                        </div>
-                        <div id="collapseFlnTwelve" class="collapse" aria-labelledby="headingFlnTwelve" data-parent="#accordion4">
-                          <div class="card-body">
-                            <p>Engenharia de prompt é o processo de orientar modelos de linguagem grandes (LLMs) para produzir saídas desejadas. Nesta sessão, será apresentado uma visão geral das melhores práticas de engenharia de prompt e aprenda como escolher os formatos, frases, palavras e símbolos mais apropriados para obter o máximo das soluções de IA generativas, ao mesmo tempo em que melhora a precisão e o desempenho. Esta sessão usa o Claude 2 LLM como um exemplo de como a engenharia de prompt ajuda a resolver casos de uso complexos do cliente.</p>
-                            <div class="location">
-                              <span>Location:</span> Auditório SEBRAE
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div id="headingFlnThirteen">
-                          <div class="schedule-slot-time">
-                            <span> 18:50 - 19:20 ...</span>
-                            End Game
-                          </div>
-                          <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseFlnThirteen" aria-expanded="false" aria-controls="collapseFlnThirteen">
-                            <h4>Encerramento</h4>
-                            <h5 class="name">Hora dos sorteios e encerramento.</h5>
-                          </div>
-                        </div>
-                        <div id="collapseFlnThirteen" class="collapse" aria-labelledby="headingFlnThirteen" data-parent="#accordion">
-                          <div class="card-body">
-                            <p>Hora dos sorteios e encerramento.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>  -->
-    <!-- Schedule Section End -->
-
-    <div id="hero-area-2" class="hero-area-bg-2">
+    <!-- Hero Area Start -->
+    <div id="hero-area" class="hero-area-bg">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12 col-sm-12">
+          <div class="col-lg-9 col-sm-12">
             <div class="contents text-center">
-              <div class="section-title-header text-center">
-                <h2 class="section-title-w">INSCRIÇÕES</h2>
-                <p class="paragph">Todo o valor arrecadado com os ingressos serão usados para a realização do evento</p>
-                <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank" class="btn btn-common">AQUI</a>
-              </div>
-              <br><br><br><br>
-              <div class="section-title-header text-center">
-                <h2 class="section-title-w">CALL FOR PAPERS ENCERRADO</h2>
-                <p class="paragph">O período de submissão de palestras para o AWS Community Day Brasil 2025 foi encerrado. Agradecemos imensamente a todos que dedicaram seu tempo e conhecimento para enviar propostas incríveis! Estamos revisando todas as submissões e em breve divulgaremos a programação oficial do evento. Acompanhe nossas redes sociais para mais atualizações!</p>
+              <img class="img-logo-content" src="assets/img/logo.png" alt="">
+              <p class="banner-info">27 de Setembro de 2025</p>
+              <p class="banner-info">Esta edição acontecerá na cidade de Campinas </p>
+              <p align="justify" class="banner-desc">
+                Os grupos de usuários AWS do Brasil estão de volta para apresentar o maior e melhor AWS Community Day
+                Brasil de todos os tempos. Vamos compartilhar histórias de sucesso, casos de uso do dia a dia, histórias
+                de sucessos, fundamentos, conceitos avançados, com apresentações para todos os níveis de conhecimento na
+                cloud AWS.</p>
+              <div class="mt-4">
+                <br /><br />
+                <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank"
+                  class="btn btn-warning btn-lg registration-button">
+                  GARANTA JÁ SUA VAGA!
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Hero Area End -->
 
-    <!-- Ticket Pricing Area Start -->
-    <!-- <section id="pricing" class="section-padding-2">
+  </header>
+  <!-- Header Area wrapper End -->
+
+  <!-- Count Bar Start -->
+  <section id="count">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="count-wrapper text-center">
+            <div class="time-countdown wow fadeInUp">
+              <div id="clock" class="time-count"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Count Bar End -->
+
+  <!-- About Section Start -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <div class="img-thumb">
+            <img class="img-fluid" src="assets/img/about/img.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <div class="about-content">
+            <div>
+              <div class="about-text">
+                <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
+                <p align="justify">Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo
+                  inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por
+                  usuários e empresas que são referência no Brasil e no mundo.
+
+                  Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em
+                  conceitos se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma
+                  equalitária, segura, justa e acessível.
+
+                  Todas as pessoas são bem vindas para colaborar e fazer parte desta jornada de conhecimento e
+                  compartilhamento. Escolha um grupo de usuários perto de você e venha nos ajudar a tornar as
+                  comunidades AWS do Brasil maiores e melhores!
+
+                  Ajude a construir um evento melhor para todas as pessoas. As atividades do AWS Community Day Brasil
+                  são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de
+                    conduta</a>.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+  <!-- Information Bar Start -->
+  <section id="information-bar" class="info-section">
+    <div class="container">
+      <div class="info-cards-wrapper">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="lni-map-marker"></i>
+          </div>
+          <div class="info-content">
+            <h3>Local</h3>
+            <p>Expo Dom Pedro<br>Campinas/SP</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="lni-calendar"></i>
+          </div>
+          <div class="info-content">
+            <h3>Data e Hora</h3>
+            <p>27 de Setembro de 2025<br>9:00h às 19:00h</p>
+          </div>
+        </div>
+
+        <div class="info-card highlight-card">
+          <div class="info-icon">
+            <i class="lni-ticket"></i>
+          </div>
+          <div class="info-content">
+            <h3>Garanta sua vaga</h3>
+            <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank"
+              class="registration-button">
+              INSCREVA-SE AGORA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Information Bar End -->
+
+  <!-- Intro Section Start -->
+  <section id="intro" class="intro section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp">O QUE ESPERAR DO NOSSO EVENTO?</h2>
+            <p class="paragph">Renove seus conhecimentos em AWS no AWS Community Day Brasil! Aprenda sobre as últimas
+              tendências e inovações, conecte-se com usuários AWS, DevOps, desenvolvedores e arquitetos de soluções, e
+              crie contatos valiosos. Este evento é ideal para todos os níveis de experiência e oferece histórias
+              inspiradoras de usuários AWS. Além disso, concorra a brindes, incluindo créditos para sua conta AWS.</p>
+          </div>
+
+          <br><br>
+        </div>
+      </div>
+      <div class="row intro-wrapper">
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="single-intro-text mb-70">
+            <i class="lni-heart"></i>
+            <h3>Inspiração</h3>
+            <br><br>
+            <p>
+              Encontre inspiração nas histórias dos membros que enfrentaram desafios e alcançaram sucesso. Sua história
+              inspira
+            </p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="single-intro-text mb-70">
+            <i class="lni-cup"></i>
+            <h3>Networking</h3>
+            <br><br>
+            <p>
+              É uma oportunidade para conectar-se, trocar ideias e criar relacionamentos profissionais e até
+              oportunidades de carreira.
+            </p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="single-intro-text mb-70">
+            <i class="lni-library"></i>
+            <h3>Conteúdo para Todos</h3>
+            <br>
+            <p>
+              Teremos atividades para pessoas que estão iniciando, que tem conhecimento intermediário e também quem já é
+              especialista.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="single-intro-text mb-70">
+            <i class="lni-gallery"></i>
+            <h3>Responsabilidade Social</h3>
+            <br>
+            <p>
+              Todo o dinheiro arrecadado com a venda dos ingressos será doado a uma instituição de caridade.
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Intro Section End -->
+
+  <!-- Schedule Section Start -->
+  <section id="schedules" class="schedule section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp">NOSSA PROGRAMAÇÃO DE PALESTRAS</h2>
+            <p class="wow fadeInDown">Confira aqui a nossa grade de palestras. (sujeita a alterações)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="schedule-area row wow fadeInDown" data-wow-delay="0.3s">
+          <div class="schedule-tab-content col-12 clearfix">
+            <div class="tab-content" id="myTabContent">
+              <div id="accordion">
+                <div class="card">
+
+                  <div id="headingOne">
+                    <div class="schedule-slot-time">
+                      <span> 08:00 - 08:30 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse1"
+                      aria-expanded="false" aria-controls="collapse1">
+                      <div class="content">
+                        <h4>Credenciamento + Recepção</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingOne">
+                    <div class="schedule-slot-time">
+                      <span> 08:30 - 09:00 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse2"
+                      aria-expanded="false" aria-controls="collapse2">
+                      <div class="content">
+                        <h4>Welcome Coffee</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingTwo">
+                    <div class="schedule-slot-time">
+                      <span> 09:00 - 09:10 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse3"
+                      aria-expanded="false" aria-controls="collapse3">
+                      <div class="content">
+                        <h4>Abertura do Community Day</h4>
+                        <h5 class="name">Comunidades AWS User Groups</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 09:10 - 9:50 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse4"
+                      aria-expanded="false" aria-controls="collapse4">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/william-lino.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Qual melhor camada de dados para construir seu Knowledge Database na AWS?</h4>
+                        <h5 class="name">William Lino</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse4" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Nesta sessão veremos como avaliar sua arquitetura para escolher a melhor camada de armazenamento para montar seu knowledge database na AWS, pensando em custo e escalabilidade.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 09:20 - 10:20 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse20"
+                      aria-expanded="false" aria-controls="collapse20">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/michelle-leonardo.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Implementação de segurança de saída com AWS Network Firewall e Route 53</h4>
+                        <h5 class="name">Michelle Perez e Leonardo Azize</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse20" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Nesta sessão, explore métodos comprovados para aumentar a segurança das cargas de trabalho implementando controles de segurança de saída usando AWS Network Firewall e Amazon Route 53 DNS Firewall. Aprenda como iniciar sua jornada de segurança de saída e os passos específicos que você pode tomar para proteger cargas de trabalho em VPCs, bloqueando ameaças e detectando anomalias de rede nas cargas de trabalho.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 10:00 - 10:40 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse6"
+                      aria-expanded="false" aria-controls="collapse6">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/daiane-dalavi.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Carreira em Cloud: Do Técnico ao Estratégico, Onde Você se Encaixa?</h4>
+                        <h5 class="name">Daiane Dalavi</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse6" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Quando falamos em carreira em Cloud, muita gente pensa só em programar ou em áreas super técnicas. Mas a verdade é que a nuvem abre espaço para muito mais: estratégia, negócios, inovação, vendas, gestão e até criação de novos modelos de trabalho. Nesta conversa vamos mostrar como cada perfil pode encontrar seu lugar nesse universo e porque o futuro da cloud é tão diverso quanto as pessoas que fazem parte dele.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 10:30 - 11:30 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse7"
+                      aria-expanded="false" aria-controls="collapse7">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/bruno-marangoni.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na prática!</h4>
+                        <h5 class="name">Bruno Marangoni</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse7" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Hands-on prático onde vai ser ensinado com proteger, detectar e prevenir uma aplicação web, credenciais de segurança. Usando o WAF, GuardDuty, S3 Bucket policy e VPC endpoint, e usando o EventBridge para automatizer a revogação de credenciais expostas.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 10:50 - 11:30 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse8"
+                      aria-expanded="false" aria-controls="collapse8">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/felipe-kiko.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Automações em FinOps: Tempo é dinheiro...então economize os dois!</h4>
+                        <h5 class="name">Felipe KiKo</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse8" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Nesse talk vamos explorar automações práticas que facilitam o dia a dia do FinOps e aumentam a eficiência de custos na AWS, com alguns exemplos reais e ferramentas open-source que ajudam nessa missão!</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 11:40 - 12:20 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse9"
+                      aria-expanded="false" aria-controls="collapse9">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/humberto-beto-demolinari.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker</h4>
+                        <h5 class="name">Humberto "Beto" Demolinari</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse9" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        Uma análise prática da evolução na implementação de sistemas de Machine Learning, comparando o processo manual de 2016 com a agilidade dos modelos de fundação na nuvem em 2025.<br><br>
+
+                        Nesta sessão, Beto Demolinari demonstra a evolução radical da área desde 2016, contrastando o desenvolvimento manual e supervisionado em Matlab com o poder do AWS SageMaker. Você verá como orquestrar e implantar modelos de fundação de ponta (LLMs, difusão, etc.) usando o SageMaker Jumpstart, de forma ágil e escalável. Levamos a teoria à prática em uma demonstração "antes e depois": em um notebook, vamos selecionar um modelo, implantá-lo com poucas linhas de código e obter um endpoint funcional, uma tarefa que antes exigia semanas de trabalho em engenharia e infraestrutura.<br><br>
+                        
+                        SageMaker, Sagemaker Jumpstart, PartyRock, Matlab,<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 11:40 - 12:20 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse10"
+                      aria-expanded="false" aria-controls="collapse10">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/carlos-leticia.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Assistente GenAI com Bedrock usando StepFunctions, OpenSearch e RAG</h4>
+                        <h5 class="name">Carlos Alberto Marangon e Leticia Massae Uchida</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse10" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        A apresentação aborda o uso de StepFunctions, múltiplos modelos do Bedrock e OpenSearch para implementar um assistente online baseado em GenAI.<br><br>
+
+                        Este assistente auxilia os clientes com informações sobre cursos (engenharia, medicina, arquitetura e muitos outros).<br><br>
+                        
+                        Ao final da conversa, o assistente cria um resumo e o envia para a SalesForce como um lead, e a equipe comercial pode usar as informações para entrar em contato com o cliente.<br><br>
+                        
+                        Esta arquitetura permite respostas de conteúdo específico ou privado, proporcionando interações de baixa latência.<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingTwo">
+                    <div class="schedule-slot-time">
+                      <span> 12:20 - 13:30 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse11"
+                      aria-expanded="false" aria-controls="collapse11">
+                      <div class="content">
+                        <h4>Almoço</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 13:30 - 14:10 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse12"
+                      aria-expanded="false" aria-controls="collapse12">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/cleiton-nascimento.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Descomplicando os principais serviços de computação da AWS: EC2, ECS, EKS e Lambda</h4>
+                        <h5 class="name">Cleiton Nascimento</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse12" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        A apresentação terá como foco os serviços de computação mais utilizados da AWS: EC2, ECS, EKS e Lambda.<br><br>
+
+                        Sabendo que muitas vezes por falta de conhecimento sobre os serviços, muitas pessoas acabam tomando decisões de forma precipitada. O objetivo da apresentação é ajudar o público a entender o que cada um faz, quando usar, diferenças práticas e exemplos reais de aplicação, para que possam tomar decisões mais assertivas ao migrar ou criar aplicações na nuvem. Além disso, trarei dicas sobre erros comuns, critérios para escolha (custo, performance, complexidade) e casos práticos, simplificando os conceitos e indo direto ao ponto.<br><br>
+                        
+                        Contribuindo para uma decisão mais assertiva na hora de escolher o serviço de computação ideal para a sua aplicação.<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 13:30 - 14:10 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse13"
+                      aria-expanded="false" aria-controls="collapse13">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/walter-neto.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Integrando Bancos Transacionais em um Lakehouse na AWS com DMS CDC, SQS FIFO e Iceberg</h4>
+                        <h5 class="name">Walter Neto</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse13" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        Resumo e Dinâmica:<br />
+                        • Vou apresentar como capturar mudanças (CDC) em bancos transacionais, salvar em S3 e processar de forma ordenada via SQS FIFO.<br />
+                        • Em seguida, demonstro como o AWS Glue integra e consolida dados em tabelas Iceberg, garantindo time travel, otimizações e governança.<br />
+                        • Mostrarei trechos de código PySpark e APIs do Iceberg, mas a ênfase será no fluxo arquitetural (DMS -> S3 -> SQS FIFO -> Glue -> Tabelas Iceberg -> Athena).<br />
+                        • Exemplificarei todo o pipeline, destacando camadas Bronze, Silver e Gold, e como cada etapa contribui para análises em near-real-time.<br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 14:20 - 15:00 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse14"
+                      aria-expanded="false" aria-controls="collapse14">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/dan-leo.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Agentic Security Assessments on AWS</h4>
+                        <h5 class="name">Leo Ciccone e Dan Rezende</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse14" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        Transforme auditorias pontuais em um fluxo contínuo e inteligente de segurança. Nesta sessão, Leo Ciccone e Dan Rezende mostram como orquestrar avaliações com o Prowler — motor open source com centenas de checagens e mapeamentos para padrões (CIS, NIST, PCI, etc.) — utilizando o conceito de Agentic AI. Você verá como executar Prowler em múltiplas contas/Regiões, consolidar resultados e melhorar a sua postura de segurança na AWS de forma automatizada, utilizando o que há de mais novo em tecnologias de IA generativa.<br><br>
+
+                        Levaremos o conceito de agentic à prática: o agente agenda execuções, interpreta JSON do Prowler, enriquece achados, envia notificações SNS e aciona remediações via StepFunctions e SSM.<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 14:20 - 15:00 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse15"
+                      aria-expanded="false" aria-controls="collapse15">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/lucas-amom.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Construindo um Lakehouse gerenciado com Amazon S3 Tables - da teoria à prática</h4>
+                        <h5 class="name">Amom Luiz e Lucas Vitoreti</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse15" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Nesta sessão, exploraremos a evolução das arquiteturas de dados até o conceito de Data Lakehouse, apresentando os desafios que esta abordagem resolve. Discutiremos o Apache Iceberg como formato de tabela e sua implementação gerenciada através do Amazon S3 Tables. A apresentação incluirá uma demonstração prática de implementação, abordando desde a configuração inicial até consultas SQL, e concluirá com práticas recomendadas para uma implementação bem-sucedida. Ideal para arquitetos e engenheiros de dados interessados em modernizar suas soluções de análise de dados na AWS.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingTwo">
+                    <div class="schedule-slot-time">
+                      <span> 15:00 - 15:30 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse16"
+                      aria-expanded="false" aria-controls="collapse16">
+                      <div class="content">
+                        <h4>Coffee Break</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 15:30 - 16:10 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse17"
+                      aria-expanded="false" aria-controls="collapse17">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/leo-daniel.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Escalando Kubernetes: Resolvendo o Esgotamento de IPs com EKS IPv6</h4>
+                        <h5 class="name">Leonardo Azize e Daniel Cardoso</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse17" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Você está enfrentando problemas de esgotamento de endereços IP em seus clusters Amazon EKS? Nesta sessão técnica, aprenda como aproveitar o suporte a IPv6 do EKS para superar as limitações do espaço de endereços IPv4. Demonstraremos como implantar aplicações em contêineres com endereços IPv6 globalmente roteáveis, eliminando configurações complexas de roteamento e requisitos de NAT. Descubra como arquitetar redes de contêineres escaláveis, implementar comunicação direta entre pods e integrar perfeitamente com VPCs e redes on-premises. Junte-se a nós para aprender as melhores práticas para migrar seus clusters EKS para IPv6 e preparar sua infraestrutura de contêineres para o futuro.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 15:30 - 16:30 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse18"
+                      aria-expanded="false" aria-controls="collapse18">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/lays-rodrigues.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>AWS e Terraform: Don't reinvent the modules</h4>
+                        <h5 class="name">Lays Rodrigues</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse18" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Em nosso dia a dia usamos várias ferramentas para automatizar diversas tarefas. O Terraform é uma delas. Porém, dependendo do time e da empresa, todos fazem seus próprios módulos de VPC, RDS, Load Balancer... E vira uma farofa de módulos e de manutenção. Nesta palestra venho mostrar a vocês o Terrafor-AWS Modules. Dont'r reinvent the modules. Just patch it.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 16:20 - 17:00 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse19"
+                      aria-expanded="false" aria-controls="collapse19">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/erika-nagamine.jpeg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Arquitetura Moderna de Dados — Será que estou fazendo da maneira correta?</h4>
+                        <h5 class="name">Erika Nagamine</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse19" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>No cenário atual, dados são o ativo mais valioso das empresas. Mas diante de tantas opções de tecnologias, padrões e boas práticas, como saber se a arquitetura de dados adotada realmente é moderna e eficaz? Nesta sessão, vamos discutir os principais conceitos de uma arquitetura moderna de dados — desde data lakes e data warehouses até data mesh, com inteligencia artificial. Também abordaremos como equilibrar governança, escalabilidade e custo, trazendo exemplos de acertos e armadilhas comuns. Ao final, o público terá ferramentas para avaliar se está no caminho certo e quais ajustes podem ser necessários para extrair valor real dos dados.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time hands-on-stage">
+                      <span> 16:40 - 17:40 </span>
+                      Palco Hands-On
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse5"
+                      aria-expanded="false" aria-controls="collapse5">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/filipe-almeida-guimaraes.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Redes Inteligentes na AWS: Da Arquitetura ao Troubleshooting com IA</h4>
+                        <h5 class="name">Filipe Almeida Guimarães</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        Projetar e manter redes eficientes na AWS é um dos desafios mais complexos do dia a dia de arquitetos e engenheiros de nuvem. Quanto maior a arquitetura, mais difícil se torna garantir conectividade, desempenho, segurança e resiliência. É nesse cenário que entra a proposta desta apresentação: mostrar, de forma prática e interativa, como unir infraestrutura de redes AWS e Inteligência Artificial para criar ambientes mais inteligentes, autônomos e fáceis de operar.<br><br>
+
+                        Nesta sessão, vamos explorar como usar a IA generativa da AWS, com o Amazon Q, integrada aos serviços de rede como AWS Transit Gateway, VPCs e Reachability Analyzer, para revolucionar o ciclo de vida de uma rede na nuvem — desde a concepção da arquitetura até a resolução de problemas complexos. A proposta é demonstrar, ao vivo, como a IA pode ser utilizada como copiloto técnico, auxiliando na construção de topologias, identificação de gargalos e correção de falhas, reduzindo drasticamente o tempo gasto em troubleshooting.<br><br>
+                        
+                        A apresentação será baseada em um cenário realista de arquitetura hub-and-spoke com Transit Gateway, conectando múltiplas VPCs. Nesse cenário, vamos trabalhar com duas route tables do TGW, demonstrar como criar e associar os “attachments”, propagar rotas corretamente e manter isolamento de tráfego quando necessário. O público verá como a IA pode ajudar a:<br><br>
+                        
+                        - Mapear o estado atual da rede: solicitando ao Amazon Q a listagem e análise das route tables, associações e propagações do TGW;<br><br>
+                        - Projetar a arquitetura ideal: recebendo recomendações de configuração de rotas, segmentação e segurança com base em boas práticas;<br><br>
+                        - Detectar falhas e gargalos: usando linguagem natural para perguntar por que dois recursos não se comunicam, acionando o Reachability Analyzer integrado para identificar exatamente onde está o bloqueio (rota ausente, regra de segurança, NACL, assimetria, sobreposição de CIDR etc.).<br><br>
+                        - Corrigir problemas em tempo real: pedindo ao Amazon Q para gerar comandos CLI ou instruções no Console que realizem a correção — seja para associar uma VPC a uma route table, habilitar propagação, ajustar rotas ou corrigir regras de segurança.<br><br>
+                        
+                        Durante a demo, serão injetados erros intencionais no ambiente, como rota blackhole, falta de propagação, bloqueio em Security Group ou NACL, e casos de assimetria no tráfego. Cada problema será diagnosticado com apoio da IA e resolvido em minutos, ilustrando como esse tipo de abordagem pode transformar a operação de redes na AWS.<br><br>
+                        
+                        O público poderá ver claramente a diferença entre um troubleshooting tradicional — que exige múltiplos comandos, cliques e interpretações manuais — e a abordagem assistida por IA, em que a consulta em linguagem natural direciona imediatamente para a causa raiz e oferece um caminho de resolução. Essa mudança de paradigma não só reduz o tempo de resposta, mas também democratiza o acesso a diagnósticos avançados, permitindo que equipes com diferentes níveis de experiência consigam manter redes complexas funcionando com alto desempenho e segurança.<br><br>
+                        
+                        Além do aspecto técnico, a sessão também abordará boas práticas de governança e segurança ao utilizar IA na operação de redes, ressaltando que a inteligência artificial é uma assistente poderosa, mas que todas as alterações sugeridas devem passar por validação e revisão humana.<br><br>
+                        
+                        Ao final da apresentação, o público sairá com:<br>
+                        1- Um entendimento claro de como combinar AWS Transit Gateway, Reachability Analyzer e Amazon Q para criar e gerenciar redes inteligentes na nuvem;<br>
+                        2- Exemplos práticos de automação de diagnósticos e correções em ambientes AWS;<br>
+                        3- Ideias aplicáveis imediatamente no dia a dia para reduzir tempo de troubleshooting e aumentar a confiabilidade da infraestrutura;<br>
+                        4- Inspiração para repensar a forma como arquiteturas de rede são planejadas, monitoradas e ajustadas, aproveitando o melhor da IA generativa.<br><br>
+                        
+                        Cenários onde esse conhecimento fará a diferença:<br>
+                        - Ambientes multi-conta com TGW centralizando a comunicação e exigindo isolamento controlado;<br>
+                        - Integração híbrida AWS + on-premises, onde interrupções podem impactar operações críticas;<br>
+                        - Migrações e fusões de ambientes, quando rotas incorretas ou sobreposição de CIDRs podem gerar indisponibilidade;<br>
+                        - Resolução rápida de incidentes fora do horário comercial, quando cada minuto economizado reduz impacto no negócio;<br>
+                        - Auditorias de conformidade, exigindo comprovar e documentar caminhos de rede e controles de segurança.<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 17:10 - 17:50 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse21"
+                      aria-expanded="false" aria-controls="collapse21">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/christiano-milfont.png" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Observability Driven Design: Desenhando Jornadas de Confiabilidade ProdOps</h4>
+                        <h5 class="name">Christiano Milfont</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapse21" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>
+                        Nesta palestra vamos explorar como o Observability Driven Design (ODD) pode transformar a forma como projetamos sistemas confiáveis e evolutivos. Inspirado em práticas de Engenharia de Confiabilidade ProdOps e adaptando conceitos de Wardley Maps, apresentaremos uma notação própria para mapear a jornada de observabilidade em fluxos de negócio críticos.<br><br>
+
+                        A jornada de ODD nasce com o estabelecimento de Pontos de Contato (Touchpoints), o rastreamento de Eventos de Domínio e o mapeamento de Contextos de Domínio em uma linha temporal. Essa abordagem permite enxergar onde estamos cegos, onde temos métricas básicas, onde já correlacionamos eventos de negócio e onde podemos evoluir para ação automática.<br><br>
+                        
+                        Mostraremos exemplos práticos:<br>
+                        • Como traduzir processos de negócio em fluxos observáveis.<br>
+                        • Como representar visualmente a jornada usando nossa notação (com domínios, processos, eventos, métricas e SLOs).<br>
+                        • Como descrever essa jornada de forma declarativa<br><br>
+                        
+                        Além disso, conectaremos a prática de ODD com a realidade de Engenharia de Confiabilidade ProdOps, onde equipes precisam aplicar estratégias de informação, intercambiabilidade, detecção de toil e definição de North Star em contextos de negócios como Order Management, Payments, Search e Catálogo.<br><br>
+                        
+                        O público sairá da palestra com:<br>
+                        • Um modelo visual e declarativo para mapear observabilidade desde o nível técnico até o impacto de negócio.<br>
+                        • Ferramentas práticas para aplicar ODD em seu contexto (Wardley Map adaptado + notação própria baseada em fluxos de domínio).<br>
+                        • Inspiração para tornar a observabilidade parte do design do produto, e não um acessório pós-implementação.<br>                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+
+                <div class="card">
+                  <div id="headingThree">
+                    <div class="schedule-slot-time talk-stage">
+                      <span> 18:00 - 18:20 </span>
+                      Palco Talk
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse22"
+                      aria-expanded="false" aria-controls="collapse22">
+                      <div class="images-box">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/rodrigo-pokemao.jpg" alt="">
+                      </div>
+                      <div class="content">
+                        <h4>Stand-up</h4>
+                        <h5 class="name">Pokemão BR</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingTwo">
+                    <div class="schedule-slot-time">
+                      <span> 18:20 - 18:40 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse23"
+                      aria-expanded="false" aria-controls="collapse23">
+                      <div class="content">
+                        <h4>Encerramento e Sorteios</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div id="headingTwo">
+                    <div class="schedule-slot-time">
+                      <span> 18:40 - 19:30 </span>
+                      Geral
+                    </div>
+                    <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse24"
+                      aria-expanded="false" aria-controls="collapse24">
+                      <div class="content">
+                        <h4>Networking</h4>
+                        <h5 class="name">Organização</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Schedule Section End -->
+
+  <div id="hero-area-2" class="hero-area-bg-2">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-sm-12">
+          <div class="contents text-center">
+            <div class="section-title-header text-center">
+              <h2 class="section-title-w">INSCRIÇÕES</h2>
+              <p class="paragph">Todo o valor arrecadado com os ingressos serão usados para a realização do evento</p>
+              <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank"
+                class="registration-button">
+                FAÇA SUA INSCRIÇÃO AQUI
+              </a>
+            </div>
+            <!-- <br><br><br><br>
+            <div class="section-title-header text-center">
+              <h2 class="section-title-w">CALL FOR PAPERS ENCERRADO</h2>
+              <p class="paragph">O período de submissão de palestras para o AWS Community Day Brasil 2025 foi encerrado.
+                Agradecemos imensamente a todos que dedicaram seu tempo e conhecimento para enviar propostas incríveis!
+                Estamos revisando todas as submissões e em breve divulgaremos a programação oficial do evento. Acompanhe
+                nossas redes sociais para mais atualizações!</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Pricing Area Start -->
+  <!-- <section id="pricing" class="section-padding-2">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -978,13 +1068,13 @@ Com uma demo prática, veremos como essas soluções trabalham em harmonia para 
      
       </div>
     </section>-->
-    <!-- Ticket Pricing Area End -->
+  <!-- Ticket Pricing Area End -->
 
-    <!-- CFP Area Start -->
- 
-    <!-- Ticket Pricing Area End -->
+  <!-- CFP Area Start -->
 
-    <!-- Blog Section Start 
+  <!-- Ticket Pricing Area End -->
+
+  <!-- Blog Section Start 
     <section id="blog" class="section-padding">
       <div class="container">
         <div class="row">
@@ -1063,92 +1153,95 @@ Com uma demo prática, veremos como essas soluções trabalham em harmonia para 
         </div>
       </div>
     </section>-->
-    <!-- Blog Section End -->
+  <!-- Blog Section End -->
 
-    <!-- Sponsors Section Start -->
-    <section id="sponsors" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2>PATROCINADORES E APOIADORES</h2>
-            <p class="paragph">Conheça os patrocinadores e apoiadores deste ano. Estamos animados em apresentar as empresas/comunidades cujo apoio tornam nosso evento possível. Cada um deles é fundamental para nos ajudar a criar uma experiência inesquecível para todos os participantes.</p>
-            </div>
+  <!-- Sponsors Section Start -->
+  <section id="sponsors" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2>PATROCINADORES E APOIADORES</h2>
+            <p class="paragph">Conheça os patrocinadores e apoiadores deste ano. Estamos animados em apresentar as
+              empresas/comunidades cujo apoio tornam nosso evento possível. Cada um deles é fundamental para nos ajudar
+              a criar uma experiência inesquecível para todos os participantes.</p>
           </div>
         </div>
-        
-        <div class="sponsors-section">
-          <div class="sponsor-category">
-            <h4 class="category-title">PLATINA</h4>
-            <div class="sponsor-logos">
-              <a href="https://aws.amazon.com/" target="_blank" class="sponsor-logo platina">
-                <img src="assets/img/sponsors/aws.png" alt="AWS">
-              </a>
-            </div>
-          </div>
-
-          <div class="sponsor-category">
-            <h4 class="category-title">OURO</h4>
-            <div class="sponsor-logos">
-              <a href="https://ops.team/" target="_blank" class="sponsor-logo ouro">
-                <img src="assets/img/sponsors/ops-logo.svg" alt="OPS Team">
-              </a>
-              <a href="https://www.fiap.com.br/" target="_blank" class="sponsor-logo ouro">
-                <img src="assets/img/sponsors/alura_fiap.png" alt="Alura + FIAP">
-              </a>
-            </div>
-          </div>
-
-          <div class="sponsor-category">
-            <h4 class="category-title">PRATA</h4>
-            <div class="sponsor-logos">
-              <a href="https://cloudfaster.com.br/" target="_blank" class="sponsor-logo prata">
-                <img src="assets/img/sponsors/cloudfaster.png" alt="Cloudfaster">
-              </a>
-              <a href="https://tnkr.com.br/" target="_blank" class="sponsor-logo prata">
-                <img src="assets/img/sponsors/tnkr_byselect.png" alt="TNKR">
-              </a>
-              <a href="https://www.dati.com.br/" target="_blank" class="sponsor-logo prata">
-                <img src="assets/img/sponsors/dati.png" alt="dati">
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      <div class="sponsors-section">
+        <div class="sponsor-category">
+          <h4 class="category-title">PLATINA</h4>
+          <div class="sponsor-logos">
+            <a href="https://aws.amazon.com/" target="_blank" class="sponsor-logo platina">
+              <img src="assets/img/sponsors/aws.png" alt="AWS">
+            </a>
+          </div>
+        </div>
+
+        <div class="sponsor-category">
+          <h4 class="category-title">OURO</h4>
+          <div class="sponsor-logos">
+            <a href="https://ops.team/" target="_blank" class="sponsor-logo ouro">
+              <img src="assets/img/sponsors/ops-logo.svg" alt="OPS Team">
+            </a>
+            <a href="https://www.fiap.com.br/" target="_blank" class="sponsor-logo ouro">
+              <img src="assets/img/sponsors/alura_fiap.png" alt="Alura + FIAP">
+            </a>
+          </div>
+        </div>
+
+        <div class="sponsor-category">
+          <h4 class="category-title">PRATA</h4>
+          <div class="sponsor-logos">
+            <a href="https://cloudfaster.com.br/" target="_blank" class="sponsor-logo prata">
+              <img src="assets/img/sponsors/cloudfaster.png" alt="Cloudfaster">
+            </a>
+            <a href="https://tnkr.com.br/" target="_blank" class="sponsor-logo prata">
+              <img src="assets/img/sponsors/tnkr_byselect.png" alt="TNKR">
+            </a>
+            <a href="https://www.dati.com.br/" target="_blank" class="sponsor-logo prata">
+              <img src="assets/img/sponsors/dati.png" alt="dati">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
   <!-- Sponsors Section End -->
 
-    <!-- Team Section Start -->
-    <section id="team" class="section-padding text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header-2 text-center">
-              <h2 class="section-title wow fadeInUp" >ORGANIZADORES</h2>
+  <!-- Team Section Start -->
+  <section id="team" class="section-padding text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header-2 text-center">
+            <h2 class="section-title wow fadeInUp">ORGANIZADORES</h2>
 
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-bt">
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/deividveras" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-08.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover;"> </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3>
             </div>
           </div>
-        </div>        
-        
+          <!-- Team Item Ends -->
+        </div>
 
-        <div class="row justify-content-bt">
-          
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" >
-              <div class="team-img">
-                <a href="https://www.linkedin.com/in/deividveras" target="_blank"> <img class="img-fluid" src="assets/img/team/team-08.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover;"> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-       
 
-          <!-- div class="col-lg-3 col-md-6 col-xs-12">
+        <!-- div class="col-lg-3 col-md-6 col-xs-12">
             <div class="team-item wow fadeInUp" >
               <div class="team-img">
                 <a href="https://www.linkedin.com/in/epiresdasilva/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-04.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover;"> </a>
@@ -1159,8 +1252,8 @@ Com uma demo prática, veremos como essas soluções trabalham em harmonia para 
               </div>
             </div>
           </div -->
-        
-         <!-- <div class="col-lg-3 col-md-6 col-xs-12">
+
+        <!-- <div class="col-lg-3 col-md-6 col-xs-12">
           
             <div class="team-item wow fadeInUp" >
               <div class="team-img">
@@ -1171,218 +1264,241 @@ Com uma demo prática, veremos como essas soluções trabalham em harmonia para 
               </div>
             </div>
            
-          </div>  -->      
+          </div>  -->
 
 
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" >
-              <div class="team-img">
-                <a href="https://pimenta.dev" target="_blank"> <img class="img-fluid" src="https://s3-sa-east-1.amazonaws.com/thedevconf/photos/9d7b0358917bd1363e59351b4c79fa5348a2daaa.jpeg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://pimenta.dev" target="_blank">FLÁVIO PIMENTA</a></h3>
-              </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://pimenta.dev" target="_blank"> <img class="img-fluid"
+                  src="https://s3-sa-east-1.amazonaws.com/thedevconf/photos/9d7b0358917bd1363e59351b4c79fa5348a2daaa.jpeg"
+                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
             </div>
-            <!-- Team Item Ends -->
+            <div class="info-text">
+              <h3><a href="https://pimenta.dev" target="_blank">FLÁVIO PIMENTA</a></h3>
+            </div>
           </div>
-          
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp">
-              <div class="team-img">
-                <a href="https://fredmosc.dev" target="_blank"> <img class="img-fluid" src="assets/img/team/team-09.jpg" alt="fredmosc.dev" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://fredmosc.dev" target="_blank">FREDERICK MOSCHKOWICH</a></h3>
-              </div>
+          <!-- Team Item Ends -->
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://fredmosc.dev" target="_blank"> <img class="img-fluid" src="assets/img/team/team-09.jpg"
+                  alt="fredmosc.dev" style="height: 220px; width: 220px; object-fit: cover; "> </a>
             </div>
-            <!-- Team Item Ends -->
+            <div class="info-text">
+              <h3><a href="https://fredmosc.dev" target="_blank">FREDERICK MOSCHKOWICH</a></h3>
+            </div>
           </div>
-          
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp">
-              <div class="team-img">
-              <a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-02.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "></a>
+          <!-- Team Item Ends -->
+        </div>
 
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank">JEFFERSON MACHADO</a></h3>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>      
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-02.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "></a>
 
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp">
-              <div class="team-img">
-                <a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-15.jpg" alt="julia-werlang" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank">JULIA WERLANG</a></h3>
-              </div>
             </div>
-            <!-- Team Item Ends -->
-          </div> 
-
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp">
-              <div class="team-img">
-                <a href="https://www.linkedin.com/in/leandro-venancio/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-10.png" alt="leandro-venancio" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/leandro-venancio/" target="_blank">LEANDRO VENANCIO</a></h3>
-              </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/jeffersonfm/" target="_blank">JEFFERSON MACHADO</a></h3>
             </div>
-            <!-- Team Item Ends -->
-          </div>  
-            <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp">
-              <div class="team-img">
-                <a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-17.jpg" alt="leticia-albuquerque" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank">LETICIA ALBUQUERQUE</a></h3>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>        
-
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" >
-              <div class="team-img">
-                <a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-05.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-              
-              </div>
-              <div class="info-text">
-                <h3><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank">MARCELO PAIVA</a></h3>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
           </div>
+          <!-- Team Item Ends -->
+        </div>
 
-            <div class="col-lg-3 col-md-6 col-xs-12">
-              <!-- Team Item Starts -->
-              <div class="team-item wow fadeInUp" >
-                <div class="team-img">
-                  <a href="https://x.com/shescloud_" target="_blank"> <img class="img-fluid" src="assets/img/team/team-01.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-
-                </div>
-                <div class="info-text">
-                  <h3><a href="https://x.com/shescloud_" target="_blank">PALOMA LATALIZA</a></h3>
-                </div>
-              </div>
-              <!-- Team Item Ends -->
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank"> <img
+                  class="img-fluid" src="assets/img/team/team-15.jpg" alt="julia-werlang"
+                  style="height: 220px; width: 220px; object-fit: cover; "> </a>
             </div>
-            
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
-              <!-- Team Item Starts -->
-              <div class="team-item wow fadeInUp" >
-                <div class="team-img">
-                  <a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-06.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-                </div>
-                <div class="info-text">
-                  <h3><a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank">PRISCILA ARAUJO</a></h3>
-                </div>
-              </div>
-              <!-- Team Item Ends -->
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/" target="_blank">JULIA
+                  WERLANG</a></h3>
             </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
 
-            <div class="col-lg-3 col-md-6 col-xs-12">
-              <!-- Team Item Starts -->
-              <div class="team-item wow fadeInUp">
-                <div class="team-img">
-                  <a href="https://www.linkedin.com/in/viniganancio/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-16.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "></a>
-
-                </div>
-                <div class="info-text">
-                  <h3><a href="https://www.linkedin.com/in/viniganancio/" target="_blank">VINI GANANCIO</a></h3>
-                </div>
-              </div>
-              <!-- Team Item Ends -->
-            </div>    
-
-            
-            <div class="col-lg-3 col-md-6 col-xs-12">
-              <!-- Team Item Starts -->
-              <div class="team-item wow fadeInUp" >
-                <div class="team-img">
-                  <a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-07.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-                </div>
-                <div class="info-text">
-                  <h3><a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank">ROGÉRIO FONTES</a></h3>
-                </div>
-              </div>
-              <!-- Team Item Ends -->
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/leandro-venancio/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-10.png" alt="leandro-venancio"
+                  style="height: 220px; width: 220px; object-fit: cover; "> </a>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
-              <!-- Team Item Starts -->
-              <div class="team-item wow fadeInUp" >
-                <div class="team-img">
-                  <a href="https://kiko.dev.br" target="_blank"> <img class="img-fluid" src="assets/img/team/team-18.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
-                </div>
-                <div class="info-text">
-                  <h3><a href="https://kiko.dev.br" target="_blank">FELIPE KIKO</a></h3>
-                </div>
-              </div>
-              <!-- Team Item Ends -->
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/leandro-venancio/" target="_blank">LEANDRO VENANCIO</a></h3>
             </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-17.jpg" alt="leticia-albuquerque"
+                  style="height: 220px; width: 220px; object-fit: cover; "> </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/leticia-albuquerque/" target="_blank">LETICIA ALBUQUERQUE</a>
+              </h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-05.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
+
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank">MARCELO PAIVA</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://x.com/shescloud_" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-01.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
+
+            </div>
+            <div class="info-text">
+              <h3><a href="https://x.com/shescloud_" target="_blank">PALOMA LATALIZA</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-06.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/priscila-araujo-santos/" target="_blank">PRISCILA ARAUJO</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/viniganancio/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-16.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "></a>
+
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/viniganancio/" target="_blank">VINI GANANCIO</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-07.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/rogerio-fontes/" target="_blank">ROGÉRIO FONTES</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://kiko.dev.br" target="_blank"> <img class="img-fluid" src="assets/img/team/team-18.jpg"
+                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://kiko.dev.br" target="_blank">FELIPE KIKO</a></h3>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+      </div>
+  </section>
+  <!-- Team Section End -->
+
+
+  <footer>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-12 col-xs-12">
 
         </div>
-    </section>
-    <!-- Team Section End -->
-
-
-    <footer>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-12 col-xs-12">
-           
-        </div>
       </div>
-    </footer>
+  </footer>
 
-    <!-- Go to Top Link -->
-    <a href="#" class="back-to-top">
-    	<i class="lni-chevron-up"></i>
-    </a>
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-chevron-up"></i>
+  </a>
 
-    <div id="preloader">
-      <div class="sk-circle">
-        <div class="sk-circle1 sk-child"></div>
-        <div class="sk-circle2 sk-child"></div>
-        <div class="sk-circle3 sk-child"></div>
-        <div class="sk-circle4 sk-child"></div>
-        <div class="sk-circle5 sk-child"></div>
-        <div class="sk-circle6 sk-child"></div>
-        <div class="sk-circle7 sk-child"></div>
-        <div class="sk-circle8 sk-child"></div>
-        <div class="sk-circle9 sk-child"></div>
-        <div class="sk-circle10 sk-child"></div>
-        <div class="sk-circle11 sk-child"></div>
-        <div class="sk-circle12 sk-child"></div>
-      </div>
+  <div id="preloader">
+    <div class="sk-circle">
+      <div class="sk-circle1 sk-child"></div>
+      <div class="sk-circle2 sk-child"></div>
+      <div class="sk-circle3 sk-child"></div>
+      <div class="sk-circle4 sk-child"></div>
+      <div class="sk-circle5 sk-child"></div>
+      <div class="sk-circle6 sk-child"></div>
+      <div class="sk-circle7 sk-child"></div>
+      <div class="sk-circle8 sk-child"></div>
+      <div class="sk-circle9 sk-child"></div>
+      <div class="sk-circle10 sk-child"></div>
+      <div class="sk-circle11 sk-child"></div>
+      <div class="sk-circle12 sk-child"></div>
     </div>
+  </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/nivo-lightbox.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/main.js"></script>          
-  </body>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="assets/js/jquery-min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.countdown.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script src="assets/js/jquery.nav.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/nivo-lightbox.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
