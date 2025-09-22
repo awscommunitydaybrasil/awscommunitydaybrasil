@@ -566,17 +566,44 @@
                     <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse8"
                       aria-expanded="false" aria-controls="collapse8">
                       <div class="images-box">
-                        <img class="img-fluid" src="assets/img/speaker/vcp/felipe-kiko.jpg" alt="">
+                        <img class="img-fluid" src="assets/img/speaker/vcp/leo-oliveira.jpg" alt="">
                       </div>
                       <div class="content">
-                        <h4>Automações em FinOps: Tempo é dinheiro...então economize os dois!</h4>
-                        <h5 class="name">Felipe KiKo</h5>
+                        <h4>Melhorando Resiliência e Cortando Custos na Ingestão de Dados</h4>
+                        <h5 class="name">Léo Oliveira</h5>
                       </div>
                     </div>
                   </div>
                   <div id="collapse8" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Nesse talk vamos explorar automações práticas que facilitam o dia a dia do FinOps e aumentam a eficiência de custos na AWS, com alguns exemplos reais e ferramentas open-source que ajudam nessa missão!</p>
+                      <p>
+                        Cenário Inicial:<br />
+                        Tínhamos uma função Lambda com 2,5GB de memória, responsável por realizar a ingestão de dados de um banco SQL Server para o Amazon Redshift. Utilizando Lambda,Event Bridge e Dynamo Db. Embora funcional, essa solução apresentava dois desafios principais: custos elevados e problemas de resiliência. A Lambda custava aproximadamente $45 diários, e algumas ingestões falhavam devido ao timeout, exigindo reprocessamento manual.<br />
+                        <br />
+                        Problemas Identificados:<br />
+                        Custo<br />
+                        O uso de 2,5GB de memória era excessivo para a maioria dos processos, resultando em despesas desnecessárias.<br />
+                        <br />
+                        Resiliência<br />
+                        Ocorriam timeouts em algumas execuções, necessitando reprocessamento manual, o que impactava a eficiência.<br />
+                        <br />
+                        Solução Implementada:<br />
+                        Redução de Custos<br />
+                        Ao analisar o perfil das ingestões, descobrimos que a maior parte dos processos não exigia 2GB de memória. Assim, ajustamos a Lambda para utilizar apenas 512MB, reduzindo significativamente o custo.<br />
+                        <br />
+                        Aumento de Resiliência<br />
+                        Implementamos uma arquitetura que combina AWS Step Functions, Lambda e ECS, permitindo escalar o processo conforme necessário e garantindo maior resiliência.<br />
+                        <br />
+                        Benefícios Obtidos:<br />
+                        Diminuição de Custos<br />
+                        A redução de memória da Lambda resultou em uma economia substancial. de ~45 dólares diários para ~5 dólares diário<br />
+                        <br />
+                        Maior Resiliência<br />
+                        A nova arquitetura melhorou a confiabilidade do processo, eliminando a necessidade de reprocessamento manual.<br />
+                        <br />
+                        Eficiência Melhorada<br />
+                        Devido à escalabilidade a solução agora lida melhor com reprocessamentos, tirando uma dor de cabeça que tínhamos quando era necessário a realização para alguma tabela.<br />                        
+                      </p>
                     </div>
                   </div>
                 </div>
