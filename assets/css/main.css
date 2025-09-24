@@ -406,6 +406,12 @@ button:focus {
   padding: 20px;
 }
 
+.sponsor-logo.bronze {
+  width: 170px;
+  height: 110px;
+  padding: 16px;
+}
+
 @media (max-width: 768px) {
   .sponsor-logos {
     gap: 20px;
