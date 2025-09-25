@@ -480,7 +480,8 @@
                   </div>
                   <div id="collapse4" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Nesta sessão veremos como avaliar sua arquitetura para escolher a melhor camada de armazenamento para montar seu knowledge database na AWS, pensando em custo e escalabilidade.</p>
+                      <p>Nesta sessão veremos como avaliar sua arquitetura para escolher a melhor camada de
+                        armazenamento para montar seu knowledge database na AWS, pensando em custo e escalabilidade.</p>
                     </div>
                   </div>
                 </div>
@@ -504,7 +505,11 @@
                   </div>
                   <div id="collapse20" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Nesta sessão, explore métodos comprovados para aumentar a segurança das cargas de trabalho implementando controles de segurança de saída usando AWS Network Firewall e Amazon Route 53 DNS Firewall. Aprenda como iniciar sua jornada de segurança de saída e os passos específicos que você pode tomar para proteger cargas de trabalho em VPCs, bloqueando ameaças e detectando anomalias de rede nas cargas de trabalho.</p>
+                      <p>Nesta sessão, explore métodos comprovados para aumentar a segurança das cargas de trabalho
+                        implementando controles de segurança de saída usando AWS Network Firewall e Amazon Route 53 DNS
+                        Firewall. Aprenda como iniciar sua jornada de segurança de saída e os passos específicos que
+                        você pode tomar para proteger cargas de trabalho em VPCs, bloqueando ameaças e detectando
+                        anomalias de rede nas cargas de trabalho.</p>
                     </div>
                   </div>
                 </div>
@@ -528,7 +533,11 @@
                   </div>
                   <div id="collapse6" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Quando falamos em carreira em Cloud, muita gente pensa só em programar ou em áreas super técnicas. Mas a verdade é que a nuvem abre espaço para muito mais: estratégia, negócios, inovação, vendas, gestão e até criação de novos modelos de trabalho. Nesta conversa vamos mostrar como cada perfil pode encontrar seu lugar nesse universo e porque o futuro da cloud é tão diverso quanto as pessoas que fazem parte dele.</p>
+                      <p>Quando falamos em carreira em Cloud, muita gente pensa só em programar ou em áreas super
+                        técnicas. Mas a verdade é que a nuvem abre espaço para muito mais: estratégia, negócios,
+                        inovação, vendas, gestão e até criação de novos modelos de trabalho. Nesta conversa vamos
+                        mostrar como cada perfil pode encontrar seu lugar nesse universo e porque o futuro da cloud é
+                        tão diverso quanto as pessoas que fazem parte dele.</p>
                     </div>
                   </div>
                 </div>
@@ -545,14 +554,17 @@
                         <img class="img-fluid" src="assets/img/speaker/vcp/bruno-marangoni.png" alt="">
                       </div>
                       <div class="content">
-                        <h4>Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na prática!</h4>
+                        <h4>Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na
+                          prática!</h4>
                         <h5 class="name">Bruno Marangoni</h5>
                       </div>
                     </div>
                   </div>
                   <div id="collapse7" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Hands-on prático onde vai ser ensinado com proteger, detectar e prevenir uma aplicação web, credenciais de segurança. Usando o WAF, GuardDuty, S3 Bucket policy e VPC endpoint, e usando o EventBridge para automatizer a revogação de credenciais expostas.</p>
+                      <p>Hands-on prático onde vai ser ensinado com proteger, detectar e prevenir uma aplicação web,
+                        credenciais de segurança. Usando o WAF, GuardDuty, S3 Bucket policy e VPC endpoint, e usando o
+                        EventBridge para automatizer a revogação de credenciais expostas.</p>
                     </div>
                   </div>
                 </div>
@@ -578,31 +590,43 @@
                     <div class="card-body">
                       <p>
                         Cenário Inicial:<br />
-                        Tínhamos uma função Lambda com 2,5GB de memória, responsável por realizar a ingestão de dados de um banco SQL Server para o Amazon Redshift. Utilizando Lambda,Event Bridge e Dynamo Db. Embora funcional, essa solução apresentava dois desafios principais: custos elevados e problemas de resiliência. A Lambda custava aproximadamente $45 diários, e algumas ingestões falhavam devido ao timeout, exigindo reprocessamento manual.<br />
+                        Tínhamos uma função Lambda com 2,5GB de memória, responsável por realizar a ingestão de dados de
+                        um banco SQL Server para o Amazon Redshift. Utilizando Lambda,Event Bridge e Dynamo Db. Embora
+                        funcional, essa solução apresentava dois desafios principais: custos elevados e problemas de
+                        resiliência. A Lambda custava aproximadamente $45 diários, e algumas ingestões falhavam devido
+                        ao timeout, exigindo reprocessamento manual.<br />
                         <br />
                         Problemas Identificados:<br />
                         Custo<br />
-                        O uso de 2,5GB de memória era excessivo para a maioria dos processos, resultando em despesas desnecessárias.<br />
+                        O uso de 2,5GB de memória era excessivo para a maioria dos processos, resultando em despesas
+                        desnecessárias.<br />
                         <br />
                         Resiliência<br />
-                        Ocorriam timeouts em algumas execuções, necessitando reprocessamento manual, o que impactava a eficiência.<br />
+                        Ocorriam timeouts em algumas execuções, necessitando reprocessamento manual, o que impactava a
+                        eficiência.<br />
                         <br />
                         Solução Implementada:<br />
                         Redução de Custos<br />
-                        Ao analisar o perfil das ingestões, descobrimos que a maior parte dos processos não exigia 2GB de memória. Assim, ajustamos a Lambda para utilizar apenas 512MB, reduzindo significativamente o custo.<br />
+                        Ao analisar o perfil das ingestões, descobrimos que a maior parte dos processos não exigia 2GB
+                        de memória. Assim, ajustamos a Lambda para utilizar apenas 512MB, reduzindo significativamente o
+                        custo.<br />
                         <br />
                         Aumento de Resiliência<br />
-                        Implementamos uma arquitetura que combina AWS Step Functions, Lambda e ECS, permitindo escalar o processo conforme necessário e garantindo maior resiliência.<br />
+                        Implementamos uma arquitetura que combina AWS Step Functions, Lambda e ECS, permitindo escalar o
+                        processo conforme necessário e garantindo maior resiliência.<br />
                         <br />
                         Benefícios Obtidos:<br />
                         Diminuição de Custos<br />
-                        A redução de memória da Lambda resultou em uma economia substancial. de ~45 dólares diários para ~5 dólares diário<br />
+                        A redução de memória da Lambda resultou em uma economia substancial. de ~45 dólares diários para
+                        ~5 dólares diário<br />
                         <br />
                         Maior Resiliência<br />
-                        A nova arquitetura melhorou a confiabilidade do processo, eliminando a necessidade de reprocessamento manual.<br />
+                        A nova arquitetura melhorou a confiabilidade do processo, eliminando a necessidade de
+                        reprocessamento manual.<br />
                         <br />
                         Eficiência Melhorada<br />
-                        Devido à escalabilidade a solução agora lida melhor com reprocessamentos, tirando uma dor de cabeça que tínhamos quando era necessário a realização para alguma tabela.<br />                        
+                        Devido à escalabilidade a solução agora lida melhor com reprocessamentos, tirando uma dor de
+                        cabeça que tínhamos quando era necessário a realização para alguma tabela.<br />
                       </p>
                     </div>
                   </div>
@@ -620,7 +644,8 @@
                         <img class="img-fluid" src="assets/img/speaker/vcp/humberto-beto-demolinari.jpg" alt="">
                       </div>
                       <div class="content">
-                        <h4>A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker</h4>
+                        <h4>A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker
+                        </h4>
                         <h5 class="name">Humberto "Beto" Demolinari</h5>
                       </div>
                     </div>
@@ -628,11 +653,18 @@
                   <div id="collapse9" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        Uma análise prática da evolução na implementação de sistemas de Machine Learning, comparando o processo manual de 2016 com a agilidade dos modelos de fundação na nuvem em 2025.<br><br>
+                        Uma análise prática da evolução na implementação de sistemas de Machine Learning, comparando o
+                        processo manual de 2016 com a agilidade dos modelos de fundação na nuvem em 2025.<br><br>
 
-                        Nesta sessão, Beto Demolinari demonstra a evolução radical da área desde 2016, contrastando o desenvolvimento manual e supervisionado em Matlab com o poder do AWS SageMaker. Você verá como orquestrar e implantar modelos de fundação de ponta (LLMs, difusão, etc.) usando o SageMaker Jumpstart, de forma ágil e escalável. Levamos a teoria à prática em uma demonstração "antes e depois": em um notebook, vamos selecionar um modelo, implantá-lo com poucas linhas de código e obter um endpoint funcional, uma tarefa que antes exigia semanas de trabalho em engenharia e infraestrutura.<br><br>
-                        
-                        SageMaker, Sagemaker Jumpstart, PartyRock, Matlab,<br>                        
+                        Nesta sessão, Beto Demolinari demonstra a evolução radical da área desde 2016, contrastando o
+                        desenvolvimento manual e supervisionado em Matlab com o poder do AWS SageMaker. Você verá como
+                        orquestrar e implantar modelos de fundação de ponta (LLMs, difusão, etc.) usando o SageMaker
+                        Jumpstart, de forma ágil e escalável. Levamos a teoria à prática em uma demonstração "antes e
+                        depois": em um notebook, vamos selecionar um modelo, implantá-lo com poucas linhas de código e
+                        obter um endpoint funcional, uma tarefa que antes exigia semanas de trabalho em engenharia e
+                        infraestrutura.<br><br>
+
+                        SageMaker, Sagemaker Jumpstart, PartyRock, Matlab,<br>
                       </p>
                     </div>
                   </div>
@@ -658,13 +690,17 @@
                   <div id="collapse10" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        A apresentação aborda o uso de StepFunctions, múltiplos modelos do Bedrock e OpenSearch para implementar um assistente online baseado em GenAI.<br><br>
+                        A apresentação aborda o uso de StepFunctions, múltiplos modelos do Bedrock e OpenSearch para
+                        implementar um assistente online baseado em GenAI.<br><br>
 
-                        Este assistente auxilia os clientes com informações sobre cursos (engenharia, medicina, arquitetura e muitos outros).<br><br>
-                        
-                        Ao final da conversa, o assistente cria um resumo e o envia para a SalesForce como um lead, e a equipe comercial pode usar as informações para entrar em contato com o cliente.<br><br>
-                        
-                        Esta arquitetura permite respostas de conteúdo específico ou privado, proporcionando interações de baixa latência.<br>                        
+                        Este assistente auxilia os clientes com informações sobre cursos (engenharia, medicina,
+                        arquitetura e muitos outros).<br><br>
+
+                        Ao final da conversa, o assistente cria um resumo e o envia para a SalesForce como um lead, e a
+                        equipe comercial pode usar as informações para entrar em contato com o cliente.<br><br>
+
+                        Esta arquitetura permite respostas de conteúdo específico ou privado, proporcionando interações
+                        de baixa latência.<br>
                       </p>
                     </div>
                   </div>
@@ -710,11 +746,18 @@
                   <div id="collapse12" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        A apresentação terá como foco os serviços de computação mais utilizados da AWS: EC2, ECS, EKS e Lambda.<br><br>
+                        A apresentação terá como foco os serviços de computação mais utilizados da AWS: EC2, ECS, EKS e
+                        Lambda.<br><br>
 
-                        Sabendo que muitas vezes por falta de conhecimento sobre os serviços, muitas pessoas acabam tomando decisões de forma precipitada. O objetivo da apresentação é ajudar o público a entender o que cada um faz, quando usar, diferenças práticas e exemplos reais de aplicação, para que possam tomar decisões mais assertivas ao migrar ou criar aplicações na nuvem. Além disso, trarei dicas sobre erros comuns, critérios para escolha (custo, performance, complexidade) e casos práticos, simplificando os conceitos e indo direto ao ponto.<br><br>
-                        
-                        Contribuindo para uma decisão mais assertiva na hora de escolher o serviço de computação ideal para a sua aplicação.<br>                        
+                        Sabendo que muitas vezes por falta de conhecimento sobre os serviços, muitas pessoas acabam
+                        tomando decisões de forma precipitada. O objetivo da apresentação é ajudar o público a entender
+                        o que cada um faz, quando usar, diferenças práticas e exemplos reais de aplicação, para que
+                        possam tomar decisões mais assertivas ao migrar ou criar aplicações na nuvem. Além disso, trarei
+                        dicas sobre erros comuns, critérios para escolha (custo, performance, complexidade) e casos
+                        práticos, simplificando os conceitos e indo direto ao ponto.<br><br>
+
+                        Contribuindo para uma decisão mais assertiva na hora de escolher o serviço de computação ideal
+                        para a sua aplicação.<br>
                       </p>
                     </div>
                   </div>
@@ -741,10 +784,14 @@
                     <div class="card-body">
                       <p>
                         Resumo e Dinâmica:<br />
-                        • Vou apresentar como capturar mudanças (CDC) em bancos transacionais, salvar em S3 e processar de forma ordenada via SQS FIFO.<br />
-                        • Em seguida, demonstro como o AWS Glue integra e consolida dados em tabelas Iceberg, garantindo time travel, otimizações e governança.<br />
-                        • Mostrarei trechos de código PySpark e APIs do Iceberg, mas a ênfase será no fluxo arquitetural (DMS -> S3 -> SQS FIFO -> Glue -> Tabelas Iceberg -> Athena).<br />
-                        • Exemplificarei todo o pipeline, destacando camadas Bronze, Silver e Gold, e como cada etapa contribui para análises em near-real-time.<br />
+                        • Vou apresentar como capturar mudanças (CDC) em bancos transacionais, salvar em S3 e processar
+                        de forma ordenada via SQS FIFO.<br />
+                        • Em seguida, demonstro como o AWS Glue integra e consolida dados em tabelas Iceberg, garantindo
+                        time travel, otimizações e governança.<br />
+                        • Mostrarei trechos de código PySpark e APIs do Iceberg, mas a ênfase será no fluxo arquitetural
+                        (DMS -> S3 -> SQS FIFO -> Glue -> Tabelas Iceberg -> Athena).<br />
+                        • Exemplificarei todo o pipeline, destacando camadas Bronze, Silver e Gold, e como cada etapa
+                        contribui para análises em near-real-time.<br />
                       </p>
                     </div>
                   </div>
@@ -770,9 +817,16 @@
                   <div id="collapse14" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        Transforme auditorias pontuais em um fluxo contínuo e inteligente de segurança. Nesta sessão, Leo Ciccone e Dan Rezende mostram como orquestrar avaliações com o Prowler — motor open source com centenas de checagens e mapeamentos para padrões (CIS, NIST, PCI, etc.) — utilizando o conceito de Agentic AI. Você verá como executar Prowler em múltiplas contas/Regiões, consolidar resultados e melhorar a sua postura de segurança na AWS de forma automatizada, utilizando o que há de mais novo em tecnologias de IA generativa.<br><br>
+                        Transforme auditorias pontuais em um fluxo contínuo e inteligente de segurança. Nesta sessão,
+                        Leo Ciccone e Dan Rezende mostram como orquestrar avaliações com o Prowler — motor open source
+                        com centenas de checagens e mapeamentos para padrões (CIS, NIST, PCI, etc.) — utilizando o
+                        conceito de Agentic AI. Você verá como executar Prowler em múltiplas contas/Regiões, consolidar
+                        resultados e melhorar a sua postura de segurança na AWS de forma automatizada, utilizando o que
+                        há de mais novo em tecnologias de IA generativa.<br><br>
 
-                        Levaremos o conceito de agentic à prática: o agente agenda execuções, interpreta JSON do Prowler, enriquece achados, envia notificações SNS e aciona remediações via StepFunctions e SSM.<br>                        
+                        Levaremos o conceito de agentic à prática: o agente agenda execuções, interpreta JSON do
+                        Prowler, enriquece achados, envia notificações SNS e aciona remediações via StepFunctions e
+                        SSM.<br>
                       </p>
                     </div>
                   </div>
@@ -797,7 +851,13 @@
                   </div>
                   <div id="collapse15" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Nesta sessão, exploraremos a evolução das arquiteturas de dados até o conceito de Data Lakehouse, apresentando os desafios que esta abordagem resolve. Discutiremos o Apache Iceberg como formato de tabela e sua implementação gerenciada através do Amazon S3 Tables. A apresentação incluirá uma demonstração prática de implementação, abordando desde a configuração inicial até consultas SQL, e concluirá com práticas recomendadas para uma implementação bem-sucedida. Ideal para arquitetos e engenheiros de dados interessados em modernizar suas soluções de análise de dados na AWS.</p>
+                      <p>Nesta sessão, exploraremos a evolução das arquiteturas de dados até o conceito de Data
+                        Lakehouse, apresentando os desafios que esta abordagem resolve. Discutiremos o Apache Iceberg
+                        como formato de tabela e sua implementação gerenciada através do Amazon S3 Tables. A
+                        apresentação incluirá uma demonstração prática de implementação, abordando desde a configuração
+                        inicial até consultas SQL, e concluirá com práticas recomendadas para uma implementação
+                        bem-sucedida. Ideal para arquitetos e engenheiros de dados interessados em modernizar suas
+                        soluções de análise de dados na AWS.</p>
                     </div>
                   </div>
                 </div>
@@ -841,7 +901,14 @@
                   </div>
                   <div id="collapse17" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Você está enfrentando problemas de esgotamento de endereços IP em seus clusters Amazon EKS? Nesta sessão técnica, aprenda como aproveitar o suporte a IPv6 do EKS para superar as limitações do espaço de endereços IPv4. Demonstraremos como implantar aplicações em contêineres com endereços IPv6 globalmente roteáveis, eliminando configurações complexas de roteamento e requisitos de NAT. Descubra como arquitetar redes de contêineres escaláveis, implementar comunicação direta entre pods e integrar perfeitamente com VPCs e redes on-premises. Junte-se a nós para aprender as melhores práticas para migrar seus clusters EKS para IPv6 e preparar sua infraestrutura de contêineres para o futuro.</p>
+                      <p>Você está enfrentando problemas de esgotamento de endereços IP em seus clusters Amazon EKS?
+                        Nesta sessão técnica, aprenda como aproveitar o suporte a IPv6 do EKS para superar as limitações
+                        do espaço de endereços IPv4. Demonstraremos como implantar aplicações em contêineres com
+                        endereços IPv6 globalmente roteáveis, eliminando configurações complexas de roteamento e
+                        requisitos de NAT. Descubra como arquitetar redes de contêineres escaláveis, implementar
+                        comunicação direta entre pods e integrar perfeitamente com VPCs e redes on-premises. Junte-se a
+                        nós para aprender as melhores práticas para migrar seus clusters EKS para IPv6 e preparar sua
+                        infraestrutura de contêineres para o futuro.</p>
                     </div>
                   </div>
                 </div>
@@ -865,7 +932,10 @@
                   </div>
                   <div id="collapse18" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>Em nosso dia a dia usamos várias ferramentas para automatizar diversas tarefas. O Terraform é uma delas. Porém, dependendo do time e da empresa, todos fazem seus próprios módulos de VPC, RDS, Load Balancer... E vira uma farofa de módulos e de manutenção. Nesta palestra venho mostrar a vocês o Terrafor-AWS Modules. Dont'r reinvent the modules. Just patch it.</p>
+                      <p>Em nosso dia a dia usamos várias ferramentas para automatizar diversas tarefas. O Terraform é
+                        uma delas. Porém, dependendo do time e da empresa, todos fazem seus próprios módulos de VPC,
+                        RDS, Load Balancer... E vira uma farofa de módulos e de manutenção. Nesta palestra venho mostrar
+                        a vocês o Terrafor-AWS Modules. Dont'r reinvent the modules. Just patch it.</p>
                     </div>
                   </div>
                 </div>
@@ -889,7 +959,14 @@
                   </div>
                   <div id="collapse19" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                      <p>No cenário atual, dados são o ativo mais valioso das empresas. Mas diante de tantas opções de tecnologias, padrões e boas práticas, como saber se a arquitetura de dados adotada realmente é moderna e eficaz? Nesta sessão, vamos discutir os principais conceitos de uma arquitetura moderna de dados — desde data lakes e data warehouses até data mesh, com inteligencia artificial. Também abordaremos como equilibrar governança, escalabilidade e custo, trazendo exemplos de acertos e armadilhas comuns. Ao final, o público terá ferramentas para avaliar se está no caminho certo e quais ajustes podem ser necessários para extrair valor real dos dados.</p>
+                      <p>No cenário atual, dados são o ativo mais valioso das empresas. Mas diante de tantas opções de
+                        tecnologias, padrões e boas práticas, como saber se a arquitetura de dados adotada realmente é
+                        moderna e eficaz? Nesta sessão, vamos discutir os principais conceitos de uma arquitetura
+                        moderna de dados — desde data lakes e data warehouses até data mesh, com inteligencia
+                        artificial. Também abordaremos como equilibrar governança, escalabilidade e custo, trazendo
+                        exemplos de acertos e armadilhas comuns. Ao final, o público terá ferramentas para avaliar se
+                        está no caminho certo e quais ajustes podem ser necessários para extrair valor real dos dados.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -914,35 +991,73 @@
                   <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        Projetar e manter redes eficientes na AWS é um dos desafios mais complexos do dia a dia de arquitetos e engenheiros de nuvem. Quanto maior a arquitetura, mais difícil se torna garantir conectividade, desempenho, segurança e resiliência. É nesse cenário que entra a proposta desta apresentação: mostrar, de forma prática e interativa, como unir infraestrutura de redes AWS e Inteligência Artificial para criar ambientes mais inteligentes, autônomos e fáceis de operar.<br><br>
+                        Projetar e manter redes eficientes na AWS é um dos desafios mais complexos do dia a dia de
+                        arquitetos e engenheiros de nuvem. Quanto maior a arquitetura, mais difícil se torna garantir
+                        conectividade, desempenho, segurança e resiliência. É nesse cenário que entra a proposta desta
+                        apresentação: mostrar, de forma prática e interativa, como unir infraestrutura de redes AWS e
+                        Inteligência Artificial para criar ambientes mais inteligentes, autônomos e fáceis de
+                        operar.<br><br>
 
-                        Nesta sessão, vamos explorar como usar a IA generativa da AWS, com o Amazon Q, integrada aos serviços de rede como AWS Transit Gateway, VPCs e Reachability Analyzer, para revolucionar o ciclo de vida de uma rede na nuvem — desde a concepção da arquitetura até a resolução de problemas complexos. A proposta é demonstrar, ao vivo, como a IA pode ser utilizada como copiloto técnico, auxiliando na construção de topologias, identificação de gargalos e correção de falhas, reduzindo drasticamente o tempo gasto em troubleshooting.<br><br>
-                        
-                        A apresentação será baseada em um cenário realista de arquitetura hub-and-spoke com Transit Gateway, conectando múltiplas VPCs. Nesse cenário, vamos trabalhar com duas route tables do TGW, demonstrar como criar e associar os “attachments”, propagar rotas corretamente e manter isolamento de tráfego quando necessário. O público verá como a IA pode ajudar a:<br><br>
-                        
-                        - Mapear o estado atual da rede: solicitando ao Amazon Q a listagem e análise das route tables, associações e propagações do TGW;<br><br>
-                        - Projetar a arquitetura ideal: recebendo recomendações de configuração de rotas, segmentação e segurança com base em boas práticas;<br><br>
-                        - Detectar falhas e gargalos: usando linguagem natural para perguntar por que dois recursos não se comunicam, acionando o Reachability Analyzer integrado para identificar exatamente onde está o bloqueio (rota ausente, regra de segurança, NACL, assimetria, sobreposição de CIDR etc.).<br><br>
-                        - Corrigir problemas em tempo real: pedindo ao Amazon Q para gerar comandos CLI ou instruções no Console que realizem a correção — seja para associar uma VPC a uma route table, habilitar propagação, ajustar rotas ou corrigir regras de segurança.<br><br>
-                        
-                        Durante a demo, serão injetados erros intencionais no ambiente, como rota blackhole, falta de propagação, bloqueio em Security Group ou NACL, e casos de assimetria no tráfego. Cada problema será diagnosticado com apoio da IA e resolvido em minutos, ilustrando como esse tipo de abordagem pode transformar a operação de redes na AWS.<br><br>
-                        
-                        O público poderá ver claramente a diferença entre um troubleshooting tradicional — que exige múltiplos comandos, cliques e interpretações manuais — e a abordagem assistida por IA, em que a consulta em linguagem natural direciona imediatamente para a causa raiz e oferece um caminho de resolução. Essa mudança de paradigma não só reduz o tempo de resposta, mas também democratiza o acesso a diagnósticos avançados, permitindo que equipes com diferentes níveis de experiência consigam manter redes complexas funcionando com alto desempenho e segurança.<br><br>
-                        
-                        Além do aspecto técnico, a sessão também abordará boas práticas de governança e segurança ao utilizar IA na operação de redes, ressaltando que a inteligência artificial é uma assistente poderosa, mas que todas as alterações sugeridas devem passar por validação e revisão humana.<br><br>
-                        
+                        Nesta sessão, vamos explorar como usar a IA generativa da AWS, com o Amazon Q, integrada aos
+                        serviços de rede como AWS Transit Gateway, VPCs e Reachability Analyzer, para revolucionar o
+                        ciclo de vida de uma rede na nuvem — desde a concepção da arquitetura até a resolução de
+                        problemas complexos. A proposta é demonstrar, ao vivo, como a IA pode ser utilizada como
+                        copiloto técnico, auxiliando na construção de topologias, identificação de gargalos e correção
+                        de falhas, reduzindo drasticamente o tempo gasto em troubleshooting.<br><br>
+
+                        A apresentação será baseada em um cenário realista de arquitetura hub-and-spoke com Transit
+                        Gateway, conectando múltiplas VPCs. Nesse cenário, vamos trabalhar com duas route tables do TGW,
+                        demonstrar como criar e associar os “attachments”, propagar rotas corretamente e manter
+                        isolamento de tráfego quando necessário. O público verá como a IA pode ajudar a:<br><br>
+
+                        - Mapear o estado atual da rede: solicitando ao Amazon Q a listagem e análise das route tables,
+                        associações e propagações do TGW;<br><br>
+                        - Projetar a arquitetura ideal: recebendo recomendações de configuração de rotas, segmentação e
+                        segurança com base em boas práticas;<br><br>
+                        - Detectar falhas e gargalos: usando linguagem natural para perguntar por que dois recursos não
+                        se comunicam, acionando o Reachability Analyzer integrado para identificar exatamente onde está
+                        o bloqueio (rota ausente, regra de segurança, NACL, assimetria, sobreposição de CIDR
+                        etc.).<br><br>
+                        - Corrigir problemas em tempo real: pedindo ao Amazon Q para gerar comandos CLI ou instruções no
+                        Console que realizem a correção — seja para associar uma VPC a uma route table, habilitar
+                        propagação, ajustar rotas ou corrigir regras de segurança.<br><br>
+
+                        Durante a demo, serão injetados erros intencionais no ambiente, como rota blackhole, falta de
+                        propagação, bloqueio em Security Group ou NACL, e casos de assimetria no tráfego. Cada problema
+                        será diagnosticado com apoio da IA e resolvido em minutos, ilustrando como esse tipo de
+                        abordagem pode transformar a operação de redes na AWS.<br><br>
+
+                        O público poderá ver claramente a diferença entre um troubleshooting tradicional — que exige
+                        múltiplos comandos, cliques e interpretações manuais — e a abordagem assistida por IA, em que a
+                        consulta em linguagem natural direciona imediatamente para a causa raiz e oferece um caminho de
+                        resolução. Essa mudança de paradigma não só reduz o tempo de resposta, mas também democratiza o
+                        acesso a diagnósticos avançados, permitindo que equipes com diferentes níveis de experiência
+                        consigam manter redes complexas funcionando com alto desempenho e segurança.<br><br>
+
+                        Além do aspecto técnico, a sessão também abordará boas práticas de governança e segurança ao
+                        utilizar IA na operação de redes, ressaltando que a inteligência artificial é uma assistente
+                        poderosa, mas que todas as alterações sugeridas devem passar por validação e revisão
+                        humana.<br><br>
+
                         Ao final da apresentação, o público sairá com:<br>
-                        1- Um entendimento claro de como combinar AWS Transit Gateway, Reachability Analyzer e Amazon Q para criar e gerenciar redes inteligentes na nuvem;<br>
+                        1- Um entendimento claro de como combinar AWS Transit Gateway, Reachability Analyzer e Amazon Q
+                        para criar e gerenciar redes inteligentes na nuvem;<br>
                         2- Exemplos práticos de automação de diagnósticos e correções em ambientes AWS;<br>
-                        3- Ideias aplicáveis imediatamente no dia a dia para reduzir tempo de troubleshooting e aumentar a confiabilidade da infraestrutura;<br>
-                        4- Inspiração para repensar a forma como arquiteturas de rede são planejadas, monitoradas e ajustadas, aproveitando o melhor da IA generativa.<br><br>
-                        
+                        3- Ideias aplicáveis imediatamente no dia a dia para reduzir tempo de troubleshooting e aumentar
+                        a confiabilidade da infraestrutura;<br>
+                        4- Inspiração para repensar a forma como arquiteturas de rede são planejadas, monitoradas e
+                        ajustadas, aproveitando o melhor da IA generativa.<br><br>
+
                         Cenários onde esse conhecimento fará a diferença:<br>
-                        - Ambientes multi-conta com TGW centralizando a comunicação e exigindo isolamento controlado;<br>
+                        - Ambientes multi-conta com TGW centralizando a comunicação e exigindo isolamento
+                        controlado;<br>
                         - Integração híbrida AWS + on-premises, onde interrupções podem impactar operações críticas;<br>
-                        - Migrações e fusões de ambientes, quando rotas incorretas ou sobreposição de CIDRs podem gerar indisponibilidade;<br>
-                        - Resolução rápida de incidentes fora do horário comercial, quando cada minuto economizado reduz impacto no negócio;<br>
-                        - Auditorias de conformidade, exigindo comprovar e documentar caminhos de rede e controles de segurança.<br>                        
+                        - Migrações e fusões de ambientes, quando rotas incorretas ou sobreposição de CIDRs podem gerar
+                        indisponibilidade;<br>
+                        - Resolução rápida de incidentes fora do horário comercial, quando cada minuto economizado reduz
+                        impacto no negócio;<br>
+                        - Auditorias de conformidade, exigindo comprovar e documentar caminhos de rede e controles de
+                        segurança.<br>
                       </p>
                     </div>
                   </div>
@@ -968,21 +1083,34 @@
                   <div id="collapse21" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       <p>
-                        Nesta palestra vamos explorar como o Observability Driven Design (ODD) pode transformar a forma como projetamos sistemas confiáveis e evolutivos. Inspirado em práticas de Engenharia de Confiabilidade ProdOps e adaptando conceitos de Wardley Maps, apresentaremos uma notação própria para mapear a jornada de observabilidade em fluxos de negócio críticos.<br><br>
+                        Nesta palestra vamos explorar como o Observability Driven Design (ODD) pode transformar a forma
+                        como projetamos sistemas confiáveis e evolutivos. Inspirado em práticas de Engenharia de
+                        Confiabilidade ProdOps e adaptando conceitos de Wardley Maps, apresentaremos uma notação própria
+                        para mapear a jornada de observabilidade em fluxos de negócio críticos.<br><br>
 
-                        A jornada de ODD nasce com o estabelecimento de Pontos de Contato (Touchpoints), o rastreamento de Eventos de Domínio e o mapeamento de Contextos de Domínio em uma linha temporal. Essa abordagem permite enxergar onde estamos cegos, onde temos métricas básicas, onde já correlacionamos eventos de negócio e onde podemos evoluir para ação automática.<br><br>
-                        
+                        A jornada de ODD nasce com o estabelecimento de Pontos de Contato (Touchpoints), o rastreamento
+                        de Eventos de Domínio e o mapeamento de Contextos de Domínio em uma linha temporal. Essa
+                        abordagem permite enxergar onde estamos cegos, onde temos métricas básicas, onde já
+                        correlacionamos eventos de negócio e onde podemos evoluir para ação automática.<br><br>
+
                         Mostraremos exemplos práticos:<br>
                         • Como traduzir processos de negócio em fluxos observáveis.<br>
-                        • Como representar visualmente a jornada usando nossa notação (com domínios, processos, eventos, métricas e SLOs).<br>
+                        • Como representar visualmente a jornada usando nossa notação (com domínios, processos, eventos,
+                        métricas e SLOs).<br>
                         • Como descrever essa jornada de forma declarativa<br><br>
-                        
-                        Além disso, conectaremos a prática de ODD com a realidade de Engenharia de Confiabilidade ProdOps, onde equipes precisam aplicar estratégias de informação, intercambiabilidade, detecção de toil e definição de North Star em contextos de negócios como Order Management, Payments, Search e Catálogo.<br><br>
-                        
+
+                        Além disso, conectaremos a prática de ODD com a realidade de Engenharia de Confiabilidade
+                        ProdOps, onde equipes precisam aplicar estratégias de informação, intercambiabilidade, detecção
+                        de toil e definição de North Star em contextos de negócios como Order Management, Payments,
+                        Search e Catálogo.<br><br>
+
                         O público sairá da palestra com:<br>
-                        • Um modelo visual e declarativo para mapear observabilidade desde o nível técnico até o impacto de negócio.<br>
-                        • Ferramentas práticas para aplicar ODD em seu contexto (Wardley Map adaptado + notação própria baseada em fluxos de domínio).<br>
-                        • Inspiração para tornar a observabilidade parte do design do produto, e não um acessório pós-implementação.<br>                        
+                        • Um modelo visual e declarativo para mapear observabilidade desde o nível técnico até o impacto
+                        de negócio.<br>
+                        • Ferramentas práticas para aplicar ODD em seu contexto (Wardley Map adaptado + notação própria
+                        baseada em fluxos de domínio).<br>
+                        • Inspiração para tornar a observabilidade parte do design do produto, e não um acessório
+                        pós-implementação.<br>
                       </p>
                     </div>
                   </div>
@@ -1266,18 +1394,6 @@
       </div>
 
       <div class="row justify-content-bt">
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <div class="team-img">
-              <a href="https://www.linkedin.com/in/deividveras" target="_blank"> <img class="img-fluid"
-                  src="assets/img/team/team-08.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover;"> </a>
-            </div>
-            <div class="info-text">
-              <h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3>
-            </div>
-          </div>
-        </div>
-
         <!-- div class="col-lg-3 col-md-6 col-xs-12">
             <div class="team-item wow fadeInUp" >
               <div class="team-img">
@@ -1309,6 +1425,18 @@
             </div>
             <div class="info-text">
               <h3><a href="https://pimenta.dev" target="_blank">FLÁVIO PIMENTA</a></h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="team-item wow fadeInUp">
+            <div class="team-img">
+              <a href="https://www.linkedin.com/in/deividveras" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-08.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover;"> </a>
+            </div>
+            <div class="info-text">
+              <h3><a href="https://www.linkedin.com/in/deividveras" target="_blank">DEIVID VERAS</a></h3>
             </div>
           </div>
         </div>
@@ -1385,7 +1513,6 @@
               <a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank"> <img class="img-fluid"
                   src="assets/img/team/team-05.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
               </a>
-
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/marcelopaiva/" target="_blank">MARCELO PAIVA</a></h3>
@@ -1399,7 +1526,6 @@
               <a href="https://x.com/shescloud_" target="_blank"> <img class="img-fluid"
                   src="assets/img/team/team-01.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
               </a>
-
             </div>
             <div class="info-text">
               <h3><a href="https://x.com/shescloud_" target="_blank">PALOMA LATALIZA</a></h3>
@@ -1424,8 +1550,8 @@
           <div class="team-item wow fadeInUp">
             <div class="team-img">
               <a href="https://www.linkedin.com/in/viniganancio/" target="_blank"> <img class="img-fluid"
-                  src="assets/img/team/team-16.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; "></a>
-
+                  src="assets/img/team/team-16.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/viniganancio/" target="_blank">VINI GANANCIO</a></h3>
@@ -1436,8 +1562,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/linuxmen/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-21.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/linuxmen/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-21.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/linuxmen/" target="_blank">CHRISTIANO LINUXMEN</a></h3>
@@ -1448,11 +1575,13 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-22.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-22.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
-              <h3><a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank">VANESSA SANTOS</a></h3>
+              <h3><a href="https://www.linkedin.com/in/vanessa-alves-dos-santos/" target="_blank">VANESSA SANTOS</a>
+              </h3>
             </div>
           </div>
         </div>
@@ -1485,8 +1614,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/levinux/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-19.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/levinux/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-19.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/levinux/" target="_blank">LEVINUX</a></h3>
@@ -1497,8 +1627,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/rafaeloliveiramartins/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-20.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/rafaeloliveiramartins/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-20.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/rafaeloliveiramartins/" target="_blank">RAFAEL MARTINS</a></h3>
@@ -1509,8 +1640,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/ramalho-dev/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-23.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/ramalho-dev/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-23.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/ramalho-dev/" target="_blank">MARCOS RAMALHO</a></h3>
@@ -1521,8 +1653,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/criscostasimons/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-24.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/criscostasimons/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-24.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/criscostasimons/" target="_blank">CRISTIANE SIMONS</a></h3>
@@ -1533,8 +1666,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/danrezende/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-25.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/danrezende/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-25.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/danrezende/" target="_blank">DAN REZENDE</a></h3>
@@ -1545,8 +1679,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/ofelps/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-26.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/ofelps/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-26.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/ofelps/" target="_blank">FELPS</a></h3>
@@ -1557,8 +1692,9 @@
         <div class="col-lg-3 col-md-6 col-xs-12">
           <div class="team-item wow fadeInUp">
             <div class="team-img">
-              <a href="https://www.linkedin.com/in/caiuaiorio/" target="_blank"> <img class="img-fluid" src="assets/img/team/team-27.jpg"
-                  alt="" style="height: 220px; width: 220px; object-fit: cover; "> </a>
+              <a href="https://www.linkedin.com/in/caiuaiorio/" target="_blank"> <img class="img-fluid"
+                  src="assets/img/team/team-27.jpg" alt="" style="height: 220px; width: 220px; object-fit: cover; ">
+              </a>
             </div>
             <div class="info-text">
               <h3><a href="https://www.linkedin.com/in/caiuaiorio/" target="_blank">CAIUÃ IORIO</a></h3>
