@@ -841,21 +841,6 @@ a.back-to-top:hover, a.back-to-top:focus {
   padding: 10px;
 }
 
-/* Center menu when logo is hidden */
-.navbar .container {
-  position: relative;
-  transition: justify-content 0.3s ease;
-}
-
-.navbar-brand.logo-hidden + .navbar-toggler ~ .navbar-collapse {
-  justify-content: center;
-}
-
-.navbar-brand.logo-hidden ~ .navbar-collapse .navbar-nav {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Desktop menu centering when logo is hidden */
 @media (min-width: 992px) {
   .navbar .container.center-menu {
@@ -863,15 +848,33 @@ a.back-to-top:hover, a.back-to-top:focus {
     justify-content: center;
     align-items: center;
   }
-  
+
   .navbar .container.center-menu .navbar-collapse {
     flex-grow: 0;
   }
-  
+
   .navbar .container.center-menu .navbar-nav {
     margin: 0;
+    justify-content: center;
   }
 }
+
+.navbar-collapse .navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide AWS Community Day nav item on desktop when navbar-brand image is present */
+@media (min-width: 992px) {
+  .navbar-nav .nav-item:first-child .nav-link[href="#about"] {
+    display: none !important;
+  }
+
+  /* Ensure navbar remains centered when item is hidden */
+  .navbar-nav {
+    justify-content: center !important;
+  }
+} 
 
 /* Mobile navbar improvements */
 @media (max-width: 768px) {
@@ -1526,6 +1529,16 @@ h1 {
   font-weight: 500;
   display: inline-block;
   margin-bottom: 5px;
+}
+
+/* Ensure speaker links maintain default text color */
+.schedule .card-header .name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.schedule .card-header .name a:hover {
+  color: #FF9900;
 }
 
 .schedule .card-body {
@@ -2662,4 +2675,16 @@ footer {
   font-size: 16px;
   padding: 12px 40px;
   text-transform: uppercase;
+}
+
+.copyright-text {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+  margin-bottom: 10px;
+}
+
+.copyright-text p {
+  color: #b3b3b3;
+  margin: 0;
+  font-size: 14px;
 }

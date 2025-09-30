@@ -131,6 +131,80 @@
       box-shadow: 0 3px 10px rgba(255, 153, 0, 0.3) !important;
     }
 
+    /* Estilos para a seção de Edições Anteriores */
+    .edicao-item {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .edicao-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .edicao-img {
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .edicao-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .edicao-item:hover .edicao-img img {
+      transform: scale(1.05);
+    }
+
+    .edicao-text {
+      padding: 20px;
+    }
+
+    .edicao-text h3 {
+      margin-bottom: 10px;
+    }
+
+    .edicao-text h3 a {
+      color: #333;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .edicao-text h3 a:hover {
+      color: #FF9900;
+      text-decoration: none;
+    }
+
+    .edicao-text p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn-common {
+      background: #FF9900;
+      color: #fff !important;
+      padding: 8px 25px !important;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      display: inline-block;
+    }
+
+    .btn-common:hover {
+      background: #FF8500;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+    }
+
     @media (max-width: 991px) {
       .info-card {
         min-width: 100%;
@@ -160,11 +234,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
               <a class="nav-link" href="#header-wrap">
                 Home
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="#about">
                 AWS Community Day
@@ -190,6 +264,11 @@
                 Organizadores
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edicoes-anteriores">
+                Edições Anteriores
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -205,7 +284,7 @@
             <div class="contents text-center">
               <img class="img-logo-content" src="assets/img/logo.png" alt="">
               <p class="banner-info">27 de Setembro de 2025</p>
-              <p class="banner-info">Esta edição acontecerá na cidade de Campinas </p>
+              <p class="banner-info">Esta edição aconteceu na cidade de Campinas</p>
               <p align="justify" class="banner-desc">
                 Os grupos de usuários AWS do Brasil estão de volta para apresentar o maior e melhor AWS Community Day
                 Brasil de todos os tempos. Vamos compartilhar histórias de sucesso, casos de uso do dia a dia, histórias
@@ -306,18 +385,18 @@
           </div>
         </div>
 
-        <div class="info-card highlight-card">
+        <!-- <div class="info-card highlight-card">
           <div class="info-icon">
             <i class="lni-ticket"></i>
           </div>
-          <!-- div class="info-content">
+          <div class="info-content">
             <h3>Garanta sua vaga</h3>
             <a href="https://www.hubingressos.com.br/evento/awscommunityday" target="_blank"
               class="registration-button">
               INSCREVA-SE AGORA
             </a>
-          </div -->
-        </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -474,7 +553,7 @@
                       </div>
                       <div class="content">
                         <h4>Qual melhor camada de dados para construir seu Knowledge Database na AWS?</h4>
-                        <h5 class="name">William Lino</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/williamlinooliveira/" target="_blank">William Lino</a></h5>
                       </div>
                     </div>
                   </div>
@@ -499,7 +578,8 @@
                       </div>
                       <div class="content">
                         <h4>Implementação de segurança de saída com AWS Network Firewall e Route 53</h4>
-                        <h5 class="name">Michelle Perez e Leonardo Azize</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/michelle-b-perez/" target="_blank">Michelle Perez</a> e <a href="https://www.linkedin.com/in/leonardo-azize-martins/"
+                            target="_blank">Leonardo Azize</a></h5>
                       </div>
                     </div>
                   </div>
@@ -527,7 +607,7 @@
                       </div>
                       <div class="content">
                         <h4>Carreira em Cloud: Do Técnico ao Estratégico, Onde Você se Encaixa?</h4>
-                        <h5 class="name">Daiane Dalavi</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/daiane-dalavi/" target="_blank">Daiane Dalavi</a></h5>
                       </div>
                     </div>
                   </div>
@@ -556,7 +636,7 @@
                       <div class="content">
                         <h4>Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na
                           prática!</h4>
-                        <h5 class="name">Bruno Marangoni</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/bmarangoni/" target="_blank">Bruno Marangoni</a></h5>
                       </div>
                     </div>
                   </div>
@@ -582,7 +662,7 @@
                       </div>
                       <div class="content">
                         <h4>Melhorando Resiliência e Cortando Custos na Ingestão de Dados</h4>
-                        <h5 class="name">Léo Oliveira</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/leoigornunes/" target="_blank">Léo Oliveira</a></h5>
                       </div>
                     </div>
                   </div>
@@ -646,7 +726,7 @@
                       <div class="content">
                         <h4>A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker
                         </h4>
-                        <h5 class="name">Humberto "Beto" Demolinari</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/humbertodemolinari/" target="_blank">Humberto "Beto" Demolinari</a></h5>
                       </div>
                     </div>
                   </div>
@@ -683,7 +763,8 @@
                       </div>
                       <div class="content">
                         <h4>Assistente GenAI com Bedrock usando StepFunctions, OpenSearch e RAG</h4>
-                        <h5 class="name">Carlos Alberto Marangon e Leticia Massae Uchida</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/carlosmarangon/" target="_blank">Carlos Alberto Marangon</a> e <a href="https://www.linkedin.com/in/leticiamassae/"
+                            target="_blank">Leticia Massae Uchida</a></h5>
                       </div>
                     </div>
                   </div>
@@ -739,7 +820,7 @@
                       </div>
                       <div class="content">
                         <h4>Descomplicando os principais serviços de computação da AWS: EC2, ECS, EKS e Lambda</h4>
-                        <h5 class="name">Cleiton Nascimento</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/cleiton-nascimento-dev/" target="_blank">Cleiton Nascimento</a></h5>
                       </div>
                     </div>
                   </div>
@@ -776,7 +857,7 @@
                       </div>
                       <div class="content">
                         <h4>Integrando Bancos Transacionais em um Lakehouse na AWS com DMS CDC, SQS FIFO e Iceberg</h4>
-                        <h5 class="name">Walter Neto</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/wnascimentoneto/" target="_blank">Walter Neto</a></h5>
                       </div>
                     </div>
                   </div>
@@ -810,7 +891,8 @@
                       </div>
                       <div class="content">
                         <h4>Agentic Security Assessments on AWS</h4>
-                        <h5 class="name">Leo Ciccone e Dan Rezende</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/leonardo-ciccone/" target="_blank">Leo Ciccone</a> e <a href="https://www.linkedin.com/in/danrezende/"
+                            target="_blank">Dan Rezende</a></h5>
                       </div>
                     </div>
                   </div>
@@ -845,7 +927,8 @@
                       </div>
                       <div class="content">
                         <h4>Construindo um Lakehouse gerenciado com Amazon S3 Tables - da teoria à prática</h4>
-                        <h5 class="name">Amom Luiz e Lucas Vitoreti</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/amommendes/" target="_blank">Amom Luiz</a> e <a href="https://www.linkedin.com/in/lucasvitoreti/"
+                            target="_blank">Lucas Vitoreti</a></h5>
                       </div>
                     </div>
                   </div>
@@ -895,7 +978,8 @@
                       </div>
                       <div class="content">
                         <h4>Escalando Kubernetes: Resolvendo o Esgotamento de IPs com EKS IPv6</h4>
-                        <h5 class="name">Leonardo Azize e Daniel Cardoso</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/leonardo-azize-martins/" target="_blank">Leonardo Azize</a> e <a href="https://www.linkedin.com/in/danielcardosodaconceicao/"
+                            target="_blank">Daniel Cardoso</a></h5>
                       </div>
                     </div>
                   </div>
@@ -926,7 +1010,7 @@
                       </div>
                       <div class="content">
                         <h4>Redes Inteligentes na AWS: Da Arquitetura ao Troubleshooting com IA</h4>
-                        <h5 class="name">Filipe Almeida Guimarães</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/oalmeidafilipe/" target="_blank">Filipe Almeida Guimarães</a></h5>
                       </div>
                     </div>
                   </div>
@@ -1018,7 +1102,7 @@
                       </div>
                       <div class="content">
                         <h4>Arquitetura Moderna de Dados — Será que estou fazendo da maneira correta?</h4>
-                        <h5 class="name">Erika Nagamine</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/erika-nagamine/" target="_blank">Erika Nagamine</a></h5>
                       </div>
                     </div>
                   </div>
@@ -1050,7 +1134,7 @@
                       </div>
                       <div class="content">
                         <h4>AWS e Terraform: Don't reinvent the modules</h4>
-                        <h5 class="name">Lays Rodrigues</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/laysrodrigues147/" target="_blank">Lays Rodrigues</a></h5>
                       </div>
                     </div>
                   </div>
@@ -1079,7 +1163,7 @@
                       </div>
                       <div class="content">
                         <h4>Observability Driven Design: Desenhando Jornadas de Confiabilidade ProdOps</h4>
-                        <h5 class="name">Christiano Milfont</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/cmilfont/" target="_blank">Christiano Milfont</a></h5>
                       </div>
                     </div>
                   </div>
@@ -1134,7 +1218,7 @@
                       </div>
                       <div class="content">
                         <h4>Stand-up</h4>
-                        <h5 class="name">Pokemão BR</h5>
+                        <h5 class="name"><a href="https://www.linkedin.com/in/pokemaobr/" target="_blank">Rodrigo Pokemão</a></h5>
                       </div>
                     </div>
                   </div>
@@ -1716,14 +1800,46 @@
   </section>
   <!-- Team Section End -->
 
+  <!-- Edições Anteriores Section Start -->
+  <section id="edicoes-anteriores" class="section-padding" style="background-color: #ffffff;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp">EDIÇÕES ANTERIORES</h2>
+            <p class="wow fadeInDown">Confira como foram as edições anteriores do AWS Community Day Brasil</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="edicao-item wow fadeInUp">
+            <div class="edicao-text text-center">
+              <h3><a href="old/2024-nov/index.html" target="_blank" rel="noopener noreferrer">Novembro 2024</a></h3>
+              <p>Edição simultânea do evento ocorrendo em Goiânia e Florianópolis</p>
+              <a href="old/2024-nov/index.html" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver Mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Edições Anteriores Section End -->
 
   <footer>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12 col-xs-12">
-
+          <div class="row">
+            <div class="col-12">
+              <div class="copyright-text text-center">
+                <p>&copy; 2025 AWS Community Day Brasil. Todos os direitos reservados.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
   </footer>
 
   <!-- Go to Top Link -->
