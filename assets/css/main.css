@@ -1607,7 +1607,6 @@ h1 {
 #information-bar {
   background: #F6F9F9;
   position: relative;
-  margin-bottom: 100px;
   padding: 70px;
 }
 
@@ -2555,7 +2554,7 @@ footer {
 }
 
 #hero-area .contents {
-  padding: 160px 20px 180px;
+  padding: 160px 20px 80px;
 }
 
 #hero-area .contents .icon {
