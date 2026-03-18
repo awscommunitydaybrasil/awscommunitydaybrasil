@@ -28,9 +28,17 @@ const AboutSection = () => {
                 comum: aprender e compartilhar conhecimento de forma igualitária, segura, justa e acessível.
               </p>
               <p>
-                Em <strong className="text-foreground">2026</strong>, o AWS Community Day Brasil entra para a história:
-                <strong className="text-foreground"> pela primeira vez</strong>, o evento acontece em{" "}
-                <strong className="text-foreground">todas as regiões do país</strong>!
+                Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de
+                conhecimento e compartilhamento. As atividades do AWS Community Day Brasil
+                são guiadas pelo{" "}
+                <a
+                  href="https://github.com/awscommunitydaybrasil/codigo-de-conduta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Código de conduta
+                </a>.
               </p>
             </div>
           </div>
