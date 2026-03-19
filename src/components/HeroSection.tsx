@@ -1,3 +1,5 @@
+import logo from "@/assets/logo-community-day.png";
+
 const BrazilMapSVG = () => (
   <svg viewBox="0 0 600 600" className="w-full h-full opacity-10" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Simplified Brazil outline */}
@@ -42,11 +44,7 @@ const HeroSection = () => {
         <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-4 font-display">
           2026
         </p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold font-display text-foreground leading-tight mb-6">
-          AWS Community Day
-          <br />
-          <span className="text-gradient-primary">Brasil</span>
-        </h1>
+        <img src={logo} alt="AWS Community Day Brasil" className="max-w-sm md:max-w-lg lg:max-w-2xl mx-auto mb-6" />
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body">
           O maior movimento de comunidades AWS do Brasil
         </p>
