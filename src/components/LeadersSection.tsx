@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import postcardBH from "@/assets/postcard-bh.png";
 import postcardSalvador from "@/assets/postcard-salvador.png";
@@ -14,7 +15,7 @@ const leaders = [
     leader: "Wagner Landim",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-31.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
-    link: "https://www.awscommunityday.com.br/centrooeste/index.html",
+    link: "/centro-oeste",
   },
   {
     name: "Sudeste",
@@ -103,17 +104,29 @@ const LeaderCard = ({
       <p className="text-sm text-muted-foreground mb-1">{city}</p>
       <p className="text-xs font-semibold tracking-[0.15em] uppercase text-primary font-display">{date}</p>
       {link !== "#" && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
-        >
-          Ver evento
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+        link.startsWith("/") ? (
+          <Link
+            to={link}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
+          >
+            Ver evento
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        ) : (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
+          >
+            Ver evento
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        )
       )}
     </div>
   </div>
