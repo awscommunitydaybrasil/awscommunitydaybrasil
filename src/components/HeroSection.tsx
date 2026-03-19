@@ -1,3 +1,5 @@
+import logo from "@/assets/logo-community-day.png";
+
 const BrazilMapSVG = () => (
   <svg viewBox="0 0 600 600" className="w-full h-full opacity-10" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Simplified Brazil outline */}
