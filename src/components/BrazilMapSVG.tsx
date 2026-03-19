@@ -174,16 +174,75 @@ const BrazilMapSVG = () => {
         {Object.entries(hostMarkerPositions).map(([uf, pos]) => {
           const markerX = pos.x + 9;
           const markerY = pos.y - 20;
+          const isHovered = hoveredHost === uf;
+          const cityData = hostCityData[uf];
+          const tooltipWidth = 120;
+          const tooltipX = markerX - tooltipWidth / 2;
+          const tooltipY = markerY - 42;
           return (
-            <g key={`marker-${uf}`} style={{ pointerEvents: "none" }}>
+            <g
+              key={`marker-${uf}`}
+              style={{ cursor: "pointer" }}
+              onMouseEnter={() => setHoveredHost(uf)}
+              onMouseLeave={() => setHoveredHost(null)}
+            >
               <path
                 d={`M${markerX.toFixed(1)},${(markerY - 8).toFixed(1)} c-3.5,0 -6.3,2.7 -6.3,6.1 c0,4.6 6.3,10.9 6.3,10.9 s6.3-6.3 6.3-10.9 c0-3.4 -2.8-6.1 -6.3-6.1 z`}
-                fill="#e53935"
+                fill={isHovered ? "#c62828" : "#e53935"}
                 stroke="hsl(var(--background))"
                 strokeWidth="0.8"
+                style={{ transition: "fill 0.2s ease", transform: isHovered ? "scale(1.15)" : "scale(1)", transformOrigin: `${markerX}px ${markerY}px` }}
               />
               <circle cx={markerX.toFixed(1)} cy={markerY.toFixed(1)} r="2.2" fill="#ffffff" opacity="0.95" />
               <circle cx={(markerX - 1.8).toFixed(1)} cy={(markerY - 1.9).toFixed(1)} r="1.1" fill="#ffffff" opacity="0.55" />
+              {/* Tooltip */}
+              {isHovered && cityData && (
+                <g style={{ pointerEvents: "none" }}>
+                  <rect
+                    x={tooltipX}
+                    y={tooltipY}
+                    width={tooltipWidth}
+                    height={30}
+                    rx={6}
+                    fill="hsl(var(--card))"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="1"
+                    opacity="0.95"
+                  />
+                  {/* Arrow */}
+                  <polygon
+                    points={`${markerX - 5},${tooltipY + 30} ${markerX},${tooltipY + 36} ${markerX + 5},${tooltipY + 30}`}
+                    fill="hsl(var(--card))"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="1"
+                  />
+                  <rect
+                    x={tooltipX + 1}
+                    y={tooltipY + 28}
+                    width={tooltipWidth - 2}
+                    height={4}
+                    fill="hsl(var(--card))"
+                  />
+                  <text
+                    x={markerX}
+                    y={tooltipY + 13}
+                    textAnchor="middle"
+                    fill="hsl(var(--card-foreground))"
+                    style={{ font: "bold 10px Arial, sans-serif" }}
+                  >
+                    {cityData.city}
+                  </text>
+                  <text
+                    x={markerX}
+                    y={tooltipY + 24}
+                    textAnchor="middle"
+                    fill="hsl(var(--muted-foreground))"
+                    style={{ font: "9px Arial, sans-serif" }}
+                  >
+                    {cityData.date}
+                  </text>
+                </g>
+              )}
             </g>
           );
         })}
