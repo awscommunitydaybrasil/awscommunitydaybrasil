@@ -1,8 +1,8 @@
-import regionCentroOeste from "@/assets/region-centro-oeste.jpg";
-import regionSudeste from "@/assets/region-sudeste.jpg";
-import regionNordeste from "@/assets/region-nordeste.jpg";
-import regionSul from "@/assets/region-sul.jpg";
-import regionNorte from "@/assets/region-norte.jpg";
+import postcardBrasilia from "@/assets/postcard-brasilia.png";
+import postcardBH from "@/assets/postcard-bh.png";
+import postcardSalvador from "@/assets/postcard-salvador.png";
+import postcardCuritiba from "@/assets/postcard-curitiba.png";
+import postcardBelem from "@/assets/postcard-belem.png";
 
 const leaders = [
   {
