@@ -116,11 +116,6 @@ const LeaderCard = ({
         {leader}
       </h3>
 
-      {/* Badge */}
-      <span className="inline-block text-[10px] font-semibold tracking-[0.2em] uppercase text-primary-foreground bg-primary/80 px-3 py-1 rounded-full mb-4">
-        Líder Regional
-      </span>
-
       {/* Region + city */}
       <p className="text-base font-semibold font-display text-foreground mb-0.5">{name}</p>
       <p className="text-sm text-muted-foreground mb-1">{city}</p>
