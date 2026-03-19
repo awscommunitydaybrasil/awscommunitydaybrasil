@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import postcardBH from "@/assets/postcard-bh.png";
 import postcardSalvador from "@/assets/postcard-salvador.png";
