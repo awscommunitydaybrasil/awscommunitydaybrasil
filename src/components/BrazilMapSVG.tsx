@@ -89,6 +89,7 @@ const hostCityData: Record<string, { city: string; date: string }> = {
 
 const BrazilMapSVG = () => {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
+  const [hoveredHost, setHoveredHost] = useState<string | null>(null);
 
   const getStateFill = (code: string) => {
     const region = stateToRegion[code];
