@@ -9,7 +9,7 @@ const leaders = [
     name: "Centro-Oeste",
     city: "Brasília",
     date: "27/06/2026",
-    image: regionCentroOeste,
+    image: postcardBrasilia,
     leader: "Wagner Landim",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-31.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
