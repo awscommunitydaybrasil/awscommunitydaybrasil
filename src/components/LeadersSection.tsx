@@ -19,7 +19,7 @@ const leaders = [
     name: "Sudeste",
     city: "Belo Horizonte",
     date: "Em breve",
-    image: regionSudeste,
+    image: postcardBH,
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
