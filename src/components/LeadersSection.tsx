@@ -1,15 +1,15 @@
-import regionCentroOeste from "@/assets/region-centro-oeste.jpg";
-import regionSudeste from "@/assets/region-sudeste.jpg";
-import regionNordeste from "@/assets/region-nordeste.jpg";
-import regionSul from "@/assets/region-sul.jpg";
-import regionNorte from "@/assets/region-norte.jpg";
+import postcardBrasilia from "@/assets/postcard-brasilia.png";
+import postcardBH from "@/assets/postcard-bh.png";
+import postcardSalvador from "@/assets/postcard-salvador.png";
+import postcardCuritiba from "@/assets/postcard-curitiba.png";
+import postcardBelem from "@/assets/postcard-belem.png";
 
 const leaders = [
   {
     name: "Centro-Oeste",
     city: "Brasília",
     date: "27/06/2026",
-    image: regionCentroOeste,
+    image: postcardBrasilia,
     leader: "Wagner Landim",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-31.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
@@ -19,7 +19,7 @@ const leaders = [
     name: "Sudeste",
     city: "Belo Horizonte",
     date: "Em breve",
-    image: regionSudeste,
+    image: postcardBH,
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
@@ -29,7 +29,7 @@ const leaders = [
     name: "Nordeste",
     city: "Salvador",
     date: "Em breve",
-    image: regionNordeste,
+    image: postcardSalvador,
     leader: "Caio Nunes",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
@@ -39,7 +39,7 @@ const leaders = [
     name: "Sul",
     city: "Curitiba",
     date: "Em breve",
-    image: regionSul,
+    image: postcardCuritiba,
     leader: "Alceu Neto",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
@@ -49,7 +49,7 @@ const leaders = [
     name: "Norte",
     city: "Belém",
     date: "Em breve",
-    image: regionNorte,
+    image: postcardBelem,
     leader: "Thayana Mamoré",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
     leaderLinkedin: "https://www.linkedin.com/in/thayanacmamore/",
@@ -115,11 +115,6 @@ const LeaderCard = ({
       <h3 className="text-xl font-bold font-display text-foreground mb-1">
         {leader}
       </h3>
-
-      {/* Badge */}
-      <span className="inline-block text-[10px] font-semibold tracking-[0.2em] uppercase text-primary-foreground bg-primary/80 px-3 py-1 rounded-full mb-4">
-        Líder Regional
-      </span>
 
       {/* Region + city */}
       <p className="text-base font-semibold font-display text-foreground mb-0.5">{name}</p>
