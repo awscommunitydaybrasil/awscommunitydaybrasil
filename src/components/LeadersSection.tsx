@@ -68,67 +68,91 @@ const LeaderCard = ({
   link,
 }: (typeof leaders)[number]) => (
   <div
-    className="group relative overflow-hidden rounded-lg"
+    className="group relative overflow-hidden rounded-lg aspect-[3/4]"
     style={{ boxShadow: "var(--shadow-card)" }}
   >
-    <div className="relative aspect-[4/3]">
-      <img
-        src={image}
-        alt={`${city} - ${name}`}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-lg transition-colors duration-300" />
+    {/* Background postcard image */}
+    <img
+      src={image}
+      alt={`${city} - ${name}`}
+      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+    />
 
-      <div className="relative h-full flex flex-col justify-end p-5">
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-1 font-display">
-          {date}
-        </p>
-        <h3 className="text-xl font-bold font-display text-foreground mb-0.5">{name}</h3>
-        <p className="text-sm text-muted-foreground mb-3">{city}</p>
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
 
-        <a
-          href={leaderLinkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 group/leader"
+    {/* Hover border glow */}
+    <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary transition-colors duration-300" />
+
+    {/* Content */}
+    <div className="relative h-full flex flex-col items-center justify-center p-5 text-center">
+      {/* Leader photo - large and prominent */}
+      <a
+        href={leaderLinkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative mb-5 group/photo"
+      >
+        <div
+          className="w-28 h-28 rounded-full overflow-hidden border-[3px] border-primary transition-transform duration-500 group-hover:scale-105"
+          style={{ boxShadow: "var(--shadow-glow)" }}
         >
           <img
             src={leaderPhoto}
             alt={leader}
-            className="w-10 h-10 rounded-full object-cover border-2 border-border group-hover/leader:border-primary transition-colors"
+            className="w-full h-full object-cover"
           />
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Líder</p>
-            <p className="text-sm font-semibold text-foreground group-hover/leader:text-primary transition-colors">
-              {leader}
-            </p>
-          </div>
-        </a>
+        </div>
+        {/* LinkedIn icon overlay */}
+        <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-primary-foreground">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+      </a>
 
-        {link !== "#" && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-3"
+      {/* Leader name */}
+      <h3 className="text-xl font-bold font-display text-foreground mb-1">
+        {leader}
+      </h3>
+
+      {/* Badge */}
+      <span className="inline-block text-[10px] font-semibold tracking-[0.2em] uppercase text-primary-foreground bg-primary/80 px-3 py-1 rounded-full mb-4">
+        Líder Regional
+      </span>
+
+      {/* Region + city */}
+      <p className="text-base font-semibold font-display text-foreground mb-0.5">{name}</p>
+      <p className="text-sm text-muted-foreground mb-1">{city}</p>
+
+      {/* Date */}
+      <p className="text-xs font-semibold tracking-[0.15em] uppercase text-primary font-display">
+        {date}
+      </p>
+
+      {/* Event link */}
+      {link !== "#" && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
+        >
+          Ver evento
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            Ver evento
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        )}
-      </div>
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      )}
     </div>
   </div>
 );
