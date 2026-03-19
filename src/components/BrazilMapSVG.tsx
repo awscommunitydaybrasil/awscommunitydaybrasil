@@ -71,11 +71,11 @@ const states: StateData[] = [
 
 // Host marker pin positions (approximate label positions from the SVG text transforms)
 const hostMarkerPositions: Record<string, { x: number; y: number }> = {
-  PA: { x: 258, y: 95 },   // Belém - north of PA state
-  DF: { x: 300, y: 240 },  // Brasília - DF region
-  BA: { x: 375, y: 195 },  // Salvador - east coast of BA
-  MG: { x: 345, y: 280 },  // Belo Horizonte - center of MG
-  PR: { x: 262, y: 350 },  // Curitiba - center of PR
+  PA: { x: 280, y: 88 },   // Belém - northeast of PA
+  DF: { x: 292, y: 246 },  // Brasília - matches DF SVG position
+  BA: { x: 398, y: 195 },  // Salvador - east coast of BA
+  MG: { x: 340, y: 280 },  // Belo Horizonte - south-center of MG
+  PR: { x: 278, y: 350 },  // Curitiba - east side of PR
 };
 
 const BrazilMapSVG = () => {
