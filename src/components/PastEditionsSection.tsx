@@ -1,3 +1,5 @@
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 const editions = [
   {
     year: "Setembro 2025",
@@ -38,10 +40,16 @@ const editions = [
 ];
 
 const PastEditionsSection = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: listRef, isVisible: listVisible } = useScrollAnimation();
+
   return (
     <section id="anteriores" className="py-24 bg-secondary">
       <div className="container max-w-3xl">
-        <div className="text-center mb-4">
+        <div
+          ref={titleRef}
+          className={`text-center mb-4 transition-all duration-700 ease-out ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
             Edições Anteriores
           </h2>
@@ -49,14 +57,15 @@ const PastEditionsSection = () => {
             Confira como foram as edições anteriores do AWS Community Day Brasil
           </p>
         </div>
-        <div className="mt-10 space-y-4">
-          {editions.map((ed) => (
+        <div ref={listRef} className="mt-10 space-y-4">
+          {editions.map((ed, i) => (
             <a
               key={ed.year}
               href={ed.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-6 p-5 rounded-lg border border-border hover:border-primary/50 transition-all group"
+              className={`flex items-center gap-6 p-5 rounded-lg border border-border hover:border-primary/50 transition-all group ${listVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDuration: "700ms", transitionTimingFunction: "ease-out", transitionDelay: `${i * 100}ms` }}
             >
               <span className="text-lg md:text-xl font-bold font-display text-primary whitespace-nowrap">{ed.year}</span>
               <div className="h-px flex-1 bg-border" />
