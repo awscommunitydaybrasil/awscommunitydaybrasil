@@ -69,13 +69,22 @@ const states: StateData[] = [
   { code: "PB", label: "PB", textTransform: "matrix(1 0 0 1 425.2129 148.9893)", paths: ["M401.575,141.096c2.081-3.081,16.791-6.82,19.117-4.616c0,1.918,7.259,1.686,10.133,2.712c-0.492,3.038,12.652,1.533,14.408,2.259c1.421,0.589,3.833,11.983,1.421,12.202c-0.874-1.124-2.083-1.739-3.586-1.835c-2.957-0.027-2.546,1.863-4.383,3.108c-2.626,1.767-6.571,1.917-9.558,2.109c-0.162,1.232-3.943,4.438-5.259,4.916c-3.122,1.149-2.657-2.727-5.095-3.602c0.713-1.124,4.082-5.203,3.725-6.205c-1.423-3.846-12.051,5.52-14.981,3.506c-1.396-0.973-6.218,1.493-3.476-2.588C405.574,150.776,400.398,142.889,401.575,141.096z"], circlePath: "M433.797,133.597c6.237,0,11.26,5.051,11.26,11.261c0,6.226-5.022,11.262-11.26,11.262c-6.208,0-11.257-5.036-11.257-11.262C422.54,138.647,427.589,133.597,433.797,133.597z" },
 ];
 
-// Host marker pin positions (approximate label positions from the SVG text transforms)
+// Host marker pin positions
 const hostMarkerPositions: Record<string, { x: number; y: number }> = {
-  PA: { x: 280, y: 88 },   // Belém - northeast of PA
-  DF: { x: 292, y: 246 },  // Brasília - matches DF SVG position
-  BA: { x: 398, y: 195 },  // Salvador - east coast of BA
-  MG: { x: 340, y: 280 },  // Belo Horizonte - south-center of MG
-  PR: { x: 278, y: 350 },  // Curitiba - east side of PR
+  PA: { x: 240, y: 118 },
+  DF: { x: 292, y: 246 },
+  BA: { x: 365, y: 205 },
+  MG: { x: 340, y: 280 },
+  PR: { x: 255, y: 358 },
+};
+
+// Host city data for tooltips
+const hostCityData: Record<string, { city: string; date: string }> = {
+  PA: { city: "Belém", date: "Em breve" },
+  DF: { city: "Brasília", date: "26 Jul" },
+  BA: { city: "Salvador", date: "Em breve" },
+  MG: { city: "Belo Horizonte", date: "21 Jun" },
+  PR: { city: "Curitiba", date: "Em breve" },
 };
 
 const BrazilMapSVG = () => {
