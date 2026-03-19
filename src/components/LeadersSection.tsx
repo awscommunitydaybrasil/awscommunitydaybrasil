@@ -39,7 +39,7 @@ const leaders = [
     name: "Sul",
     city: "Curitiba",
     date: "Em breve",
-    image: regionSul,
+    image: postcardCuritiba,
     leader: "Alceu Neto",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
