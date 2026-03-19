@@ -14,7 +14,7 @@ const leaders = [
     leader: "Wagner Landim",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-31.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
-    link: "https://www.awscommunityday.com.br/centrooeste/index.html",
+    link: "/centro-oeste",
   },
   {
     name: "Sudeste",
