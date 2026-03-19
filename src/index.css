@@ -68,4 +68,17 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .hero-fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-enter 0.8s ease-out forwards;
+  }
+
+  @keyframes hero-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
