@@ -2,3 +2,7 @@
 .vs
 .vscode
 .DS_Store
+norte/node_modules
+norte/.next
+norte/dist
+norte/.yarn

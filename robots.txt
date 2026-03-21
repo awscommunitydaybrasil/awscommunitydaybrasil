@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awscommunityday.com.br/sitemap.xml
+Sitemap: https://awscommunityday.com.br/norte/sitemap.xml

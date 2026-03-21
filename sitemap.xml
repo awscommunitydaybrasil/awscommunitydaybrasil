@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Raiz -->
+  <url>
+    <loc>https://awscommunityday.com.br/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Norte (detalhes em /norte/sitemap.xml gerado pelo next-sitemap) -->
+  <url>
+    <loc>https://awscommunityday.com.br/norte/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Centro-Oeste -->
+  <url>
+    <loc>https://awscommunityday.com.br/centrooeste/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sudeste -->
+  <url>
+    <loc>https://awscommunityday.com.br/sudeste/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
