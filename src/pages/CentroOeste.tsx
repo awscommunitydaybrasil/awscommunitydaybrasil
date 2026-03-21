@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import logo from "@/assets/logo-community-day.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -88,14 +88,6 @@ const expectations = [
   },
 ];
 
-const pastEditions = [
-  { year: "Setembro 2025", location: "Campinas / SP", description: "Edição realizada no Expo Dom Pedro", link: "https://www.awscommunityday.com.br/hist/2025-dec/index.html" },
-  { year: "Novembro 2024", location: "Goiânia e Florianópolis", description: "Edição simultânea em duas cidades", link: "https://www.awscommunityday.com.br/hist/2024-nov/index.html" },
-  { year: "2023", location: "Ribeirão Preto / SP", description: "Confira os podcasts da edição", link: "https://youtube.com/playlist?list=PLM7HrN8Vfc3o3H6LK-iR7SNq5pPNWfgtF&si=duFt9rD1N78tyF3Z" },
-  { year: "2022", location: "Online", description: "Edição on-line", link: "https://youtube.com/playlist?list=PLM7HrN8Vfc3qkHf4siwu-S6TI3MzQBQ25&si=MbGxr-45Ku2PeB32" },
-  { year: "2021", location: "Online", description: "Edição on-line", link: "https://youtube.com/playlist?list=PL7D77BqXy3EPzqoHxUtT2ZfJ4uRLV2Apt&si=dhI8shGmEX08sXAB" },
-  { year: "2020", location: "Online", description: "Edição on-line", link: "#" },
-];
 
 const CentroOeste = () => {
   useEffect(() => {
@@ -107,7 +99,7 @@ const CentroOeste = () => {
   const { ref: scheduleRef, isVisible: scheduleVisible } = useScrollAnimation();
   const { ref: sponsorsRef, isVisible: sponsorsVisible } = useScrollAnimation();
   const { ref: orgRef, isVisible: orgVisible } = useScrollAnimation();
-  const { ref: pastRef, isVisible: pastVisible } = useScrollAnimation();
+  
   const countdown = useCountdown(TARGET_DATE);
 
   return (
@@ -146,7 +138,7 @@ const CentroOeste = () => {
       </section>
 
       {/* Countdown */}
-      <section className="py-16">
+      <section className="py-6">
         <div className="container max-w-3xl text-center">
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 font-display">
             Contagem Regressiva
@@ -311,46 +303,64 @@ const CentroOeste = () => {
         </div>
       </section>
 
-      {/* Edições Anteriores */}
-      <section className="py-20 bg-secondary">
-        <div className="container max-w-3xl">
-          <div
-            ref={pastRef}
-            className={`text-center mb-4 transition-all duration-700 ease-out ${pastVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
-              Edições Anteriores
-            </h2>
-            <p className="text-muted-foreground mt-3">
-              Confira como foram as edições anteriores do AWS Community Day Brasil
-            </p>
-          </div>
-          <div className="mt-10 space-y-4">
-            {pastEditions.map((ed, i) => (
+      {/* Rodapé Regional */}
+      <footer className="py-16 border-t border-border bg-card">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            {/* Redes Sociais */}
+            <div>
+              <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Redes Sociais</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="https://www.instagram.com/awscommunitydaybr/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/aws-community-day-brasil/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</a></li>
+                <li><a href="https://twitter.com/awscommunitybr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">X (Twitter)</a></li>
+                <li><a href="https://www.youtube.com/@AWSUserGroupBrasil" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">YouTube</a></li>
+              </ul>
+            </div>
+
+            {/* User Groups */}
+            <div>
+              <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">User Groups</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="https://www.meetup.com/pt-BR/awsbsb/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">AWS User Group Brasília</a></li>
+                <li><a href="https://www.meetup.com/pt-BR/awsgyn/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">AWS User Group Goiânia</a></li>
+                <li><a href="https://www.meetup.com/pt-BR/awscgr/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">AWS User Group Campo Grande</a></li>
+              </ul>
+            </div>
+
+            {/* Contato */}
+            <div>
+              <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Contato</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="mailto:contato@awscommunityday.com.br" className="text-muted-foreground hover:text-primary transition-colors">contato@awscommunityday.com.br</a></li>
+                <li><a href="https://www.awscommunityday.com.br" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">awscommunityday.com.br</a></li>
+              </ul>
+            </div>
+
+            {/* Código de Conduta */}
+            <div>
+              <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Código de Conduta</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                Nosso evento segue um código de conduta para garantir um ambiente seguro e inclusivo para todos.
+              </p>
               <a
-                key={ed.year}
-                href={ed.link}
+                href="https://aws.amazon.com/codeofconduct/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-6 p-5 rounded-lg border border-border hover:border-primary/50 transition-all group ${pastVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-                style={{ transitionDuration: "700ms", transitionTimingFunction: "ease-out", transitionDelay: `${i * 100}ms` }}
+                className="text-sm text-primary hover:underline font-medium"
               >
-                <span className="text-lg md:text-xl font-bold font-display text-primary whitespace-nowrap">{ed.year}</span>
-                <div className="h-px flex-1 bg-border" />
-                <div className="text-right">
-                  <p className="text-foreground font-medium">{ed.location}</p>
-                  <p className="text-sm text-muted-foreground">{ed.description}</p>
-                </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                Leia o Código de Conduta →
               </a>
-            ))}
+            </div>
+          </div>
+
+          <div className="mt-12 pt-6 border-t border-border text-center">
+            <p className="text-xs text-muted-foreground">
+              © 2026 AWS Community Day Brasil — Edição Centro-Oeste. Organizado pela comunidade, para a comunidade.
+            </p>
           </div>
         </div>
-      </section>
-
-      <Footer />
+      </footer>
     </div>
   );
 };
