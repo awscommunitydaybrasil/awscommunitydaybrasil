@@ -1,0 +1,19 @@
+{
+  "name": "Normal",
+  "price": "R$ 60,00",
+  "description": "Ingresso individual inteira",
+  "icon": "Ticket",
+  "featured": false,
+  "badge": "",
+  "ctaLabel": "Comprar Ingresso",
+  "ctaUrl": "https://sympla.com.br/evento/aws-community-day-norte-2026",
+  "note": "",
+  "benefits": [
+    { "item": "Acesso a todas as palestras" },
+    { "item": "Acesso aos workshops" },
+    { "item": "Kit do participante" },
+    { "item": "Certificado digital" },
+    { "item": "Coffee break incluso" }
+  ],
+  "order": 1
+}

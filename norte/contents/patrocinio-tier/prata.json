@@ -1,0 +1,17 @@
+{
+  "name": "Prata",
+  "price": "R$ 3.000",
+  "icon": "Award",
+  "featured": true,
+  "badge": "Recomendado",
+  "ctaLabel": "Ser Prata",
+  "benefits": [
+    { "item": "Tudo do plano Bronze" },
+    { "item": "Logo em destaque no backdrop" },
+    { "item": "Stand médio no evento" },
+    { "item": "6 ingressos cortesia" },
+    { "item": "Menção do apresentador no palco" },
+    { "item": "Post dedicado nas redes sociais" }
+  ],
+  "order": 3
+}

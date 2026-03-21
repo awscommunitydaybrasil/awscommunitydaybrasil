@@ -1,0 +1,16 @@
+{
+  "name": "Bronze",
+  "price": "R$ 1.500",
+  "icon": "Medal",
+  "featured": false,
+  "badge": "",
+  "ctaLabel": "Ser Bronze",
+  "benefits": [
+    { "item": "Tudo do plano Comunidade" },
+    { "item": "Logo no backdrop do palco" },
+    { "item": "Stand pequeno no evento" },
+    { "item": "4 ingressos cortesia" },
+    { "item": "Distribuição de material" }
+  ],
+  "order": 2
+}

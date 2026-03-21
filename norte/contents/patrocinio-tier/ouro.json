@@ -1,0 +1,18 @@
+{
+  "name": "Ouro",
+  "price": "R$ 5.000",
+  "icon": "Trophy",
+  "featured": false,
+  "badge": "",
+  "ctaLabel": "Ser Ouro",
+  "benefits": [
+    { "item": "Tudo do plano Prata" },
+    { "item": "Logo principal no backdrop e materiais" },
+    { "item": "Stand grande em posição privilegiada" },
+    { "item": "10 ingressos cortesia" },
+    { "item": "Palestra ou workshop de 15 min" },
+    { "item": "Vídeo de agradecimento nas redes" },
+    { "item": "Naming: 'Patrocinado por [Empresa]'" }
+  ],
+  "order": 4
+}

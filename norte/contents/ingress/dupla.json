@@ -1,0 +1,19 @@
+{
+  "name": "Dupla",
+  "price": "R$ 100,00",
+  "description": "Dois ingressos com desconto especial",
+  "icon": "Users",
+  "featured": true,
+  "badge": "Mais Popular",
+  "ctaLabel": "Comprar Dupla",
+  "ctaUrl": "https://sympla.com.br/evento/aws-community-day-norte-2026",
+  "note": "",
+  "benefits": [
+    { "item": "2 ingressos individuais" },
+    { "item": "Economia de R$ 20,00" },
+    { "item": "Acesso completo ao evento" },
+    { "item": "Kit do participante para cada" },
+    { "item": "Certificado digital para cada" }
+  ],
+  "order": 3
+}

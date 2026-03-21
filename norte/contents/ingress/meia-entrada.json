@@ -1,0 +1,19 @@
+{
+  "name": "Meia-Entrada",
+  "price": "R$ 30,00",
+  "description": "Estudantes, professores, PCD e ID Jovem",
+  "icon": "GraduationCap",
+  "featured": false,
+  "badge": "",
+  "ctaLabel": "Comprar Meia",
+  "ctaUrl": "https://sympla.com.br/evento/aws-community-day-norte-2026",
+  "note": "* Necessário apresentar comprovante na entrada",
+  "benefits": [
+    { "item": "Acesso a todas as palestras" },
+    { "item": "Acesso aos workshops" },
+    { "item": "Kit do participante" },
+    { "item": "Certificado digital" },
+    { "item": "Coffee break incluso" }
+  ],
+  "order": 2
+}

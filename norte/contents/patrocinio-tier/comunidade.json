@@ -1,0 +1,14 @@
+{
+  "name": "Comunidade",
+  "price": "R$ 500",
+  "icon": "Sprout",
+  "featured": false,
+  "badge": "",
+  "ctaLabel": "Quero Apoiar",
+  "benefits": [
+    { "item": "Logo no site do evento" },
+    { "item": "Menção nas redes sociais" },
+    { "item": "2 ingressos cortesia" }
+  ],
+  "order": 1
+}
