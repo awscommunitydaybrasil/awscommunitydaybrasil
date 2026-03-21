@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const regionColors: Record<string, string> = {
   norte: "#554492",
@@ -24,7 +25,7 @@ Object.entries(regionStates).forEach(([region, states]) => {
 const regionLinks: Record<string, string> = {
   norte: "#",
   nordeste: "#",
-  centroOeste: "https://www.awscommunityday.com.br/centrooeste/index.html",
+  centroOeste: "/centro-oeste",
   sudeste: "https://www.awscommunityday.com.br/sudeste/index.html",
   sul: "#",
 };
@@ -90,6 +91,7 @@ const hostCityData: Record<string, { city: string; date: string }> = {
 const BrazilMapSVG = () => {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [hoveredHost, setHoveredHost] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const getStateFill = (code: string) => {
     const region = stateToRegion[code];
@@ -109,7 +111,11 @@ const BrazilMapSVG = () => {
     if (!region) return;
     const link = regionLinks[region];
     if (link && link !== "#") {
-      window.open(link, "_blank", "noopener,noreferrer");
+      if (link.startsWith("/")) {
+        navigate(link);
+      } else {
+        window.open(link, "_blank", "noopener,noreferrer");
+      }
     }
   };
 

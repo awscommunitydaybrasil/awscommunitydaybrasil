@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -77,6 +78,9 @@ const pastEditions = [
 ];
 
 const CentroOeste = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
   const { ref: expectRef, isVisible: expectVisible } = useScrollAnimation();
