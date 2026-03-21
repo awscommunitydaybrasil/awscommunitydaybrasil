@@ -78,6 +78,9 @@ const pastEditions = [
 ];
 
 const CentroOeste = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
   const { ref: expectRef, isVisible: expectVisible } = useScrollAnimation();
