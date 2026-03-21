@@ -144,6 +144,32 @@ const CentroOeste = () => {
         </div>
       </section>
 
+      {/* Countdown */}
+      <section className="py-16">
+        <div className="container max-w-3xl text-center">
+          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 font-display">
+            Contagem Regressiva
+          </p>
+          <div className="flex justify-center gap-4 md:gap-8">
+            {([
+              ["days", "Dias"],
+              ["hours", "Horas"],
+              ["minutes", "Min"],
+              ["seconds", "Seg"],
+            ] as const).map(([key, label]) => (
+              <div key={key} className="flex flex-col items-center">
+                <span className="text-4xl md:text-6xl font-bold font-display text-primary tabular-nums">
+                  {String(countdown[key]).padStart(2, "0")}
+                </span>
+                <span className="text-xs md:text-sm text-muted-foreground mt-1 font-display uppercase tracking-wider">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Info Cards */}
       <section className="py-20">
         <div
