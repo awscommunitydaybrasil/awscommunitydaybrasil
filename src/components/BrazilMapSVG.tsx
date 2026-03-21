@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const regionColors: Record<string, string> = {
   norte: "#554492",
