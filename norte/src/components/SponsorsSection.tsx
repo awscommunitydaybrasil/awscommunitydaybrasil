@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import type { Patrocinador } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 type Props = { sponsors: Patrocinador[] };
 
@@ -21,7 +22,7 @@ const SponsorCard = ({ sponsor, size }: { sponsor: Patrocinador; size: string })
     className={`${size} rounded-xl bg-card border border-border flex items-center justify-center hover:border-primary hover:shadow-md transition-all duration-300 p-4`}
   >
     {sponsor.logoUrl ? (
-      <img src={sponsor.logoUrl} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+      <img src={imgSrc(sponsor.logoUrl)} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
     ) : (
       <span className="text-muted-foreground font-semibold text-center">{sponsor.name}</span>
     )}

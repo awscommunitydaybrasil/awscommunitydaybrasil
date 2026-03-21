@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Linkedin, Twitter, Github, ArrowLeft } from "lucide-react";
 import { getSpeakers, getSpeakerBySlug, getSchedule, getSettings } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 const settings = getSettings();
 
@@ -74,7 +75,7 @@ export default async function SpeakerPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row gap-8 items-start mb-10">
             <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/20 shrink-0">
               {speaker.photo ? (
-                <img src={speaker.photo} alt={speaker.name} className="w-full h-full object-cover" />
+                <img src={imgSrc(speaker.photo)} alt={speaker.name} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full bg-muted flex items-center justify-center text-4xl font-bold text-muted-foreground">
                   {speaker.name.charAt(0)}

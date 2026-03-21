@@ -2,6 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import type { Speaker } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 type Props = { speakers: Speaker[] };
 
@@ -19,7 +20,7 @@ const SpeakersSection = ({ speakers }: Props) => (
             <div className="bg-card rounded-2xl border border-border p-6 text-center card-hover">
               <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4">
                 {s.photo ? (
-                  <img src={s.photo} alt={s.name} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={imgSrc(s.photo)} alt={s.name} className="w-full h-full object-cover" loading="lazy" />
                 ) : (
                   <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground text-2xl font-bold">
                     {s.name.charAt(0)}

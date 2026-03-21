@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, Mic } from "lucide-react";
 import { getSchedule, getScheduleBySlug, getSpeakers, getSettings } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 const settings = getSettings();
 
@@ -105,7 +106,7 @@ export default async function TalkPage({ params }: Props) {
             >
               <div className="w-16 h-16 rounded-full overflow-hidden shrink-0">
                 {speakerDetail.photo ? (
-                  <img src={speakerDetail.photo} alt={speakerDetail.name} className="w-full h-full object-cover" />
+                  <img src={imgSrc(speakerDetail.photo)} alt={speakerDetail.name} className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-muted flex items-center justify-center text-xl font-bold text-muted-foreground">
                     {speakerDetail.name.charAt(0)}
