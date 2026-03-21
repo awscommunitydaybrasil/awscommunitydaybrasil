@@ -1,10 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import logo from "@/assets/logo-community-day.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+const TARGET_DATE = new Date("2026-06-27T09:00:00-03:00");
+
+function useCountdown(targetDate: Date) {
+  const calc = () => {
+    const diff = Math.max(0, targetDate.getTime() - Date.now());
+    return {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [time, setTime] = useState(calc);
+  useEffect(() => {
+    const id = setInterval(() => setTime(calc()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
 
 const organizers = [
   {
