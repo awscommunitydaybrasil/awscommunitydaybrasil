@@ -1,20 +1,16 @@
 import OrgTeamSection from "@/components/OrgTeamSection";
 import { Mail, MapPin, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { getSettings, getEquipe } from "@/lib/cms";
-import siteData from "@/data/site.json";
 
 export default function ContactContent() {
   const settings = getSettings();
   const team     = getEquipe();
 
-  const contactEmail     = settings.contactEmail     || siteData.contact.email;
-  const sponsorshipEmail = settings.sponsorshipEmail || siteData.contact.sponsorshipEmail;
-
   const socials = [
-    { icon: Instagram, label: "Instagram",  href: settings.instagram  || siteData.social.instagram },
-    { icon: Linkedin,  label: "LinkedIn",   href: settings.linkedin   || siteData.social.linkedin  },
-    { icon: Twitter,   label: "X / Twitter",href: settings.twitter    || siteData.social.twitterUrl },
-    { icon: Youtube,   label: "YouTube",    href: settings.youtube    || siteData.social.youtube   },
+    { icon: Instagram, label: "Instagram",   href: settings.instagram },
+    { icon: Linkedin,  label: "LinkedIn",    href: settings.linkedin  },
+    { icon: Twitter,   label: "X / Twitter", href: settings.twitter   },
+    { icon: Youtube,   label: "YouTube",     href: settings.youtube   },
   ].filter((s) => s.href && s.href !== "#");
 
   return (
@@ -32,29 +28,29 @@ export default function ContactContent() {
               <Mail className="text-primary" size={22} />
             </div>
             <h3 className="text-lg font-bold text-foreground">E-mail Geral</h3>
-            <a href={`mailto:${contactEmail}`} className="font-medium text-primary hover:underline">
-              {contactEmail}
+            <a href={`mailto:${settings.contactEmail}`} className="font-medium text-primary hover:underline">
+              {settings.contactEmail}
             </a>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-              <Mail className="text-primary" size={22} />
+          {settings.sponsorshipEmail && (
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                <Mail className="text-primary" size={22} />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Patrocínio</h3>
+              <a href={`mailto:${settings.sponsorshipEmail}`} className="font-medium text-primary hover:underline">
+                {settings.sponsorshipEmail}
+              </a>
             </div>
-            <h3 className="text-lg font-bold text-foreground">Patrocínio</h3>
-            <a href={`mailto:${sponsorshipEmail}`} className="font-medium text-primary hover:underline">
-              {sponsorshipEmail}
-            </a>
-          </div>
+          )}
 
           <div className="flex flex-col items-center gap-2">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
               <MapPin className="text-primary" size={22} />
             </div>
             <h3 className="text-lg font-bold text-foreground">Local do Evento</h3>
-            <p className="text-muted-foreground">
-              {settings.venueCity || siteData.event.location.city}
-            </p>
+            <p className="text-muted-foreground">{settings.venueCity}</p>
           </div>
 
           {socials.length > 0 && (
