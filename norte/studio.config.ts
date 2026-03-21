@@ -23,6 +23,20 @@ const config: StudioConfig = {
           { name: "showVenue",         type: "boolean", defaultValue: true  },
           { name: "showFaq",           type: "boolean", defaultValue: true  },
           { name: "showCta",           type: "boolean", defaultValue: true  },
+          // Site identity
+          { name: "siteName",          type: "text" },
+          { name: "siteTagline",       type: "text" },
+          { name: "siteDescription",   type: "long-text" },
+          { name: "siteUrl",           type: "url"  },
+          { name: "ogImage",           type: "url"  },
+          { name: "locale",            type: "text" },
+          { name: "organizationName",  type: "text" },
+          // Event date
+          { name: "eventDisplayDate",  type: "text" },
+          { name: "eventStartDate",    type: "text" },
+          { name: "eventEndDate",      type: "text" },
+          { name: "eventRegion",       type: "text" },
+          { name: "eventCountry",      type: "text" },
           // Location
           { name: "venueName",         type: "text" },
           { name: "venueAddress",      type: "text" },
@@ -209,6 +223,18 @@ const config: StudioConfig = {
           { name: "question", type: "text",      required: true },
           { name: "answer",   type: "long-text", required: true },
           { name: "order",    type: "number" },
+        ],
+      },
+    },
+
+    navigation: {
+      schema: {
+        collection: "navigation",
+        label: "Navegação",
+        fields: [
+          { name: "label",  type: "text",   required: true },
+          { name: "href",   type: "text",   required: true },
+          { name: "order",  type: "number" },
         ],
       },
     },

@@ -48,7 +48,7 @@ export default function HomeContent() {
       {settings.showSponsors    && <SponsorsSection sponsors={sponsors} />}
       {settings.showSponsorship && <SponsorshipSection tiers={tiers} settings={settings} />}
       {settings.showFaq         && <FAQSection faqs={faqs} />}
-      {settings.showCta         && <CTASection />}
+      {settings.showCta         && <CTASection settings={settings} />}
     </main>
   );
 }

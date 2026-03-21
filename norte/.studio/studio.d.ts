@@ -77,6 +77,13 @@ export interface IngressEntry {
   order: number;
 }
 
+/** Data shape for the "navigation" collection. */
+export interface NavigationEntry {
+  label: string;
+  href: string;
+  order: number;
+}
+
 /** Data shape for the "patrocinadores" collection. */
 export interface PatrocinadoresEntry {
   name: string;
@@ -126,16 +133,34 @@ export interface SettingssiteEntry {
   showVenue: boolean;
   showFaq: boolean;
   showCta: boolean;
+  // Site identity
+  siteName: string;
+  siteTagline: string;
+  siteDescription: string;
+  siteUrl: string;
+  ogImage: string;
+  locale: string;
+  organizationName: string;
+  // Event
+  eventDisplayDate: string;
+  eventStartDate: string;
+  eventEndDate: string;
+  eventRegion: string;
+  eventCountry: string;
+  // Location
   venueName: string;
   venueAddress: string;
   venueCity: string;
   venueMapUrl: string;
+  // Social
   instagram: HttpUrl;
   linkedin: HttpUrl;
   twitter: HttpUrl;
   youtube: HttpUrl;
+  // Contact
   contactEmail: Email;
   sponsorshipEmail: Email;
+  // Footer links
   codeOfConductUrl: string;
   privacyPolicyUrl: string;
 }
@@ -162,6 +187,7 @@ declare module 'nextjs-studio' {
     "equipe": EquipeEntry;
     "faq": FaqEntry;
     "ingress": IngressEntry;
+    "navigation": NavigationEntry;
     "patrocinadores": PatrocinadoresEntry;
     "patrocinio-tier": PatrocinioTierEntry;
     "schedule": ScheduleEntry;
@@ -177,6 +203,7 @@ declare module 'nextjs-studio/server' {
     "equipe": EquipeEntry;
     "faq": FaqEntry;
     "ingress": IngressEntry;
+    "navigation": NavigationEntry;
     "patrocinadores": PatrocinadoresEntry;
     "patrocinio-tier": PatrocinioTierEntry;
     "schedule": ScheduleEntry;
