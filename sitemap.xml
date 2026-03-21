@@ -18,13 +18,13 @@
   <url>
     <loc>https://awscommunityday.com.br/centrooeste/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
   <!-- Sudeste -->
   <url>
     <loc>https://awscommunityday.com.br/sudeste/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>
