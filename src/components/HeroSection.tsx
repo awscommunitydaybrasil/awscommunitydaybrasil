@@ -44,7 +44,7 @@ const HeroSection = () => {
         <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-4 font-display hero-fade-in" style={{ animationDelay: "0.2s" }}>
           2026
         </p>
-        <img src={logo} alt="AWS Community Day Brasil" className="max-w-md md:max-w-xl lg:max-w-3xl mx-auto mb-6 hero-fade-in" style={{ animationDelay: "0.5s" }} />
+        <img src={logo} alt="AWS Community Day Brasil" className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-3xl mx-auto mb-6 px-4 sm:px-0 hero-fade-in" style={{ animationDelay: "0.5s" }} />
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body hero-fade-in" style={{ animationDelay: "0.8s" }}>
           O maior movimento de comunidades AWS do Brasil
         </p>
