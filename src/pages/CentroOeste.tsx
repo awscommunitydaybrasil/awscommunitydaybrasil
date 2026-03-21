@@ -146,7 +146,7 @@ const CentroOeste = () => {
       </section>
 
       {/* Countdown */}
-      <section className="py-16">
+      <section className="py-6">
         <div className="container max-w-3xl text-center">
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 font-display">
             Contagem Regressiva
