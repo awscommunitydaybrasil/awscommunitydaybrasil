@@ -131,17 +131,8 @@ const CentroOeste = () => {
             Edição Centro-Oeste · Brasília
           </p>
           <img src={logo} alt="AWS Community Day Brasil" className="max-w-xs md:max-w-md lg:max-w-lg mx-auto mb-6" />
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body mb-10">
             O maior evento de comunidades AWS do Centro-Oeste brasileiro
-          </p>
-        </div>
-      </section>
-
-      {/* Countdown */}
-      <section className="py-6">
-        <div className="container max-w-3xl text-center">
-          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 font-display">
-            Contagem Regressiva
           </p>
           <div className="flex justify-center gap-4 md:gap-8">
             {([
