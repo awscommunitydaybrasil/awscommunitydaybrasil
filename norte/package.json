@@ -8,7 +8,8 @@
         "lint": "eslint",
         "sitemap": "next-sitemap --config next-sitemap.config.cjs",
         "postbuild": "yarn sitemap",
-        "start": "next start"
+        "start": "next start",
+        "ts-check": "yarn tsc"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.10.0",

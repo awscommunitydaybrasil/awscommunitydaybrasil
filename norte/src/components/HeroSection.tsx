@@ -3,11 +3,18 @@
 import { useEffect, useState } from "react";
 import { CalendarDays, MapPin, Ticket } from "lucide-react";
 import { imgSrc } from "@/lib/utils";
+import type { AboutData, SettingsSite } from "@/lib/cms";
 
-type Props = { eventStartDate: string };
+type Props = {
+  about: AboutData;
+  settings: Pick<SettingsSite, "eventStartDate" | "eventDisplayDate" | "venueCity" | "hero">;
+};
 
-const HeroSection = ({ eventStartDate }: Props) => {
-  const TARGET_DATE = new Date(`${eventStartDate}T08:00:00-03:00`).getTime();
+const HeroSection = ({ about, settings }: Props) => {
+  const hero = about.hero;
+  const showCountdown  = settings.hero.showCountdown;
+  const showCtaButtons = settings.hero.showCtaButtons;
+  const TARGET_DATE = new Date(`${settings.eventStartDate}T08:00:00-03:00`).getTime();
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
 
   function getTimeLeft() {
@@ -22,6 +29,7 @@ const HeroSection = ({ eventStartDate }: Props) => {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimeLeft(getTimeLeft());
     const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(id);
@@ -43,28 +51,30 @@ const HeroSection = ({ eventStartDate }: Props) => {
           {/* Left column */}
           <div className="lg:col-span-3">
             <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-              Edição Norte 2026
+              {hero.editionLabel}
             </span>
             <h1 className="text-white font-extrabold text-4xl md:text-5xl lg:text-[52px] leading-[1.1] text-balance mb-5">
-              A maior conferência de cloud da Amazônia está de volta
+              {hero.headline}
             </h1>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-              Um dia inteiro de palestras, workshops e networking com a comunidade AWS. Para todos os níveis.
+              {hero.subtitle}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
-              <a href="#ingressos" className="btn-primary text-base py-3 px-7">
-                Garanta seu Ingresso
-              </a>
-              <a href="#programacao" className="btn-outline-white text-base py-3 px-7">
-                Ver Programação
-              </a>
-            </div>
+            {showCtaButtons && (
+              <div className="flex flex-wrap gap-3 mb-8">
+                <a href={hero.ctaPrimaryUrl} className="btn-primary text-base py-3 px-7">
+                  {hero.ctaPrimaryLabel}
+                </a>
+                <a href={hero.ctaSecondaryUrl} className="btn-outline-white text-base py-3 px-7">
+                  {hero.ctaSecondaryLabel}
+                </a>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-white/50 text-sm">
-              <span className="flex items-center gap-1.5"><CalendarDays size={15} /> 12 de Setembro de 2026</span>
-              <span className="flex items-center gap-1.5"><MapPin size={15} /> Belém, PA</span>
-              <span className="flex items-center gap-1.5"><Ticket size={15} /> Vagas Limitadas</span>
+              <span className="flex items-center gap-1.5"><CalendarDays size={15} /> {settings.eventDisplayDate}</span>
+              <span className="flex items-center gap-1.5"><MapPin size={15} /> {settings.venueCity}</span>
+              <span className="flex items-center gap-1.5"><Ticket size={15} /> {hero.ticketsLabel}</span>
             </div>
           </div>
 
@@ -72,8 +82,8 @@ const HeroSection = ({ eventStartDate }: Props) => {
           <div className="lg:col-span-2 hidden lg:flex items-center justify-center">
             <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={imgSrc("/images/hero-event.jpg")}
-                alt="Evento AWS Community Day"
+                src={imgSrc(hero.imageUrl)}
+                alt={hero.imageAlt}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -82,7 +92,7 @@ const HeroSection = ({ eventStartDate }: Props) => {
         </div>
 
         {/* Countdown */}
-        <div className="mt-16 md:mt-20">
+        {showCountdown && <div className="mt-16 md:mt-20">
           {timeLeft ? (
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               {[
@@ -107,7 +117,7 @@ const HeroSection = ({ eventStartDate }: Props) => {
           ) : (
             <p className="text-primary text-center text-xl font-bold">O evento já aconteceu!</p>
           )}
-        </div>
+        </div>}
       </div>
     </section>
   );

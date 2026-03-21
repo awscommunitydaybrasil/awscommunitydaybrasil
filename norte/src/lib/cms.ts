@@ -47,15 +47,15 @@ export interface FaqContent {
 // ── Query helpers ─────────────────────────────────────────────────────────────
 
 export function getSettings() {
-  return queryCollection("settingssite").first();
+  return queryCollection("settingssite").one() ;
 }
 
 export function getAbout() {
-  return queryCollection("about").first();
+  return queryCollection("about").one();
 }
 
 export function getCounts() {
-  return queryCollection("counts").first();
+  return queryCollection("counts").one();
 }
 
 export function getCommunity() {

@@ -19,6 +19,18 @@ export interface AboutEntry {
   paragraph3: string;
   imageUrl: string;
   imageAlt: string;
+  hero: {
+    editionLabel: string;
+    headline: string;
+    subtitle: string;
+    ctaPrimaryLabel: string;
+    ctaPrimaryUrl: string;
+    ctaSecondaryLabel: string;
+    ctaSecondaryUrl: string;
+    ticketsLabel: string;
+    imageUrl: string;
+    imageAlt: string;
+  };
 }
 
 /** Data shape for the "community" collection. */
@@ -121,18 +133,24 @@ export interface ScheduleEntry {
 
 /** Data shape for the "settingssite" collection. */
 export interface SettingssiteEntry {
-  showHero: boolean;
-  showAbout: boolean;
-  showCounts: boolean;
-  showIngress: boolean;
-  showSchedule: boolean;
-  showSpeakers: boolean;
-  showSponsors: boolean;
-  showSponsorship: boolean;
-  showUserGroups: boolean;
-  showVenue: boolean;
-  showFaq: boolean;
-  showCta: boolean;
+  sections: {
+    hero: boolean;
+    about: boolean;
+    counts: boolean;
+    ingress: boolean;
+    schedule: boolean;
+    speakers: boolean;
+    sponsors: boolean;
+    sponsorship: boolean;
+    userGroups: boolean;
+    venue: boolean;
+    faq: boolean;
+    cta: boolean;
+  };
+  hero: {
+    showCountdown: boolean;
+    showCtaButtons: boolean;
+  };
   siteName: string;
   siteTagline: string;
   siteDescription: string;

@@ -37,18 +37,18 @@ export default function HomeContent() {
 
   return (
     <main>
-      {settings.showHero        && <HeroSection eventStartDate={settings.eventStartDate} />}
-      {settings.showAbout       && <AboutSection about={about} />}
-      {settings.showCounts      && <StatsSection counts={counts} />}
-      {settings.showIngress     && <TicketsSection tickets={tickets} />}
-      {settings.showSchedule    && <ScheduleSection items={schedule} />}
-      {settings.showSpeakers    && <SpeakersSection speakers={speakers} />}
-      {settings.showUserGroups  && <UserGroupsSection groups={community} />}
-      {settings.showVenue       && <VenueSection settings={settings} />}
-      {settings.showSponsors    && <SponsorsSection sponsors={sponsors} />}
-      {settings.showSponsorship && <SponsorshipSection tiers={tiers} settings={settings} />}
-      {settings.showFaq         && <FAQSection faqs={faqs} />}
-      {settings.showCta         && <CTASection settings={settings} />}
+      {settings.sections.hero        && <HeroSection about={about} settings={settings} />}
+      {settings.sections.about       && <AboutSection about={about} />}
+      {settings.sections.counts      && <StatsSection counts={counts} />}
+      {settings.sections.ingress     && <TicketsSection tickets={tickets} />}
+      {settings.sections.schedule    && <ScheduleSection items={schedule} />}
+      {settings.sections.speakers    && <SpeakersSection speakers={speakers} />}
+      {settings.sections.userGroups  && <UserGroupsSection groups={community} />}
+      {settings.sections.venue       && <VenueSection settings={settings} />}
+      {settings.sections.sponsors    && <SponsorsSection sponsors={sponsors} />}
+      {settings.sections.sponsorship && <SponsorshipSection tiers={tiers} settings={settings} />}
+      {settings.sections.faq         && <FAQSection faqs={faqs} />}
+      {settings.sections.cta         && <CTASection settings={settings} />}
     </main>
   );
 }
