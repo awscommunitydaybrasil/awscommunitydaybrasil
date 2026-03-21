@@ -1,6 +1,7 @@
 import ScrollReveal from "./ScrollReveal";
 import Link from "next/link";
 import type { ScheduleItem } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 type Stage = "Geral" | "Palco Talk" | "Palco Hands-On";
 
@@ -31,7 +32,7 @@ const ScheduleSection = ({ items }: Props) => (
               <div className="flex items-center gap-4 px-5 py-4 flex-1 min-w-0">
                 {s.avatar && (
                   <img
-                    src={s.avatar}
+                    src={imgSrc(s.avatar)}
                     alt={s.speaker || ""}
                     className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover shrink-0 border-2 border-border"
                   />

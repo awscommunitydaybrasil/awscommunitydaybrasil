@@ -1,6 +1,7 @@
 import ScrollReveal from "./ScrollReveal";
 import { Linkedin } from "lucide-react";
 import type { EquipeMember } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 type Props = { team: EquipeMember[] };
 
@@ -22,7 +23,7 @@ const OrgTeamSection = ({ team }: Props) => (
               <div className="relative mx-auto w-24 h-24 md:w-28 md:h-28 mb-3">
                 {m.photoUrl ? (
                   <img
-                    src={m.photoUrl}
+                    src={imgSrc(m.photoUrl)}
                     alt={m.name}
                     className="w-full h-full rounded-full object-cover border-2 border-border group-hover:border-primary transition-colors duration-300"
                   />
