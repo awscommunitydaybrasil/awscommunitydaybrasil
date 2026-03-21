@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import type { AboutData } from "@/lib/cms";
+import { imgSrc } from "@/lib/utils";
 
 type Props = { about: AboutData };
 
@@ -10,7 +11,7 @@ const AboutSection = ({ about }: Props) => (
         <ScrollReveal className="md:col-span-2">
           <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
             <img
-              src={about.imageUrl ?? "/images/about-community.jpg"}
+              src={imgSrc(about.imageUrl ?? "/images/about-community.jpg")}
               alt={about.imageAlt ?? "Comunidade AWS reunida"}
               className="w-full h-full object-cover"
               loading="lazy"

@@ -41,6 +41,8 @@ const config: StudioConfig = {
           { name: "venueName",         type: "text" },
           { name: "venueAddress",      type: "text" },
           { name: "venueCity",         type: "text" },
+          { name: "venueLat",          type: "text" },
+          { name: "venueLng",          type: "text" },
           { name: "venueMapUrl",       type: "url"  },
           // Social
           { name: "instagram",         type: "url"  },

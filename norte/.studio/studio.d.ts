@@ -148,6 +148,8 @@ export interface SettingssiteEntry {
   venueName: string;
   venueAddress: string;
   venueCity: string;
+  venueLat: string;
+  venueLng: string;
   venueMapUrl: string;
   instagram: HttpUrl;
   linkedin: HttpUrl;

@@ -1,10 +1,10 @@
 {
-  "title": "OBSERVABILIDADE E MONITORAMENTO COM CLOUDWATCH E X-RAY",
-  "time": "13:30 - 14:10",
-  "speaker": "A definir",
-  "stage": "Palco Talk",
-  "tag": "Observabilidade",
-  "avatar": "/images/speakers/speaker-6.jpg",
-  "slug": "observabilidade-cloudwatch-xray",
-  "order": 9
+    "title": "OBSERVABILIDADE E MONITORAMENTO COM CLOUDWATCH E X-RAY",
+    "time": "13:30 - 14:10",
+    "speaker": "A definir",
+    "stage": "Palco Talk",
+    "tag": "Observabilidade",
+    "avatar": "/images/speaker-6.jpg",
+    "slug": "observabilidade-cloudwatch-xray",
+    "order": 9
 }

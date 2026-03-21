@@ -1,10 +1,10 @@
 {
-  "title": "CONSTRUINDO APLICAÇÕES SERVERLESS COM AWS LAMBDA E STEP FUNCTIONS",
-  "time": "09:20 - 10:20",
-  "speaker": "A definir",
-  "stage": "Palco Hands-On",
-  "tag": "Serverless",
-  "avatar": "/images/speakers/speaker-2.jpg",
-  "slug": "aplicacoes-serverless-lambda-step-functions",
-  "order": 4
+    "title": "CONSTRUINDO APLICAÇÕES SERVERLESS COM AWS LAMBDA E STEP FUNCTIONS",
+    "time": "09:20 - 10:20",
+    "speaker": "A definir",
+    "stage": "Palco Hands-On",
+    "tag": "Serverless",
+    "avatar": "/images/speaker-2.jpg",
+    "slug": "aplicacoes-serverless-lambda-step-functions",
+    "order": 4
 }

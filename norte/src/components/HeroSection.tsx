@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { CalendarDays, MapPin, Ticket } from "lucide-react";
+import { imgSrc } from "@/lib/utils";
 
-const TARGET_DATE = new Date("2026-09-12T08:00:00-03:00").getTime();
+type Props = { eventStartDate: string };
 
-const HeroSection = () => {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+const HeroSection = ({ eventStartDate }: Props) => {
+  const TARGET_DATE = new Date(`${eventStartDate}T08:00:00-03:00`).getTime();
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
 
   function getTimeLeft() {
     const diff = TARGET_DATE - Date.now();
@@ -20,6 +22,7 @@ const HeroSection = () => {
   }
 
   useEffect(() => {
+    setTimeLeft(getTimeLeft());
     const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(id);
   }, []);
@@ -69,7 +72,7 @@ const HeroSection = () => {
           <div className="lg:col-span-2 hidden lg:flex items-center justify-center">
             <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/images/hero-event.jpg"
+                src={imgSrc("/images/hero-event.jpg")}
                 alt="Evento AWS Community Day"
                 className="w-full h-full object-cover"
                 loading="lazy"

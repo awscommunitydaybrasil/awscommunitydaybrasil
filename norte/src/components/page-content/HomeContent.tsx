@@ -37,7 +37,7 @@ export default function HomeContent() {
 
   return (
     <main>
-      {settings.showHero        && <HeroSection />}
+      {settings.showHero        && <HeroSection eventStartDate={settings.eventStartDate} />}
       {settings.showAbout       && <AboutSection about={about} />}
       {settings.showCounts      && <StatsSection counts={counts} />}
       {settings.showIngress     && <TicketsSection tickets={tickets} />}
