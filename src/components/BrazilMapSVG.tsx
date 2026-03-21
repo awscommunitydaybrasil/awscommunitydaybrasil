@@ -25,7 +25,7 @@ Object.entries(regionStates).forEach(([region, states]) => {
 const regionLinks: Record<string, string> = {
   norte: "#",
   nordeste: "#",
-  centroOeste: "https://www.awscommunityday.com.br/centrooeste/index.html",
+  centroOeste: "/centro-oeste",
   sudeste: "https://www.awscommunityday.com.br/sudeste/index.html",
   sul: "#",
 };
