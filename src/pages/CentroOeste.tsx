@@ -155,7 +155,7 @@ const CentroOeste = () => {
       </section>
 
       {/* Info Cards */}
-      <section className="py-20">
+      <section className="py-8">
         <div
           ref={infoRef}
           className="container grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl"
