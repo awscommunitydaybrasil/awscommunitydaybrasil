@@ -1,4 +1,6 @@
-import siteData from "@/data/site.json";
+import { getSettings } from "@/lib/cms";
+
+const s = getSettings();
 
 type BreadcrumbItem = {
   name: string;
@@ -13,55 +15,51 @@ type FaqItem = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: siteData.name,
-  url: siteData.url,
-  description: siteData.description,
+  name: s.siteName,
+  url: s.siteUrl,
+  description: s.siteDescription,
 };
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: siteData.organization.name,
-  url: siteData.url,
-  logo: `${siteData.url}${siteData.ogImage}`,
-  description: siteData.description,
+  name: s.organizationName,
+  url: s.siteUrl,
+  logo: `${s.siteUrl}${s.ogImage}`,
+  description: s.siteDescription,
   areaServed: "BR",
-  sameAs: [
-    siteData.social.instagram,
-    siteData.social.linkedin,
-    siteData.social.youtube
-  ].filter(Boolean),
+  sameAs: [s.instagram, s.linkedin, s.youtube].filter(Boolean),
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Support",
-    email: siteData.contact.email,
+    email: s.contactEmail,
   },
 };
 
 export const eventSchema = {
   "@context": "https://schema.org",
   "@type": "Event",
-  name: siteData.name,
-  description: siteData.description,
-  startDate: siteData.event.startDate,
-  endDate: siteData.event.endDate,
+  name: s.siteName,
+  description: s.siteDescription,
+  startDate: s.eventStartDate,
+  endDate: s.eventEndDate,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  image: [`${siteData.url}${siteData.ogImage}`],
+  image: [`${s.siteUrl}${s.ogImage}`],
   location: {
     "@type": "Place",
-    name: siteData.event.location.venue,
+    name: s.venueName,
     address: {
       "@type": "PostalAddress",
-      addressLocality: siteData.event.location.city,
-      addressRegion: siteData.event.location.region,
-      addressCountry: siteData.event.location.country,
+      addressLocality: s.venueCity,
+      addressRegion: s.eventRegion,
+      addressCountry: s.eventCountry,
     },
   },
   organizer: {
     "@type": "Organization",
-    name: siteData.organization.name,
-    url: siteData.url,
+    name: s.organizationName,
+    url: s.siteUrl,
   },
 };
 

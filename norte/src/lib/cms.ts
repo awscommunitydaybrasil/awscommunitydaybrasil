@@ -14,6 +14,7 @@ export type {
   EquipeEntry         as EquipeMember,
   FaqEntry            as FaqItem,
   IngressEntry        as Ingress,
+  NavigationEntry     as NavItem,
   PatrocinadoresEntry as Patrocinador,
   PatrocinioTierEntry as PatrocinioTier,
   ScheduleEntry       as ScheduleItem,
@@ -99,6 +100,10 @@ export function getFaq(): FaqContent[] {
     order:    f.order,
     body:     (f as unknown as { body: string }).body ?? "",
   }));
+}
+
+export function getNavigation() {
+  return queryCollection("navigation").sort("order", "asc").all();
 }
 
 export function getEquipe() {

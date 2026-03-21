@@ -133,34 +133,28 @@ export interface SettingssiteEntry {
   showVenue: boolean;
   showFaq: boolean;
   showCta: boolean;
-  // Site identity
   siteName: string;
   siteTagline: string;
   siteDescription: string;
-  siteUrl: string;
+  siteUrl: HttpUrl;
   ogImage: string;
   locale: string;
   organizationName: string;
-  // Event
   eventDisplayDate: string;
-  eventStartDate: string;
-  eventEndDate: string;
+  eventStartDate: ISODate;
+  eventEndDate: ISODate;
   eventRegion: string;
   eventCountry: string;
-  // Location
   venueName: string;
   venueAddress: string;
   venueCity: string;
   venueMapUrl: string;
-  // Social
   instagram: HttpUrl;
   linkedin: HttpUrl;
   twitter: HttpUrl;
   youtube: HttpUrl;
-  // Contact
   contactEmail: Email;
   sponsorshipEmail: Email;
-  // Footer links
   codeOfConductUrl: string;
   privacyPolicyUrl: string;
 }
