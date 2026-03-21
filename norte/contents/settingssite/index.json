@@ -24,9 +24,9 @@
     "ogImage": "/og-image.jpg",
     "locale": "pt-BR",
     "organizationName": "AWS User Group Norte",
-    "eventDisplayDate": "12 de setembro de 2026",
-    "eventStartDate": "2026-09-12",
-    "eventEndDate": "2026-09-12",
+    "eventDisplayDate": "14 de novembro de 2026",
+    "eventStartDate": "2026-11-14",
+    "eventEndDate": "2026-11-14",
     "eventRegion": "Pará",
     "eventCountry": "BR",
     "venueName": "Centro de Convenções — Belém, PA",
@@ -39,8 +39,8 @@
     "linkedin": "https://linkedin.com/",
     "twitter": "https://twitter.com/",
     "youtube": "https://youtube.com/",
-    "contactEmail": "SOON",
-    "sponsorshipEmail": "SOON",
+    "contactEmail": "awsusergroupbelem@gmail.com",
+    "sponsorshipEmail": "awsusergroupbelem@gmail.com",
     "codeOfConductUrl": "/contato",
     "privacyPolicyUrl": "https://github.com/awscommunitydaybrasil/codigo-de-conduta"
 }

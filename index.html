@@ -1,116 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>AWS Community Day Brasil 2026</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AWS Community Day Brasil 2026</title>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
-  <style>
-    .info-section { padding: 60px 0; background: #f8f9fa; }
-    .info-cards-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 10px; }
-    .info-card { background: #fff; border-radius: 10px; padding: 28px 24px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border: 1px solid #eee; min-width: 260px; max-width: 350px; flex: 1; }
-    .info-card .info-icon { font-size: 36px; color: #ff9900; margin-bottom: 16px; }
-    .info-card h3 { font-size: 20px; margin-bottom: 12px; }
-    .info-card p { color: #666; margin-bottom: 18px; }
-    .btn-common { background: #ff9900; color: #fff !important; padding: 9px 24px !important; border-radius: 50px; font-weight: 600; border: none; display: inline-block; }
-    .btn-common:hover { background: #ff8500; color: #fff; }
-    .hero-cta { background: #ff9900 !important; border-color: #ff9900 !important; color: #fff !important; border-radius: 50px; }
-    .hero-cta:hover { background: #ff8500 !important; border-color: #ff8500 !important; color: #fff !important; }
-    .edicao-item { background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eee; }
-    .edicao-text { padding: 20px; }
-    .edicao-text p { color: #666; margin-bottom: 20px; }
-    .edicao-text h3 a { color: #333; font-weight: 700; }
-    .edicao-text h3 a:hover { color: #ff9900; text-decoration: none; }
-
-    #svg-map { width: 100%; max-width: 820px; height: auto; display: block; margin: 0 auto; }
-    #svg-map path { fill: #d8d8d8; transition: fill 0.2s ease, filter 0.2s ease; }
-    #svg-map text { fill: #fff; font: 12px Arial-BoldMT, sans-serif; cursor: default; pointer-events: none; }
-    #svg-map a { text-decoration: none; cursor: default; }
-    #svg-map .is-clickable { cursor: pointer; }
-    #svg-map .circle { fill: rgba(255, 255, 255, 0.3); stroke: #ffffff; stroke-width: 1; }
-    #svg-map .host-marker { pointer-events: none; }
-    #svg-map .host-marker-pin { fill: #e53935; stroke: #232f3e; stroke-width: 0.8; }
-    #svg-map .host-marker-core { fill: #ffffff; opacity: 0.95; }
-    #svg-map .host-marker-shine { fill: #ffffff; opacity: 0.55; }
-  </style>
+    <style>
+        .info-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .info-cards-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 10px;
+        }
+        
+        .info-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #eee;
+            min-width: 260px;
+            max-width: 350px;
+            flex: 1;
+        }
+        
+        .info-card .info-icon {
+            font-size: 36px;
+            color: #ff9900;
+            margin-bottom: 16px;
+        }
+        
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .info-card p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+        
+        .btn-common {
+            background: #ff9900;
+            color: #fff !important;
+            padding: 9px 24px !important;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            display: inline-block;
+        }
+        
+        .btn-common:hover {
+            background: #ff8500;
+            color: #fff;
+        }
+        
+        .hero-cta {
+            background: #ff9900 !important;
+            border-color: #ff9900 !important;
+            color: #fff !important;
+            border-radius: 50px;
+        }
+        
+        .hero-cta:hover {
+            background: #ff8500 !important;
+            border-color: #ff8500 !important;
+            color: #fff !important;
+        }
+        
+        .edicao-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+        
+        .edicao-text {
+            padding: 20px;
+        }
+        
+        .edicao-text p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .edicao-text h3 a {
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .edicao-text h3 a:hover {
+            color: #ff9900;
+            text-decoration: none;
+        }
+        
+        #svg-map {
+            width: 100%;
+            max-width: 820px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #svg-map path {
+            fill: #d8d8d8;
+            transition: fill 0.2s ease, filter 0.2s ease;
+        }
+        
+        #svg-map text {
+            fill: #fff;
+            font: 12px Arial-BoldMT, sans-serif;
+            cursor: default;
+            pointer-events: none;
+        }
+        
+        #svg-map a {
+            text-decoration: none;
+            cursor: default;
+        }
+        
+        #svg-map .is-clickable {
+            cursor: pointer;
+        }
+        
+        #svg-map .circle {
+            fill: rgba(255, 255, 255, 0.3);
+            stroke: #ffffff;
+            stroke-width: 1;
+        }
+        
+        #svg-map .host-marker {
+            pointer-events: none;
+        }
+        
+        #svg-map .host-marker-pin {
+            fill: #e53935;
+            stroke: #232f3e;
+            stroke-width: 0.8;
+        }
+        
+        #svg-map .host-marker-core {
+            fill: #ffffff;
+            opacity: 0.95;
+        }
+        
+        #svg-map .host-marker-shine {
+            fill: #ffffff;
+            opacity: 0.55;
+        }
+    </style>
 </head>
+
 <body>
-  <header id="header-wrap">
-    <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
-      <div class="container">
-        <a href="index.html" class="navbar-brand"><img src="assets/img/aws-community-day-logo-new.png" alt="AWS Community Day Brasil"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <header id="header-wrap">
+        <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="assets/img/aws-community-day-logo-new.png" alt="AWS Community Day Brasil"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <i class="lni-menu"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#about">AWS Community Day</a></li>
-            <li class="nav-item"><a class="nav-link" href="#information-bar">Edições 2026</a></li>
-            <li class="nav-item"><a class="nav-link" href="#team">Líderes</a></li>
-            <li class="nav-item"><a class="nav-link" href="#edicoes-anteriores">Edições Anteriores</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div id="hero-area" class="hero-area-bg">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-sm-12">
-            <div class="contents text-center">
-              <img class="img-logo-content" src="assets/img/logo.png" alt="AWS Community Day Brasil">
-              <p align="justify" class="banner-desc">
-                Em <strong>2026</strong>, o AWS Community Day Brasil entra para a história: <strong>pela primeira vez</strong>, o evento
-                acontece em <strong>todas as regiões do país</strong>! Serão edições no <strong>Norte</strong>, <strong>Nordeste</strong>,
-                <strong>Centro-Oeste</strong>, <strong>Sudeste</strong> e <strong>Sul</strong>, conectando comunidades de ponta a ponta do Brasil!
-                <br /><br />
-              </p>
-              <div class="mt-4"><a href="#information-bar" class="btn btn-lg hero-cta">Conheça as Edições 2026</a></div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#about">AWS Community Day</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#information-bar">Edições 2026</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Líderes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#edicoes-anteriores">Edições Anteriores</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+        </nav>
 
-  
-
-  <section id="about" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 col-xs-12">
-          <div class="img-thumb"><img class="img-fluid" src="assets/img/about/img.png" alt="Sobre o AWS Community Day Brasil"></div>
-        </div>
-        <div class="col-lg-6 col-md-12 col-xs-12">
-          <div class="about-content">
-            <div class="about-text">
-              <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
-              <p align="justify">
-                Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
-                <br><br>
-                Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos, se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma igualitária, segura, justa e acessível.
-                <br><br>
-                Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento.
-                As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.
-              </p>
+        <div id="hero-area" class="hero-area-bg">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 col-sm-12">
+                        <div class="contents text-center">
+                            <img class="img-logo-content" src="assets/img/logo.png" alt="AWS Community Day Brasil">
+                            <p align="justify" class="banner-desc">
+                                Em <strong>2026</strong>, o AWS Community Day Brasil entra para a história: <strong>pela primeira vez</strong>, o evento acontece em <strong>todas as regiões do país</strong>! Serão edições no <strong>Norte</strong>, <strong>Nordeste</strong>,
+                                <strong>Centro-Oeste</strong>, <strong>Sudeste</strong> e <strong>Sul</strong>, conectando comunidades de ponta a ponta do Brasil!
+                                <br /><br />
+                            </p>
+                            <div class="mt-4"><a href="#information-bar" class="btn btn-lg hero-cta">Conheça as Edições 2026</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="information-bar" class="info-section">
-    <div class="container">
-      <div>
-        <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
+
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-xs-12">
+                    <div class="img-thumb"><img class="img-fluid" src="assets/img/about/img.png" alt="Sobre o AWS Community Day Brasil"></div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2>SOBRE O AWS COMMUNITY DAY BRASIL</h2>
+                            <p align="justify">
+                                Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.
+                                <br><br> Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos, se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma igualitária,
+                                segura, justa e acessível.
+                                <br><br> Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento. As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta">Código de conduta</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="information-bar" class="info-section">
+        <div class="container">
+            <div>
+                <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
           <g>
             <a xlink:href="#tocantins" class="estado" name="Tocantins" code="17">
               <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M289.558,235.641
@@ -424,312 +547,391 @@
             </a>
           </g>
         </svg>
-      </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-padding text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-header-2 text-center">
+                        <h2 class="section-title wow fadeInUp">EDIÇÕES POR REGIÃO</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="team-item wow fadeInUp">
+                        <span class="edicao-text text-center" style="color: #777"><h4>Centro-Oeste</h4></span></br>
+                        <span style="color: #777">Cidade: Brasília</span></br>
+                        <span style="color: #777">Local: TBD</span></br>
+                        <span style="color: #777">Data: 27/06/2026</span></br>
+                        <div class="team-img">
+                            <a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank">
+                                <img class="img-fluid" src="assets/img/team/team-31.jpg" alt="Wagner Landim" style="height:220px;width:220px;object-fit:cover;"></a>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank">
+                                    <span style="color: #777">Líder</span>
+                                    <br />Wagner Landim</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="team-item wow fadeInUp">
+                        <span class="edicao-text text-center" style="color: #777"><h4>Sudeste</h4></span></br>
+                        <span style="color: #777">Cidade: Belo Horizonte</span></br>
+                        <span style="color: #777">Local: TBD</span></br>
+                        <span style="color: #777">Data: TBD</span></br>
+                        <div class="team-img">
+                            <a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank">
+                                <img class="img-fluid" src="assets/img/team/team-03.jpg" alt="Rafaela Vidotti" style="height:220px;width:220px;object-fit:cover;"></a>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank">
+                                    <span style="color: #777">Líder</span>
+                                    <br />Rafaela Vidotti</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="team-item wow fadeInUp">
+                        <span class="edicao-text text-center" style="color: #777"><h4>Nordeste</h4></span></br>
+                        <span style="color: #777">Cidade: Salvador</span></br>
+                        <span style="color: #777">Local: TBD</span></br>
+                        <span style="color: #777">Data: TBD</span></br>
+                        <div class="team-img">
+                            <a href="https://www.linkedin.com/in/caionscloud/" target="_blank">
+                                <img class="img-fluid" src="assets/img/team/team-30.jpg" alt="Caio Nunes" style="height:220px;width:220px;object-fit:cover;"></a>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="https://www.linkedin.com/in/caionscloud/" target="_blank">
+                                    <span style="color: #777">Líder</span>
+                                    <br />Caio Nunes</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="team-item wow fadeInUp">
+                        <span class="edicao-text text-center" style="color: #777"><h4>Sul</h4></span></br>
+                        <span style="color: #777">Cidade: Curitiba</span></br>
+                        <span style="color: #777">Local: TBD</span></br>
+                        <span style="color: #777">Data: TBD</span></br>
+                        <div class="team-img">
+                            <a href="https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/" target="_blank">
+                                <img class="img-fluid" src="assets/img/team/team-32.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/" target="_blank">
+                                    <span style="color: #777">Líder</span>
+                                    <br />Alceu Neto</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="team-item wow fadeInUp">
+                        <span class="edicao-text text-center" style="color: #777"><h4>Norte</h4></span></br>
+                        <span style="color: #777">Cidade: Belém</span></br>
+                        <span style="color: #777">Local: TBD</span></br>
+                        <span style="color: #777">Data: 14/11/2026</span></br>
+                        <div class="team-img">
+                            <a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank">
+                                <img class="img-fluid" src="assets/img/team/team-32.png" alt="Thayana Mamoré" style="height:220px;width:220px;object-fit:cover;"></a>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank">
+                                    <span style="color: #777">Líder</span>
+                                    <br />Thayana Mamoré</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="edicoes-anteriores" class="section-padding" style="background-color:#ffffff;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-header text-center">
+                        <h2 class="section-title wow fadeInUp">EDIÇÕES ANTERIORES</h2>
+                        <p class="wow fadeInDown">Confira como foram as edições anteriores do AWS Community Day Brasil</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">Setembro 2025</a></h3>
+                            <p>Edição realizada no Expo Dom Pedro em Campinas / SP</p><a href="hist/2025-dec/index.html" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xs-12 mt-4 mt-md-0">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2024-nov/index.html" target="_blank" rel="noopener noreferrer">Novembro 2024</a></h3>
+                            <p>Edição simultânea ocorrendo em Goiânia e Florianópolis</p><a href="hist/2024-nov/index.html" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
+              2023</a></h3>
+                            <p>Veja os podcasts da edição realizada em Ribeirão / SP</p>
+                            <a href="https://youtube.com/playlist?list=PLM7HrN8Vfc3o3H6LK-iR7SNq5pPNWfgtF&si=duFt9rD1N78tyF3Z" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
+              2022</a></h3>
+                            <p>Edição on-line!</p>
+                            <a href="https://youtube.com/playlist?list=PLM7HrN8Vfc3qkHf4siwu-S6TI3MzQBQ25&si=MbGxr-45Ku2PeB32" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
+              2021</a></h3>
+                            <p>Edição on-line!</p>
+                            <a href="https://youtube.com/playlist?list=PL7D77BqXy3EPzqoHxUtT2ZfJ4uRLV2Apt&si=dhI8shGmEX08sXAB" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="edicao-item wow fadeInUp">
+                        <div class="edicao-text text-center">
+                            <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
+              2020</a></h3>
+                            <p>Edição on-line!</p>
+                            <a href="https://youtube.com/playlist?list=PL7D77BqXy3EP7qajLWNW6UYOsaGXKj69Q&si=FMuQmqHo9z4qDxKe" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 col-xs-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy; 2026 AWS Community Day Brasil. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <div id="preloader">
+        <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
     </div>
-  </section>
 
-  <section id="team" class="section-padding text-center">
-    <div class="container">
-      <div class="row"><div class="col-12"><div class="section-title-header-2 text-center"><h2 class="section-title wow fadeInUp">EDIÇÕES POR REGIÃO</h2></div></div></div>
-      <div class="row justify-content-center">
-        
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <span class="edicao-text text-center" style="color: #777"><h4>Centro-Oeste</h4></span></br>
-            <span style="color: #777">Cidade: Brasília</span></br>
-            <span style="color: #777">Local: TBD</span></br>
-            <span style="color: #777">Data: 27/06/2026</span></br>
-            <div class="team-img"><a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank">
-              <img class="img-fluid" src="assets/img/team/team-31.jpg" alt="Wagner Landim" style="height:220px;width:220px;object-fit:cover;"></a>
-            </div>
-            <div class="info-text"><h3><a href="https://www.linkedin.com/in/wagnerlandim/" target="_blank">
-              <span style="color: #777">Líder</span>
-              <br />Wagner Landim</a></h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <span class="edicao-text text-center" style="color: #777"><h4>Sudeste</h4></span></br>
-            <span style="color: #777">Cidade: Belo Horizonte</span></br>
-            <span style="color: #777">Local: TBD</span></br>
-            <span style="color: #777">Data: TBD</span></br>
-            <div class="team-img"><a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank">
-              <img class="img-fluid" src="assets/img/team/team-03.jpg" alt="Rafaela Vidotti" style="height:220px;width:220px;object-fit:cover;"></a>
-            </div>
-            <div class="info-text"><h3><a href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank">
-              <span style="color: #777">Líder</span>
-              <br />Rafaela Vidotti</a></h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <span class="edicao-text text-center" style="color: #777"><h4>Nordeste</h4></span></br>
-            <span style="color: #777">Cidade: Salvador</span></br>
-            <span style="color: #777">Local: TBD</span></br>
-            <span style="color: #777">Data: TBD</span></br>
-            <div class="team-img"><a href="https://www.linkedin.com/in/caionscloud/" target="_blank">
-              <img class="img-fluid" src="assets/img/team/team-30.jpg" alt="Caio Nunes" style="height:220px;width:220px;object-fit:cover;"></a>
-            </div>
-            <div class="info-text"><h3><a href="https://www.linkedin.com/in/caionscloud/" target="_blank">
-              <span style="color: #777">Líder</span>
-              <br />Caio Nunes</a></h3>
-            </div>
-          </div>
-        </div>  
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        (function() {
+            var regionColors = {
+                norte: "#554492",
+                nordeste: "#E69019",
+                centroOeste: "#FBC064",
+                sudeste: "#77889D",
+                sul: "#322F5A"
+            };
 
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <span class="edicao-text text-center" style="color: #777"><h4>Sul</h4></span></br>
-            <span style="color: #777">Cidade: Curitiba</span></br>
-            <span style="color: #777">Local: TBD</span></br>
-            <span style="color: #777">Data: TBD</span></br>
-            <div class="team-img"><a href="https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/" target="_blank">
-              <img class="img-fluid" src="assets/img/team/team-32.jpg" alt="" style="height:220px;width:220px;object-fit:cover;"></a>
-            </div>
-            <div class="info-text"><h3><a href="https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/" target="_blank">
-              <span style="color: #777">Líder</span>
-              <br />Alceu Neto</a></h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp">
-            <span class="edicao-text text-center" style="color: #777"><h4>Norte</h4></span></br>
-            <span style="color: #777">Cidade: Belém</span></br>
-            <span style="color: #777">Local: TBD</span></br>
-            <span style="color: #777">Data: 12/09/2026</span></br>
-            <div class="team-img"><a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank">
-              <img class="img-fluid" src="assets/img/team/team-32.png" alt="Thayana Mamoré" style="height:220px;width:220px;object-fit:cover;"></a>
-            </div>
-            <div class="info-text"><h3><a href="https://www.linkedin.com/in/thayanacmamore/" target="_blank">
-              <span style="color: #777">Líder</span>
-              <br />Thayana Mamoré</a></h3>
-              <a href="norte/index.html" class="btn btn-common mt-2">Ver site</a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+            var regionStates = {
+                norte: ["AC", "AP", "AM", "PA", "RO", "RR", "TO"],
+                nordeste: ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"],
+                centroOeste: ["DF", "GO", "MT", "MS"],
+                sudeste: ["ES", "MG", "RJ", "SP"],
+                sul: ["PR", "RS", "SC"]
+            };
+            var hostStateByRegion = {
+                norte: "PA", // Belem
+                nordeste: "BA", // Salvador
+                centroOeste: "DF", // Brasilia
+                sudeste: "MG", // Belo Horizonte
+                sul: "PR" // Curitiba
+            };
 
-  <section id="edicoes-anteriores" class="section-padding" style="background-color:#ffffff;">
-    <div class="container">
-      <div class="row"><div class="col-12"><div class="section-title-header text-center"><h2 class="section-title wow fadeInUp">EDIÇÕES ANTERIORES</h2><p class="wow fadeInDown">Confira como foram as edições anteriores do AWS Community Day Brasil</p></div></div></div>
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 col-xs-12"><div class="edicao-item wow fadeInUp"><div class="edicao-text text-center"><h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">Setembro 2025</a></h3><p>Edição realizada no Expo Dom Pedro em Campinas / SP</p><a href="hist/2025-dec/index.html" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a></div></div></div>
-        <div class="col-md-6 col-lg-4 col-xs-12 mt-4 mt-md-0"><div class="edicao-item wow fadeInUp"><div class="edicao-text text-center"><h3><a href="hist/2024-nov/index.html" target="_blank" rel="noopener noreferrer">Novembro 2024</a></h3><p>Edição simultânea ocorrendo em Goiânia e Florianópolis</p><a href="hist/2024-nov/index.html" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a></div></div></div>
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="edicao-item wow fadeInUp">
-            <div class="edicao-text text-center">
-              <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
-              2023</a></h3><p>Veja os podcasts da edição realizada em Ribeirão / SP</p>
-              <a href="https://youtube.com/playlist?list=PLM7HrN8Vfc3o3H6LK-iR7SNq5pPNWfgtF&si=duFt9rD1N78tyF3Z" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="edicao-item wow fadeInUp">
-            <div class="edicao-text text-center">
-              <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
-              2022</a></h3><p>Edição on-line!</p>
-              <a href="https://youtube.com/playlist?list=PLM7HrN8Vfc3qkHf4siwu-S6TI3MzQBQ25&si=MbGxr-45Ku2PeB32" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="edicao-item wow fadeInUp">
-            <div class="edicao-text text-center">
-              <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
-              2021</a></h3><p>Edição on-line!</p>
-              <a href="https://youtube.com/playlist?list=PL7D77BqXy3EPzqoHxUtT2ZfJ4uRLV2Apt&si=dhI8shGmEX08sXAB" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="edicao-item wow fadeInUp">
-            <div class="edicao-text text-center">
-              <h3><a href="hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
-              2020</a></h3><p>Edição on-line!</p>
-              <a href="https://youtube.com/playlist?list=PL7D77BqXy3EP7qajLWNW6UYOsaGXKj69Q&si=FMuQmqHo9z4qDxKe" class="btn btn-common" target="_blank" rel="noopener noreferrer">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+            var regionLinks = {
+                norte: "norte/index.html",
+                nordeste: "#nordeste",
+                centroOeste: "centrooeste/index.html",
+                sudeste: "sudeste/index.html",
+                sul: "#sul"
+            };
 
-  <footer>
-    <div class="container"><div class="row justify-content-center"><div class="col-lg-8 col-md-12 col-xs-12"><div class="copyright-text text-center"><p>&copy; 2026 AWS Community Day Brasil. Todos os direitos reservados.</p></div></div></div></div>
-  </footer>
+            var stateToRegion = {};
+            Object.keys(regionStates).forEach(function(region) {
+                regionStates[region].forEach(function(uf) {
+                    stateToRegion[uf] = region;
+                });
+            });
 
-  <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-  <div id="preloader"><div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div></div>
+            function getLabelPosition(node) {
+                var label = node.querySelector("text");
+                if (label) {
+                    var transform = label.getAttribute("transform") || "";
+                    var matrixMatch = transform.match(/matrix\([^\)]+\)/);
+                    if (matrixMatch) {
+                        var numbers = matrixMatch[0].replace("matrix(", "").replace(")", "").trim().split(/\s+/);
+                        if (numbers.length >= 6) {
+                            var x = parseFloat(numbers[4]);
+                            var y = parseFloat(numbers[5]);
+                            if (!isNaN(x) && !isNaN(y)) return {
+                                x: x,
+                                y: y
+                            };
+                        }
+                    }
+                }
 
-  <script src="assets/js/jquery-min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.nav.js"></script>
-  <script src="assets/js/jquery.easing.min.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script>
-    (function () {
-      var regionColors = {
-        norte: "#554492",
-        nordeste: "#E69019",
-        centroOeste: "#FBC064",
-        sudeste: "#77889D",
-        sul: "#322F5A"
-      };
-
-      var regionStates = {
-        norte: ["AC", "AP", "AM", "PA", "RO", "RR", "TO"],
-        nordeste: ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"],
-        centroOeste: ["DF", "GO", "MT", "MS"],
-        sudeste: ["ES", "MG", "RJ", "SP"],
-        sul: ["PR", "RS", "SC"]
-      };
-      var hostStateByRegion = {
-        norte: "PA",        // Belem
-        nordeste: "BA",     // Salvador
-        centroOeste: "DF",  // Brasilia
-        sudeste: "MG",      // Belo Horizonte
-        sul: "PR"           // Curitiba
-      };
-
-      var regionLinks = {
-        norte: "norte/index.html",
-        nordeste: "#nordeste",
-        centroOeste: "centrooeste/index.html",
-        sudeste: "sudeste/index.html",
-        sul: "#sul"
-      };
-
-      var stateToRegion = {};
-      Object.keys(regionStates).forEach(function (region) {
-        regionStates[region].forEach(function (uf) {
-          stateToRegion[uf] = region;
-        });
-      });
-
-      function getLabelPosition(node) {
-        var label = node.querySelector("text");
-        if (label) {
-          var transform = label.getAttribute("transform") || "";
-          var matrixMatch = transform.match(/matrix\([^\)]+\)/);
-          if (matrixMatch) {
-            var numbers = matrixMatch[0].replace("matrix(", "").replace(")", "").trim().split(/\s+/);
-            if (numbers.length >= 6) {
-              var x = parseFloat(numbers[4]);
-              var y = parseFloat(numbers[5]);
-              if (!isNaN(x) && !isNaN(y)) return { x: x, y: y };
+                var path = node.querySelector("path");
+                if (path && typeof path.getBBox === "function") {
+                    var box = path.getBBox();
+                    return {
+                        x: box.x + box.width / 2,
+                        y: box.y + box.height / 2
+                    };
+                }
+                return null;
             }
-          }
-        }
 
-        var path = node.querySelector("path");
-        if (path && typeof path.getBBox === "function") {
-          var box = path.getBBox();
-          return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
-        }
-        return null;
-      }
+            function addHostMarker(node) {
+                var ufLabelNode = node.querySelector("text");
+                if (!ufLabelNode) return;
+                var ufCode = ufLabelNode.textContent.trim();
+                if (document.querySelector('#svg-map .host-marker[data-host-uf="' + ufCode + '"]')) return;
+                var pos = getLabelPosition(node);
+                if (!pos) return;
+                var svgRoot = document.getElementById("svg-map");
+                var svgTopGroup = svgRoot.querySelector("g");
+                if (!svgTopGroup) return;
 
-      function addHostMarker(node) {
-        var ufLabelNode = node.querySelector("text");
-        if (!ufLabelNode) return;
-        var ufCode = ufLabelNode.textContent.trim();
-        if (document.querySelector('#svg-map .host-marker[data-host-uf="' + ufCode + '"]')) return;
-        var pos = getLabelPosition(node);
-        if (!pos) return;
-        var svgRoot = document.getElementById("svg-map");
-        var svgTopGroup = svgRoot.querySelector("g");
-        if (!svgTopGroup) return;
+                var markerGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                markerGroup.setAttribute("class", "host-marker");
+                markerGroup.setAttribute("data-host-uf", ufCode);
+                var markerX = pos.x + 9;
+                var markerY = pos.y - 20;
 
-        var markerGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        markerGroup.setAttribute("class", "host-marker");
-        markerGroup.setAttribute("data-host-uf", ufCode);
-        var markerX = pos.x + 9;
-        var markerY = pos.y - 20;
+                var pin = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                pin.setAttribute("class", "host-marker-pin");
+                pin.setAttribute(
+                    "d",
+                    "M" + markerX.toFixed(1) + "," + (markerY - 8).toFixed(1) +
+                    " c-3.5,0 -6.3,2.7 -6.3,6.1 c0,4.6 6.3,10.9 6.3,10.9 s6.3-6.3 6.3-10.9 c0-3.4 -2.8-6.1 -6.3-6.1 z"
+                );
 
-        var pin = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        pin.setAttribute("class", "host-marker-pin");
-        pin.setAttribute(
-          "d",
-          "M" + markerX.toFixed(1) + "," + (markerY - 8).toFixed(1) +
-          " c-3.5,0 -6.3,2.7 -6.3,6.1 c0,4.6 6.3,10.9 6.3,10.9 s6.3-6.3 6.3-10.9 c0-3.4 -2.8-6.1 -6.3-6.1 z"
-        );
+                var core = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                core.setAttribute("class", "host-marker-core");
+                core.setAttribute("cx", markerX.toFixed(1));
+                core.setAttribute("cy", markerY.toFixed(1));
+                core.setAttribute("r", "2.2");
 
-        var core = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        core.setAttribute("class", "host-marker-core");
-        core.setAttribute("cx", markerX.toFixed(1));
-        core.setAttribute("cy", markerY.toFixed(1));
-        core.setAttribute("r", "2.2");
+                var shine = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                shine.setAttribute("class", "host-marker-shine");
+                shine.setAttribute("cx", (markerX - 1.8).toFixed(1));
+                shine.setAttribute("cy", (markerY - 1.9).toFixed(1));
+                shine.setAttribute("r", "1.1");
 
-        var shine = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        shine.setAttribute("class", "host-marker-shine");
-        shine.setAttribute("cx", (markerX - 1.8).toFixed(1));
-        shine.setAttribute("cy", (markerY - 1.9).toFixed(1));
-        shine.setAttribute("r", "1.1");
+                markerGroup.appendChild(pin);
+                markerGroup.appendChild(core);
+                markerGroup.appendChild(shine);
+                // Append to the top map layer so pins never hide behind neighboring regions.
+                svgTopGroup.appendChild(markerGroup);
+            }
 
-        markerGroup.appendChild(pin);
-        markerGroup.appendChild(core);
-        markerGroup.appendChild(shine);
-        // Append to the top map layer so pins never hide behind neighboring regions.
-        svgTopGroup.appendChild(markerGroup);
-      }
+            function paintRegion(region, color) {
+                document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function(path) {
+                    path.style.fill = color;
+                });
+            }
 
-      function paintRegion(region, color) {
-        document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function (path) {
-          path.style.fill = color;
-        });
-      }
-      function shadeRegion(region, amount) {
-        document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function (path) {
-          path.style.filter = amount;
-        });
-      }
+            function shadeRegion(region, amount) {
+                document.querySelectorAll('#svg-map a.estado[data-region="' + region + '"] path').forEach(function(path) {
+                    path.style.filter = amount;
+                });
+            }
 
-      var nodes = document.querySelectorAll("#svg-map a.estado");
-      nodes.forEach(function (node) {
-        var ufNode = node.querySelector("text");
-        if (!ufNode) return;
+            var nodes = document.querySelectorAll("#svg-map a.estado");
+            nodes.forEach(function(node) {
+                var ufNode = node.querySelector("text");
+                if (!ufNode) return;
 
-        var uf = ufNode.textContent.trim();
-        var region = stateToRegion[uf];
-        if (!region) return;
+                var uf = ufNode.textContent.trim();
+                var region = stateToRegion[uf];
+                if (!region) return;
 
-        var color = regionColors[region];
-        var hostUf = hostStateByRegion[region];
-        node.setAttribute("data-region", region);
-        node.querySelectorAll("path").forEach(function (path) {
-          path.style.fill = color;
-        });
-        if (uf === hostUf) addHostMarker(node);
+                var color = regionColors[region];
+                var hostUf = hostStateByRegion[region];
+                node.setAttribute("data-region", region);
+                node.querySelectorAll("path").forEach(function(path) {
+                    path.style.fill = color;
+                });
+                if (uf === hostUf) addHostMarker(node);
 
-        var targetUrl = regionLinks[region];
-        if (targetUrl) {
-          node.setAttribute("xlink:href", targetUrl);
-          node.setAttribute("href", targetUrl);
-          node.classList.add("is-clickable");
-          node.addEventListener("mouseenter", function () {
-            shadeRegion(region, "brightness(0.9)");
-          });
-          node.addEventListener("mouseleave", function () {
-            shadeRegion(region, "none");
-          });
-        } else {
-          node.setAttribute("xlink:href", "javascript:void(0)");
-          node.setAttribute("href", "javascript:void(0)");
-        }
-      });
-    })();
-  </script>
+                var targetUrl = regionLinks[region];
+                if (targetUrl) {
+                    node.setAttribute("xlink:href", targetUrl);
+                    node.setAttribute("href", targetUrl);
+                    node.classList.add("is-clickable");
+                    node.addEventListener("mouseenter", function() {
+                        shadeRegion(region, "brightness(0.9)");
+                    });
+                    node.addEventListener("mouseleave", function() {
+                        shadeRegion(region, "none");
+                    });
+                } else {
+                    node.setAttribute("xlink:href", "javascript:void(0)");
+                    node.setAttribute("href", "javascript:void(0)");
+                }
+            });
+        })();
+    </script>
 </body>
+
 </html>
