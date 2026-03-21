@@ -88,14 +88,6 @@ const expectations = [
   },
 ];
 
-const pastEditions = [
-  { year: "Setembro 2025", location: "Campinas / SP", description: "Edição realizada no Expo Dom Pedro", link: "https://www.awscommunityday.com.br/hist/2025-dec/index.html" },
-  { year: "Novembro 2024", location: "Goiânia e Florianópolis", description: "Edição simultânea em duas cidades", link: "https://www.awscommunityday.com.br/hist/2024-nov/index.html" },
-  { year: "2023", location: "Ribeirão Preto / SP", description: "Confira os podcasts da edição", link: "https://youtube.com/playlist?list=PLM7HrN8Vfc3o3H6LK-iR7SNq5pPNWfgtF&si=duFt9rD1N78tyF3Z" },
-  { year: "2022", location: "Online", description: "Edição on-line", link: "https://youtube.com/playlist?list=PLM7HrN8Vfc3qkHf4siwu-S6TI3MzQBQ25&si=MbGxr-45Ku2PeB32" },
-  { year: "2021", location: "Online", description: "Edição on-line", link: "https://youtube.com/playlist?list=PL7D77BqXy3EPzqoHxUtT2ZfJ4uRLV2Apt&si=dhI8shGmEX08sXAB" },
-  { year: "2020", location: "Online", description: "Edição on-line", link: "#" },
-];
 
 const CentroOeste = () => {
   useEffect(() => {
