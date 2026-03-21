@@ -99,7 +99,7 @@ const CentroOeste = () => {
   const { ref: scheduleRef, isVisible: scheduleVisible } = useScrollAnimation();
   const { ref: sponsorsRef, isVisible: sponsorsVisible } = useScrollAnimation();
   const { ref: orgRef, isVisible: orgVisible } = useScrollAnimation();
-  const { ref: pastRef, isVisible: pastVisible } = useScrollAnimation();
+  
   const countdown = useCountdown(TARGET_DATE);
 
   return (
