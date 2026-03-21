@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-brasil-generico.png";
 
@@ -14,7 +15,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <img src={logo} alt="AWS Community Day Brasil" className="h-10" />
+        <Link to="/"><img src={logo} alt="AWS Community Day Brasil" className="h-10" /></Link>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">

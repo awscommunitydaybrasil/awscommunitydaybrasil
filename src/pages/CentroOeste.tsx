@@ -1,10 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import logo from "@/assets/logo-community-day.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+const TARGET_DATE = new Date("2026-06-27T09:00:00-03:00");
+
+function useCountdown(targetDate: Date) {
+  const calc = () => {
+    const diff = Math.max(0, targetDate.getTime() - Date.now());
+    return {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [time, setTime] = useState(calc);
+  useEffect(() => {
+    const id = setInterval(() => setTime(calc()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
 
 const organizers = [
   {
@@ -88,6 +108,7 @@ const CentroOeste = () => {
   const { ref: sponsorsRef, isVisible: sponsorsVisible } = useScrollAnimation();
   const { ref: orgRef, isVisible: orgVisible } = useScrollAnimation();
   const { ref: pastRef, isVisible: pastVisible } = useScrollAnimation();
+  const countdown = useCountdown(TARGET_DATE);
 
   return (
     <div className="min-h-screen bg-background">
@@ -121,6 +142,32 @@ const CentroOeste = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body">
             O maior evento de comunidades AWS do Centro-Oeste brasileiro
           </p>
+        </div>
+      </section>
+
+      {/* Countdown */}
+      <section className="py-16">
+        <div className="container max-w-3xl text-center">
+          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 font-display">
+            Contagem Regressiva
+          </p>
+          <div className="flex justify-center gap-4 md:gap-8">
+            {([
+              ["days", "Dias"],
+              ["hours", "Horas"],
+              ["minutes", "Min"],
+              ["seconds", "Seg"],
+            ] as const).map(([key, label]) => (
+              <div key={key} className="flex flex-col items-center">
+                <span className="text-4xl md:text-6xl font-bold font-display text-primary tabular-nums">
+                  {String(countdown[key]).padStart(2, "0")}
+                </span>
+                <span className="text-xs md:text-sm text-muted-foreground mt-1 font-display uppercase tracking-wider">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
