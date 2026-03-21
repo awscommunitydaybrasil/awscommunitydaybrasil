@@ -4,10 +4,13 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import navigationData from "@/data/navigation.json";
-import siteData from "@/data/site.json";
+import type { NavItem } from "@/lib/cms";
 
-const Navbar = () => {
+interface NavbarProps {
+  navItems: NavItem[];
+}
+
+const Navbar = ({ navItems }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,11 +34,11 @@ const Navbar = () => {
     >
       <div className="container-main flex items-center justify-between h-16">
         <Link href="/" className="text-white font-bold text-lg whitespace-nowrap">
-          {siteData.name}
+          AWS Community Day Norte
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
-          {navigationData.primary.map((link) => (
+          {navItems.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -60,7 +63,7 @@ const Navbar = () => {
 
       {menuOpen && (
         <nav className="lg:hidden bg-aws-dark border-t border-white/10 px-5 pb-5 pt-2">
-          {navigationData.primary.map((link) => (
+          {navItems.map((link) => (
             <Link
               key={link.href}
               href={link.href}
