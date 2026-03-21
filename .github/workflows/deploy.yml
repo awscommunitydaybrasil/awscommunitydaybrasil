@@ -22,9 +22,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+      - name: Compute Next.js base path
+        id: basepath
+        run: |
+          if [ "$GITHUB_REPOSITORY" = "awscommunitydaybrasil/awscommunitydaybrasil" ]; then
+            echo "value=" >> $GITHUB_OUTPUT
+          else
+            REPO_NAME=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f2)
+            echo "value=/$REPO_NAME" >> $GITHUB_OUTPUT
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -42,7 +48,7 @@ jobs:
         working-directory: norte
         run: yarn build
         env:
-          NEXT_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_BASE_PATH: ${{ steps.basepath.outputs.value }}
 
       - name: Assemble deploy directory
         run: |
@@ -62,6 +68,9 @@ jobs:
 
           # Copy built Norte site
           cp -r norte/dist/. _site/norte/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
