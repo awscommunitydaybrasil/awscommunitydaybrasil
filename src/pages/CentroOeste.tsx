@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import logo from "@/assets/logo-community-day.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
