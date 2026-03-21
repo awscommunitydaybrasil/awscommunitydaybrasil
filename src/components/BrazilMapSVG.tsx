@@ -91,6 +91,7 @@ const hostCityData: Record<string, { city: string; date: string }> = {
 const BrazilMapSVG = () => {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [hoveredHost, setHoveredHost] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const getStateFill = (code: string) => {
     const region = stateToRegion[code];
@@ -110,7 +111,11 @@ const BrazilMapSVG = () => {
     if (!region) return;
     const link = regionLinks[region];
     if (link && link !== "#") {
-      window.open(link, "_blank", "noopener,noreferrer");
+      if (link.startsWith("/")) {
+        navigate(link);
+      } else {
+        window.open(link, "_blank", "noopener,noreferrer");
+      }
     }
   };
 
