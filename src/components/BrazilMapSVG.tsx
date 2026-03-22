@@ -81,11 +81,11 @@ const hostMarkerPositions: Record<string, { x: number; y: number }> = {
 
 // Host city data for tooltips
 const hostCityData: Record<string, { city: string; date: string }> = {
-  PA: { city: "Belém", date: "Em breve" },
-  DF: { city: "Brasília", date: "26 Jul" },
-  BA: { city: "Salvador", date: "Em breve" },
-  MG: { city: "Belo Horizonte", date: "21 Jun" },
-  PR: { city: "Curitiba", date: "Em breve" },
+  DF: { city: "Brasília", date: "27 Jun" },
+  MG: { city: "Belo Horizonte", date: "22 Ago" },
+  PR: { city: "Curitiba", date: "19 Set" },
+  BA: { city: "Salvador", date: "03 Out" },
+  PA: { city: "Belém", date: "14 Nov" },
 };
 
 const BrazilMapSVG = () => {
