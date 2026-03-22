@@ -50,7 +50,7 @@ const leaders = [
   {
     name: "Norte",
     city: "Belém",
-    date: "Em breve",
+    date: "14/11/2026",
     image: postcardBelem,
     leader: "Thayana Mamoré",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
