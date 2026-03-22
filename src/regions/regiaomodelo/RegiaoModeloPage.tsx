@@ -107,6 +107,7 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
 
   const [activeNav, setActiveNav] = useState("");
   const [trackFilter, setTrackFilter] = useState("Todas");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
