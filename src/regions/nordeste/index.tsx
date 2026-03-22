@@ -4,7 +4,7 @@ import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
 import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
-import heroImage from "@/assets/postcard-salvador.png";
+import heroImage from "./assets/postcard-salvador.png";
 
 const Nordeste = () => (
   <RegionPage

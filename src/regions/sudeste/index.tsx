@@ -4,7 +4,7 @@ import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
 import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
-import heroImage from "@/assets/postcard-bh.png";
+import heroImage from "./assets/postcard-bh.png";
 
 const Sudeste = () => (
   <RegionPage

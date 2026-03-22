@@ -25,7 +25,7 @@ const leaders = [
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
-    link: "https://www.awscommunityday.com.br/sudeste/index.html",
+    link: "/sudeste",
   },
   {
     name: "Nordeste",
@@ -35,7 +35,7 @@ const leaders = [
     leader: "Caio Nunes",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
-    link: "#",
+    link: "/nordeste",
   },
   {
     name: "Sul",
@@ -45,7 +45,7 @@ const leaders = [
     leader: "Alceu Neto",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
-    link: "#",
+    link: "/sul",
   },
   {
     name: "Norte",
@@ -55,7 +55,7 @@ const leaders = [
     leader: "Thayana Mamoré",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
     leaderLinkedin: "https://www.linkedin.com/in/thayanacmamore/",
-    link: "#",
+    link: "/norte",
   },
 ];
 

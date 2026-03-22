@@ -2,7 +2,7 @@
   "regionName": "Norte",
   "subtitle": "O maior evento de comunidades AWS do Norte brasileiro",
   "targetDate": "2026-09-01T09:00:00-03:00",
-  "heroImage": "/src/assets/postcard-belem.png",
+  "heroImage": "./assets/postcard-belem.png",
   "location": {
     "venue": "Em Breve!",
     "city": "Belém/PA"

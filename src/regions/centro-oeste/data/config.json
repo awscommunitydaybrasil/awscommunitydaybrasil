@@ -2,7 +2,7 @@
   "regionName": "Centro-Oeste",
   "subtitle": "O maior evento de comunidades AWS do Centro-Oeste brasileiro",
   "targetDate": "2026-06-27T09:00:00-03:00",
-  "heroImage": "/src/assets/postcard-brasilia.png",
+  "heroImage": "./assets/postcard-brasilia.png",
   "location": {
     "venue": "Em Breve!",
     "city": "Taguatinga/DF"
