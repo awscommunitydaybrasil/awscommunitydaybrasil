@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import logo from "@/assets/logo-community-day.png";
 import siteLogo from "@/assets/logo-brasil-generico.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
