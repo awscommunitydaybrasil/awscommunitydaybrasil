@@ -1,3 +1,4 @@
+// Regional page component
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Instagram, Linkedin, Youtube } from "lucide-react";
