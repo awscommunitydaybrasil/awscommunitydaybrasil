@@ -1,0 +1,28 @@
+{
+  "regionName": "Norte",
+  "subtitle": "O maior evento de comunidades AWS do Norte brasileiro",
+  "targetDate": "2026-09-01T09:00:00-03:00",
+  "heroImage": "/src/assets/postcard-belem.png",
+  "location": {
+    "venue": "Em Breve!",
+    "city": "Belém/PA"
+  },
+  "registration": {
+    "status": "Em Breve!",
+    "url": ""
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/awscommunitydaybr/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "twitter": "https://twitter.com/awscommunitybr",
+    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+  },
+  "userGroups": [
+    { "name": "AWS User Group Belém", "url": "https://www.meetup.com/pt-BR/awsbel/" },
+    { "name": "AWS User Group Manaus", "url": "https://www.meetup.com/pt-BR/awsmao/" }
+  ],
+  "contact": {
+    "email": "contato@awscommunityday.com.br",
+    "website": "https://www.awscommunityday.com.br"
+  }
+}
