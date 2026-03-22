@@ -50,6 +50,7 @@ export interface ScheduleItem {
   title: string;
   speaker: string;
   track: string;
+  level?: string;
 }
 
 export interface Sponsor {
