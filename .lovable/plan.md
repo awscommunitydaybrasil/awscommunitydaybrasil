@@ -1,39 +1,34 @@
 
 
-## Plano: Mover assets regionais e atualizar links da página Brasil
+## Plano: Adicionar fotos dos organizadores Centro-Oeste
 
 ### O que será feito
 
-1. **Mover imagens regionais para pastas específicas** — copiar cada postcard da pasta `src/assets/` para `src/regions/[regiao]/assets/`:
-   - `postcard-brasilia.png` → `src/regions/centro-oeste/assets/`
-   - `postcard-salvador.png` → `src/regions/nordeste/assets/`
-   - `postcard-belem.png` → `src/regions/norte/assets/`
-   - `postcard-bh.png` → `src/regions/sudeste/assets/`
-   - `postcard-curitiba.png` → `src/regions/sul/assets/`
+1. **Copiar 4 imagens** para `src/regions/centro-oeste/assets/`:
+   - `user-uploads://deivid.jpg` → `deivid.jpg`
+   - `user-uploads://paiva.jpg` → `marcelopaiva.jpg`
+   - `user-uploads://priscilla.jpg` → `priscila.jpg`
+   - `user-uploads://wagner.jpg` → `wagner.jpg`
 
-2. **Atualizar imports nas páginas regionais** — cada `regions/[regiao]/index.tsx` passará a importar o heroImage de `./assets/` em vez de `@/assets/`.
-
-3. **Atualizar links da LeadersSection** — todos os cards na home que apontam para `#` ou links externos serão atualizados para rotas internas (`/nordeste`, `/norte`, `/sul`).
-
-4. **Atualizar config.json de cada região** — campo `heroImage` apontará para o path local.
-
-5. **Imagens globais permanecem em `src/assets/`** — logo, community-illustration e region-*.jpg (usados na home) ficam onde estão.
+2. **Atualizar `organizers.json`** — trocar as URLs externas por imports locais. Como JSON não suporta imports, será necessário ajustar o `index.tsx` da região para processar os caminhos locais, ou converter o `photo` para paths relativos que serão resolvidos via import no componente.
 
 ### Detalhes técnicos
 
-**Arquivos modificados:**
-- `src/regions/centro-oeste/index.tsx` — import de `./assets/postcard-brasilia.png`
-- `src/regions/nordeste/index.tsx` — import de `./assets/postcard-salvador.png`
-- `src/regions/norte/index.tsx` — import de `./assets/postcard-belem.png`
-- `src/regions/sudeste/index.tsx` — import de `./assets/postcard-bh.png`
-- `src/regions/sul/index.tsx` — import de `./assets/postcard-curitiba.png`
-- `src/components/LeadersSection.tsx` — links de Nordeste (`/nordeste`), Sul (`/sul`), Norte (`/norte`) em vez de `#`; Sudeste para `/sudeste` em vez do link externo
-- 5x `config.json` — atualizar campo heroImage
+Como JSONs não suportam `import`, a abordagem será:
+- Salvar as fotos nos assets da região
+- No `organizers.json`, usar nomes de arquivo simples (ex: `"photo": "deivid.jpg"`)
+- No `src/regions/centro-oeste/index.tsx`, importar as imagens e criar um mapeamento, ou alternativamente importar os organizadores diretamente com as fotos já mapeadas
+- Atualizar `RegionPage.tsx` para aceitar organizadores com fotos já resolvidas
 
-**Arquivos criados (cópia de assets):**
-- `src/regions/centro-oeste/assets/postcard-brasilia.png`
-- `src/regions/nordeste/assets/postcard-salvador.png`
-- `src/regions/norte/assets/postcard-belem.png`
-- `src/regions/sudeste/assets/postcard-bh.png`
-- `src/regions/sul/assets/postcard-curitiba.png`
+**Alternativa mais simples**: manter as fotos como imports estáticos no `index.tsx` e sobrescrever o campo `photo` dos organizadores antes de passar ao `RegionPage`. Isso mantém o JSON limpo e os assets corretamente bundled pelo Vite.
+
+### Arquivos modificados
+- `src/regions/centro-oeste/data/organizers.json` — campo photo com nome do arquivo
+- `src/regions/centro-oeste/index.tsx` — importar imagens e mapear nos organizadores
+
+### Arquivos criados
+- `src/regions/centro-oeste/assets/deivid.jpg`
+- `src/regions/centro-oeste/assets/marcelopaiva.jpg`
+- `src/regions/centro-oeste/assets/priscila.jpg`
+- `src/regions/centro-oeste/assets/wagner.jpg`
 
