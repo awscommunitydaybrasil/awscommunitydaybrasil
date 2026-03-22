@@ -30,7 +30,7 @@ const RegiaoModelo = () => (
     organizers={resolvedOrganizers}
     speakers={speakers}
     schedule={schedule}
-    sponsors={sponsors}
+    sponsors={sponsors as Sponsor[]}
     heroImage={heroImage}
   />
 );
