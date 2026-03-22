@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/norte" element={<Norte />} />
           <Route path="/sudeste" element={<Sudeste />} />
           <Route path="/sul" element={<Sul />} />
+          <Route path="/regiaomodelo" element={<RegiaoModelo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

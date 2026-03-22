@@ -1,0 +1,56 @@
+[
+  {
+    "name": "AWS",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/aws.png",
+    "url": "https://aws.amazon.com/",
+    "tier": "diamond"
+  },
+  {
+    "name": "Caylent",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/caylent.png",
+    "url": "https://caylent.com/",
+    "tier": "diamond"
+  },
+  {
+    "name": "OPS Team",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/ops-logo.svg",
+    "url": "https://ops.team/",
+    "tier": "gold"
+  },
+  {
+    "name": "Alura + FIAP",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/alura_fiap.png",
+    "url": "https://www.fiap.com.br/",
+    "tier": "gold"
+  },
+  {
+    "name": "Cloudfaster",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/cloudfaster.png",
+    "url": "https://cloudfaster.com.br/",
+    "tier": "silver"
+  },
+  {
+    "name": "TNKR",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/tnkr_byselect.png",
+    "url": "https://tnkr.com.br/",
+    "tier": "silver"
+  },
+  {
+    "name": "Dati",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/dati.png",
+    "url": "https://www.dati.com.br/",
+    "tier": "silver"
+  },
+  {
+    "name": "GFT",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/gft.png",
+    "url": "https://www.gft.com/",
+    "tier": "silver"
+  },
+  {
+    "name": "Darede",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/darede.png",
+    "url": "https://www.darede.com.br/",
+    "tier": "bronze"
+  }
+]
