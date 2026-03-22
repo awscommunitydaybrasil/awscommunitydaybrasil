@@ -1,42 +1,24 @@
 
 
-## Plano: Página modelo dedicada com programação por trilha, patrocinadores por tier e menu regional
+## Plano: Substituir header principal pelo menu regional na página modelo
 
-### 1. Criar página TSX dedicada para a região modelo
+### O que sera feito
 
-Criar `src/regions/regiaomodelo/RegiaoModeloPage.tsx` -- uma copia do `RegionPage.tsx` mas independente, para poder evoluir sem afetar as demais regiões. O `index.tsx` passará a usar este componente em vez do `RegionPage` compartilhado.
+Remover o `<Header />` global da `RegiaoModeloPage.tsx` e transformar o menu regional sticky (que ja existe) no header principal da pagina. O menu regional passara a incluir o logo com link para home e os anchor links das secoes, ocupando a posicao fixa no topo (z-50, top-0).
 
-### 2. Programação com filtro por trilha
+### Mudancas em `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
 
-Adicionar tabs/filtros na seção de programação:
-- **Todas** (visão geral com todas as atividades)
-- **Palco Talk**
-- **Palco Hands-On**
-- **Geral** (credenciamento, coffee, almoço, etc.)
+1. **Remover** o import e uso de `<Header />` (linhas 3 e 166)
+2. **Transformar** o nav sticky (linha 203) no header fixo da pagina:
+   - Mover para `fixed top-0` com z-50 (mesmo comportamento do Header global)
+   - Adicionar logo (link para `/`) no lado esquerdo
+   - Manter os anchor links (Sobre, Palestrantes, Programacao, Patrocinadores, Organizadores) no centro/direita
+   - Adicionar menu hamburguer mobile para os anchor links
+   - Manter o indicador de secao ativa (IntersectionObserver ja implementado)
+3. **Ajustar** o `pt-16` do hero para compensar o novo header fixo
+4. **Remover** o link "Voltar para Home" do hero (ja tera o logo no header)
 
-Usar o componente `Tabs` (shadcn) para alternar entre as trilhas. Adicionalmente, criar no schedule.json campos `level` para as trilhas de nível: Iniciante, Intermediário e Avançado (distribuídos entre as palestras existentes), e adicionar um segundo grupo de filtros ou badges visuais por nível.
+### Resultado
 
-### 3. Patrocinadores agrupados por tier
-
-Reorganizar a seção de patrocinadores para exibir por grupo hierárquico:
-- **Platina** (diamond) -- logos maiores, destaque visual
-- **Ouro** (gold) -- logos médios
-- **Prata** (silver) -- logos menores
-- **Bronze** (bronze) -- logos compactos
-
-Cada tier terá um heading e tamanhos de logo proporcionais ao nível de patrocínio.
-
-### 4. Menu de navegação regional (anchor links)
-
-Adicionar um menu sticky abaixo do hero com links âncora para as seções da página:
-- Sobre | Palestrantes | Programação | Patrocinadores | Organizadores
-
-Cada seção receberá um `id` correspondente. O menu ficará fixo no topo ao fazer scroll (sticky).
-
-### Arquivos a criar
-- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` -- página completa independente com as 3 melhorias
-
-### Arquivos a modificar
-- `src/regions/regiaomodelo/index.tsx` -- importar `RegiaoModeloPage` em vez de `RegionPage`
-- `src/regions/regiaomodelo/data/schedule.json` -- adicionar campo `level` às palestras
+Ao acessar `/regiaomodelo`, o usuario vera apenas o menu regional no topo -- sem o header generico do site. O logo leva de volta a home, e os links navegam pelas secoes da pagina.
 
