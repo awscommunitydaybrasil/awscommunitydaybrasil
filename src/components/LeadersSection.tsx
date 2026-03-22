@@ -30,7 +30,7 @@ const leaders = [
   {
     name: "Nordeste",
     city: "Salvador",
-    date: "Em breve",
+    date: "03/10/2026",
     image: postcardSalvador,
     leader: "Caio Nunes",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
