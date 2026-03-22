@@ -424,14 +424,14 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
                     <h3 className="text-sm font-bold font-display uppercase tracking-[0.2em] text-primary mb-4">
                       {tc.label}
                     </h3>
-                    <div className={`grid ${tc.gridCols} gap-4 justify-items-center`}>
+                    <div className={`flex flex-wrap justify-center gap-4`}>
                       {tierSponsors.map((sponsor) => (
                         <a
                           key={sponsor.name}
                           href={sponsor.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="rounded-lg border border-border bg-card p-5 flex items-center justify-center hover:border-primary/50 transition-all w-full"
+                          className="rounded-lg border border-border bg-white p-5 flex items-center justify-center hover:border-primary/50 transition-all w-40 md:w-48"
                         >
                           <img src={sponsor.logo} alt={sponsor.name} className={`${tc.logoSize} object-contain`} />
                         </a>
