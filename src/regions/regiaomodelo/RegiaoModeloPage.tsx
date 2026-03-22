@@ -1,7 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-community-day.png";
+import siteLogo from "@/assets/logo-brasil-generico.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { RegionConfig, Organizer, Speaker, Sponsor } from "@/regions/types";
 
@@ -106,6 +107,7 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
 
   const [activeNav, setActiveNav] = useState("");
   const [trackFilter, setTrackFilter] = useState("Todas");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
@@ -163,7 +165,62 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {/* Regional Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+        <div className="container flex items-center justify-between h-16">
+          <Link to="/"><img src={siteLogo} alt="AWS Community Day Brasil" className="h-10" /></Link>
+          <nav className="hidden md:flex items-center gap-1">
+            {navSections.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className={`px-4 py-2 text-sm font-display font-semibold rounded-full transition-all whitespace-nowrap ${
+                  activeNav === id
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-card/95 backdrop-blur-md border-b border-border">
+            <nav className="container flex flex-col gap-2 py-4">
+              {navSections.map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className={`px-4 py-2 text-sm font-display font-semibold rounded-full transition-all ${
+                    activeNav === id
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-16">
@@ -173,12 +230,6 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
           ref={heroRef}
           className={`relative z-10 text-center container transition-all duration-1000 ease-out ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8 font-display">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Voltar para Home
-          </Link>
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-4 font-display">
             Edição {config.regionName} · {config.location.city}
           </p>
@@ -198,29 +249,6 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
           </div>
         </div>
       </section>
-
-      {/* Sticky Regional Nav */}
-      <nav className="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-border">
-        <div className="container max-w-4xl flex items-center justify-center gap-1 py-2 overflow-x-auto">
-          {navSections.map(({ id, label }) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-              className={`px-4 py-2 text-sm font-display font-semibold rounded-full transition-all whitespace-nowrap ${
-                activeNav === id
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              }`}
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      </nav>
 
       {/* Info Cards */}
       <section id="sobre" className="py-8 scroll-mt-16">
