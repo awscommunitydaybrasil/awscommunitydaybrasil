@@ -1,31 +1,22 @@
 
 
-## Plano: Keynote, ordenação e redes sociais dos palestrantes
+## Plano: Aplicar keynote, ordenação e redes sociais na RegionPage.tsx
 
-### 1. Atualizar tipo `Speaker` em `src/regions/types.ts`
+### Arquivo: `src/regions/RegionPage.tsx`
 
-Adicionar campos opcionais:
-```ts
-keynote?: boolean;
-social?: {
-  instagram?: string;
-  linkedin?: string;
-  twitter?: string;
-};
-```
+**1. Adicionar imports** (topo do arquivo):
+- `Star`, `Linkedin`, `Instagram` de `lucide-react`
 
-### 2. Atualizar `src/regions/regiaomodelo/data/speakers.json`
+**2. Seção Palestrantes (linhas 180-207)**: Replicar a mesma lógica do `RegiaoModeloPage.tsx`:
+- Ordenar speakers: keynotes primeiro, depois alfabético por nome
+- Adicionar badge "Keynote" com estrela dourada
+- Estilizar card de keynote com `border-primary/40 ring-1 ring-primary/20`
+- Adicionar ícones sociais (LinkedIn, Instagram, X) condicionalmente
+- Manter o comportamento existente: seção só aparece se `speakers.length > 0`
 
-Adicionar `keynote: true` nos 2-3 primeiros palestrantes (como exemplo) e campos `social` com links fictícios de exemplo para demonstrar a funcionalidade.
+**3. Manter cards "Em Breve"**: As seções de programação (linhas 214-230) e patrocinadores (linhas 234-252) já exibem cards "Em Breve" quando vazias — nenhuma alteração necessária nessas seções.
 
-### 3. Atualizar `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
-
-- **Ordenação**: Antes de renderizar, ordenar speakers: keynotes primeiro, depois alfabético por nome.
-- **Badge "Keynote"**: Exibir um badge visual nos cards de keynote speakers (ex: badge dourado com estrela).
-- **Ícones sociais**: No card de cada speaker, após o título/empresa, renderizar ícones de Instagram, LinkedIn e X (apenas os que tiverem link preenchido). Usar Lucide `Instagram`, `Linkedin` e SVG inline para X.
-
-### Arquivos a modificar
-- `src/regions/types.ts` — novos campos opcionais
-- `src/regions/regiaomodelo/data/speakers.json` — adicionar `keynote` e `social`
-- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` — lógica de ordenação + badge keynote + ícones sociais
+### Arquivos NÃO alterados
+- `types.ts` — já possui `keynote` e `social` (atualizado anteriormente)
+- JSONs regionais — mantêm-se como estão (arrays vazios ou com dados)
 
