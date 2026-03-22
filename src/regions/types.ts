@@ -37,6 +37,12 @@ export interface Speaker {
   company: string;
   talk: string;
   bio: string;
+  keynote?: boolean;
+  social?: {
+    instagram?: string;
+    linkedin?: string;
+    twitter?: string;
+  };
 }
 
 export interface ScheduleItem {

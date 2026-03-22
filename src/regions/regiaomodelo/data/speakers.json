@@ -5,7 +5,11 @@
     "title": "Especialista em Dados",
     "company": "",
     "talk": "Qual melhor camada de dados para construir seu Knowledge Database na AWS?",
-    "bio": ""
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/williamlino"
+    }
   },
   {
     "name": "Daiane Dalavi",
@@ -13,7 +17,12 @@
     "title": "Cloud Professional",
     "company": "",
     "talk": "Carreira em Cloud: Do Técnico ao Estratégico, Onde Você se Encaixa?",
-    "bio": ""
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/daianedalavi",
+      "instagram": "https://instagram.com/daianedalavi"
+    }
   },
   {
     "name": "Léo Oliveira",
@@ -21,7 +30,10 @@
     "title": "Engenheiro de Dados",
     "company": "",
     "talk": "Melhorando Resiliência e Cortando Custos na Ingestão de Dados",
-    "bio": ""
+    "bio": "",
+    "social": {
+      "linkedin": "https://linkedin.com/in/leooliveira"
+    }
   },
   {
     "name": "Humberto \"Beto\" Demolinari",
@@ -29,7 +41,8 @@
     "title": "ML Engineer",
     "company": "",
     "talk": "A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Cleiton Nascimento",
@@ -37,7 +50,8 @@
     "title": "Desenvolvedor Cloud",
     "company": "",
     "talk": "Descomplicando os principais serviços de computação da AWS: EC2, ECS, EKS e Lambda",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Erika Nagamine",
@@ -45,7 +59,12 @@
     "title": "Data Architect",
     "company": "",
     "talk": "Arquitetura Moderna de Dados — Será que estou fazendo da maneira correta?",
-    "bio": ""
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/erikanagamine",
+      "twitter": "https://x.com/erikanagamine"
+    }
   },
   {
     "name": "Christiano Milfont",
@@ -53,7 +72,8 @@
     "title": "ProdOps Engineer",
     "company": "",
     "talk": "Observability Driven Design: Desenhando Jornadas de Confiabilidade ProdOps",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Rodrigo Pokemão",
@@ -61,7 +81,10 @@
     "title": "Comediante Tech",
     "company": "",
     "talk": "Stand-up",
-    "bio": ""
+    "bio": "",
+    "social": {
+      "instagram": "https://instagram.com/rodrigopokemao"
+    }
   },
   {
     "name": "Bruno Marangoni",
@@ -69,7 +92,8 @@
     "title": "Security Specialist",
     "company": "",
     "talk": "Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na prática!",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Lays Rodrigues",
@@ -77,7 +101,10 @@
     "title": "DevOps Engineer",
     "company": "",
     "talk": "AWS e Terraform: Don't reinvent the modules",
-    "bio": ""
+    "bio": "",
+    "social": {
+      "linkedin": "https://linkedin.com/in/laysrodrigues"
+    }
   },
   {
     "name": "Filipe Almeida Guimarães",
@@ -85,7 +112,8 @@
     "title": "Network Architect",
     "company": "",
     "talk": "Redes Inteligentes na AWS: Da Arquitetura ao Troubleshooting com IA",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Leo Ciccone & Dan Rezende",
@@ -93,7 +121,8 @@
     "title": "Security Engineers",
     "company": "",
     "talk": "Agentic Security Assessments on AWS",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Michelle Perez & Leonardo Azize",
@@ -101,7 +130,8 @@
     "title": "Cloud Engineers",
     "company": "",
     "talk": "Implementação de segurança de saída com AWS Network Firewall e Route 53",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Carlos A. Marangon & Leticia M. Uchida",
@@ -109,7 +139,8 @@
     "title": "GenAI Specialists",
     "company": "",
     "talk": "Assistente GenAI com Bedrock usando StepFunctions, OpenSearch e RAG",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Walter Neto",
@@ -117,7 +148,8 @@
     "title": "Data Engineer",
     "company": "",
     "talk": "Integrando Bancos Transacionais em um Lakehouse na AWS com DMS CDC, SQS FIFO e Iceberg",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Amom Luiz & Lucas Vitoreti",
@@ -125,7 +157,8 @@
     "title": "Data Engineers",
     "company": "",
     "talk": "Construindo um Lakehouse gerenciado com Amazon S3 Tables - da teoria à prática",
-    "bio": ""
+    "bio": "",
+    "social": {}
   },
   {
     "name": "Leonardo Azize & Daniel Cardoso",
@@ -133,6 +166,7 @@
     "title": "Cloud Engineers",
     "company": "",
     "talk": "Escalando Kubernetes: Resolvendo o Esgotamento de IPs com EKS IPv6",
-    "bio": ""
+    "bio": "",
+    "social": {}
   }
 ]
