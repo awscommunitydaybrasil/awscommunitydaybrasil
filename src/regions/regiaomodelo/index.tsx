@@ -1,4 +1,4 @@
-import RegiaoModeloPage from "./RegiaoModeloPage";
+import RegionPage from "@/regions/RegionPage";
 import config from "./data/config.json";
 import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
@@ -25,7 +25,7 @@ const resolvedOrganizers = organizers.map((org) => ({
 }));
 
 const RegiaoModelo = () => (
-  <RegiaoModeloPage
+  <RegionPage
     config={config}
     organizers={resolvedOrganizers}
     speakers={speakers}
