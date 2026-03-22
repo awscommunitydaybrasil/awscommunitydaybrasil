@@ -23,11 +23,11 @@ Object.entries(regionStates).forEach(([region, states]) => {
 });
 
 const regionLinks: Record<string, string> = {
-  norte: "#",
-  nordeste: "#",
+  norte: "/norte",
+  nordeste: "/nordeste",
   centroOeste: "/centro-oeste",
-  sudeste: "https://www.awscommunityday.com.br/sudeste/index.html",
-  sul: "#",
+  sudeste: "/sudeste",
+  sul: "/sul",
 };
 
 const hostStates = ["PA", "BA", "DF", "MG", "PR"];
