@@ -35,7 +35,7 @@ const leaders = [
     leader: "Caio Nunes",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
-    link: "#",
+    link: "/nordeste",
   },
   {
     name: "Sul",
