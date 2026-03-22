@@ -188,6 +188,16 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
               </a>
             ))}
           </nav>
+          {config.registration.url && (
+            <a
+              href={config.registration.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
+            >
+              Inscreva-se
+            </a>
+          )}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -217,6 +227,17 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
                   {label}
                 </a>
               ))}
+              {config.registration.url && (
+                <a
+                  href={config.registration.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mx-4 mt-2 inline-flex items-center justify-center px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
+                >
+                  Inscreva-se
+                </a>
+              )}
             </nav>
           </div>
         )}
