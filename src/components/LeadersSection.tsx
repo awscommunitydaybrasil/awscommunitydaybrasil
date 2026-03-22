@@ -25,7 +25,7 @@ const leaders = [
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
-    link: "https://www.awscommunityday.com.br/sudeste/index.html",
+    link: "/sudeste",
   },
   {
     name: "Nordeste",
