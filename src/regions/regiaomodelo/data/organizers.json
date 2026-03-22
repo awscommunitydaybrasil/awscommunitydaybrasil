@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Priscila Araujo",
+    "photo": "priscila.jpg",
+    "linkedin": "https://www.linkedin.com/in/priaaraujo/"
+  },
+  {
+    "name": "Wagner Landim",
+    "photo": "wagner.jpg",
+    "linkedin": "https://www.linkedin.com/in/wagnerlandim/"
+  },
+  {
+    "name": "Deivid Veras",
+    "photo": "deivid.jpg",
+    "linkedin": "https://www.linkedin.com/in/deividveras/"
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "marcelopaiva.jpg",
+    "linkedin": "https://www.linkedin.com/in/mfrpaiva/"
+  }
+]

@@ -9,6 +9,7 @@ import Nordeste from "./regions/nordeste/index.tsx";
 import Norte from "./regions/norte/index.tsx";
 import Sudeste from "./regions/sudeste/index.tsx";
 import Sul from "./regions/sul/index.tsx";
+import RegiaoModelo from "./regions/regiaomodelo/index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/norte" element={<Norte />} />
           <Route path="/sudeste" element={<Sudeste />} />
           <Route path="/sul" element={<Sul />} />
+          <Route path="/regiaomodelo" element={<RegiaoModelo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
