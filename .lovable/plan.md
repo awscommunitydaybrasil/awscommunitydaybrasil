@@ -1,40 +1,42 @@
 
 
-## Plano: Criar região oculta "regiaomodelo"
+## Plano: Página modelo dedicada com programação por trilha, patrocinadores por tier e menu regional
 
-### O que sera feito
+### 1. Criar página TSX dedicada para a região modelo
 
-Criar uma região modelo completa em `/regiaomodelo` com dados extraidos do site historico (edição 2025 Campinas), usando a estrutura da centro-oeste como base. A rota não será linkada em nenhum menu ou mapa -- acesso apenas por URL direto.
+Criar `src/regions/regiaomodelo/RegiaoModeloPage.tsx` -- uma copia do `RegionPage.tsx` mas independente, para poder evoluir sem afetar as demais regiões. O `index.tsx` passará a usar este componente em vez do `RegionPage` compartilhado.
 
-### Dados extraidos do site historico
+### 2. Programação com filtro por trilha
 
-**Palestrantes (13):**
-William Lino, Daiane Dalavi, Léo Oliveira, Humberto "Beto" Demolinari, Cleiton Nascimento, Erika Nagamine, Christiano Milfont, Rodrigo Pokemão, Bruno Marangoni, Lays Rodrigues, Filipe Almeida Guimarães, Leo Ciccone & Dan Rezende, Michelle Perez & Leonardo Azize, Carlos Alberto Marangon & Leticia Massae Uchida, Walter Neto, Amom Luiz & Lucas Vitoreti
+Adicionar tabs/filtros na seção de programação:
+- **Todas** (visão geral com todas as atividades)
+- **Palco Talk**
+- **Palco Hands-On**
+- **Geral** (credenciamento, coffee, almoço, etc.)
 
-**Programação (22 itens):** Grade completa de 08:00 às 19:30, com Palco Talk e Palco Hands-On
+Usar o componente `Tabs` (shadcn) para alternar entre as trilhas. Adicionalmente, criar no schedule.json campos `level` para as trilhas de nível: Iniciante, Intermediário e Avançado (distribuídos entre as palestras existentes), e adicionar um segundo grupo de filtros ou badges visuais por nível.
 
-**Patrocinadores (8):** AWS e Caylent (Platina), OPS Team e Alura+FIAP (Ouro), Cloudfaster, TNKR, Dati, GFT (Prata), Darede (Bronze)
+### 3. Patrocinadores agrupados por tier
 
-**Organizadores:** Usar os 4 da centro-oeste (Priscila, Wagner, Deivid, Marcelo) com fotos locais já existentes
+Reorganizar a seção de patrocinadores para exibir por grupo hierárquico:
+- **Platina** (diamond) -- logos maiores, destaque visual
+- **Ouro** (gold) -- logos médios
+- **Prata** (silver) -- logos menores
+- **Bronze** (bronze) -- logos compactos
+
+Cada tier terá um heading e tamanhos de logo proporcionais ao nível de patrocínio.
+
+### 4. Menu de navegação regional (anchor links)
+
+Adicionar um menu sticky abaixo do hero com links âncora para as seções da página:
+- Sobre | Palestrantes | Programação | Patrocinadores | Organizadores
+
+Cada seção receberá um `id` correspondente. O menu ficará fixo no topo ao fazer scroll (sticky).
 
 ### Arquivos a criar
-
-- `src/regions/regiaomodelo/data/config.json` — baseado no centro-oeste, ajustado para "Região Modelo", local "Expo Dom Pedro, Campinas/SP"
-- `src/regions/regiaomodelo/data/speakers.json` — 13+ palestrantes com fotos externas (URLs do site historico)
-- `src/regions/regiaomodelo/data/schedule.json` — 22 itens da grade completa
-- `src/regions/regiaomodelo/data/sponsors.json` — 8 patrocinadores com logos externos (URLs do site historico)
-- `src/regions/regiaomodelo/data/organizers.json` — copia dos 4 organizadores centro-oeste
-- `src/regions/regiaomodelo/index.tsx` — importa dados e reutiliza RegionPage, importa fotos dos organizadores de centro-oeste
-- `src/regions/regiaomodelo/assets/` — symlink ou copia do postcard de brasilia como hero image
+- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` -- página completa independente com as 3 melhorias
 
 ### Arquivos a modificar
-
-- `src/App.tsx` — adicionar rota `/regiaomodelo` (sem adicionar ao mapa ou menus)
-
-### Detalhes tecnicos
-
-- Fotos de palestrantes e logos de patrocinadores usarão URLs externas diretas do site historico (evita copiar dezenas de imagens)
-- Fotos dos organizadores reutilizarão os imports ja existentes em centro-oeste/assets
-- O `tier` dos sponsors será mapeado: Platina→diamond, Ouro→gold, Prata→silver, Bronze→bronze
-- Rota oculta: não aparece no mapa, na LeadersSection nem no RegionsSection
+- `src/regions/regiaomodelo/index.tsx` -- importar `RegiaoModeloPage` em vez de `RegionPage`
+- `src/regions/regiaomodelo/data/schedule.json` -- adicionar campo `level` às palestras
 
