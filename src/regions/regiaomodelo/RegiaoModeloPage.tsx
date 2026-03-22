@@ -485,12 +485,12 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
             <div>
               <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Redes Sociais</h4>
-              <ul className="space-y-2 text-sm">
-                {config.socialLinks.instagram && <li><a href={config.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a></li>}
-                {config.socialLinks.linkedin && <li><a href={config.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</a></li>}
-                {config.socialLinks.twitter && <li><a href={config.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">X (Twitter)</a></li>}
-                {config.socialLinks.youtube && <li><a href={config.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">YouTube</a></li>}
-              </ul>
+              <div className="flex gap-4">
+                {config.socialLinks.instagram && <a href={config.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram"><Instagram size={22} /></a>}
+                {config.socialLinks.linkedin && <a href={config.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin size={22} /></a>}
+                {config.socialLinks.twitter && <a href={config.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="X (Twitter)"><Twitter size={22} /></a>}
+                {config.socialLinks.youtube && <a href={config.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube"><Youtube size={22} /></a>}
+              </div>
             </div>
             <div>
               <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">User Groups</h4>
