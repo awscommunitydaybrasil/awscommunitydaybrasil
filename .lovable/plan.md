@@ -1,15 +1,31 @@
 
 
-## Plano: Logos de patrocinadores com fundo branco e centralizadas
+## Plano: Keynote, ordenação e redes sociais dos palestrantes
 
-### Mudança em `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
+### 1. Atualizar tipo `Speaker` em `src/regions/types.ts`
 
-**Linha 434**: Alterar o `className` do `<a>` wrapper de cada sponsor para incluir `bg-white` (fundo branco fixo independente do tema) e garantir centralização.
+Adicionar campos opcionais:
+```ts
+keynote?: boolean;
+social?: {
+  instagram?: string;
+  linkedin?: string;
+  twitter?: string;
+};
+```
 
-**Linha 427**: Adicionar `place-items-center` ou `justify-center` ao grid container para centralizar as logos quando não preenchem toda a linha.
+### 2. Atualizar `src/regions/regiaomodelo/data/speakers.json`
 
-Mudanças específicas:
-- `bg-card` → `bg-white` no link do sponsor (linha 434)
-- Adicionar `justify-center` no `<div>` do grid (linha 427) para centralizar logos na última linha incompleta
-- Mudar o grid para `flex flex-wrap justify-center` para melhor centralização geral
+Adicionar `keynote: true` nos 2-3 primeiros palestrantes (como exemplo) e campos `social` com links fictícios de exemplo para demonstrar a funcionalidade.
+
+### 3. Atualizar `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
+
+- **Ordenação**: Antes de renderizar, ordenar speakers: keynotes primeiro, depois alfabético por nome.
+- **Badge "Keynote"**: Exibir um badge visual nos cards de keynote speakers (ex: badge dourado com estrela).
+- **Ícones sociais**: No card de cada speaker, após o título/empresa, renderizar ícones de Instagram, LinkedIn e X (apenas os que tiverem link preenchido). Usar Lucide `Instagram`, `Linkedin` e SVG inline para X.
+
+### Arquivos a modificar
+- `src/regions/types.ts` — novos campos opcionais
+- `src/regions/regiaomodelo/data/speakers.json` — adicionar `keynote` e `social`
+- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` — lógica de ordenação + badge keynote + ícones sociais
 
