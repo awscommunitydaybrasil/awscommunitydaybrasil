@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import logo from "@/assets/logo-community-day.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Star, Linkedin, Instagram } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import type { RegionConfig, Organizer, Speaker, ScheduleItem, Sponsor } from "./types";
 
 function useCountdown(targetDate: string) {
