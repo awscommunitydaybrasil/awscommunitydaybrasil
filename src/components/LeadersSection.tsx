@@ -20,7 +20,7 @@ const leaders = [
   {
     name: "Sudeste",
     city: "Belo Horizonte",
-    date: "Em breve",
+    date: "22/08/2026",
     image: postcardBH,
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
@@ -30,7 +30,7 @@ const leaders = [
   {
     name: "Nordeste",
     city: "Salvador",
-    date: "Em breve",
+    date: "03/10/2026",
     image: postcardSalvador,
     leader: "Caio Nunes",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
@@ -40,7 +40,7 @@ const leaders = [
   {
     name: "Sul",
     city: "Curitiba",
-    date: "Em breve",
+    date: "19/09/2026",
     image: postcardCuritiba,
     leader: "Alceu Neto",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
@@ -50,7 +50,7 @@ const leaders = [
   {
     name: "Norte",
     city: "Belém",
-    date: "Em breve",
+    date: "14/11/2026",
     image: postcardBelem,
     leader: "Thayana Mamoré",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
