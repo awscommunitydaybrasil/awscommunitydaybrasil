@@ -1,75 +1,39 @@
 
 
-## Plano: Reestruturar projeto por regiões com dados JSON
+## Plano: Mover assets regionais e atualizar links da página Brasil
 
-### Objetivo
-Criar uma estrutura de pastas organizada por região, onde cada região tem seus próprios dados (JSON) e página, permitindo que pessoas diferentes editem cada região independentemente.
+### O que será feito
 
-### Nova estrutura de pastas
+1. **Mover imagens regionais para pastas específicas** — copiar cada postcard da pasta `src/assets/` para `src/regions/[regiao]/assets/`:
+   - `postcard-brasilia.png` → `src/regions/centro-oeste/assets/`
+   - `postcard-salvador.png` → `src/regions/nordeste/assets/`
+   - `postcard-belem.png` → `src/regions/norte/assets/`
+   - `postcard-bh.png` → `src/regions/sudeste/assets/`
+   - `postcard-curitiba.png` → `src/regions/sul/assets/`
 
-```text
-src/
-  regions/
-    types.ts                    # Tipos TypeScript compartilhados
-    centro-oeste/
-      data/
-        config.json             # Dados gerais: nome, data, local, countdown, links
-        organizers.json         # Organizadores
-        speakers.json           # Palestrantes (vazio por enquanto)
-        schedule.json           # Programação (vazio por enquanto)
-        sponsors.json           # Patrocinadores (vazio por enquanto)
-      assets/                   # Imagens específicas da região
-      index.tsx                 # Página principal (refatorada do CentroOeste.tsx)
-    nordeste/
-      data/
-        config.json
-        organizers.json
-        speakers.json
-        schedule.json
-        sponsors.json
-      assets/
-      index.tsx
-    norte/
-      data/  (mesma estrutura)
-      assets/
-      index.tsx
-    sudeste/
-      data/  (mesma estrutura)
-      assets/
-      index.tsx
-    sul/
-      data/  (mesma estrutura)
-      assets/
-      index.tsx
-```
+2. **Atualizar imports nas páginas regionais** — cada `regions/[regiao]/index.tsx` passará a importar o heroImage de `./assets/` em vez de `@/assets/`.
+
+3. **Atualizar links da LeadersSection** — todos os cards na home que apontam para `#` ou links externos serão atualizados para rotas internas (`/nordeste`, `/norte`, `/sul`).
+
+4. **Atualizar config.json de cada região** — campo `heroImage` apontará para o path local.
+
+5. **Imagens globais permanecem em `src/assets/`** — logo, community-illustration e region-*.jpg (usados na home) ficam onde estão.
 
 ### Detalhes técnicos
 
-**1. Tipos compartilhados (`types.ts`)**
-- Interfaces: `RegionConfig`, `Organizer`, `Speaker`, `ScheduleItem`, `Sponsor`
-- `RegionConfig` inclui: nome, subtítulo, data do evento, local, cidade, links de redes sociais, user groups, contato
+**Arquivos modificados:**
+- `src/regions/centro-oeste/index.tsx` — import de `./assets/postcard-brasilia.png`
+- `src/regions/nordeste/index.tsx` — import de `./assets/postcard-salvador.png`
+- `src/regions/norte/index.tsx` — import de `./assets/postcard-belem.png`
+- `src/regions/sudeste/index.tsx` — import de `./assets/postcard-bh.png`
+- `src/regions/sul/index.tsx` — import de `./assets/postcard-curitiba.png`
+- `src/components/LeadersSection.tsx` — links de Nordeste (`/nordeste`), Sul (`/sul`), Norte (`/norte`) em vez de `#`; Sudeste para `/sudeste` em vez do link externo
+- 5x `config.json` — atualizar campo heroImage
 
-**2. Arquivos JSON por região**
-- `config.json`: nome da região, data-alvo do countdown, local, cidade/UF, links de footer (redes sociais, user groups, contato, código de conduta)
-- `organizers.json`: array com {name, photo, linkedin}
-- `speakers.json`: array com {name, photo, title, company, talk, bio} — vazio inicialmente exceto centro-oeste
-- `schedule.json`: array com {time, title, speaker, track} — vazio inicialmente
-- `sponsors.json`: array com {name, logo, url, tier} — vazio inicialmente
-
-**3. Componente de página regional reutilizável**
-- Criar `src/regions/RegionPage.tsx` — componente genérico que recebe os dados JSON e renderiza a página completa (hero, countdown, info cards, expectations, programação, patrocinadores, organizadores, footer)
-- Cada `regions/[regiao]/index.tsx` simplesmente importa seus JSONs e passa para `RegionPage`
-
-**4. Rotas**
-- Atualizar `App.tsx` com rotas: `/centro-oeste`, `/nordeste`, `/norte`, `/sudeste`, `/sul`
-- Atualizar `BrazilMapSVG.tsx` com os links internos para cada região
-
-**5. Migração**
-- Extrair dados hardcoded de `CentroOeste.tsx` para os JSONs
-- Deletar `src/pages/CentroOeste.tsx` (substituído por `src/regions/centro-oeste/index.tsx`)
-- Demais regiões terão JSONs com dados placeholder ("Em Breve")
-
-### O que NÃO muda
-- Página principal (`Index.tsx`) e seus componentes globais permanecem intactos
-- Header e componentes UI compartilhados ficam onde estão
+**Arquivos criados (cópia de assets):**
+- `src/regions/centro-oeste/assets/postcard-brasilia.png`
+- `src/regions/nordeste/assets/postcard-salvador.png`
+- `src/regions/norte/assets/postcard-belem.png`
+- `src/regions/sudeste/assets/postcard-bh.png`
+- `src/regions/sul/assets/postcard-curitiba.png`
 
