@@ -323,7 +323,13 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
       </section>
 
       {/* Palestrantes */}
-      {speakers.length > 0 && (
+      {speakers.length > 0 && (() => {
+        const sortedSpeakers = [...speakers].sort((a, b) => {
+          if (a.keynote && !b.keynote) return -1;
+          if (!a.keynote && b.keynote) return 1;
+          return a.name.localeCompare(b.name, "pt-BR");
+        });
+        return (
         <section id="palestrantes" className="py-20 scroll-mt-16">
           <div className="container max-w-5xl">
             <div ref={speakersRef} className={`text-center mb-12 transition-all duration-700 ease-out ${speakersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -331,12 +337,18 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
               <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">Quem vai palestrar</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {speakers.map((speaker, i) => (
+              {sortedSpeakers.map((speaker, i) => (
                 <div
                   key={speaker.name}
-                  className={`rounded-lg border border-border bg-card p-6 text-center transition-all duration-700 ease-out hover:border-primary/50 ${speakersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                  className={`rounded-lg border bg-card p-6 text-center transition-all duration-700 ease-out hover:border-primary/50 ${speaker.keynote ? "border-primary/40 ring-1 ring-primary/20" : "border-border"} ${speakersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                   style={{ transitionDelay: `${i * 100}ms`, boxShadow: "var(--shadow-card)" }}
                 >
+                  {speaker.keynote && (
+                    <div className="flex items-center justify-center gap-1.5 mb-3">
+                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      <span className="text-xs font-bold uppercase tracking-wider text-yellow-500 font-display">Keynote</span>
+                    </div>
+                  )}
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-[3px] border-primary mb-4" style={{ boxShadow: "var(--shadow-glow)" }}>
                     <img src={speaker.photo} alt={speaker.name} className="w-full h-full object-cover" />
                   </div>
@@ -344,12 +356,32 @@ const RegiaoModeloPage = ({ config, organizers, speakers, schedule, sponsors, he
                   <p className="text-sm text-primary font-medium">{speaker.title}</p>
                   <p className="text-xs text-muted-foreground">{speaker.company}</p>
                   {speaker.talk && <p className="text-sm text-muted-foreground mt-3 italic">"{speaker.talk}"</p>}
+                  {speaker.social && (speaker.social.instagram || speaker.social.linkedin || speaker.social.twitter) && (
+                    <div className="flex items-center justify-center gap-3 mt-4">
+                      {speaker.social.linkedin && (
+                        <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                      )}
+                      {speaker.social.instagram && (
+                        <a href={speaker.social.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                          <Instagram className="h-5 w-5" />
+                        </a>
+                      )}
+                      {speaker.social.twitter && (
+                        <a href={speaker.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
-      )}
+        );
+      })()}
 
       {/* Programação */}
       <section id="programacao" className={`py-20 scroll-mt-16 ${speakers.length > 0 ? "bg-secondary" : ""}`}>
