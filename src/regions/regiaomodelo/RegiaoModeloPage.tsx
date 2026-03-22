@@ -1,7 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-community-day.png";
+import siteLogo from "@/assets/logo-brasil-generico.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { RegionConfig, Organizer, Speaker, Sponsor } from "@/regions/types";
 
