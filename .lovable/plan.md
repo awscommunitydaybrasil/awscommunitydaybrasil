@@ -1,17 +1,22 @@
 
 
-## Plano: Botão "Inscreva-se" no header regional
+## Plano: Scroll suave global e ícones nas redes sociais
 
-### Mudança única em `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
+### 1. Scroll suave global
 
-Adicionar um botão "Inscreva-se" condicional no header, visível apenas quando `config.registration.url` não está vazio.
+Adicionar `scroll-behavior: smooth` ao `html` em `src/index.css`. Isso faz com que todos os anchor links (`#sobre`, `#palestrantes`, etc.) naveguem suavemente sem precisar de JS adicional.
 
-**Desktop (linha ~190, após o `</nav>`):**
-- Inserir um `<a>` estilizado como botão primário (bg-primary, rounded-full, text-sm font-semibold) com `target="_blank"` apontando para `config.registration.url`
-- Posicionar entre o nav e o botão hamburger mobile
+### 2. Redes sociais com ícones no footer
 
-**Mobile (dentro do menu dropdown, linha ~218):**
-- Adicionar o mesmo botão "Inscreva-se" ao final da lista de links do menu mobile
+No footer da `RegiaoModeloPage.tsx` (linhas 486-493), substituir os links de texto por ícones do Lucide React:
+- Instagram → `Instagram` icon
+- LinkedIn → `Linkedin` icon  
+- X (Twitter) → `Twitter` icon
+- YouTube → `Youtube` icon
 
-**Condição:** Renderizar apenas se `config.registration.url` for truthy (string não vazia).
+Renderizar como uma linha horizontal de ícones (`flex gap-4`) em vez de uma lista vertical de texto.
+
+### Arquivos a modificar
+- `src/index.css` — adicionar `scroll-behavior: smooth` no `html`
+- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` — importar ícones do Lucide e substituir os links textuais por ícones no footer
 
