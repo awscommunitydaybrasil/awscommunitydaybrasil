@@ -2,7 +2,7 @@
   "regionName": "Sudeste",
   "subtitle": "O maior evento de comunidades AWS do Sudeste brasileiro",
   "targetDate": "2026-06-21T09:00:00-03:00",
-  "heroImage": "/src/assets/postcard-bh.png",
+  "heroImage": "./assets/postcard-bh.png",
   "location": {
     "venue": "Em Breve!",
     "city": "Belo Horizonte/MG"

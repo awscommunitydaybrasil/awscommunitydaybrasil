@@ -55,7 +55,7 @@ const leaders = [
     leader: "Thayana Mamoré",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
     leaderLinkedin: "https://www.linkedin.com/in/thayanacmamore/",
-    link: "#",
+    link: "/norte",
   },
 ];
 
