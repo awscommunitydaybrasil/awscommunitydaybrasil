@@ -45,7 +45,7 @@ const leaders = [
     leader: "Alceu Neto",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
-    link: "#",
+    link: "/sul",
   },
   {
     name: "Norte",
