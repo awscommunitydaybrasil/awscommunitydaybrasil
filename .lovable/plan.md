@@ -1,22 +1,15 @@
 
 
-## Plano: Scroll suave global e ícones nas redes sociais
+## Plano: Logos de patrocinadores com fundo branco e centralizadas
 
-### 1. Scroll suave global
+### Mudança em `src/regions/regiaomodelo/RegiaoModeloPage.tsx`
 
-Adicionar `scroll-behavior: smooth` ao `html` em `src/index.css`. Isso faz com que todos os anchor links (`#sobre`, `#palestrantes`, etc.) naveguem suavemente sem precisar de JS adicional.
+**Linha 434**: Alterar o `className` do `<a>` wrapper de cada sponsor para incluir `bg-white` (fundo branco fixo independente do tema) e garantir centralização.
 
-### 2. Redes sociais com ícones no footer
+**Linha 427**: Adicionar `place-items-center` ou `justify-center` ao grid container para centralizar as logos quando não preenchem toda a linha.
 
-No footer da `RegiaoModeloPage.tsx` (linhas 486-493), substituir os links de texto por ícones do Lucide React:
-- Instagram → `Instagram` icon
-- LinkedIn → `Linkedin` icon  
-- X (Twitter) → `Twitter` icon
-- YouTube → `Youtube` icon
-
-Renderizar como uma linha horizontal de ícones (`flex gap-4`) em vez de uma lista vertical de texto.
-
-### Arquivos a modificar
-- `src/index.css` — adicionar `scroll-behavior: smooth` no `html`
-- `src/regions/regiaomodelo/RegiaoModeloPage.tsx` — importar ícones do Lucide e substituir os links textuais por ícones no footer
+Mudanças específicas:
+- `bg-card` → `bg-white` no link do sponsor (linha 434)
+- Adicionar `justify-center` no `<div>` do grid (linha 427) para centralizar logos na última linha incompleta
+- Mudar o grid para `flex flex-wrap justify-center` para melhor centralização geral
 
