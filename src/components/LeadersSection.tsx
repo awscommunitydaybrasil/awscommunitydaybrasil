@@ -20,7 +20,7 @@ const leaders = [
   {
     name: "Sudeste",
     city: "Belo Horizonte",
-    date: "Em breve",
+    date: "22/08/2026",
     image: postcardBH,
     leader: "Rafaela Vidotti",
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
