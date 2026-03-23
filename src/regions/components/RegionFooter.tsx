@@ -36,7 +36,7 @@ const RegionFooter = ({ config }: RegionFooterProps) => (
         <div>
           <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Código de Conduta</h4>
           <p className="text-sm text-muted-foreground leading-relaxed mb-3">Nosso evento segue um código de conduta para garantir um ambiente seguro e inclusivo para todos.</p>
-          <a href="https://aws.amazon.com/codeofconduct/" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline font-medium">Leia o Código de Conduta →</a>
+          <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline font-medium">Leia o Código de Conduta →</a>
         </div>
       </div>
       <div className="mt-12 pt-6 border-t border-border text-center">
