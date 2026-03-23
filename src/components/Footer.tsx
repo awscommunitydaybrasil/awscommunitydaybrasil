@@ -30,7 +30,7 @@ const Footer = () => {
           © 2026 AWS Community Day Brasil. Organizado pela comunidade, para a comunidade.
         </p>
         <a
-          href="https://aws.amazon.com/codeofconduct/"
+          href="https://github.com/awscommunitydaybrasil/codigo-de-conduta"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs text-muted-foreground hover:text-primary transition-colors"
