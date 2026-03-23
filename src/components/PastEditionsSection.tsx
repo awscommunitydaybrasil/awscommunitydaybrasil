@@ -11,7 +11,7 @@ const editions = [
     year: "Novembro 2024",
     location: "Goiânia e Florianópolis",
     description: "Edição simultânea em duas cidades",
-    link: "https://www.awscommunityday.com.br/hist/2024-nov/index.html",
+    link: "/hist/2024-nov/index.html",
   },
   {
     year: "2023",

@@ -2,6 +2,7 @@ export interface RegionConfig {
   regionName: string;
   subtitle: string;
   targetDate: string;
+  eventTime?: string;
   heroImage: string;
   location: {
     venue: string;
@@ -27,7 +28,13 @@ export interface RegionConfig {
 export interface Organizer {
   name: string;
   photo: string;
-  linkedin: string;
+  social?: {
+    linkedin?: string;
+    instagram?: string;
+    twitter?: string;
+  };
+  /** @deprecated Use social.linkedin instead */
+  linkedin?: string;
 }
 
 export interface Speaker {
