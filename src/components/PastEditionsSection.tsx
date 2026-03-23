@@ -5,7 +5,7 @@ const editions = [
     year: "Setembro 2025",
     location: "Campinas / SP",
     description: "Edição realizada no Expo Dom Pedro",
-    link: "https://www.awscommunityday.com.br/hist/2025-dec/index.html",
+    link: "/hist/2025-dec/index.html",
   },
   {
     year: "Novembro 2024",
