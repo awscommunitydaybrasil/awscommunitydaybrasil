@@ -1,7 +1,8 @@
 {
   "regionName": "Nordeste",
   "subtitle": "O maior evento de comunidades AWS do Nordeste brasileiro",
-  "targetDate": "2026-08-01T09:00:00-03:00",
+  "targetDate": "2026-10-03T09:00:00-03:00",
+  "eventTime": "09h às 18h",
   "heroImage": "./assets/postcard-salvador.png",
   "location": {
     "venue": "Em Breve!",

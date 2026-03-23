@@ -1,7 +1,8 @@
 {
   "regionName": "Sudeste",
   "subtitle": "O maior evento de comunidades AWS do Sudeste brasileiro",
-  "targetDate": "2026-06-21T09:00:00-03:00",
+  "targetDate": "2026-08-22T09:00:00-03:00",
+  "eventTime": "09h às 18h",
   "heroImage": "./assets/postcard-bh.png",
   "location": {
     "venue": "Em Breve!",

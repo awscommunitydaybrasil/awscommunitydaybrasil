@@ -28,16 +28,6 @@ const leaders = [
     link: "/sudeste",
   },
   {
-    name: "Nordeste",
-    city: "Salvador",
-    date: "03/10/2026",
-    image: postcardSalvador,
-    leader: "Caio Nunes",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
-    leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
-    link: "/nordeste",
-  },
-  {
     name: "Sul",
     city: "Curitiba",
     date: "19/09/2026",
@@ -46,6 +36,16 @@ const leaders = [
     leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
     link: "/sul",
+  },
+  {
+    name: "Nordeste",
+    city: "Salvador",
+    date: "03/10/2026",
+    image: postcardSalvador,
+    leader: "Caio Nunes",
+    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
+    leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
+    link: "/nordeste",
   },
   {
     name: "Norte",
