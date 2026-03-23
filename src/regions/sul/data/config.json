@@ -1,7 +1,8 @@
 {
   "regionName": "Sul",
   "subtitle": "O maior evento de comunidades AWS do Sul brasileiro",
-  "targetDate": "2026-10-01T09:00:00-03:00",
+  "targetDate": "2026-09-19T09:00:00-03:00",
+  "eventTime": "09h às 18h",
   "heroImage": "./assets/postcard-curitiba.png",
   "location": {
     "venue": "Em Breve!",

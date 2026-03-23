@@ -2,6 +2,7 @@
   "regionName": "Região Modelo",
   "subtitle": "Exemplo completo de página regional — baseado na edição Campinas 2025",
   "targetDate": "2026-09-27T09:00:00-03:00",
+  "eventTime": "09h às 19h",
   "heroImage": "./assets/postcard-brasilia.png",
   "location": {
     "venue": "Expo Dom Pedro",
