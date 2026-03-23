@@ -35,7 +35,7 @@ const editions = [
     year: "2020",
     location: "Online",
     description: "Edição on-line",
-    link: "#",
+    link: "https://www.youtube.com/playlist?list=PL7D77BqXy3EP7qajLWNW6UYOsaGXKj69Q",
   },
 ];
 
@@ -50,9 +50,7 @@ const PastEditionsSection = () => {
           ref={titleRef}
           className={`text-center mb-4 transition-all duration-700 ease-out ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
-            Edições Anteriores
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">Edições Anteriores</h2>
           <p className="text-muted-foreground mt-3">
             Confira como foram as edições anteriores do AWS Community Day Brasil
           </p>
@@ -65,17 +63,29 @@ const PastEditionsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-6 p-5 rounded-lg border border-border hover:border-primary/50 transition-all group ${listVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-              style={{ transitionDuration: "700ms", transitionTimingFunction: "ease-out", transitionDelay: `${i * 100}ms` }}
+              style={{
+                transitionDuration: "700ms",
+                transitionTimingFunction: "ease-out",
+                transitionDelay: `${i * 100}ms`,
+              }}
             >
-              <span className="text-lg md:text-xl font-bold font-display text-primary whitespace-nowrap">{ed.year}</span>
+              <span className="text-lg md:text-xl font-bold font-display text-primary whitespace-nowrap">
+                {ed.year}
+              </span>
               <div className="h-px flex-1 bg-border" />
               <div className="text-right">
                 <p className="text-foreground font-medium">{ed.location}</p>
                 <p className="text-sm text-muted-foreground">{ed.description}</p>
               </div>
               <svg
-                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0"
               >
                 <path d="M5 12h14M12 5l7 7-7 7" />
