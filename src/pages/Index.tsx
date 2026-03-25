@@ -16,6 +16,7 @@ const Index = () => {
       <AboutSection />
       <RegionsSection />
       <LeadersSection />
+      <GalleryCarousel />
       <PastEditionsSection />
       <CTASection />
       <Footer />
