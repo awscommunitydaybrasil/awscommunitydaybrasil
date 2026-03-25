@@ -8,8 +8,18 @@ import gallery04 from "@/assets/gallery/gallery-04.jpg";
 import gallery05 from "@/assets/gallery/gallery-05.jpg";
 import gallery06 from "@/assets/gallery/gallery-06.jpg";
 import gallery07 from "@/assets/gallery/gallery-07.jpg";
+import gallery08 from "@/assets/gallery/gallery-08.jpg";
+import gallery09 from "@/assets/gallery/gallery-09.jpg";
+import gallery10 from "@/assets/gallery/gallery-10.jpg";
+import gallery11 from "@/assets/gallery/gallery-11.jpg";
+import gallery12 from "@/assets/gallery/gallery-12.jpg";
+import gallery13 from "@/assets/gallery/gallery-13.jpg";
+import gallery14 from "@/assets/gallery/gallery-14.jpg";
+import gallery15 from "@/assets/gallery/gallery-15.jpg";
+import gallery16 from "@/assets/gallery/gallery-16.jpg";
+import gallery17 from "@/assets/gallery/gallery-17.jpg";
 
-const images = [gallery01, gallery02, gallery03, gallery04, gallery05, gallery06, gallery07];
+const images = [gallery01, gallery02, gallery03, gallery04, gallery05, gallery06, gallery07, gallery08, gallery09, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17];
 
 const GalleryCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
