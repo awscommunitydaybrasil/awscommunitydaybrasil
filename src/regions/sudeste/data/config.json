@@ -23,6 +23,7 @@
     { "name": "AWS User Group São Paulo", "url": "https://www.meetup.com/pt-BR/awssp/" },
     { "name": "AWS User Group Rio de Janeiro", "url": "https://www.meetup.com/pt-BR/awsrj/" }
   ],
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"

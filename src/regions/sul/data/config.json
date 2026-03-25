@@ -23,6 +23,7 @@
     { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-BR/awspoa/" },
     { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-BR/awsfln/" }
   ],
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"

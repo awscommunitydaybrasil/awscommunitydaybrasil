@@ -19,6 +19,7 @@ export interface RegionConfig {
     youtube?: string;
   };
   userGroups: Array<{ name: string; url: string }>;
+  callForSpeakersUrl?: string;
   contact: {
     email: string;
     website: string;

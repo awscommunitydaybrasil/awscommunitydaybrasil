@@ -22,6 +22,7 @@
     { "name": "AWS User Group Belém", "url": "https://www.meetup.com/pt-BR/awsbel/" },
     { "name": "AWS User Group Manaus", "url": "https://www.meetup.com/pt-BR/awsmao/" }
   ],
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
