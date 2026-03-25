@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import RegionsSection from "@/components/RegionsSection";
 import LeadersSection from "@/components/LeadersSection";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import PastEditionsSection from "@/components/PastEditionsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
