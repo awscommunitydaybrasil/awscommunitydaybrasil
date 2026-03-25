@@ -1,34 +1,25 @@
 
 
-## Plano: Documentar o projeto no README.md
+## Plano: Botão CTA "Call for Speakers" nas páginas regionais
 
-### Arquivo: `README.md`
+### 1. `src/regions/types.ts`
+Adicionar campo opcional `callForSpeakersUrl?: string` no `RegionConfig`.
 
-Reescrever completamente o README com as seguintes seções:
+### 2. `src/regions/centro-oeste/data/config.json` (e demais configs)
+Adicionar campo `"callForSpeakersUrl": ""` em cada config regional. Quando preenchido com URL, o botão aparece; vazio = não aparece.
 
-**1. Visão geral** — Descrição do projeto (site AWS Community Day Brasil 2026).
+### 3. `src/regions/RegionPage.tsx`
+Entre `<RegionHero>` e `<InfoCardsSection>`, adicionar um bloco condicional:
+- Se `config.callForSpeakersUrl` existir e não for vazio, renderizar uma `<section>` centralizada com um botão/link CTA estilizado (fundo primário, texto bold, ícone de microfone, `target="_blank"`).
+- Texto: "Call for Speakers" ou "Submeta sua palestra".
+- Responsivo com padding adequado (`py-6`, centralizado com `text-center`).
 
-**2. Stack técnica** — React 18, Vite 5, TypeScript, Tailwind CSS, shadcn/ui, React Router, Lucide Icons.
+### 4. `src/regions/regiaomodelo/data/config.json`
+Colocar uma URL de exemplo para validação visual (ex: `"callForSpeakersUrl": "https://sessionize.com/exemplo"`).
 
-**3. Estrutura do projeto** — Diagrama ASCII mostrando a árvore de diretórios relevante (`src/regions/[regiao]/data/`, `src/regions/components/`, `public/hist/`).
-
-**4. Arquitetura regional** — Explicação do sistema modular: cada região tem sua pasta com `index.tsx`, `assets/` e `data/` contendo 5 arquivos JSON. O componente unificado `RegionPage.tsx` renderiza tudo.
-
-**5. Guia de conteúdo por arquivo JSON** — Para cada arquivo, incluir: finalidade, campos obrigatórios/opcionais, tipos aceitos e exemplo completo:
-
-| Arquivo | Finalidade |
-|---------|-----------|
-| `config.json` | Configuração geral da região (nome, data, local, inscrição, redes sociais, grupos) |
-| `speakers.json` | Lista de palestrantes (nome, foto, cargo, palestra, keynote, redes sociais) |
-| `schedule.json` | Programação do evento (horário, título, palestrante, trilha, nível) |
-| `sponsors.json` | Patrocinadores por tier (diamond, gold, silver, bronze, community) |
-| `organizers.json` | Organizadores com foto e redes sociais (linkedin, instagram, twitter) |
-
-Cada um com exemplo JSON mínimo funcional e notas sobre comportamento (ex: seções vazias exibem "Em Breve", keynotes aparecem primeiro, sponsors agrupam por tier).
-
-**6. Como adicionar uma nova região** — Passo a passo: criar pasta, copiar template dos JSONs, adicionar assets, registrar rota no `App.tsx`.
-
-**7. Como rodar localmente** — `npm install` + `npm run dev`.
-
-**8. Edições anteriores** — Nota sobre os HTMLs estáticos em `public/hist/`.
+### Arquivos a modificar
+- `src/regions/types.ts` — novo campo
+- `src/regions/RegionPage.tsx` — CTA condicional
+- `src/regions/*/data/config.json` (6 configs) — adicionar campo vazio
+- `src/regions/regiaomodelo/data/config.json` — URL de exemplo
 
