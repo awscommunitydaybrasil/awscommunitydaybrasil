@@ -22,6 +22,7 @@
     { "name": "AWS User Group Campinas", "url": "https://www.meetup.com/pt-BR/awsvcp/" },
     { "name": "AWS User Group São Paulo", "url": "https://www.meetup.com/pt-BR/awsusergroupsp/" }
   ],
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-exemplo",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"

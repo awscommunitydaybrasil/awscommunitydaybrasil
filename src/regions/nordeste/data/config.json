@@ -23,6 +23,7 @@
     { "name": "AWS User Group Recife", "url": "https://www.meetup.com/pt-BR/awsrec/" },
     { "name": "AWS User Group Fortaleza", "url": "https://www.meetup.com/pt-BR/awsfor/" }
   ],
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"

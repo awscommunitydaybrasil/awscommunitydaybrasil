@@ -22,6 +22,7 @@
     { "name": "AWS User Group Brasília", "url": "https://www.meetup.com/pt-BR/awsbsb/" },
     { "name": "AWS User Group Goiânia", "url": "https://www.meetup.com/pt-BR/awsgyn/" }
   ],
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
