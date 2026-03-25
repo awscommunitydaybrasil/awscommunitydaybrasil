@@ -32,7 +32,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
       <RegionHero config={config} heroImage={heroImage} />
 
       {config.callForSpeakersUrl && (
-        <section className="py-6 px-4 text-center">
+        <section className="py-3 px-4 text-center">
           <a
             href={config.callForSpeakersUrl}
             target="_blank"
