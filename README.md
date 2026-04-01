@@ -2,8 +2,6 @@
 
 Site oficial do **AWS Community Day Brasil 2026**, um evento de comunidade com edições regionais em todo o Brasil. Cada região possui sua própria página com palestrantes, programação, patrocinadores e organizadores.
 
-🔗 **Produção:** [awscday26br.lovable.app](https://awscday26br.lovable.app)
-
 ---
 
 ## Stack Técnica
