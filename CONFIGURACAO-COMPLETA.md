@@ -25,12 +25,21 @@
 - BrowserRouter com basename: `/awscommunitydaybrasil26`
 - Rotas funcionarão corretamente no GitHub Pages
 
-### 4. Arquivo .nojekyll
+### 4. Solução para Rotas SPA no GitHub Pages
+✅ Criado: `public/404.html`
+- Redireciona 404s para index.html preservando a rota
+- Permite acesso direto a URLs como `/regiaomodelo`
+
+✅ Atualizado: `index.html`
+- Script para processar redirecionamento do 404.html
+- Restaura a URL original após o redirecionamento
+
+### 5. Arquivo .nojekyll
 ✅ Criado: `public/.nojekyll`
 - Previne processamento Jekyll do GitHub
 - Permite arquivos/pastas começando com underscore
 
-### 5. Documentação
+### 6. Documentação
 ✅ Criado: `DEPLOY.md` - Guia completo de deploy
 ✅ Criado: `.github/SETUP.md` - Setup rápido
 
@@ -108,6 +117,7 @@ Após o deploy, teste todas as rotas:
 - https://marcelojpaiva.github.io/awscommunitydaybrasil26/norte
 - https://marcelojpaiva.github.io/awscommunitydaybrasil26/sudeste
 - https://marcelojpaiva.github.io/awscommunitydaybrasil26/sul
+- https://marcelojpaiva.github.io/awscommunitydaybrasil26/regiaomodelo (Página modelo/exemplo)
 
 ---
 
@@ -118,10 +128,19 @@ Após o deploy, teste todas as rotas:
 **Causa**: Configuração do base path incorreta  
 **Solução**: Já está configurado corretamente! Se persistir, limpe o cache: Ctrl+Shift+R
 
-### ❌ Erro 404 ao acessar rotas
+### ❌ Erro 404 ao acessar rotas diretamente
 
-**Causa**: GitHub Pages não configurado para "GitHub Actions"  
-**Solução**: Vá em Settings → Pages → Source: GitHub Actions
+**Causa**: GitHub Pages não encontra arquivo físico para rotas do React Router  
+**Solução**: ✅ Já implementada! O arquivo `404.html` redireciona automaticamente para a rota correta
+
+**Como funciona:**
+1. Você acessa `/awscommunitydaybrasil26/regiaomodelo`
+2. GitHub Pages não encontra arquivo físico → retorna `404.html`
+3. O `404.html` salva a URL e redireciona para `/awscommunitydaybrasil26/`
+4. O `index.html` detecta o redirecionamento e restaura a URL original
+5. React Router carrega a rota correta
+
+Após o deploy, todas as rotas funcionarão perfeitamente, incluindo acesso direto!
 
 ### ❌ Build falha no Actions
 
