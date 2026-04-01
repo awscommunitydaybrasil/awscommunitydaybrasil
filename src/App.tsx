@@ -19,7 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/awscommunitydaybrasil26">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/centro-oeste" element={<CentroOeste />} />
