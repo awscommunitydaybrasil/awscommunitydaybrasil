@@ -23,7 +23,7 @@ const InfoCardsSection = ({ config, formattedDate }: InfoCardsSectionProps) => {
   const cards = [
     { label: "Local", value: config.location.venue, sub: config.location.city, icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
     { label: "Data e Hora", value: dateValue, sub: timeSub, icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
-    { label: "Inscrições", value: config.registration.status, sub: config.registration.url ? "Inscreva-se" : "Fique ligado", icon: "M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" },
+    { label: "Inscrições", value: config.registration.status, sub: config.registration.url ? "Inscreva-se" : "Fique ligado", href: config.registration.url || undefined, icon: "M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" },
   ];
 
   return (
@@ -40,7 +40,18 @@ const InfoCardsSection = ({ config, formattedDate }: InfoCardsSectionProps) => {
             </svg>
             <h3 className="text-lg font-bold font-display text-foreground mb-1">{card.label}</h3>
             <p className="text-xl font-bold text-primary font-display">{card.value}</p>
-            <p className="text-sm text-muted-foreground mt-1">{card.sub}</p>
+            {card.href ? (
+              <a
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center mt-3 px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
+              >
+                {card.sub}
+              </a>
+            ) : (
+              <p className="text-sm text-muted-foreground mt-1">{card.sub}</p>
+            )}
           </div>
         ))}
       </div>

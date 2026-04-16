@@ -2,29 +2,28 @@
   "regionName": "Centro-Oeste",
   "subtitle": "O maior evento de comunidades AWS do Centro-Oeste brasileiro",
   "targetDate": "2026-06-27T09:00:00-03:00",
-  "eventTime": "09h às 18h",
+  "eventTime": "08:30h às 17h",
   "heroImage": "./assets/postcard-brasilia.png",
   "location": {
-    "venue": "Em Breve!",
+    "venue": "UniProjeção - Campus I Área Especial Setor C Norte, 15",
     "city": "Taguatinga/DF"
   },
   "registration": {
-    "status": "Em Breve!",
-    "url": ""
+    "status": "Garanta sua vaga",
+    "url": "https://hubconnecteventos.com.br/evento/awscommunitydaybrasilia"
   },
   "socialLinks": {
-    "instagram": "https://www.instagram.com/awscommunitydaybr/",
-    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
-    "twitter": "https://twitter.com/awscommunitybr",
-    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+    "instagram": "https://www.instagram.com/awsbrasilia",
+    "linkedin": "linkedin.com/company/aws-user-group-bsb/",
+    "youtube": "https://www.youtube.com/@AWSUsergroupBrasilia/streams"
   },
   "userGroups": [
-    { "name": "AWS User Group Brasília", "url": "https://www.meetup.com/pt-BR/awsbsb/" },
-    { "name": "AWS User Group Goiânia", "url": "https://www.meetup.com/pt-BR/awsgyn/" }
+    { "name": "AWS User Group Brasília", "url": "https://www.meetup.com/pt-BR/aws-user-group-brasilia/" },
+    { "name": "AWS User Group Goiânia", "url": "https://www.meetup.com/aws-go" }
   ],
-  "callForSpeakersUrl": "",
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-2026-centro-oeste",
   "contact": {
-    "email": "contato@awscommunityday.com.br",
+    "email": "centrooeste@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
   }
 }
