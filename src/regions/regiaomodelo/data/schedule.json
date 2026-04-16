@@ -1,0 +1,170 @@
+[
+  {
+    "time": "08:00 - 08:30",
+    "title": "Credenciamento + Recepção",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "08:30 - 09:00",
+    "title": "Welcome Coffee",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "09:00 - 09:10",
+    "title": "Abertura do Community Day",
+    "speaker": "Comunidades AWS User Groups",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "09:10 - 09:50",
+    "title": "Qual melhor camada de dados para construir seu Knowledge Database na AWS?",
+    "speaker": "William Lino",
+    "track": "Palco Talk",
+    "level": "Intermediário"
+  },
+  {
+    "time": "09:20 - 10:20",
+    "title": "Implementação de segurança de saída com AWS Network Firewall e Route 53",
+    "speaker": "Michelle Perez e Leonardo Azize",
+    "track": "Palco Hands-On",
+    "level": "Avançado"
+  },
+  {
+    "time": "10:00 - 10:40",
+    "title": "Carreira em Cloud: Do Técnico ao Estratégico, Onde Você se Encaixa?",
+    "speaker": "Daiane Dalavi",
+    "track": "Palco Talk",
+    "level": "Iniciante"
+  },
+  {
+    "time": "10:30 - 11:30",
+    "title": "Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na prática!",
+    "speaker": "Bruno Marangoni",
+    "track": "Palco Hands-On",
+    "level": "Avançado"
+  },
+  {
+    "time": "10:50 - 11:30",
+    "title": "Melhorando Resiliência e Cortando Custos na Ingestão de Dados",
+    "speaker": "Léo Oliveira",
+    "track": "Palco Talk",
+    "level": "Intermediário"
+  },
+  {
+    "time": "11:40 - 12:20",
+    "title": "A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker",
+    "speaker": "Humberto \"Beto\" Demolinari",
+    "track": "Palco Talk",
+    "level": "Intermediário"
+  },
+  {
+    "time": "11:40 - 12:20",
+    "title": "Assistente GenAI com Bedrock usando StepFunctions, OpenSearch e RAG",
+    "speaker": "Carlos Alberto Marangon e Leticia Massae Uchida",
+    "track": "Palco Hands-On",
+    "level": "Avançado"
+  },
+  {
+    "time": "12:20 - 13:30",
+    "title": "Almoço",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "13:30 - 14:10",
+    "title": "Descomplicando os principais serviços de computação da AWS: EC2, ECS, EKS e Lambda",
+    "speaker": "Cleiton Nascimento",
+    "track": "Palco Talk",
+    "level": "Iniciante"
+  },
+  {
+    "time": "13:30 - 14:10",
+    "title": "Integrando Bancos Transacionais em um Lakehouse na AWS com DMS CDC, SQS FIFO e Iceberg",
+    "speaker": "Walter Neto",
+    "track": "Palco Hands-On",
+    "level": "Avançado"
+  },
+  {
+    "time": "14:20 - 15:00",
+    "title": "Agentic Security Assessments on AWS",
+    "speaker": "Leo Ciccone e Dan Rezende",
+    "track": "Palco Talk",
+    "level": "Avançado"
+  },
+  {
+    "time": "14:20 - 15:00",
+    "title": "Construindo um Lakehouse gerenciado com Amazon S3 Tables - da teoria à prática",
+    "speaker": "Amom Luiz e Lucas Vitoreti",
+    "track": "Palco Hands-On",
+    "level": "Intermediário"
+  },
+  {
+    "time": "15:00 - 15:30",
+    "title": "Coffee Break",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "15:30 - 16:10",
+    "title": "Escalando Kubernetes: Resolvendo o Esgotamento de IPs com EKS IPv6",
+    "speaker": "Leonardo Azize e Daniel Cardoso",
+    "track": "Palco Talk",
+    "level": "Avançado"
+  },
+  {
+    "time": "15:30 - 16:30",
+    "title": "Redes Inteligentes na AWS: Da Arquitetura ao Troubleshooting com IA",
+    "speaker": "Filipe Almeida Guimarães",
+    "track": "Palco Hands-On",
+    "level": "Intermediário"
+  },
+  {
+    "time": "16:20 - 17:00",
+    "title": "Arquitetura Moderna de Dados — Será que estou fazendo da maneira correta?",
+    "speaker": "Erika Nagamine",
+    "track": "Palco Talk",
+    "level": "Intermediário"
+  },
+  {
+    "time": "16:40 - 17:40",
+    "title": "AWS e Terraform: Don't reinvent the modules",
+    "speaker": "Lays Rodrigues",
+    "track": "Palco Hands-On",
+    "level": "Iniciante"
+  },
+  {
+    "time": "17:10 - 17:50",
+    "title": "Observability Driven Design: Desenhando Jornadas de Confiabilidade ProdOps",
+    "speaker": "Christiano Milfont",
+    "track": "Palco Talk",
+    "level": "Avançado"
+  },
+  {
+    "time": "18:00 - 18:20",
+    "title": "Stand-up",
+    "speaker": "Rodrigo Pokemão",
+    "track": "Palco Talk",
+    "level": "Iniciante"
+  },
+  {
+    "time": "18:20 - 18:40",
+    "title": "Encerramento e Sorteios",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "18:40 - 19:30",
+    "title": "Networking",
+    "speaker": "Organização",
+    "track": "Geral",
+    "level": ""
+  }
+]

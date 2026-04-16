@@ -1,0 +1,31 @@
+{
+  "regionName": "Nordeste",
+  "subtitle": "O maior evento de comunidades AWS do Nordeste brasileiro",
+  "targetDate": "2026-10-03T09:00:00-03:00",
+  "eventTime": "09h às 18h",
+  "heroImage": "./assets/postcard-salvador.png",
+  "location": {
+    "venue": "Em Breve!",
+    "city": "Salvador/BA"
+  },
+  "registration": {
+    "status": "Em Breve!",
+    "url": ""
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/awscommunitydaybr/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "twitter": "https://twitter.com/awscommunitybr",
+    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+  },
+  "userGroups": [
+    { "name": "AWS User Group Salvador", "url": "https://www.meetup.com/pt-BR/awsssa/" },
+    { "name": "AWS User Group Recife", "url": "https://www.meetup.com/pt-BR/awsrec/" },
+    { "name": "AWS User Group Fortaleza", "url": "https://www.meetup.com/pt-BR/awsfor/" }
+  ],
+  "callForSpeakersUrl": "",
+  "contact": {
+    "email": "contato@awscommunityday.com.br",
+    "website": "https://www.awscommunityday.com.br"
+  }
+}

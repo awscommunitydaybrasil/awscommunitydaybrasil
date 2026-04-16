@@ -1,0 +1,31 @@
+{
+  "regionName": "Sudeste",
+  "subtitle": "O maior evento de comunidades AWS do Sudeste brasileiro",
+  "targetDate": "2026-08-22T09:00:00-03:00",
+  "eventTime": "09h às 18h",
+  "heroImage": "./assets/postcard-bh.png",
+  "location": {
+    "venue": "Em Breve!",
+    "city": "Belo Horizonte/MG"
+  },
+  "registration": {
+    "status": "Em Breve!",
+    "url": ""
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/awscommunitydaybr/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "twitter": "https://twitter.com/awscommunitybr",
+    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+  },
+  "userGroups": [
+    { "name": "AWS User Group Belo Horizonte", "url": "https://www.meetup.com/pt-BR/awsbh/" },
+    { "name": "AWS User Group São Paulo", "url": "https://www.meetup.com/pt-BR/awssp/" },
+    { "name": "AWS User Group Rio de Janeiro", "url": "https://www.meetup.com/pt-BR/awsrj/" }
+  ],
+  "callForSpeakersUrl": "",
+  "contact": {
+    "email": "contato@awscommunityday.com.br",
+    "website": "https://www.awscommunityday.com.br"
+  }
+}

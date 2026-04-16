@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Priscila Araujo",
+    "photo": "priscila.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/priaaraujo/"
+    }
+  },
+  {
+    "name": "Wagner Landim",
+    "photo": "wagner.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/wagnerlandim/"
+    }
+  },
+  {
+    "name": "Deivid Veras",
+    "photo": "deivid.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/deividveras/"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "marcelopaiva.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/mfrpaiva/"
+    }
+  }
+]

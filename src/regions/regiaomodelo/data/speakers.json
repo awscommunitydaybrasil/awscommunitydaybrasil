@@ -1,0 +1,172 @@
+[
+  {
+    "name": "William Lino",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/william-lino.jpg",
+    "title": "Especialista em Dados",
+    "company": "",
+    "talk": "Qual melhor camada de dados para construir seu Knowledge Database na AWS?",
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/williamlino"
+    }
+  },
+  {
+    "name": "Daiane Dalavi",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/daiane-dalavi.png",
+    "title": "Cloud Professional",
+    "company": "",
+    "talk": "Carreira em Cloud: Do Técnico ao Estratégico, Onde Você se Encaixa?",
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/daianedalavi",
+      "instagram": "https://instagram.com/daianedalavi"
+    }
+  },
+  {
+    "name": "Léo Oliveira",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/leo-oliveira.jpg",
+    "title": "Engenheiro de Dados",
+    "company": "",
+    "talk": "Melhorando Resiliência e Cortando Custos na Ingestão de Dados",
+    "bio": "",
+    "social": {
+      "linkedin": "https://linkedin.com/in/leooliveira"
+    }
+  },
+  {
+    "name": "Humberto \"Beto\" Demolinari",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/humberto-beto-demolinari.jpg",
+    "title": "ML Engineer",
+    "company": "",
+    "talk": "A (R)evolução do ML: De Meses de Trabalho em MATLAB à Produção em Minutos com AWS SageMaker",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Cleiton Nascimento",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/cleiton-nascimento.png",
+    "title": "Desenvolvedor Cloud",
+    "company": "",
+    "talk": "Descomplicando os principais serviços de computação da AWS: EC2, ECS, EKS e Lambda",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Erika Nagamine",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/erika-nagamine.jpeg",
+    "title": "Data Architect",
+    "company": "",
+    "talk": "Arquitetura Moderna de Dados — Será que estou fazendo da maneira correta?",
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://linkedin.com/in/erikanagamine",
+      "twitter": "https://x.com/erikanagamine"
+    }
+  },
+  {
+    "name": "Christiano Milfont",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/christiano-milfont.png",
+    "title": "ProdOps Engineer",
+    "company": "",
+    "talk": "Observability Driven Design: Desenhando Jornadas de Confiabilidade ProdOps",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Rodrigo Pokemão",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/rodrigo-pokemao.jpg",
+    "title": "Comediante Tech",
+    "company": "",
+    "talk": "Stand-up",
+    "bio": "",
+    "social": {
+      "instagram": "https://instagram.com/rodrigopokemao"
+    }
+  },
+  {
+    "name": "Bruno Marangoni",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/bruno-marangoni.png",
+    "title": "Security Specialist",
+    "company": "",
+    "talk": "Web Ataque na AWS - Invadindo sua aplicação sem código e capturando dados sensíveis na prática!",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Lays Rodrigues",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/lays-rodrigues.jpg",
+    "title": "DevOps Engineer",
+    "company": "",
+    "talk": "AWS e Terraform: Don't reinvent the modules",
+    "bio": "",
+    "social": {
+      "linkedin": "https://linkedin.com/in/laysrodrigues"
+    }
+  },
+  {
+    "name": "Filipe Almeida Guimarães",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/filipe-almeida-guimaraes.jpg",
+    "title": "Network Architect",
+    "company": "",
+    "talk": "Redes Inteligentes na AWS: Da Arquitetura ao Troubleshooting com IA",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Leo Ciccone & Dan Rezende",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/dan-leo.png",
+    "title": "Security Engineers",
+    "company": "",
+    "talk": "Agentic Security Assessments on AWS",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Michelle Perez & Leonardo Azize",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/michelle-leonardo.png",
+    "title": "Cloud Engineers",
+    "company": "",
+    "talk": "Implementação de segurança de saída com AWS Network Firewall e Route 53",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Carlos A. Marangon & Leticia M. Uchida",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/carlos-leticia.png",
+    "title": "GenAI Specialists",
+    "company": "",
+    "talk": "Assistente GenAI com Bedrock usando StepFunctions, OpenSearch e RAG",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Walter Neto",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/walter-neto.jpg",
+    "title": "Data Engineer",
+    "company": "",
+    "talk": "Integrando Bancos Transacionais em um Lakehouse na AWS com DMS CDC, SQS FIFO e Iceberg",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Amom Luiz & Lucas Vitoreti",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/lucas-amom.png",
+    "title": "Data Engineers",
+    "company": "",
+    "talk": "Construindo um Lakehouse gerenciado com Amazon S3 Tables - da teoria à prática",
+    "bio": "",
+    "social": {}
+  },
+  {
+    "name": "Leonardo Azize & Daniel Cardoso",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/speaker/vcp/leo-daniel.png",
+    "title": "Cloud Engineers",
+    "company": "",
+    "talk": "Escalando Kubernetes: Resolvendo o Esgotamento de IPs com EKS IPv6",
+    "bio": "",
+    "social": {}
+  }
+]

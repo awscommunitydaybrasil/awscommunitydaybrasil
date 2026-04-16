@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Flávio Pimenta",
+    "photo": "https://s3-sa-east-1.amazonaws.com/thedevconf/photos/9d7b0358917bd1363e59351b4c79fa5348a2daaa.jpeg",
+    "social": {
+      "linkedin": "https://pimenta.dev/"
+    }
+  },
+  {
+    "name": "Deivid Veras",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-08.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/deividveras"
+    }
+  },
+  {
+    "name": "Julia Werlang",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-15.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/"
+    }
+  },
+  {
+    "name": "Fernanda G. Gugliellmo",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-29.jpeg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/fernandaguglielmo/"
+    }
+  },
+  {
+    "name": "Leticia Albuquerque",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-17.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/leticia-albuquerque/"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-05.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
+    }
+  },
+  {
+    "name": "Paloma Lataliza",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-01.jpg",
+    "social": {
+      "twitter": "https://x.com/shescloud_"
+    }
+  },
+  {
+    "name": "Priscila Araujo",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-06.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/priscila-araujo-santos/"
+    }
+  },
+  {
+    "name": "Vini Ganancio",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-16.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/viniganancio/"
+    }
+  },
+  {
+    "name": "Christiano Linuxmen",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-21.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/linuxmen/"
+    }
+  },
+  {
+    "name": "Vanessa Santos",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-22.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/vanessa-alves-dos-santos/"
+    }
+  },
+  {
+    "name": "Felipe Kiko",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-18.jpg",
+    "social": {
+      "linkedin": "https://kiko.dev.br/"
+    }
+  },
+  {
+    "name": "Levinux",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-19.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/levinux/"
+    }
+  },
+  {
+    "name": "Rafael Martins",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-20.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rafaeloliveiramartins/"
+    }
+  },
+  {
+    "name": "Marcos Ramalho",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-23.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/ramalho-dev/"
+    }
+  },
+  {
+    "name": "Cristiane Simons",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-24.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/criscostasimons/"
+    }
+  },
+  {
+    "name": "Dan Rezende",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-25.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/danrezende/"
+    }
+  },
+  {
+    "name": "Felps",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-26.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/ofelps/"
+    }
+  },
+  {
+    "name": "Caiuã Iorio",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-27.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/caiuaiorio/"
+    }
+  },
+  {
+    "name": "Carlos Carvalho",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-28.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/carloskardan/"
+    }
+  }
+]

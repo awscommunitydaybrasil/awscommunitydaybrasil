@@ -1,0 +1,30 @@
+{
+  "regionName": "Região Modelo",
+  "subtitle": "Exemplo completo de página regional — baseado na edição Campinas 2025",
+  "targetDate": "2026-09-27T09:00:00-03:00",
+  "eventTime": "09h às 19h",
+  "heroImage": "./assets/postcard-brasilia.png",
+  "location": {
+    "venue": "Expo Dom Pedro",
+    "city": "Campinas/SP"
+  },
+  "registration": {
+    "status": "Aberto",
+    "url": "https://www.awscommunityday.com.br"
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/awscommunitydaybr/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "twitter": "https://twitter.com/awscommunitybr",
+    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+  },
+  "userGroups": [
+    { "name": "AWS User Group Campinas", "url": "https://www.meetup.com/pt-BR/awsvcp/" },
+    { "name": "AWS User Group São Paulo", "url": "https://www.meetup.com/pt-BR/awsusergroupsp/" }
+  ],
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-exemplo",
+  "contact": {
+    "email": "contato@awscommunityday.com.br",
+    "website": "https://www.awscommunityday.com.br"
+  }
+}

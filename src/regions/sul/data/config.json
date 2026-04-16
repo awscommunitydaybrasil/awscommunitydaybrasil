@@ -1,0 +1,31 @@
+{
+  "regionName": "Sul",
+  "subtitle": "O maior evento de comunidades AWS do Sul brasileiro",
+  "targetDate": "2026-09-19T09:00:00-03:00",
+  "eventTime": "09h às 18h",
+  "heroImage": "./assets/postcard-curitiba.png",
+  "location": {
+    "venue": "Em Breve!",
+    "city": "Curitiba/PR"
+  },
+  "registration": {
+    "status": "Em Breve!",
+    "url": ""
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/awscommunitydaybr/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "twitter": "https://twitter.com/awscommunitybr",
+    "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
+  },
+  "userGroups": [
+    { "name": "AWS User Group Curitiba", "url": "https://www.meetup.com/pt-BR/awscwb/" },
+    { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-BR/awspoa/" },
+    { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-BR/awsfln/" }
+  ],
+  "callForSpeakersUrl": "",
+  "contact": {
+    "email": "contato@awscommunityday.com.br",
+    "website": "https://www.awscommunityday.com.br"
+  }
+}
