@@ -5,8 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Configuração para GitHub Pages: https://github.com/marcelojpaiva/awscommunitydaybrasil26
-  base: '/awscommunitydaybrasil26/',
+  base: '/',
   server: {
     host: "::",
     port: 8080,
