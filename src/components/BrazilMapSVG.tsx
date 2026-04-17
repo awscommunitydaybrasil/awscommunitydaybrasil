@@ -138,9 +138,15 @@ const BrazilMapSVG = () => {
           return (
             <g
               key={state.code}
+              role={isClickable ? "button" : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+              aria-label={isClickable ? `Navegar para a região ${region}` : undefined}
               onMouseEnter={() => setHoveredRegion(region || null)}
               onMouseLeave={() => setHoveredRegion(null)}
               onClick={() => handleClick(state.code)}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(state.code); } }}
+              onFocus={() => setHoveredRegion(region || null)}
+              onBlur={() => setHoveredRegion(null)}
               style={{ cursor: isClickable ? "pointer" : "default" }}
             >
               {state.paths.map((d, i) => (
