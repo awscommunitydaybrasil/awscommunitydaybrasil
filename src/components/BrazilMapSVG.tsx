@@ -30,6 +30,16 @@ const regionLinks: Record<string, string> = {
   sul: "/sul",
 };
 
+const regionOrder = ["norte", "nordeste", "centroOeste", "sudeste", "sul"] as const;
+
+const regionDisplayNames: Record<string, string> = {
+  norte: "Norte",
+  nordeste: "Nordeste",
+  centroOeste: "Centro-Oeste",
+  sudeste: "Sudeste",
+  sul: "Sul",
+};
+
 interface StateData {
   code: string;
   paths: string[];
@@ -104,9 +114,7 @@ const BrazilMapSVG = () => {
     return "none";
   };
 
-  const handleClick = (code: string) => {
-    const region = stateToRegion[code];
-    if (!region) return;
+  const handleRegionClick = (region: string) => {
     const link = regionLinks[region];
     if (link && link !== "#") {
       if (link.startsWith("/")) {
@@ -130,52 +138,62 @@ const BrazilMapSVG = () => {
       className="w-full max-w-[820px] h-auto mx-auto block"
     >
       <g>
-        {states.map((state) => {
-          const region = stateToRegion[state.code];
-          const link = region ? regionLinks[region] : "#";
-          const isClickable = link && link !== "#";
+        {regionOrder.map((region) => {
+          const regionStates = states.filter((state) => stateToRegion[state.code] === region);
+          const link = regionLinks[region];
+          const isClickable = !!(link && link !== "#");
+          const regionLabel = regionDisplayNames[region] ?? region;
 
           return (
             <g
-              key={state.code}
+              key={region}
               role={isClickable ? "button" : undefined}
               tabIndex={isClickable ? 0 : undefined}
-              aria-label={isClickable ? `Navegar para a região ${region}` : undefined}
-              onMouseEnter={() => setHoveredRegion(region || null)}
+              aria-label={isClickable ? `Navegar para a região ${regionLabel}` : undefined}
+              onMouseEnter={() => setHoveredRegion(region)}
               onMouseLeave={() => setHoveredRegion(null)}
-              onClick={() => handleClick(state.code)}
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(state.code); } }}
-              onFocus={() => setHoveredRegion(region || null)}
+              onClick={() => handleRegionClick(region)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleRegionClick(region);
+                }
+              }}
+              onFocus={() => setHoveredRegion(region)}
               onBlur={() => setHoveredRegion(null)}
               style={{ cursor: isClickable ? "pointer" : "default" }}
             >
-              {state.paths.map((d, i) => (
-                <path
-                  key={i}
-                  d={d}
-                  stroke="#FFFFFF"
-                  strokeWidth="1.0404"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill={getStateFill(state.code)}
-                  style={{ filter: getStateFilter(state.code), transition: "fill 0.2s ease, filter 0.2s ease" }}
-                />
+              {regionStates.map((state) => (
+                <g key={state.code}>
+                  {state.paths.map((d, i) => (
+                    <path
+                      key={i}
+                      d={d}
+                      stroke="#FFFFFF"
+                      strokeWidth="1.0404"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill={getStateFill(state.code)}
+                      style={{ filter: getStateFilter(state.code), transition: "fill 0.2s ease, filter 0.2s ease" }}
+                    />
+                  ))}
+                  {state.circlePath && (
+                    <path
+                      d={state.circlePath}
+                      fill="rgba(255, 255, 255, 0.3)"
+                      stroke="#ffffff"
+                      strokeWidth="1"
+                    />
+                  )}
+                  <text
+                    transform={state.textTransform}
+                    fill="#FFFFFF"
+                    style={{ font: "12px Arial, sans-serif", pointerEvents: "none", fontWeight: "bold" }}
+                  >
+                    {state.label}
+                  </text>
+                </g>
               ))}
-              {state.circlePath && (
-                <path
-                  d={state.circlePath}
-                  fill="rgba(255, 255, 255, 0.3)"
-                  stroke="#ffffff"
-                  strokeWidth="1"
-                />
-              )}
-              <text
-                transform={state.textTransform}
-                fill="#FFFFFF"
-                style={{ font: "12px Arial, sans-serif", pointerEvents: "none", fontWeight: "bold" }}
-              >
-                {state.label}
-              </text>
             </g>
           );
         })}
