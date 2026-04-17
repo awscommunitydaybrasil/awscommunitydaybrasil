@@ -30,8 +30,6 @@ const regionLinks: Record<string, string> = {
   sul: "/sul",
 };
 
-const hostStates = ["PA", "BA", "DF", "MG", "PR"];
-
 interface StateData {
   code: string;
   paths: string[];
