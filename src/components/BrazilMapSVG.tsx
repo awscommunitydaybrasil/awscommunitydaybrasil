@@ -96,17 +96,28 @@ const hostCityData: Record<string, { city: string; date: string }> = {
   PA: { city: "Belém", date: "14 Nov" },
 };
 
-const BrazilMapSVG = () => {
+interface BrazilMapSVGProps {
+  outlineOnly?: boolean;
+  className?: string;
+}
+
+const BrazilMapSVG = ({ outlineOnly = false, className }: BrazilMapSVGProps) => {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [hoveredHost, setHoveredHost] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const getStateFill = (code: string) => {
+    if (outlineOnly) {
+      return "none";
+    }
     const region = stateToRegion[code];
     return region ? regionColors[region] : "#d8d8d8";
   };
 
   const getStateFilter = (code: string) => {
+    if (outlineOnly) {
+      return "none";
+    }
     const region = stateToRegion[code];
     if (hoveredRegion && region === hoveredRegion) {
       return "brightness(0.85)";
@@ -135,71 +146,100 @@ const BrazilMapSVG = () => {
       height="460px"
       viewBox="0 0 450 460"
       enableBackground="new 0 0 450 460"
-      className="w-full max-w-[820px] h-auto mx-auto block"
+      className={className ?? "w-full max-w-[820px] h-auto mx-auto block"}
     >
+      {outlineOnly && (
+        <defs>
+          <filter id="brazil-outline-filter" x="-10%" y="-10%" width="120%" height="120%" colorInterpolationFilters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1.4" result="dilated" />
+            <feMorphology in="SourceAlpha" operator="erode" radius="1.1" result="eroded" />
+            <feComposite in="dilated" in2="eroded" operator="out" result="outline" />
+            <feFlood floodColor="hsl(var(--accent))" floodOpacity="0.7" result="outlineColor" />
+            <feComposite in="outlineColor" in2="outline" operator="in" result="coloredOutline" />
+            <feMerge>
+              <feMergeNode in="coloredOutline" />
+            </feMerge>
+          </filter>
+        </defs>
+      )}
       <g>
-        {regionOrder.map((region) => {
-          const regionStates = states.filter((state) => stateToRegion[state.code] === region);
-          const link = regionLinks[region];
-          const isClickable = !!(link && link !== "#");
-          const regionLabel = regionDisplayNames[region] ?? region;
+        {outlineOnly && (
+          <g filter="url(#brazil-outline-filter)">
+            {states.map((state) => (
+              <g key={`outline-${state.code}`}>
+                {state.paths.map((d, i) => (
+                  <path key={i} d={d} fill="#ffffff" stroke="none" />
+                ))}
+              </g>
+            ))}
+          </g>
+        )}
+        {!outlineOnly && (
+          <>
+            {regionOrder.map((region) => {
+              const regionStates = states.filter((state) => stateToRegion[state.code] === region);
+              const link = regionLinks[region];
+              const isClickable = !!(link && link !== "#");
+              const regionLabel = regionDisplayNames[region] ?? region;
 
-          return (
-            <g
-              key={region}
-              role={isClickable ? "button" : undefined}
-              tabIndex={isClickable ? 0 : undefined}
-              aria-label={isClickable ? `Navegar para a região ${regionLabel}` : undefined}
-              onMouseEnter={() => setHoveredRegion(region)}
-              onMouseLeave={() => setHoveredRegion(null)}
-              onClick={() => handleRegionClick(region)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  handleRegionClick(region);
-                }
-              }}
-              onFocus={() => setHoveredRegion(region)}
-              onBlur={() => setHoveredRegion(null)}
-              style={{ cursor: isClickable ? "pointer" : "default" }}
-            >
-              {regionStates.map((state) => (
-                <g key={state.code}>
-                  {state.paths.map((d, i) => (
-                    <path
-                      key={i}
-                      d={d}
-                      stroke="#FFFFFF"
-                      strokeWidth="1.0404"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill={getStateFill(state.code)}
-                      style={{ filter: getStateFilter(state.code), transition: "fill 0.2s ease, filter 0.2s ease" }}
-                    />
+              return (
+                <g
+                  key={region}
+                  role={isClickable ? "button" : undefined}
+                  tabIndex={isClickable ? 0 : undefined}
+                  aria-label={isClickable ? `Navegar para a região ${regionLabel}` : undefined}
+                  onMouseEnter={() => setHoveredRegion(region)}
+                  onMouseLeave={() => setHoveredRegion(null)}
+                  onClick={() => handleRegionClick(region)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleRegionClick(region);
+                    }
+                  }}
+                  onFocus={() => setHoveredRegion(region)}
+                  onBlur={() => setHoveredRegion(null)}
+                  style={{ cursor: isClickable ? "pointer" : "default" }}
+                >
+                  {regionStates.map((state) => (
+                    <g key={state.code}>
+                      {state.paths.map((d, i) => (
+                        <path
+                          key={i}
+                          d={d}
+                          stroke="#FFFFFF"
+                          strokeWidth="1.0404"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill={getStateFill(state.code)}
+                          style={{ filter: getStateFilter(state.code), transition: "fill 0.2s ease, filter 0.2s ease" }}
+                        />
+                      ))}
+                      {state.circlePath && (
+                        <path
+                          d={state.circlePath}
+                          fill="rgba(255, 255, 255, 0.3)"
+                          stroke="#ffffff"
+                          strokeWidth="1"
+                        />
+                      )}
+                      <text
+                        transform={state.textTransform}
+                        fill="#FFFFFF"
+                        style={{ font: "12px Arial, sans-serif", pointerEvents: "none", fontWeight: "bold" }}
+                      >
+                        {state.label}
+                      </text>
+                    </g>
                   ))}
-                  {state.circlePath && (
-                    <path
-                      d={state.circlePath}
-                      fill="rgba(255, 255, 255, 0.3)"
-                      stroke="#ffffff"
-                      strokeWidth="1"
-                    />
-                  )}
-                  <text
-                    transform={state.textTransform}
-                    fill="#FFFFFF"
-                    style={{ font: "12px Arial, sans-serif", pointerEvents: "none", fontWeight: "bold" }}
-                  >
-                    {state.label}
-                  </text>
                 </g>
-              ))}
-            </g>
-          );
-        })}
+              );
+            })}
+          </>
+        )}
 
         {/* Host city markers */}
-        {Object.entries(hostMarkerPositions).map(([uf, pos]) => {
+        {!outlineOnly && Object.entries(hostMarkerPositions).map(([uf, pos]) => {
           const markerX = pos.x + 9;
           const markerY = pos.y - 20;
           const isHovered = hoveredHost === uf;
