@@ -150,23 +150,12 @@ const LeadersSection = () => {
             Quem faz acontecer
           </h2>
         </div>
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {leaders.slice(0, 3).map((l, i) => (
+        <div ref={gridRef} className="flex flex-wrap justify-center gap-6">
+          {leaders.slice(0, 6).map((l, i) => (
             <div
               key={l.name}
-              className={`transition-all duration-700 ease-out ${gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`w-full max-w-sm md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] transition-all duration-700 ease-out ${gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <LeaderCard {...l} />
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
-          {leaders.slice(3).map((l, i) => (
-            <div
-              key={l.name}
-              className={`transition-all duration-700 ease-out ${gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: `${(i + 3) * 150}ms` }}
             >
               <LeaderCard {...l} />
             </div>
