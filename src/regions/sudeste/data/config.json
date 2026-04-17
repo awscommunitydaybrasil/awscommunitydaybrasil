@@ -21,7 +21,8 @@
   "userGroups": [
     { "name": "AWS User Group Belo Horizonte", "url": "https://www.meetup.com/pt-BR/awsbh/" },
     { "name": "AWS User Group São Paulo", "url": "https://www.meetup.com/pt-BR/awssp/" },
-    { "name": "AWS User Group Rio de Janeiro", "url": "https://www.meetup.com/pt-BR/awsrj/" }
+    { "name": "AWS User Group Rio de Janeiro", "url": "https://www.meetup.com/pt-BR/awsrj/" },
+    { "name": "AWS User Group Campinas", "url": "https://www.meetup.com/pt-BR/awscampinas/" }
   ],
   "callForSpeakersUrl": "",
   "contact": {
