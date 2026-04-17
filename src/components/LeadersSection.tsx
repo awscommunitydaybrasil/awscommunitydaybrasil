@@ -4,6 +4,11 @@ import postcardBH from "@/assets/postcard-bh.png";
 import postcardSalvador from "@/assets/postcard-salvador.png";
 import postcardCuritiba from "@/assets/postcard-curitiba.png";
 import postcardBelem from "@/assets/postcard-belem.png";
+import leaderWagnerLandim from "@/assets/img/team/wagner-landim.jpg";
+import leaderRafaelaVidotti from "@/assets/img/team/rafaela-vidotti.jpg";
+import leaderAlceuNeto from "@/assets/img/team/alceu-neto.jpg";
+import leaderCaioNunes from "@/assets/img/team/caio-nunes.jpg";
+import leaderThayanaMamore from "@/assets/img/team/thayana-mamore.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const leaders = [
@@ -13,7 +18,7 @@ const leaders = [
     date: "27/06/2026",
     image: postcardBrasilia,
     leader: "Wagner Landim",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-31.jpg",
+    leaderPhoto: leaderWagnerLandim,
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
     link: "/centro-oeste",
   },
@@ -23,7 +28,7 @@ const leaders = [
     date: "22/08/2026",
     image: postcardBH,
     leader: "Rafaela Vidotti",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-03.jpg",
+    leaderPhoto: leaderRafaelaVidotti,
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
     link: "/sudeste",
   },
@@ -33,7 +38,7 @@ const leaders = [
     date: "19/09/2026",
     image: postcardCuritiba,
     leader: "Alceu Neto",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.jpg",
+    leaderPhoto: leaderAlceuNeto,
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
     link: "/sul",
   },
@@ -43,7 +48,7 @@ const leaders = [
     date: "03/10/2026",
     image: postcardSalvador,
     leader: "Caio Nunes",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-30.jpg",
+    leaderPhoto: leaderCaioNunes,
     leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
     link: "/nordeste",
   },
@@ -53,7 +58,7 @@ const leaders = [
     date: "14/11/2026",
     image: postcardBelem,
     leader: "Thayana Mamoré",
-    leaderPhoto: "https://www.awscommunityday.com.br/assets/img/team/team-32.png",
+    leaderPhoto: leaderThayanaMamore,
     leaderLinkedin: "https://www.linkedin.com/in/thayanacmamore/",
     link: "/norte",
   },
