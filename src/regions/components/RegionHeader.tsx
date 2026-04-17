@@ -64,13 +64,19 @@ const RegionHeader = ({ registrationUrl }: RegionHeaderProps) => {
             Inscreva-se
           </a>
         )}
-        <button className="md:hidden p-2 text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
+        <button
+          className="md:hidden p-2 text-foreground"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="region-mobile-nav"
+        >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       {mobileMenuOpen && (
         <div className="md:hidden bg-card/95 backdrop-blur-md border-b border-border">
-          <nav className="container flex flex-col gap-2 py-4">
+          <nav id="region-mobile-nav" className="container flex flex-col gap-2 py-4">
             {navSections.map(({ id, label }) => (
               <a
                 key={id}

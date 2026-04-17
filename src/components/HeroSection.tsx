@@ -1,35 +1,5 @@
 import logo from "@/assets/logo-community-day.png";
-
-const BrazilMapSVG = () => (
-  <svg viewBox="0 0 600 600" className="w-full h-full opacity-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Simplified Brazil outline */}
-    <path
-      d="M300 80 L380 100 L420 140 L450 180 L480 200 L500 260 L490 320 L470 360 L440 400 L400 440 L360 470 L320 490 L280 500 L240 490 L200 460 L180 420 L160 380 L150 340 L140 300 L150 260 L170 220 L200 180 L240 140 L280 100 Z"
-      stroke="hsl(var(--accent))"
-      strokeWidth="1"
-      opacity="0.5"
-    />
-    {/* Connection nodes */}
-    {[
-      [300, 180], [380, 260], [450, 300], [260, 340], [340, 400],
-      [200, 280], [320, 240], [400, 350], [280, 450], [360, 160],
-    ].map(([cx, cy], i) => (
-      <g key={i}>
-        <circle cx={cx} cy={cy} r="3" fill="hsl(var(--primary))" opacity="0.6" />
-        <circle cx={cx} cy={cy} r="8" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.3" />
-      </g>
-    ))}
-    {/* Connection lines */}
-    {[
-      [300, 180, 380, 260], [380, 260, 450, 300], [300, 180, 260, 340],
-      [260, 340, 340, 400], [200, 280, 300, 180], [320, 240, 400, 350],
-      [340, 400, 280, 450], [380, 260, 360, 160], [450, 300, 400, 350],
-    ].map(([x1, y1, x2, y2], i) => (
-      <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
-        stroke="hsl(var(--accent))" strokeWidth="0.5" opacity="0.3" />
-    ))}
-  </svg>
-);
+import BrazilMapSVG from "./BrazilMapSVG";
 
 const HeroSection = () => {
   return (
@@ -37,7 +7,7 @@ const HeroSection = () => {
       style={{ background: "var(--gradient-hero)" }}>
       <div className="absolute inset-0 flex items-center justify-center hero-fade-in" style={{ animationDelay: "0.3s" }}>
         <div className="w-[600px] h-[600px]">
-          <BrazilMapSVG />
+          <BrazilMapSVG outlineOnly className="w-full h-full opacity-10" />
         </div>
       </div>
       <div className="relative z-10 text-center container">

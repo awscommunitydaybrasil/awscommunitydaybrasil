@@ -3,21 +3,24 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import logo from "@/assets/logo-community-day.png";
 import type { RegionConfig } from "@/regions/types";
 
-function useCountdown(targetDate: string) {
-  const calc = () => {
-    const diff = Math.max(0, new Date(targetDate).getTime() - Date.now());
-    return {
-      days: Math.floor(diff / 86400000),
-      hours: Math.floor((diff % 86400000) / 3600000),
-      minutes: Math.floor((diff % 3600000) / 60000),
-      seconds: Math.floor((diff % 60000) / 1000),
-    };
+const getCountdown = (targetDate: string) => {
+  const diff = Math.max(0, new Date(targetDate).getTime() - Date.now());
+  return {
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor((diff % 86400000) / 3600000),
+    minutes: Math.floor((diff % 3600000) / 60000),
+    seconds: Math.floor((diff % 60000) / 1000),
   };
-  const [time, setTime] = useState(calc);
+};
+
+function useCountdown(targetDate: string) {
+  const [time, setTime] = useState(() => getCountdown(targetDate));
+
   useEffect(() => {
-    const id = setInterval(() => setTime(calc()), 1000);
+    const id = setInterval(() => setTime(getCountdown(targetDate)), 1000);
     return () => clearInterval(id);
   }, [targetDate]);
+
   return time;
 }
 

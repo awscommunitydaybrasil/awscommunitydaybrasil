@@ -26,14 +26,16 @@ const Header = () => {
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       {menuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
-          <nav className="container flex flex-col gap-4 py-4">
+          <nav id="mobile-nav" className="container flex flex-col gap-4 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
