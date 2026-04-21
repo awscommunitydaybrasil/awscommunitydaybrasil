@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Community Day Brasil 2026 — Mídia Kit Nacional</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--purple:#6b21a8;--violet:#a78bfa;--pink:#ec4899;--dark:#0a0a1a;--card:rgba(139,92,246,.06)}
+body{font-family:'Inter',sans-serif;color:#e0e0e0;background:var(--dark)}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:4px;opacity:.35}
+.hero-mosaic img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,26,.55) 0%,rgba(10,10,26,.92) 100%)}
+.hero-content{position:relative;z-index:2;padding:40px 20px}
+.badge{display:inline-block;background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.45);padding:10px 28px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;margin-bottom:32px}
+.hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;margin-bottom:24px}
+.hero h1 span{background:linear-gradient(90deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;max-width:720px;margin:0 auto 48px;color:#c4b5fd;line-height:1.6}
+.stats{display:flex;gap:48px;justify-content:center;flex-wrap:wrap}
+.stat .num{font-size:3.5rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .lbl{font-size:.85rem;color:#8888aa;margin-top:2px}
+
+/* ===== SECTIONS ===== */
+section{max-width:1140px;margin:0 auto;padding:90px 24px}
+h2{font-size:2.4rem;font-weight:800;margin-bottom:12px}
+h2 span{background:linear-gradient(90deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lead{color:#9999b5;font-size:1.05rem;max-width:720px;line-height:1.75;margin-bottom:48px}
+
+/* ===== PHOTO STRIP ===== */
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:48px;border-radius:16px;overflow:hidden}
+.photo-strip img{width:100%;height:240px;object-fit:cover;transition:transform .3s}
+.photo-strip img:hover{transform:scale(1.04)}
+
+/* ===== CARDS ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:48px}
+.card{background:linear-gradient(145deg,rgba(139,92,246,.08),rgba(236,72,153,.04));border:1px solid rgba(139,92,246,.12);border-radius:16px;padding:32px;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .ico{font-size:2.2rem;margin-bottom:14px}
+.card h3{font-size:1.15rem;margin-bottom:8px;color:#c4b5fd}
+.card p{color:#9999b5;line-height:1.65;font-size:.92rem}
+
+/* ===== TIMELINE ===== */
+.tl{position:relative;padding-left:44px;margin-bottom:48px}
+.tl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#a78bfa,#ec4899)}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-item::before{content:'';position:absolute;left:-36px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--purple);border:3px solid var(--violet)}
+.tl-item h3{font-size:1.05rem;color:#e0e0e0}
+.tl-item .meta{font-size:.82rem;color:var(--violet);margin:2px 0 4px}
+.tl-item p{color:#9999b5;font-size:.88rem}
+
+/* ===== EDITIONS ===== */
+.ed-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:48px}
+@media(max-width:800px){.ed-grid{grid-template-columns:repeat(2,1fr)}}
+.ed-card{background:linear-gradient(135deg,rgba(107,33,168,.25),rgba(236,72,153,.12));border:1px solid rgba(139,92,246,.2);border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s}
+.ed-card:hover{transform:translateY(-4px)}
+.ed-card .region{font-size:1.25rem;font-weight:800;margin-bottom:6px}
+.ed-card .city{color:var(--violet);font-size:.9rem}
+.ed-card .date{color:#8888aa;font-size:.82rem;margin-top:4px}
+
+/* ===== TABLE ===== */
+.tbl-wrap{overflow-x:auto;margin-bottom:24px}
+table{width:100%;border-collapse:collapse}
+thead th{padding:16px 14px;text-align:left;font-weight:700;font-size:.82rem;border-bottom:2px solid rgba(139,92,246,.25);color:#c4b5fd;text-transform:uppercase;letter-spacing:1px}
+thead th:not(:first-child){text-align:center}
+tbody td{padding:14px;border-bottom:1px solid rgba(139,92,246,.06);font-size:.9rem;color:#b0b0c8}
+tbody td:not(:first-child){text-align:center}
+tbody tr:hover{background:rgba(139,92,246,.04)}
+.ck{color:var(--violet);font-weight:700;font-size:1.1rem}
+.price td{font-weight:700;font-size:1.1rem;color:#fff;border-top:2px solid rgba(139,92,246,.3)}
+.price td:not(:first-child){background:linear-gradient(90deg,rgba(139,92,246,.12),rgba(236,72,153,.08))}
+.rn{display:block;font-size:.7rem;color:#777;font-style:italic;margin-top:2px}
+
+/* ===== FULL-WIDTH PHOTO ===== */
+.full-photo{width:100%;height:400px;object-fit:cover;margin:60px 0}
+
+/* ===== CTA ===== */
+.cta{text-align:center;padding:100px 24px;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:.2}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,10,62,.9),rgba(107,33,168,.85))}
+.cta>*:not(.cta-bg):not(.cta-overlay){position:relative;z-index:2}
+.cta h2{font-size:2.8rem;margin-bottom:16px;color:#fff}
+.cta p{color:#c4b5fd;font-size:1.15rem;margin-bottom:36px}
+.cta a{display:inline-block;padding:18px 52px;border-radius:50px;font-weight:700;font-size:1.1rem;background:linear-gradient(90deg,#a78bfa,#ec4899);color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.cta a:hover{transform:scale(1.05);box-shadow:0 8px 32px rgba(167,139,250,.4)}
+
+footer{text-align:center;padding:32px;color:#555;font-size:.8rem}
+</style>
+</head>
+<body>
+
+<!-- HERO com mosaico de fotos reais -->
+<div class="hero">
+  <div class="hero-mosaic">
+    <img src="fotos/evento-1.jpg" alt="AWS Community Day 2025"><img src="fotos/evento-4.jpg" alt=""><img src="fotos/foto-3.jpg" alt=""><img src="fotos/evento-8.jpg" alt="">
+    <img src="fotos/evento-2.jpg" alt=""><img src="fotos/foto-6.jpg" alt=""><img src="fotos/evento-7.jpg" alt=""><img src="fotos/evento-11.jpg" alt="">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="badge">Patrocínio Nacional 2026</div>
+    <h1>AWS Community Day<br><span>Brasil 2026</span></h1>
+    <p class="sub">Pela primeira vez na história, o maior evento comunitário AWS do Brasil acontece em <strong>todas as 5 regiões do país</strong>.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">5</div><div class="lbl">Regiões</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">Cidades</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Anos de história</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Cotas Nacionais</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section>
+  <h2>Sobre o <span>AWS Community Day</span></h2>
+  <p class="lead">Os AWS Community Days são eventos organizados pelos grupos de usuários AWS ao redor do mundo, com workshops e networking liderados por profissionais referência no mercado. No Brasil, o evento acontece desde 2020 e já reuniu milhares de participantes em edições presenciais e online.</p>
+  <div class="photo-strip">
+    <img src="fotos/evento-9.jpg" alt="Evento"><img src="fotos/evento-3.jpg" alt="Evento"><img src="fotos/foto-2.jpg" alt="Evento">
+  </div>
+  <div class="cards">
+    <div class="card"><div class="ico">🎤</div><h3>Conteúdo técnico de alto nível</h3><p>Sessões para todos os níveis cobrindo arquitetura, segurança, dados, IA/ML, DevOps e muito mais.</p></div>
+    <div class="card"><div class="ico">🤝</div><h3>Networking qualificado</h3><p>Conecte sua marca a arquitetos, engenheiros, desenvolvedores e tomadores de decisão que utilizam AWS no dia a dia.</p></div>
+    <div class="card"><div class="ico">🌎</div><h3>Alcance nacional inédito</h3><p>Em 2026, pela primeira vez, o evento cobre Norte, Nordeste, Centro-Oeste, Sudeste e Sul — presença em todo o Brasil.</p></div>
+    <div class="card"><div class="ico">❤️</div><h3>Impacto social</h3><p>Receita de ingressos doada a instituições de caridade. Comunidade que transforma.</p></div>
+  </div>
+</section>
+
+<!-- FOTO FULL -->
+<img class="full-photo" src="fotos/evento-12.jpg" alt="AWS Community Day Brasil">
+
+<!-- HISTÓRICO -->
+<section>
+  <h2>Nossa <span>Trajetória</span></h2>
+  <p class="lead">Desde 2020, o AWS Community Day Brasil cresce a cada edição, consolidando-se como o principal evento comunitário AWS da América Latina.</p>
+  <div class="tl">
+    <div class="tl-item"><h3>2020–2022 — Edições online</h3><div class="meta">Virtual</div><p>Nascimento e consolidação do evento durante a pandemia.</p></div>
+    <div class="tl-item"><h3>2023 — Retorno presencial</h3><div class="meta">Ribeirão Preto / SP</div><p>Primeira edição presencial com conteúdo gravado em podcast.</p></div>
+    <div class="tl-item"><h3>2024 — Edição simultânea</h3><div class="meta">Goiânia + Florianópolis</div><p>Expansão para duas cidades simultâneas, ampliando o alcance regional.</p></div>
+    <div class="tl-item"><h3>2025 — Maior edição até então</h3><div class="meta">Campinas / SP — Expo Dom Pedro</div><p>Grande centro de convenções com público recorde e conteúdo de alto nível.</p></div>
+    <div class="tl-item"><h3>2026 — 5 Regiões do Brasil 🚀</h3><div class="meta">Norte · Nordeste · Centro-Oeste · Sudeste · Sul</div><p>Edição histórica cobrindo todo o território nacional pela primeira vez.</p></div>
+  </div>
+</section>
+
+<!-- EDIÇÕES 2026 -->
+<section>
+  <h2>Edições <span>2026</span></h2>
+  <p class="lead">Cinco eventos, cinco regiões, um só propósito: conectar a comunidade AWS de ponta a ponta do Brasil.</p>
+  <div class="ed-grid">
+    <div class="ed-card"><div class="region">Centro-Oeste</div><div class="city">Taguatinga / DF</div><div class="date">27 de Junho</div></div>
+    <div class="ed-card"><div class="region">Sul</div><div class="city">Curitiba / PR</div><div class="date">19 de Setembro</div></div>
+    <div class="ed-card"><div class="region">Sudeste</div><div class="city">Belo Horizonte / MG</div><div class="date">22 de Agosto</div></div>
+    <div class="ed-card"><div class="region">Nordeste</div><div class="city">Salvador / BA</div><div class="date">03 de Outubro</div></div>
+    <div class="ed-card"><div class="region">Norte</div><div class="city">Belém / PA</div><div class="date">14 de Novembro</div></div>
+  </div>
+</section>
+
+<!-- FOTO FULL -->
+<img class="full-photo" src="fotos/foto-5.jpg" alt="AWS Community Day Brasil">
+
+<!-- COTAS -->
+<section>
+  <h2>Cotas de <span>Patrocínio Nacional</span></h2>
+  <p class="lead">Presença da sua marca em <strong>todas as 5 edições</strong> com 10% de desconto sobre a soma das cotas regionais.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Benefício</th><th>🥉 Bronze</th><th>🥈 Prata</th><th>💎 Platina</th></tr></thead>
+      <tbody>
+        <tr><td>Logo no site de todas as edições</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Divulgação nas redes sociais (5 regiões)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Logo em banners físicos / materiais de marketing</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Distribuição de brindes no kit dos participantes</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Ingressos (total nas 5 regiões)</td><td class="ck">10</td><td class="ck">20</td><td class="ck">40</td></tr>
+        <tr><td>Logo destaque de palco</td><td>—</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Piso Balcão / Stand promocional</td><td>—</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Marca nas telas / banners de sala</td><td>—</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+        <tr><td>Exibição de vídeo institucional (até 60s)</td><td>—</td><td>—</td><td class="ck">✓</td></tr>
+        <tr><td>Acesso ao mailing dos participantes (opt-in)</td><td>—</td><td>—</td><td class="ck">✓</td></tr>
+        <tr><td>Logo nos cordões de crachá<span class="rn">(apenas nas regiões: Centro-Oeste)</span></td><td>—</td><td>—</td><td class="ck">✓</td></tr>
+        <tr><td>Logo destaque nos eventos de Warm-up<span class="rn">(apenas na região: Sul)</span></td><td>—</td><td>—</td><td class="ck">✓</td></tr>
+        <tr><td>Palestra no evento<span class="rn">(apenas na região: Norte)</span></td><td>—</td><td>—</td><td class="ck">✓</td></tr>
+        <tr class="price"><td>INVESTIMENTO</td><td>R$ 12.600</td><td>R$ 24.300</td><td>R$ 45.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-bg"><img src="fotos/evento-5.jpg" alt=""><img src="fotos/evento-6.jpg" alt=""></div>
+  <div class="cta-overlay"></div>
+  <h2>Faça parte desta <span>história</span></h2>
+  <p>Leve sua marca para todas as regiões do Brasil no maior evento comunitário AWS do país.</p>
+  <a href="mailto:brasil@awscommunity.com.br">Quero patrocinar →</a>
+</div>
+
+<footer>© 2026 AWS Community Day Brasil — awscommunityday.com.br</footer>
+</body>
+</html>
