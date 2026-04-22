@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "gen:og": "npx tsx scripts/generate-og-images.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -53,6 +54,7 @@
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^3.0.0",
     "react-hook-form": "^7.61.1",
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
