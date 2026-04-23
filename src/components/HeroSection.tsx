@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-16"
       style={{ background: "var(--gradient-hero)" }}>
       <div className="absolute inset-0 flex items-center justify-center hero-fade-in" style={{ animationDelay: "0.3s" }}>
-        <div className="w-[600px] h-[600px]">
+        <div className="w-[600px] h-[600px] pt-8">
           <BrazilMapSVG outlineOnly className="w-full h-full opacity-10" />
         </div>
       </div>

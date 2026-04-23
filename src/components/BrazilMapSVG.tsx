@@ -154,7 +154,7 @@ const BrazilMapSVG = ({ outlineOnly = false, className }: BrazilMapSVGProps) => 
             <feMorphology in="SourceAlpha" operator="dilate" radius="1.4" result="dilated" />
             <feMorphology in="SourceAlpha" operator="erode" radius="1.1" result="eroded" />
             <feComposite in="dilated" in2="eroded" operator="out" result="outline" />
-            <feFlood floodColor="hsl(var(--accent))" floodOpacity="0.7" result="outlineColor" />
+            <feFlood floodColor="hsl(var(--primary))" floodOpacity="0.7" result="outlineColor" />
             <feComposite in="outlineColor" in2="outline" operator="in" result="coloredOutline" />
             <feMerge>
               <feMergeNode in="coloredOutline" />
