@@ -1,7 +1,7 @@
 [
   {
     "name": "Dayrell Hotel & Centro de Convenções",
-    "logo": "/src/regions/sudeste/assets/sponsor_dayrell.png",
+    "logo": "sponsors/dayrell.png",
     "url": "https://www.dayrell.com.br/",
     "tier": "gold"
   }
