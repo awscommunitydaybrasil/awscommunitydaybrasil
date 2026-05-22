@@ -21,7 +21,7 @@
     { "name": "AWS User Group Brasília", "url": "https://www.meetup.com/pt-BR/aws-user-group-brasilia/" },
     { "name": "AWS User Group Goiânia", "url": "https://www.meetup.com/aws-go" }
   ],
-  "callForSpeakersUrl": "",
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-2026-centro-oeste",
   "contact": {
     "email": "centrooeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
