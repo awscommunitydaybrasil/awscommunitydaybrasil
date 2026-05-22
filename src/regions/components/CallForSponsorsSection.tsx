@@ -25,8 +25,10 @@ const CallForSponsorsSection = ({ url, config }: CallForSponsorsSectionProps) =>
             Conecte sua marca a quem faz acontecer
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
-            O AWS Community Day Brasil 2026 da edição {config.regionName} está com cotas abertas.
-            Employer branding, inovação e presença de mercado: tudo em um único evento para uma comunidade ativa de profissionais AWS.
+            Sua empresa tem algo a dizer sobre tecnologia, inovação e as pessoas que movem tudo isso?
+            O AWS Community Day Brasil 2026 edição {config.regionName} está com inscrições abertas para patrocinadores.
+            Seja parte de um evento que reúne a comunidade AWS e conecta marcas a quem constrói o futuro.
+            Conhece uma empresa que deveria estar aqui? Indica pra gente.
           </p>
           <a
             href={url}

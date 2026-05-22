@@ -27,7 +27,7 @@ const CallForSpeakersSection = ({ url, config, formattedDate }: CallForSpeakersS
           </h2>
           <p className="text-muted-foreground mb-2 max-w-xl mx-auto leading-relaxed">
             As submissões para o AWS Community Day {config.regionName} 2026 estão abertas!
-            Se você tem uma história para contar, sua primeira experiência com cloud ou um caso técnico aprofundado, capricha na proposta e submete!
+            Se você quer compartilhar experiências, aprendizados, ideias ou soluções com a comunidade AWS, convidamos você a submeter sua palestra e fazer parte deste grande encontro.
           </p>
           <p className="text-sm text-muted-foreground mb-8">
             {config.location.city} · {formattedDate}
