@@ -8,6 +8,7 @@ const tierConfig: Record<string, { label: string; logoSize: string; order: numbe
   silver: { label: "Prata", logoSize: "max-h-14", order: 2 },
   bronze: { label: "Bronze", logoSize: "max-h-10", order: 3 },
   community: { label: "Comunidade", logoSize: "max-h-10", order: 4 },
+  support: { label: "Apoio", logoSize: "max-h-10", order: 5 },
 };
 
 interface SponsorsSectionProps {
