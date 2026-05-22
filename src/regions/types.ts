@@ -20,6 +20,7 @@ export interface RegionConfig {
   };
   userGroups: Array<{ name: string; url: string }>;
   callForSpeakersUrl?: string;
+  callForSponsorsUrl?: string;
   contact: {
     email: string;
     website: string;
