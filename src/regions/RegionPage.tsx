@@ -60,11 +60,11 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
       <RegionHeader registrationUrl={config.registration.url} />
       <RegionHero config={config} heroImage={heroImage} />
       <InfoCardsSection config={config} formattedDate={formattedDate} />
-      {config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} />}
+      {config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} config={config} formattedDate={formattedDate} />}
       <ExpectationsSection />
       <SpeakersSection speakers={speakers} />
       <ScheduleSection schedule={schedule} hasSpeakers={speakers.length > 0} />
-      {config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} />}
+      {config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} config={config} />}
       <SponsorsSection sponsors={sponsors} />
       <OrganizersSection organizers={organizers} />
       <RegionFooter config={config} />

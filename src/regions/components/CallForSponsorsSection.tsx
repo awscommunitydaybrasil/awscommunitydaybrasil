@@ -1,11 +1,13 @@
 import { Handshake } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import type { RegionConfig } from "@/regions/types";
 
 interface CallForSponsorsSectionProps {
   url: string;
+  config: RegionConfig;
 }
 
-const CallForSponsorsSection = ({ url }: CallForSponsorsSectionProps) => {
+const CallForSponsorsSection = ({ url, config }: CallForSponsorsSectionProps) => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -23,7 +25,7 @@ const CallForSponsorsSection = ({ url }: CallForSponsorsSectionProps) => {
             Conecte sua marca a quem faz acontecer
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
-            O AWS Community Day Brasil 2026 — edição Sudeste — está com cotas abertas.
+            O AWS Community Day Brasil 2026 — edição {config.regionName} — está com cotas abertas.
             Employer branding, inovação e presença de mercado: tudo em um único evento
             para uma comunidade ativa de profissionais AWS.
           </p>

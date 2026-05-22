@@ -1,11 +1,14 @@
 import { Mic } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import type { RegionConfig } from "@/regions/types";
 
 interface CallForSpeakersSectionProps {
   url: string;
+  config: RegionConfig;
+  formattedDate: string;
 }
 
-const CallForSpeakersSection = ({ url }: CallForSpeakersSectionProps) => {
+const CallForSpeakersSection = ({ url, config, formattedDate }: CallForSpeakersSectionProps) => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -23,12 +26,12 @@ const CallForSpeakersSection = ({ url }: CallForSpeakersSectionProps) => {
             Esse palco pode ser seu
           </h2>
           <p className="text-muted-foreground mb-2 max-w-xl mx-auto leading-relaxed">
-            As submissões para o AWS Community Day Sudeste 2026 estão abertas.
+            As submissões para o AWS Community Day {config.regionName} 2026 estão abertas.
             Se você tem uma história para contar — sua primeira experiência com cloud
             ou um caso técnico aprofundado — capricha na proposta e submete.
           </p>
           <p className="text-sm text-muted-foreground mb-8">
-            BH · 22 de agosto
+            {config.location.city} · {formattedDate}
           </p>
           <a
             href={url}
