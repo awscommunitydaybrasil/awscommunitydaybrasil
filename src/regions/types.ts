@@ -20,6 +20,7 @@ export interface RegionConfig {
   };
   userGroups: Array<{ name: string; url: string }>;
   callForSpeakersUrl?: string;
+  callForSponsorsUrl?: string;
   contact: {
     email: string;
     website: string;
@@ -65,5 +66,5 @@ export interface Sponsor {
   name: string;
   logo: string;
   url: string;
-  tier: "diamond" | "gold" | "silver" | "bronze" | "community";
+  tier: "diamond" | "gold" | "silver" | "bronze" | "community" | "support";
 }
