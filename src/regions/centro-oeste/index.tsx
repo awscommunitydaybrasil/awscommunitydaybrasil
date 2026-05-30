@@ -5,11 +5,15 @@ import speakers from "./data/speakers.json";
 import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
 import heroImage from "./assets/postcard-brasilia.png";
+import type { Sponsor } from "@/regions/types";
 
 import deividPhoto from "./assets/deivid.jpg";
 import marcelopaivaPhoto from "./assets/marcelopaiva.jpg";
 import priscilaPhoto from "./assets/priscila.jpg";
 import wagnerPhoto from "./assets/wagner.jpg";
+
+import awsLogo from "./assets/sponsors/aws.png";
+import daredeLogo from "./assets/sponsors/darede.png";
 
 const photoMap: Record<string, string> = {
   "deivid.jpg": deividPhoto,
@@ -18,10 +22,24 @@ const photoMap: Record<string, string> = {
   "wagner.jpg": wagnerPhoto,
 };
 
+const logoMap: Record<string, string> = {
+  "aws.png": awsLogo,
+  "darede.png": daredeLogo,
+};
+
 const resolvedOrganizers = organizers.map((org) => ({
   ...org,
   photo: photoMap[org.photo] || org.photo,
 }));
+
+const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
+  const filename = sponsor.logo.split("/").pop() || "";
+  return {
+    ...sponsor,
+    logo: logoMap[filename] || sponsor.logo,
+    tier: sponsor.tier as Sponsor["tier"],
+  };
+});
 
 const CentroOeste = () => (
   <RegionPage
@@ -29,7 +47,7 @@ const CentroOeste = () => (
     organizers={resolvedOrganizers}
     speakers={speakers}
     schedule={schedule}
-    sponsors={sponsors}
+    sponsors={resolvedSponsors}
     heroImage={heroImage}
   />
 );

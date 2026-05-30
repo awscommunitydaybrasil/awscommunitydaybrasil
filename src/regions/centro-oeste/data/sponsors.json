@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "name": "AWS",
+    "logo": "aws.png",
+    "url": "https://aws.amazon.com/",
+    "tier": "diamond"
+  },
+  {
+    "name": "Darede",
+    "logo": "darede.png",
+    "url": "https://www.darede.com.br/",
+    "tier": "diamond"
+  }
+]
+
