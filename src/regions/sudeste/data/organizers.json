@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "name": "Rafaela Vidotti",
+    "photo": "rafaela-vidotti.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rafaelavidotti/"
+    }
+  },
+  {
+    "name": "Flávio Pimenta",
+    "photo": "flavio-pimenta.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaap/"
+    }
+  },
+  {
+    "name": "Alexandre Ballestero de Paula",
+    "photo": "alexandre-ballestero-paula.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/abpaula77/"
+    }
+  },
+  {
+    "name": "Ana Carolyne",
+    "photo": "ana-carolyne.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/ana-carolyne-pereira-de-souza/"
+    }
+  },
+  {
+    "name": "Carlos Augusto Souza Carvalho",
+    "photo": "carlos-augusto-souza-carvalho.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/carloskardan/"
+    }
+  },
+  {
+    "name": "Fábio Baldin",
+    "photo": "fabio-baldin.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/fabiobaldin/"
+    }
+  },
+  {
+    "name": "Felipe KiKo",
+    "photo": "felipe-kiko.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/felipekiko/"
+    }
+  },
+  {
+    "name": "Jéssica Cristina Coelho",
+    "photo": "jessica-cristina-coelho.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/jessicaccoelho/"
+    }
+  },
+  {
+    "name": "Mauricio (Naka) Nakabayashi",
+    "photo": "mauricio-naka.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/mauricionaka/"
+    }
+  },
+  {
+    "name": "Paloma Lataliza",
+    "photo": "paloma-lataliza.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/palomalataliza/"
+    }
+  },
+  {
+    "name": "Rafael Fernandes",
+    "photo": "rafael-fernandes.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/therafs/"
+    }
+  },
+  {
+    "name": "Verônica Torres",
+    "photo": "veronica-torres.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/veronicatorres18/"
+    }
+  }
+]
