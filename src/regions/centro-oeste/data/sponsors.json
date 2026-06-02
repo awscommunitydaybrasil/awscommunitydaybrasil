@@ -10,6 +10,12 @@
     "logo": "darede.png",
     "url": "https://www.darede.com.br/",
     "tier": "diamond"
+  },
+  {
+    "name": "UniProjeção",
+    "logo": "uniprojecao.jpg",
+    "url": "https://www.projecao.br/Faculdade",
+    "tier": "support"
   }
 ]
 

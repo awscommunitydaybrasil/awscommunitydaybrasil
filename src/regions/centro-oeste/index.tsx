@@ -14,6 +14,7 @@ import wagnerPhoto from "./assets/wagner.jpg";
 
 import awsLogo from "./assets/sponsors/aws.png";
 import daredeLogo from "./assets/sponsors/darede.png";
+import uniprojecaoLogo from "./assets/sponsors/uniprojecao.jpg";
 
 const photoMap: Record<string, string> = {
   "deivid.jpg": deividPhoto,
@@ -25,6 +26,7 @@ const photoMap: Record<string, string> = {
 const logoMap: Record<string, string> = {
   "aws.png": awsLogo,
   "darede.png": daredeLogo,
+  "uniprojecao.jpg": uniprojecaoLogo,
 };
 
 const resolvedOrganizers = organizers.map((org) => ({
