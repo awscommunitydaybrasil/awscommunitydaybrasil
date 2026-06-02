@@ -18,10 +18,16 @@
     "youtube": "https://www.youtube.com/@AWSUsergroupBrasilia/streams"
   },
   "userGroups": [
-    { "name": "AWS User Group Brasília", "url": "https://www.meetup.com/pt-BR/aws-user-group-brasilia/" },
-    { "name": "AWS User Group Goiânia", "url": "https://www.meetup.com/aws-go" }
+    {
+      "name": "AWS User Group Brasília",
+      "url": "https://www.meetup.com/pt-BR/aws-user-group-brasilia/"
+    },
+    {
+      "name": "AWS User Group Goiânia",
+      "url": "https://www.meetup.com/aws-go"
+    }
   ],
-  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-2026-centro-oeste",
+  "callForSpeakersUrl": "",
   "contact": {
     "email": "centrooeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
