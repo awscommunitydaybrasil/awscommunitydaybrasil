@@ -13,6 +13,7 @@ import anaPhoto from "./assets/ana-carolyne.png";
 import carlosPhoto from "./assets/carlos-augusto-souza-carvalho.jpg";
 import fabioPhoto from "./assets/fabio-baldin.png";
 import felipePhoto from "./assets/felipe-kiko.jpg";
+import jessicaPhoto from "./assets/jessica-cristina-coelho.jpg";
 import mauricioPhoto from "./assets/mauricio-naka.jpg";
 import palomaPhoto from "./assets/paloma-lataliza.jpg";
 import rafaelPhoto from "./assets/rafael-fernandes.jpg";
