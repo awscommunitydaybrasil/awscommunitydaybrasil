@@ -21,6 +21,13 @@
     }
   },
   {
+    "name": "Ana Carolyne",
+    "photo": "ana-carolyne.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/ana-carolyne-pereira-de-souza/"
+    }
+  },
+  {
     "name": "Carlos Augusto Souza Carvalho",
     "photo": "carlos-augusto-souza-carvalho.jpg",
     "social": {

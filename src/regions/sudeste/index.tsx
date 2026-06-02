@@ -9,6 +9,7 @@ import heroImage from "./assets/postcard-bh.png";
 import rafaelaPhoto from "./assets/rafaela-vidotti.jpg";
 import flavioPhoto from "./assets/flavio-pimenta.jpg";
 import alexandrePhoto from "./assets/alexandre-ballestero-paula.jpg";
+import anaPhoto from "./assets/ana-carolyne.png";
 import carlosPhoto from "./assets/carlos-augusto-souza-carvalho.jpg";
 import fabioPhoto from "./assets/fabio-baldin.png";
 import felipePhoto from "./assets/felipe-kiko.jpg";
@@ -18,6 +19,7 @@ const photoMap: Record<string, string> = {
   "rafaela-vidotti.jpg": rafaelaPhoto,
   "flavio-pimenta.jpg": flavioPhoto,
   "alexandre-ballestero-paula.jpg": alexandrePhoto,
+  "ana-carolyne.png": anaPhoto,
   "carlos-augusto-souza-carvalho.jpg": carlosPhoto,
   "fabio-baldin.png": fabioPhoto,
   "felipe-kiko.jpg": felipePhoto,
