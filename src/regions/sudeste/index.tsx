@@ -6,10 +6,31 @@ import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
 import heroImage from "./assets/postcard-bh.png";
 
+import rafaelaPhoto from "./assets/rafaela-vidotti.jpg";
+import flavioPhoto from "./assets/flavio-pimenta.jpg";
+import alexandrePhoto from "./assets/alexandre-ballestero-paula.jpg";
+import carlosPhoto from "./assets/carlos-augusto-souza-carvalho.jpg";
+import fabioPhoto from "./assets/fabio-baldin.png";
+import jessicaPhoto from "./assets/jessica-cristina-coelho.jpg";
+
+const photoMap: Record<string, string> = {
+  "rafaela-vidotti.jpg": rafaelaPhoto,
+  "flavio-pimenta.jpg": flavioPhoto,
+  "alexandre-ballestero-paula.jpg": alexandrePhoto,
+  "carlos-augusto-souza-carvalho.jpg": carlosPhoto,
+  "fabio-baldin.png": fabioPhoto,
+  "jessica-cristina-coelho.jpg": jessicaPhoto,
+};
+
+const resolvedOrganizers = organizers.map((org) => ({
+  ...org,
+  photo: photoMap[org.photo] || org.photo,
+}));
+
 const Sudeste = () => (
   <RegionPage
     config={config}
-    organizers={organizers}
+    organizers={resolvedOrganizers}
     speakers={speakers}
     schedule={schedule}
     sponsors={sponsors}
