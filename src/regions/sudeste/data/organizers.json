@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "name": "Rafaela Vidotti",
+    "photo": "rafaela-vidotti.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rafaelavidotti/"
+    }
+  },
+  {
+    "name": "Flávio Pimenta",
+    "photo": "flavio-pimenta.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaap/"
+    }
+  },
+  {
+    "name": "Alexandre Ballestero de Paula",
+    "photo": "alexandre-ballestero-paula.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/abpaula77/"
+    }
+  },
+  {
+    "name": "Carlos Augusto Souza Carvalho",
+    "photo": "carlos-augusto-souza-carvalho.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/carloskardan/"
+    }
+  },
+  {
+    "name": "Fábio Baldin",
+    "photo": "fabio-baldin.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/fabiobaldin/"
+    }
+  }
+]
