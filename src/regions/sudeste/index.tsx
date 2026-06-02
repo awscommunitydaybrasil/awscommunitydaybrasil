@@ -11,6 +11,7 @@ import flavioPhoto from "./assets/flavio-pimenta.jpg";
 import alexandrePhoto from "./assets/alexandre-ballestero-paula.jpg";
 import carlosPhoto from "./assets/carlos-augusto-souza-carvalho.jpg";
 import fabioPhoto from "./assets/fabio-baldin.png";
+import felipePhoto from "./assets/felipe-kiko.png";
 import jessicaPhoto from "./assets/jessica-cristina-coelho.jpg";
 
 const photoMap: Record<string, string> = {
@@ -19,6 +20,7 @@ const photoMap: Record<string, string> = {
   "alexandre-ballestero-paula.jpg": alexandrePhoto,
   "carlos-augusto-souza-carvalho.jpg": carlosPhoto,
   "fabio-baldin.png": fabioPhoto,
+  "felipe-kiko.png": felipePhoto,
   "jessica-cristina-coelho.jpg": jessicaPhoto,
 };
 
