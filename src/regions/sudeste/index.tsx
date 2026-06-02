@@ -13,7 +13,10 @@ import anaPhoto from "./assets/ana-carolyne.png";
 import carlosPhoto from "./assets/carlos-augusto-souza-carvalho.jpg";
 import fabioPhoto from "./assets/fabio-baldin.png";
 import felipePhoto from "./assets/felipe-kiko.jpg";
-import jessicaPhoto from "./assets/jessica-cristina-coelho.jpg";
+import mauricioPhoto from "./assets/mauricio-naka.jpg";
+import palomaPhoto from "./assets/paloma-lataliza.jpg";
+import rafaelPhoto from "./assets/rafael-fernandes.jpg";
+import veronicaPhoto from "./assets/veronica-torres.jpg";
 
 const photoMap: Record<string, string> = {
   "rafaela-vidotti.jpg": rafaelaPhoto,
@@ -24,6 +27,10 @@ const photoMap: Record<string, string> = {
   "fabio-baldin.png": fabioPhoto,
   "felipe-kiko.jpg": felipePhoto,
   "jessica-cristina-coelho.jpg": jessicaPhoto,
+  "mauricio-naka.jpg": mauricioPhoto,
+  "paloma-lataliza.jpg": palomaPhoto,
+  "rafael-fernandes.jpg": rafaelPhoto,
+  "veronica-torres.jpg": veronicaPhoto,
 };
 
 const resolvedOrganizers = organizers.map((org) => ({

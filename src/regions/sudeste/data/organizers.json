@@ -54,5 +54,33 @@
     "social": {
       "linkedin": "https://www.linkedin.com/in/jessicaccoelho/"
     }
+  },
+  {
+    "name": "Mauricio (Naka) Nakabayashi",
+    "photo": "mauricio-naka.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/mauricionaka/"
+    }
+  },
+  {
+    "name": "Paloma Lataliza",
+    "photo": "paloma-lataliza.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/palomalataliza/"
+    }
+  },
+  {
+    "name": "Rafael Fernandes",
+    "photo": "rafael-fernandes.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/therafs/"
+    }
+  },
+  {
+    "name": "Verônica Torres",
+    "photo": "veronica-torres.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/veronicatorres18/"
+    }
   }
 ]
