@@ -1,1 +1,171 @@
-[]
+[
+    {
+        "name": "Aldo Henrique",
+        "photo": "https://sessionize.com/image/d353-200o200o2-pzyudKSqdim7LYL8AJUBRj.jpg",
+        "title": "Universidade de Brasília",
+        "company": "Centro Universitário Euro-Americano-Unieuro",
+        "talk": "Desenvolvendo Além do ChatGPT: Da Teoria à Produção — Agentes, Automação e LLMOps",
+        "bio": "Possui graduação em Sistemas de Informação pela Universidade Federal de Viçosa (2014) e mestrado em Informática pela Universidade de Brasília (2017), atualmente Dourando em Ciências da Computação na UnB. Tem experiência na área de Ciência da Computação, com ênfase em Sistemas de Informação, atuando principalmente nos seguintes temas: Java, C#, mobile, web e negócios. Professor universitário na Unieuro e Analista de Sistemas IV no CNI.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/aldo-mendes",
+            "instagram": "https://www.instagram.com/profaldohenrique"
+        }
+    },
+    {
+        "name": "Dan Rezende",
+        "photo": "https://sessionize.com/image/a51d-200o200o2-LarkNMRboAizCq78LJugJF.png",
+        "title": "Arquiteto de Soluções",
+        "company": "CloudFaster",
+        "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
+        "bio": "Dan Rezende. Ex-AWS, Arquiteto de Soluções pela CloudFaster. AWS Golden Jacket, AWS Community Builder, líder do AWS User Group Goiânia. Trabalho com AWS há mais de 8 anos. Conduzo dezenas de implementações AWS em diversas frentes, e sigo acompanhando o lançamento dos frontier agents (Kiro, Security Agent, DevOps Agent) desde o preview no re:Invent 2025.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/danrezende",
+            "instagram": "https://www.instagram.com/odanrezende"
+        }
+    },
+    {
+        "name": "Fellipe Mendonça",
+        "photo": "https://sessionize.com/image/9db1-200o200o2-VsWoso9UiZTw6aFf5zyECy.jpg",
+        "title": "Data Enginner",
+        "company": "NTT Data",
+        "talk": "Criando Pipeline de Dados com Terraform",
+        "bio": "Natural de Brasília, atuo na área de Tecnologia da Informação há mais de 8 anos, com experiência em projetos nacionais e internacionais. Atualmente sou Engenheiro de Dados na NTT DATA, alocado em um projeto no Banco Itaú, trabalhando principalmente com processos de ETL e iniciativas envolvendo IA Generativa para otimização de processos. Ao longo da minha trajetória, já atuei em empresas do Distrito Federal, Recife e Minas Gerais, além de ter experiência com desenvolvimento Desktop utilizando C# antes da transição para Engenharia de Dados, área em que atuo há mais de 3 anos. Também faço parte do AWS User Group Brasília, contribuindo com palestras e apoio na organização e logística de eventos da comunidade.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/fsmendonca",
+            "instagram": "https://www.instagram.com/fellipe.indio"
+        }
+    },
+    {
+        "name": "Luiz Gustavo Ribeiro",
+        "photo": "https://sessionize.com/image/87aa-200o200o2-WZdtMeCcVeoHx7pP9efJP7.jpg",
+        "title": "Senior Solutions Architect",
+        "company": "Minsait",
+        "talk": "Precisa de AWS para desenvolver na AWS? Conheça o simulador livre que roda no seu laptop",
+        "bio": "Senior Solutions Architect na Minsait, criador do AWS Local Simulator (projeto open-source MIT que simula 18 serviços AWS localmente) e AWS Community Builder for Serverless. Com 12 certificações AWS e mais de 30 anos de experiência em tecnologia, dedica-se a democratizar o acesso ao desenvolvimento em nuvem através de software livre.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/gugananuvem"
+        }
+    },
+    {
+        "name": "Luiz Machado",
+        "photo": "https://sessionize.com/image/6086-200o200o2-RnkFgCnLF5N4qvU9kBzzwA.jpg",
+        "title": "Head de Tecnologia",
+        "company": "Cilia Tecnologia",
+        "talk": "Seu Agente de IA Tem AdministratorAccess. Você Sabia?",
+        "bio": "Head de Tecnologia, AWS Community Builder, e fundador da comunidade @GYNSec. Possui 4 certificações AWS e atua na interseção entre arquitetura cloud, segurança ofensiva e liderança de times de engenharia.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/luizmachadoaws",
+            "instagram": "https://www.instagram.com/luizmachadoaws",
+            "twitter": "https://x.com/luizmachadoaws"
+        }
+    },
+    {
+        "name": "Naiara Medeiros",
+        "photo": "https://sessionize.com/image/88fb-200o200o2-B3Bi5zRJ8vA5ZKcHk4sLPD.jpg",
+        "title": "Client Engagement Manager",
+        "company": "Comunicação, tecnologia e gestão de projetos",
+        "talk": "Tech não é linha reta: comunicação, visão sistêmica e carreiras em transição",
+        "bio": "Head de Tecnologia, AWS Community Builder, e fundador da comunidade @GYNSec. Possui 4 certificações AWS e atua na interseção entre arquitetura cloud, segurança ofensiva e liderança de times de engenharia.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/naiara-medeiros-0048721b0",
+            "instagram": "https://www.instagram.com/mrssbig"
+        }
+    },
+    {
+        "name": "Nina Soraya Oliveira Pires",
+        "photo": "https://sessionize.com/image/ebc2-200o200o2-a6RYZiqtt3MFo3KSG27SYw.jpg",
+        "title": "Mercadóloga e Cientista de Dados",
+        "company": "Leader AWS User Groups Goiânia",
+        "talk": "Darwin, Dopamina e Deploy: o que a neurociência do consumo ensina sobre ética no código",
+        "bio": "Mercadóloga e Cientista de dados. Especialista em Redes com ênfase em IoT e também em Neurociências, Neuroengenharia e Neurorrobótica.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/nina-soraya-pires",
+            "instagram": "https://www.instagram.com/ninasora.ia"
+        }
+    },
+    {
+        "name": "Raphael Moura",
+        "photo": "https://sessionize.com/image/73c9-200o200o2-nnYRwyEScCtb8XrFQ6XW1J.jpg",
+        "title": "Sr. Serverless Developer",
+        "company": "Serverless Guru",
+        "talk": "Como desenvolver um sistema com IA nos dias atuais?",
+        "bio": "Sou apaixonado por tecnologia e, como Senior Serverless Developer, transformo desafios complexos em soluções utilizando arquiteturas serverless. Com sete certificações AWS, minha missão é ser um guia que ajuda as pessoas a explorarem o Universo Serverless com estudo e prática. Como AWS Community Builder e AWS Community Leader, me dedico a fortalecer e expandir nossa comunidade. Estou comprometido em compartilhar experiências, participar de eventos e colaborar com outros entusiastas da área.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/raphamoura",
+            "instagram": "https://www.instagram.com/mouraraphael"
+        }
+    },
+    {
+        "name": "Thayane Rodrigues Viana",
+        "photo": "https://sessionize.com/image/ba19-200o200o2-wJqBtQ4LtWXbFF7s5jrxEX.jpg",
+        "title": "Arquiteta de Soluções",
+        "company": "AWS",
+        "talk": "Migração de VMware para a AWS com o AWS Transform usando IA agêntica",
+        "bio": "A Thayane é arquiteta de soluções na AWS e faz parte da comunidade técnica (TFC) de Migração e Modernização na AWS. Ela também possui graduação em Engenharia de Redes de Comunicação e mestrado pela Universidade de Brasília (UnB). A Thayane possui mais de 10 anos de experiência de trabalho com infraestrutura de TI e ambientes VMware.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/thayane-rodrigues-viana"
+        }
+    },
+    {
+        "name": "Tiago Jorge",
+        "photo": "https://sessionize.com/image/489e-200o200o2-4r52rrKyJxP13VFWmdoAHo.png",
+        "title": "Head of Serverless",
+        "company": "Cilia Tecnologia",
+        "talk": "AWS Lambda além do código: decisões arquiteturais que ninguém te conta",
+        "bio": "Tiago Jorge é arquiteto de soluções e engenheiro de software com mais de 15 anos de experiência em desenvolvimento de sistemas distribuídos e aplicações cloud-native. Nos últimos anos, tem se especializado em arquitetura serverless na AWS, atuando no desenho e evolução de plataformas escaláveis orientadas a eventos, com foco em performance, eficiência de custo e impacto no negócio. Possui experiência prática com serviços como AWS Lambda, API Gateway, SQS, EventBridge, DynamoDB e demais componentes nativos da AWS para workloads modernos em produção. Também participa ativamente de comunidades técnicas e eventos, compartilhando aprendizados sobre arquitetura de software, modernização de aplicações e serverless em cenários reais.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/tiagojorgeaws",
+            "instagram": "https://www.instagram.com/tiagojorgep"
+        }
+    },
+    {
+        "name": "Weder Mariano Sousa",
+        "photo": "https://sessionize.com/image/83ab-200o200o2-VHc6UFPQijvsZP13bHCLhV.png",
+        "title": "Engenheiro de Software",
+        "company": "Grupo GFT",
+        "talk": "Do \"Prompt Passivo\" à Autonomia Real Desmistificando o Abismo de Execução da Inteligência Artificial",
+        "bio": "Sou Engenheiro de Software Sênior no Grupo GFT e Professor Universitário, com uma carreira em TI iniciada em 2000. Minha formação inclui o curso técnico em Desenvolvimento de Sistemas (ITEGO-GO) e a graduação em Ciência da Computação (Uni-Anhanguera-GO). Além disso, possuo duas especializações: uma em Segurança da Informação (UniLeya-RJ) e outra em Mídias Interativas (UFG-GO). Sou um entusiasta de Software Livre e participo ativamente do movimento em Goiás, sendo um dos membros fundadores da comunidade Anapolivre. Também sou um dos líderes da Comunidade GoJava, a maior comunidade de usuários Java do Centro-Oeste. Recentemente, fui aceito no programa AWS Community Builder e sou um dos membros fundadores do AWS User Group Anápolis. Atuo também como Professor de computação há mais de 20 anos, uma jornada contínua de formar pessoas, ensinar e aprender.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/wedermarianodesousa",
+            "instagram": "https://www.instagram.com/sousaweder"
+        }
+    },
+    {
+        "name": "William Lino",
+        "photo": "https://sessionize.com/image/18de-200o200o2-DJnSfk1suQtTopbHANNsy8.jpg",
+        "title": "Sr. Database Specialist SA",
+        "company": "AWS",
+        "talk": "DBOps Autônomo: IA Baseada em Agentes para Manutenção de Bancos de Dados",
+        "bio": "Apaixonado por tecnologia, por aprender e por passar conhecimento. Com mais de 13 anos de experiencia em áreas de infraestrutura e bancos de dados, ja trabalhou em empresas de vários tamanhos, principalmente no mercado financeiro. Hoje ajuda clientes a expandirem seus negócios utilizando Cloud Computing na AWS.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/williamlinooliveira",
+            "instagram": "https://www.instagram.com/willonil",
+            "twitter": "https://twitter.com/WilloniL"
+        }
+    },
+    {
+        "name": "Yasmin Costa",
+        "photo": "https://sessionize.com/image/6e93-200o200o2-YpRFQWNzY1pWmzpaEUBvKk.jpg",
+        "title": "",
+        "company": "",
+        "talk": "Por dentro do Mobile - Como SO, Arquitetura e Linguagens Moldam um APP",
+        "bio": "Yasmin é formada em Ciência da Computação e pós-graduanda em Inteligência Artificial e Desenvolvimento Mobile. Atua como desenvolvedora mobile utilizando Flutter e Kotlin, com interesse em arquitetura de software, sistemas mobile e engenharia de aplicações escaláveis. Também é vice-líder da Somos_Tech, comunidade voltada à tecnologia e inclusão feminina, além de ser apaixonada por animais, inovação e compartilhamento de conhecimento.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/yasmin-costa-bb24a21a3",
+            "instagram": "https://www.instagram.com/_yasmincos"
+        }
+    }
+]
