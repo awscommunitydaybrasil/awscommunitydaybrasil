@@ -1,5 +1,31 @@
 [
     {
+        "name": "Marcelo Palladino",
+        "photo": "https://media.licdn.com/dms/image/v2/D5603AQHFwvVrYI6EIA/profile-displayphoto-crop_800_800/B56Z6DrZupJMAM-/0/1780325654142?e=1782345600&v=beta&t=WQU24bjF87T99qvYH-cy5XpN5KxHw7qKy8ajvR2Y-3o",
+        "title": "Diretor AI & Modernization",
+        "company": "Dati",
+        "talk": "",
+        "bio": "",
+        "keynote": true,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/mfpalladino",
+            "instagram": "https://www.instagram.com/palla.tech"
+        }
+    },
+    {
+        "name": "Paloma Lataliza",
+        "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHBOVGbtjEstw/profile-displayphoto-crop_800_800/B4DZwWUEuFHEAI-/0/1769900887433?e=1782345600&v=beta&t=M55xdrwS3DmDMRBSSHZeeXrmnhvm7PA3JO7E-ETy66w",
+        "title": "Cloud Engineer",
+        "company": "Caylent",
+        "talk": "",
+        "bio": "",
+        "keynote": true,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/mfpalladino",
+            "instagram": "https://www.instagram.com/palla.tech"
+        }
+    },
+    {
         "name": "Aldo Henrique",
         "photo": "https://sessionize.com/image/d353-200o200o2-pzyudKSqdim7LYL8AJUBRj.jpg",
         "title": "Universidade de Brasília",
