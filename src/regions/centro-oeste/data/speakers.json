@@ -52,6 +52,18 @@
         }
     },
     {
+        "name": "Erika Nagamine",
+        "photo": "https://sessionize.com/image/9268-200o200o2-WjrrSQDJhwJNiKioVKX7C5.jpeg",
+        "title": "Sr. Specialist SA, Data & AI",
+        "company": "AWS",
+        "talk": "Do Dado ao Produto de Dados: por que precisamos mais do que nunca de governança de dados",
+        "bio": "Tenho experiencia como Arquiteta de soluções especialista em dados. Tive experiencia de estar em diversos projetos ao redor do mundo e hoje trabalho na AWS. Amo compartilhar conhecimento especializado em dados e tive a oportunidade de ser speaker nos principais eventos AWS e de comunidade como TDC.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/erika-nagamine"
+        }
+    },
+    {
         "name": "Fellipe Mendonça",
         "photo": "https://sessionize.com/image/9db1-200o200o2-VsWoso9UiZTw6aFf5zyECy.jpg",
         "title": "Data Enginner",
@@ -62,6 +74,18 @@
         "social": {
             "linkedin": "https://www.linkedin.com/in/fsmendonca",
             "instagram": "https://www.instagram.com/fellipe.indio"
+        }
+    },
+    {
+        "name": "Flávio Pimenta",
+        "photo": "https://sessionize.com/image/09bb-200o200o2-ET7pu2UfwFdmHp456VdW7W.png",
+        "title": "Staff Engineer",
+        "company": "Select Soluções",
+        "talk": "Do git clone ao Pull Request em 30 minutos: contribuindo com open source usando Kiro",
+        "bio": "Flávio Pimenta é AWS Community Builder e líder do AWS User Group de Campinas. Organizou o AWS Community Day Brasil 2025 para mais de 300 pessoas com 2 tracks simultâneas. Evangelista de Vibe Coding e desenvolvimento assistido por IA, já apresentou live coding em eventos como Campus Party Brasília, TDC São Carlos Experience e meetups pelo Brasil. No dia a dia, usa IA para acelerar entregas de POCs e protótipos, acreditando que a tecnologia amplifica quem sabe usá-la. Atua na interseção entre comunidade, cloud e produtividade com IA.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/flaapp"
         }
     },
     {
