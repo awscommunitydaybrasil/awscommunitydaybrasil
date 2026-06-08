@@ -39,6 +39,18 @@
         }
     },
     {
+        "name": "Cícero Moura",
+        "photo": "https://sessionize.com/image/0d0f-200o200o2-MwTEcTooXBM9fo9jSVunVv.jpg",
+        "title": "Data Architect Specialist",
+        "company": "Vórtx",
+        "talk": "Agentic AI vai te custar caro! A menos que você domine FinOps na AWS",
+        "bio": "Especialista em Arquitetura e Engenharia de Dados, Bacharel em Sistemas de Informação e pós-graduado em Big Data e Machine Learning. AWS Community Builder, AWS User Group Leader e Palestrante Nacional.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/cicero-moura"
+        }
+    },
+    {
         "name": "Dan Rezende",
         "photo": "https://sessionize.com/image/a51d-200o200o2-LarkNMRboAizCq78LJugJF.png",
         "title": "Arquiteto de Soluções",
@@ -86,6 +98,18 @@
         "keynote": false,
         "social": {
             "linkedin": "https://www.linkedin.com/in/flaapp"
+        }
+    },
+    {
+        "name": "Leo Ciccone",
+        "photo": "https://sessionize.com/image/02a0-200o200o2-S7SBLCSbjDXL8hpv5yr7oa.png",
+        "title": "Arquiteto Especialista",
+        "company": "AWS",
+        "talk": "De pip install a Root: Como Ataques de Supply Chain Escalam para Comprometimento total de contas AWS",
+        "bio": "",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/leonardo-ciccone"
         }
     },
     {
