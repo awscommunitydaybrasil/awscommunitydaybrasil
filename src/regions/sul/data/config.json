@@ -5,7 +5,7 @@
   "eventTime": "09h às 18h",
   "heroImage": "./assets/postcard-curitiba.png",
   "location": {
-    "venue": "Em Breve!",
+    "venue": "Aldeia Estação - Av. Sete de Setembro, 2775 – Andar G6 Rebouças",
     "city": "Curitiba/PR"
   },
   "registration": {
@@ -19,11 +19,15 @@
     "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
   },
   "userGroups": [
-    { "name": "AWS User Group Curitiba", "url": "https://www.meetup.com/pt-BR/awscwb/" },
-    { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-BR/awspoa/" },
-    { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-BR/awsfln/" }
+    { "name": "AWS User Group Curitiba", "url": "https://www.meetup.com/pt-br/aws-curitiba-user-group/" },
+    { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-br/aws-ug-rs/" },
+    { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-br/aws-user-group-floripa/" },
+    { "name": "AWS User Group Criciúma", "url": "https://www.meetup.com/criciumaops/" },
+    { "name": "AWS User Group Tubarão", "url": "https://www.meetup.com/pt-br/tubaraoops/" },
+    { "name": "AWS User Group Blumenau", "url": "https://www.meetup.com/pt-br/aws-usergroup-blumenau/" },
+    { "name": "AWS User Group Canoas", "url": "https://www.meetup.com/aws-user-group-canoas/" }
   ],
-  "callForSpeakersUrl": "",
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-2026-sul/",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
