@@ -55,7 +55,7 @@ const leaders = [
   {
     name: "Norte",
     city: "Belém",
-    date: "14/11/2026",
+    date: "31/10/2026",
     image: postcardBelem,
     leader: "Thayana Mamoré",
     leaderPhoto: leaderThayanaMamore,
