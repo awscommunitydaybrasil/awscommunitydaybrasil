@@ -16,6 +16,11 @@
     "logo": "uniprojecao.jpg",
     "url": "https://www.projecao.br/Faculdade",
     "tier": "support"
+  },
+  {
+    "name": "Party Community",
+    "logo": "party-community.jpg",
+    "url": "https://partycommunity.org/events/aws-community-day-bras-lia/aws-community-day-brasilia-2026",
+    "tier": "support"
   }
 ]
-
