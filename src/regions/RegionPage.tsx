@@ -34,8 +34,29 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
   const pageDescription = `${config.subtitle}. ${config.location.city} — ${formattedDate}.`;
   const slug = window.location.pathname.replace(/^\//, "").replace(/\/$/, "");
   const canonicalUrl = `${BASE_URL}/${slug}`;
-  // Usa o screenshot gerado em public/og/{slug}.png se disponível, senão cai no postcard
   const ogImageUrl = `${BASE_URL}/og/${slug}.png`;
+
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: `AWS Community Day Brasil 2026 - ${config.regionName}`,
+    startDate: config.targetDate,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: config.location.venue,
+      address: config.location.city,
+    },
+    image: [ogImageUrl],
+    description: pageDescription,
+    organizer: {
+      "@type": "Organization",
+      name: "AWS Community Day Brasil",
+      url: BASE_URL,
+    },
+    url: canonicalUrl,
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,12 +71,17 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:alt" content={`Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={`Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`} />
+        <script type="application/ld+json">{JSON.stringify(eventJsonLd)}</script>
       </Helmet>
       <RegionHeader registrationUrl={config.registration.url} />
       <RegionHero config={config} heroImage={heroImage} />
