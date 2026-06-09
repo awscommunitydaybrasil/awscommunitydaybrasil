@@ -33,7 +33,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
   const pageTitle = `AWS Community Day Brasil 2026 — ${config.regionName} (${config.location.city})`;
   const pageDescription = `${config.subtitle}. ${config.location.city} — ${formattedDate}.`;
   const slug = window.location.pathname.replace(/^\//, "").replace(/\/$/, "");
-  const canonicalUrl = `${BASE_URL}/${slug}`;
+  const canonicalUrl = `${BASE_URL}/${slug}/`;
   const ogImageUrl = `${BASE_URL}/og/${slug}.png`;
 
   const eventJsonLd = {

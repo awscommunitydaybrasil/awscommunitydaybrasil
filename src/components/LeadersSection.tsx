@@ -20,7 +20,7 @@ const leaders = [
     leader: "Wagner Landim",
     leaderPhoto: leaderWagnerLandim,
     leaderLinkedin: "https://www.linkedin.com/in/wagnerlandim/",
-    link: "/centro-oeste",
+    link: "/centro-oeste/",
   },
   {
     name: "Sudeste",
@@ -30,7 +30,7 @@ const leaders = [
     leader: "Rafaela Vidotti",
     leaderPhoto: leaderRafaelaVidotti,
     leaderLinkedin: "https://www.linkedin.com/in/rafaelavidotti/",
-    link: "/sudeste",
+    link: "/sudeste/",
   },
   {
     name: "Sul",
@@ -40,7 +40,7 @@ const leaders = [
     leader: "Alceu Neto",
     leaderPhoto: leaderAlceuNeto,
     leaderLinkedin: "https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/",
-    link: "/sul",
+    link: "/sul/",
   },
   {
     name: "Nordeste",
@@ -50,7 +50,7 @@ const leaders = [
     leader: "Caio Nunes",
     leaderPhoto: leaderCaioNunes,
     leaderLinkedin: "https://www.linkedin.com/in/caionscloud/",
-    link: "/nordeste",
+    link: "/nordeste/",
   },
   {
     name: "Norte",
@@ -60,7 +60,7 @@ const leaders = [
     leader: "Thayana Mamoré",
     leaderPhoto: leaderThayanaMamore,
     leaderLinkedin: "https://www.linkedin.com/in/thayanacmamore/",
-    link: "/norte",
+    link: "/norte/",
   },
 ];
 

@@ -23,11 +23,11 @@ Object.entries(regionStates).forEach(([region, states]) => {
 });
 
 const regionLinks: Record<string, string> = {
-  norte: "/norte",
-  nordeste: "/nordeste",
-  centroOeste: "/centro-oeste",
-  sudeste: "/sudeste",
-  sul: "/sul",
+  norte: "/norte/",
+  nordeste: "/nordeste/",
+  centroOeste: "/centro-oeste/",
+  sudeste: "/sudeste/",
+  sul: "/sul/",
 };
 
 const regionOrder = ["norte", "nordeste", "centroOeste", "sudeste", "sul"] as const;
