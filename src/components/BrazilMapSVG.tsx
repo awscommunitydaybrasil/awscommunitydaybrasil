@@ -93,7 +93,7 @@ const hostCityData: Record<string, { city: string; date: string }> = {
   MG: { city: "Belo Horizonte", date: "22 Ago" },
   PR: { city: "Curitiba", date: "19 Set" },
   BA: { city: "Salvador", date: "a confirmar - previsão: Outubro/26" },
-  PA: { city: "Belém", date: "14 Nov" },
+  PA: { city: "Belém", date: "31 Out" },
 };
 
 interface BrazilMapSVGProps {
