@@ -39,6 +39,18 @@
         }
     },
     {
+        "name": "Carlos Alberto Marangon",
+        "photo": "https://sessionize.com/image/53ea-200o200o2-PEkkU7mQBiKKtUK6YeM6ag.png",
+        "title": "Principal AWS Solutions Architect",
+        "company": "BRLink",
+        "talk": "Estratégia de Dados e GenAI",
+        "bio": "Carlos Marangon é Principal AWS Solutions Architect @BRLink - Ingram Micro Company, Ambassador da AWS LATAM e AWS Community Builder. Graduado em Computação - Sistemas de Informação, possui mais de 25 de anos de experiência trabalhando com TI. Atua com a AWS desde 2014, e já soma nove certificações AWS, o que comprova o seu profundo conhecimento nessa nuvem. Compartilhar conhecimento e ajudar no desenvolvimento técnico são suas paixões.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/carlosmarangon"
+        }
+    },
+    {
         "name": "Cícero Moura",
         "photo": "https://sessionize.com/image/0d0f-200o200o2-MwTEcTooXBM9fo9jSVunVv.jpg",
         "title": "Data Architect Specialist",
