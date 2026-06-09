@@ -7,12 +7,10 @@ import sponsors from "./data/sponsors.json";
 import heroImage from "./assets/postcard-curitiba.png";
 
 import daianePhoto from "./assets/daiane.jpg";
-import lucasPhoto from "./assets/lucas.jpg";
 import leandroPhoto from "./assets/leandro.jpg";
 
 const photoMap: Record<string, string> = {
   "daiane.jpg": daianePhoto,
-  "lucas.jpg": lucasPhoto,
   "leandro.jpg": leandroPhoto,
   
 };
