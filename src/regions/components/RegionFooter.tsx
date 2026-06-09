@@ -38,11 +38,21 @@ const RegionFooter = ({ config }: RegionFooterProps) => (
         {/* Coluna 2: User Groups */}
         <div>
           <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">User Groups</h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm mb-6">
             {config.userGroups.map((ug) => (
               <li key={ug.name}><a href={ug.url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">{ug.name}</a></li>
             ))}
           </ul>
+          {!!config.studentBuilderGroups?.length && (
+            <>
+              <h4 className="text-sm font-bold font-display uppercase tracking-wider text-primary mb-4">Student Builder Groups</h4>
+              <ul className="space-y-2 text-sm">
+                {config.studentBuilderGroups.map((sbg) => (
+                  <li key={sbg.name}><a href={sbg.url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">{sbg.name}</a></li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
 
         {/* Coluna 3: Código de Conduta */}
