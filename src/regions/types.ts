@@ -36,8 +36,6 @@ export interface Organizer {
     instagram?: string;
     twitter?: string;
   };
-  /** @deprecated Use social.linkedin instead */
-  linkedin?: string;
 }
 
 export interface Speaker {
