@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import type { RegionConfig, Organizer, Speaker, ScheduleItem, Sponsor } from "./types";
 import RegionHeader from "./components/RegionHeader";
 import RegionHero from "./components/RegionHero";
@@ -12,6 +11,7 @@ import ScheduleSection from "./components/ScheduleSection";
 import SponsorsSection from "./components/SponsorsSection";
 import OrganizersSection from "./components/OrganizersSection";
 import RegionFooter from "./components/RegionFooter";
+import SeoHead from "@/components/SeoHead";
 
 interface RegionPageProps {
   config: RegionConfig;
@@ -60,29 +60,32 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="AWS Community Day Brasil" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={ogImageUrl} />
-        <meta property="og:image:alt" content={`Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="robots" content="index,follow,max-image-preview:large" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={canonicalUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={ogImageUrl} />
-        <meta name="twitter:image:alt" content={`Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`} />
-        <script type="application/ld+json">{JSON.stringify(eventJsonLd)}</script>
-      </Helmet>
+      <SeoHead
+        config={{
+          title: pageTitle,
+          description: pageDescription,
+          canonicalUrl,
+          og: {
+            url: canonicalUrl,
+            image: {
+              url: ogImageUrl,
+              alt: `Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`,
+              width: 1200,
+              height: 630,
+            },
+          },
+          twitter: {
+            url: canonicalUrl,
+            image: {
+              url: ogImageUrl,
+              alt: `Postcard oficial da edicao ${config.regionName} do AWS Community Day Brasil`,
+              width: 1200,
+              height: 630,
+            },
+          },
+          jsonLd: [eventJsonLd],
+        }}
+      />
       <RegionHeader registrationUrl={config.registration.url} />
       <RegionHero config={config} heroImage={heroImage} />
       <InfoCardsSection config={config} formattedDate={formattedDate} />
