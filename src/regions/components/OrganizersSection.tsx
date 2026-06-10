@@ -10,7 +10,7 @@ const OrganizersSection = ({ organizers }: OrganizersSectionProps) => {
 
   if (organizers.length === 0) return null;
 
-  const getLinkedin = (org: Organizer) => org.social?.linkedin || org.linkedin;
+  const getLinkedin = (org: Organizer) => org.social?.linkedin;
   const getInstagram = (org: Organizer) => org.social?.instagram;
   const getTwitter = (org: Organizer) => org.social?.twitter;
 

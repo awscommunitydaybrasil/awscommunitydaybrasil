@@ -8,7 +8,13 @@
   {
     "name": "Faci Wyden",
     "logo": "faciwyden.png",
-    "url": "https://www.wyden.com.br/unidades/faci",
+    "url": "https://www.faculdadeideal.com.br/",
+    "tier": "support"
+  },
+  {
+    "name": "Grupo Educacional Ideal",
+    "logo": "ideal.png",
+    "url": "https://www.grupoideal.com.br/",
     "tier": "support"
   }
 ]
