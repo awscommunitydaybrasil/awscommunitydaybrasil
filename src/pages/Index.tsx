@@ -13,9 +13,9 @@ const BASE_URL = "https://awscommunityday.com.br";
 
 const Index = () => {
   const title = "AWS Community Day Brasil 2026";
-  const description = "AWS Community Day Brasil 2026 - pela primeira vez em todas as 5 regioes do pais.";
+  const description = "AWS Community Day Brasil 2026 - pela primeira vez em todas as 5 regiões do país.";
   const canonicalUrl = BASE_URL;
-  const ogImage = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d57d06e-1402-4426-aad6-1cec266ca1fe/id-preview-2f18f81c--b7f7201b-1f84-46b9-94a3-18c9b2fa1fde.lovable.app-1773888508246.png";
+  const ogImage = "https://awscommunityday.com.br/og/home.png";
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
