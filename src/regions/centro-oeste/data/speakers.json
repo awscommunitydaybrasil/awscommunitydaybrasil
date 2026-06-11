@@ -189,6 +189,18 @@
         }
     },
     {
+        "name": "Sulamita Dantas",
+        "photo": "https://sessionize.com/image/a8b2-200o200o2-Y7XWYHw9YBj6qeWDixSAEK.jpg",
+        "title": "Senior Database Engineer",
+        "company": "PicPay",
+        "talk": "AI Agent Architect",
+        "bio": "Minha trajetória é guiada pela busca constante de equilíbrio entre dados, inovação e impacto real nos negócios. Desde o início da minha carreira, sou movida pela curiosidade de entender como a informação pode transformar organizações, tornando-as mais estratégicas, eficientes e preparadas para um mundo orientado por dados. Ao longo dessa jornada, venho evoluindo continuamente como profissional de dados, atuando como Database Engineer e Database Administrator, com experiência em Business Intelligence e análise de dados, sempre conectando tecnologia às necessidades do negócio. Sou reconhecida como Microsoft Most Valuable Professional (MVP) na área de Data Platform e participo ativamente de diversas comunidades de tecnologia, contribuindo para o fortalecimento do ecossistema por meio de mentorias, palestras e iniciativas que promovem a troca de conhecimento em escala global. Minha formação inclui graduação em Ciência da Computação, pós-graduação em Cybersecurity and Data Governance e em Saúde e Tecnologia, além de um MBA em AI Leadership – Transformando Negócios, reforçando minha atuação na interseção entre dados, inteligência artificial e estratégia. Sou apaixonada por compartilhar conhecimento, tendo participado como palestrante e voluntária em diversos eventos de tecnologia no Brasil e no mundo, além de atuar como mentora em projetos de TI. Fora do universo da tecnologia, encontro no esporte — como ciclismo, trekking e caminhadas — uma forma de equilíbrio, disciplina e energia para seguir sempre em movimento.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/sulamitadantas"
+        }
+    },
+    {
         "name": "Thayane Rodrigues Viana",
         "photo": "https://sessionize.com/image/ba19-200o200o2-wJqBtQ4LtWXbFF7s5jrxEX.jpg",
         "title": "Arquiteta de Soluções",
