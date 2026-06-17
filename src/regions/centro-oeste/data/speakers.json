@@ -26,7 +26,7 @@
     },
     {
         "name": "Aldo Henrique",
-        "photo": "https://sessionize.com/image/d353-200o200o2-pzyudKSqdim7LYL8AJUBRj.jpg",
+        "photo": "aldo-henrique.jpg",
         "title": "Universidade de Brasília",
         "company": "Centro Universitário Euro-Americano-Unieuro",
         "talk": "Desenvolvendo Além do ChatGPT: Da Teoria à Produção — Agentes, Automação e LLMOps",
@@ -39,7 +39,7 @@
     },
     {
         "name": "Carlos Alberto Marangon",
-        "photo": "https://sessionize.com/image/53ea-200o200o2-PEkkU7mQBiKKtUK6YeM6ag.png",
+        "photo": "carlos-marangon.png",
         "title": "Principal AWS Solutions Architect",
         "company": "BRLink",
         "talk": "Estratégia de Dados e GenAI",
@@ -51,7 +51,7 @@
     },
     {
         "name": "Cícero Moura",
-        "photo": "https://sessionize.com/image/0d0f-200o200o2-MwTEcTooXBM9fo9jSVunVv.jpg",
+        "photo": "cicero-moura.jpg",
         "title": "Data Architect Specialist",
         "company": "Vórtx",
         "talk": "Agentic AI vai te custar caro! A menos que você domine FinOps na AWS",
@@ -63,7 +63,7 @@
     },
     {
         "name": "Dan Rezende",
-        "photo": "https://sessionize.com/image/a51d-200o200o2-LarkNMRboAizCq78LJugJF.png",
+        "photo": "dan-rezende.png",
         "title": "Arquiteto de Soluções",
         "company": "CloudFaster",
         "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
@@ -76,7 +76,7 @@
     },
     {
         "name": "Erika Nagamine",
-        "photo": "https://sessionize.com/image/9268-200o200o2-WjrrSQDJhwJNiKioVKX7C5.jpeg",
+        "photo": "erika-nagamine.jpg",
         "title": "Sr. Specialist SA, Data & AI",
         "company": "AWS",
         "talk": "Do Dado ao Produto de Dados: por que precisamos mais do que nunca de governança de dados",
@@ -88,7 +88,7 @@
     },
     {
         "name": "Fellipe Mendonça",
-        "photo": "https://sessionize.com/image/9db1-200o200o2-VsWoso9UiZTw6aFf5zyECy.jpg",
+        "photo": "fellipe-mendonca.jpg",
         "title": "Data Enginner",
         "company": "NTT Data",
         "talk": "Criando Pipeline de Dados com Terraform",
@@ -101,7 +101,7 @@
     },
     {
         "name": "Flávio Pimenta",
-        "photo": "https://sessionize.com/image/09bb-200o200o2-ET7pu2UfwFdmHp456VdW7W.png",
+        "photo": "flavio-pimenta.png",
         "title": "Staff Engineer",
         "company": "Select Soluções",
         "talk": "Do git clone ao Pull Request em 30 minutos: contribuindo com open source usando Kiro",
@@ -113,7 +113,7 @@
     },
     {
         "name": "Leo Ciccone",
-        "photo": "https://sessionize.com/image/02a0-200o200o2-S7SBLCSbjDXL8hpv5yr7oa.png",
+        "photo": "leo-ciccone.png",
         "title": "Arquiteto Especialista",
         "company": "AWS",
         "talk": "De pip install a Root: Como Ataques de Supply Chain Escalam para Comprometimento total de contas AWS",
@@ -125,7 +125,7 @@
     },
     {
         "name": "Luiz Gustavo Ribeiro",
-        "photo": "https://sessionize.com/image/87aa-200o200o2-WZdtMeCcVeoHx7pP9efJP7.jpg",
+        "photo": "luiz-gustavo.jpg",
         "title": "Senior Solutions Architect",
         "company": "Minsait",
         "talk": "Precisa de AWS para desenvolver na AWS? Conheça o simulador livre que roda no seu laptop",
@@ -137,7 +137,7 @@
     },
     {
         "name": "Luiz Machado",
-        "photo": "https://sessionize.com/image/6086-200o200o2-RnkFgCnLF5N4qvU9kBzzwA.jpg",
+        "photo": "luiz-machado.jpg",
         "title": "Head de Tecnologia",
         "company": "Cilia Tecnologia",
         "talk": "Seu Agente de IA Tem AdministratorAccess. Você Sabia?",
@@ -151,7 +151,7 @@
     },
     {
         "name": "Naiara Medeiros",
-        "photo": "https://sessionize.com/image/88fb-200o200o2-B3Bi5zRJ8vA5ZKcHk4sLPD.jpg",
+        "photo": "naiara-medeiros.jpg",
         "title": "Client Engagement Manager",
         "company": "Comunicação, tecnologia e gestão de projetos",
         "talk": "Tech não é linha reta: comunicação, visão sistêmica e carreiras em transição",
@@ -164,7 +164,7 @@
     },
     {
         "name": "Nina Soraya Oliveira Pires",
-        "photo": "https://sessionize.com/image/ebc2-200o200o2-a6RYZiqtt3MFo3KSG27SYw.jpg",
+        "photo": "nina-soraya.jpg",
         "title": "Mercadóloga e Cientista de Dados",
         "company": "Leader AWS User Groups Goiânia",
         "talk": "Darwin, Dopamina e Deploy: o que a neurociência do consumo ensina sobre ética no código",
@@ -177,7 +177,7 @@
     },
     {
         "name": "Raphael Moura",
-        "photo": "https://sessionize.com/image/73c9-200o200o2-nnYRwyEScCtb8XrFQ6XW1J.jpg",
+        "photo": "raphael-moura.jpg",
         "title": "Sr. Serverless Developer",
         "company": "Serverless Guru",
         "talk": "Como desenvolver um sistema com IA nos dias atuais?",
@@ -190,7 +190,7 @@
     },
     {
         "name": "Sulamita Dantas",
-        "photo": "https://sessionize.com/image/a8b2-200o200o2-Y7XWYHw9YBj6qeWDixSAEK.jpg",
+        "photo": "sulamita-dantas.jpg",
         "title": "Senior Database Engineer",
         "company": "PicPay",
         "talk": "AI Agent Architect",
@@ -202,7 +202,7 @@
     },
     {
         "name": "Thayane Rodrigues Viana",
-        "photo": "https://sessionize.com/image/ba19-200o200o2-wJqBtQ4LtWXbFF7s5jrxEX.jpg",
+        "photo": "thayane-rodrigues.jpg",
         "title": "Arquiteta de Soluções",
         "company": "AWS",
         "talk": "Migração de VMware para a AWS com o AWS Transform usando IA agêntica",
@@ -214,7 +214,7 @@
     },
     {
         "name": "Tiago Jorge",
-        "photo": "https://sessionize.com/image/489e-200o200o2-4r52rrKyJxP13VFWmdoAHo.png",
+        "photo": "tiago-jorge.png",
         "title": "Head of Serverless",
         "company": "Cilia Tecnologia",
         "talk": "AWS Lambda além do código: decisões arquiteturais que ninguém te conta",
@@ -227,7 +227,7 @@
     },
     {
         "name": "Weder Mariano Sousa",
-        "photo": "https://sessionize.com/image/83ab-200o200o2-VHc6UFPQijvsZP13bHCLhV.png",
+        "photo": "weder-mariano.png",
         "title": "Engenheiro de Software",
         "company": "Grupo GFT",
         "talk": "Do \"Prompt Passivo\" à Autonomia Real Desmistificando o Abismo de Execução da Inteligência Artificial",
@@ -240,7 +240,7 @@
     },
     {
         "name": "William Lino",
-        "photo": "https://sessionize.com/image/18de-200o200o2-DJnSfk1suQtTopbHANNsy8.jpg",
+        "photo": "william-lino.jpg",
         "title": "Sr. Database Specialist SA",
         "company": "AWS",
         "talk": "DBOps Autônomo: IA Baseada em Agentes para Manutenção de Bancos de Dados",
@@ -254,7 +254,7 @@
     },
     {
         "name": "Yasmin Costa",
-        "photo": "https://sessionize.com/image/6e93-200o200o2-YpRFQWNzY1pWmzpaEUBvKk.jpg",
+        "photo": "yasmin-costa.jpg",
         "title": "",
         "company": "",
         "talk": "Por dentro do Mobile - Como SO, Arquitetura e Linguagens Moldam um APP",
