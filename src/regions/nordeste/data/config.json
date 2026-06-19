@@ -2,14 +2,14 @@
   "regionName": "Nordeste",
   "subtitle": "O maior evento de comunidades AWS do Nordeste brasileiro",
   "targetDate": "2026-10-10T09:00:00-03:00",
-  "eventTime": "A confirmar",
+  "eventTime": "7h às 19h",
   "heroImage": "./assets/postcard-salvador.png",
   "location": {
-    "venue": "Em Breve!",
+    "venue": "SENAI CIMATEC",
     "city": "Salvador/BA"
   },
   "registration": {
-    "status": "Em Breve!",
+    "status": "Em breve",
     "url": ""
   },
   "socialLinks": {
