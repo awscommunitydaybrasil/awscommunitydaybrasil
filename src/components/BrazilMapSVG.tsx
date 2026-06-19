@@ -92,7 +92,7 @@ const hostCityData: Record<string, { city: string; date: string }> = {
   DF: { city: "Brasília", date: "27 Jun" },
   MG: { city: "Belo Horizonte", date: "22 Ago" },
   PR: { city: "Curitiba", date: "19 Set" },
-  BA: { city: "Salvador", date: "a confirmar - previsão: Outubro/26" },
+  BA: { city: "Salvador", date: "10/10/2026" },
   PA: { city: "Belém", date: "31 Out" },
 };
 

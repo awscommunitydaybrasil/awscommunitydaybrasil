@@ -45,7 +45,7 @@ const leaders = [
   {
     name: "Nordeste",
     city: "Salvador",
-    date: "a confirmar - previsão: Outubro/26",
+    date: "10/10/2026",
     image: postcardSalvador,
     leader: "Caio Nunes",
     leaderPhoto: leaderCaioNunes,
