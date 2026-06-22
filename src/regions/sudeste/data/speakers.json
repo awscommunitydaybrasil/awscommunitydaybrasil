@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "name": "Darko Mesaroš",
+        "photo": "darko-mesaros.jpg",
+        "title": "Principal Developer Advocate",
+        "company": "AWS",
+        "talk": "",
+        "bio": "",
+        "keynote": true,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/darko-mesaros/"
+        }
+    }
+]
