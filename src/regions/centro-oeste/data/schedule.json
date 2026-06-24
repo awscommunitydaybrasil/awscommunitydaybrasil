@@ -14,182 +14,182 @@
         "level": ""
     },
     {
-        "time": "08:45 - 09:15",
+        "time": "08:55 - 09:25",
         "title": "Keynote - Além do código: como o individualismo afeta ambientes de tecnologia",
         "speaker": "Marcelo Palladino",
         "track": "Auditório",
         "level": ""
     },
     {
-        "time": "09:25 - 09:55",
+        "time": "09:35 - 10:05",
         "title": "AI Agent Architect",
         "speaker": "Sulamita Dantas",
         "track": "Auditório",
         "level": "Iniciante"
     },
     {
-        "time": "09:25 - 09:55",
+        "time": "09:35 - 10:05",
         "title": "Desenvolvendo Além do ChatGPT: Da Teoria à Produção — Agentes, Automação e LLMOps",
         "speaker": "Aldo Henrique",
         "track": "Sala 1",
         "level": "Intermediário"
     },
     {
-        "time": "09:25 - 10:25",
+        "time": "09:35 - 10:35",
         "title": "Do git clone ao Pull Request em 30 minutos: contribuindo com open source usando Kiro",
         "speaker": "Flávio Pimenta",
         "track": "Workshop",
         "level": "Intermediário"
     },
     {
-        "time": "09:25 - 10:25",
+        "time": "09:35 - 10:35",
         "title": "Precisa de AWS para desenvolver na AWS? Conheça o simulador livre que roda no seu laptop",
         "speaker": "Luiz Gustavo",
         "track": "Workshop",
         "level": "Intermediário"
     },
     {
-        "time": "10:05 - 10:35",
+        "time": "10:15 - 10:45",
         "title": "Por dentro do Mobile - Como SO, Arquitetura e Linguagens Moldam um APP",
         "speaker": "Yasmin Costa",
         "track": "Auditório",
         "level": "Iniciante"
     },
     {
-        "time": "10:05 - 10:35",
+        "time": "10:15 - 10:45",
         "title": "Do \"Prompt Passivo\" à Autonomia Real Desmistificando o Abismo de Execução da Inteligência Artificial",
         "speaker": "Weder Mariano",
         "track": "Sala 1",
         "level": "Intermediário"
     },
     {
-        "time": "10:05 - 10:35",
+        "time": "10:15 - 10:45",
         "title": "Migração de VMware para a AWS com o AWS Transform usando IA agêntica",
         "speaker": "Thayane Rodrigues",
         "track": "Sala 2",
         "level": "Intermediário"
     },
     {
-        "time": "10:45 - 11:15",
+        "time": "10:55 - 11:25",
         "title": "Tech não é linha reta: comunicação, visão sistêmica e carreiras em transição",
         "speaker": "Naiara Medeiros",
         "track": "Auditório",
         "level": "Intermediário"
     },
     {
-        "time": "10:45 - 11:15",
+        "time": "10:55 - 11:25",
         "title": "AWS Lambda além do código: decisões arquiteturais que ninguém te conta",
         "speaker": "Tiago Jorge",
         "track": "Sala 1",
         "level": "Intermediário"
     },
     {
-        "time": "10:45 - 11:15",
+        "time": "10:55 - 11:25",
         "title": "Seu Agente de IA Tem AdministratorAccess. Você Sabia?",
         "speaker": "Luiz Machado",
         "track": "Sala 2",
         "level": "Avançado"
     },
     {
-        "time": "09:45 - 10:45",
+        "time": "10:55 - 11:55",
         "title": "Criando Pipeline de Dados com Terraform",
         "speaker": "Fellipe Mendonça",
         "track": "Workshop",
         "level": "Intermediário"
     },
     {
-        "time": "09:45 - 10:45",
+        "time": "10:55 - 11:55",
         "title": "DBOps Autônomo: IA Baseada em Agentes para Manutenção de Bancos de Dados",
         "speaker": "William Lino",
         "track": "Workshop",
         "level": "Intermediário"
     },
     {
-        "time": "11:25 - 11:55",
+        "time": "11:35 - 12:05",
         "title": "Darwin, Dopamina e Deploy: o que a neurociência do consumo ensina sobre ética no código",
         "speaker": "Nina Soraya",
         "track": "Auditório",
         "level": "Intermediário"
     },
     {
-        "time": "11:25 - 11:55",
+        "time": "11:35 - 12:05",
         "title": "Como desenvolver um sistema com IA nos dias atuais?",
         "speaker": "Rapahel Moura",
         "track": "Sala 1",
         "level": "Intermediário"
     },
     {
-        "time": "11:25 - 11:55",
+        "time": "11:35 - 12:05",
         "title": "Agentic AI vai te custar caro! A menos que você domine FinOps na AWS",
         "speaker": "Cícero Moura",
         "track": "Sala 2",
         "level": "Avançado"
     },
     {
-        "time": "12:00 - 13:00",
+        "time": "12:15 - 13:15",
         "title": "Almoço",
         "speaker": "",
         "track": "Geral",
         "level": ""
     },
     {
-        "time": "13:00 - 13:15",
+        "time": "13:15 - 13:30",
         "title": "Abertura",
         "speaker": "Organização",
         "track": "Auditório",
         "level": ""
     },
     {
-        "time": "13:15 - 13:30",
+        "time": "13:30 - 14:00",
         "title": "Keynote",
         "speaker": "Organização",
         "track": "Auditório",
         "level": ""
     },
     {
-        "time": "13:35 - 14:05",
+        "time": "14:05 - 14:35",
         "title": "Do Dado ao Produto de Dados: por que precisamos mais do que nunca de governança de dados",
         "speaker": "Erika Nagamine",
         "track": "Auditório",
         "level": "Iniciante"
     },
     {
-        "time": "14:10 - 14:40",
+        "time": "14:40 - 15:10",
         "title": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
         "speaker": "Dan Rezende",
         "track": "Auditório",
         "level": "Intermediário"
     },
     {
-        "time": "14:40 - 15:10",
+        "time": "15:10 - 15:40",
         "title": "Coffee Break",
         "speaker": "",
         "track": "Geral",
         "level": ""
     },
     {
-        "time": "15:10 - 15:40",
+        "time": "15:40 - 16:10",
         "title": "Estratégia de Dados e GenAI",
         "speaker": "Carlos Alberto Marangon",
         "track": "Auditório",
         "level": "Intermediário"
     },
     {
-        "time": "15:45 - 16:15",
+        "time": "16:15 - 16:45",
         "title": "De pip install a Root: Como Ataques de Supply Chain Escalam para Comprometimento total de contas AWS",
         "speaker": "Leo Ciccone",
         "track": "Auditório",
         "level": "Avançado"
     },
     {
-        "time": "16:20 - 16:50",
+        "time": "16:50 - 17:20",
         "title": "Keynote",
         "speaker": "Paloma Lataliza",
         "track": "Auditório",
         "level": ""
     },
     {
-        "time": "16:50 - 17:20",
+        "time": "17:20 - 17:40",
         "title": "Encerramento e Sorteios",
         "speaker": "Organização",
         "track": "Auditório",
