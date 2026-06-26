@@ -22,8 +22,10 @@ import flavioPhoto from "./assets/speakers/flavio-pimenta.png";
 import leoPhoto from "./assets/speakers/leo-ciccone.png";
 import luizgustavoPhoto from "./assets/speakers/luiz-gustavo.jpg";
 import luizmachadoPhoto from "./assets/speakers/luiz-machado.jpg";
+import marcelopalladinoPhoto from "./assets/speakers/marcelo-palladino.png";
 import naiaraPhoto from "./assets/speakers/naiara-medeiros.jpg";
 import ninaPhoto from "./assets/speakers/nina-soraya.jpg";
+import palomalatalizaPhoto from "./assets/speakers/paloma-lataliza.png";
 import raphaelPhoto from "./assets/speakers/raphael-moura.jpg";
 import sulamitaPhoto from "./assets/speakers/sulamita-dantas.jpg";
 import thayanePhoto from "./assets/speakers/thayane-rodrigues.jpg";
@@ -55,8 +57,10 @@ const speakerPhotoMap: Record<string, string> = {
   "leo-ciccone.png": leoPhoto,
   "luiz-gustavo.jpg": luizgustavoPhoto,
   "luiz-machado.jpg": luizmachadoPhoto,
+  "marcelo-palladino.png": marcelopalladinoPhoto,
   "naiara-medeiros.jpg": naiaraPhoto,
   "nina-soraya.jpg": ninaPhoto,
+  "paloma-lataliza.jpg": palomalatalizaPhoto,
   "raphael-moura.jpg": raphaelPhoto,
   "sulamita-dantas.jpg": sulamitaPhoto,
   "thayane-rodrigues.jpg": thayanePhoto,
