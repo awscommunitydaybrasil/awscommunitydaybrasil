@@ -1,5 +1,11 @@
 [
   {
+    "name": "Escola AWS",
+    "logo": "sponsors/escola-aws.png",
+    "url": "https://www.escolaaws.com.br/",
+    "tier": "silver"
+  },
+  {
     "name": "Dayrell Hotel & Centro de Convenções",
     "logo": "sponsors/dayrell.png",
     "url": "https://www.dayrell.com.br/",
