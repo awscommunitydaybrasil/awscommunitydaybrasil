@@ -1,32 +1,5 @@
 [
-  {
-    "name": "Stephanie Ribeiro",
-    "photo": "https://cdn.thedevconf.com.br/photos/fd66c67bcbf79da1f5f58897c8cb8af8cbab85bc.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/stephanie-s-ribeiro/"
-    }
-  },
-  {
-    "name": "Julia Werlang",
-    "photo": "https://awscommunityday.com.br/hist/2025-dec/assets/img/team/team-15.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/"
-    }
-  },
-  {
-    "name": "Jefferson Machado",
-    "photo": "https://awscommunityday.com.br/hist/2024-nov/assets/img/team/team-02.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/jeffersonfm/"
-    }
-  },
-  {
-    "name": "Leandro Venâncio",
-    "photo": "leandro.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/leandro-venancio/"
-    }
-  },
+
   {
     "name": "Alceu Conerado Neto",
     "photo": "https://awscommunityday.com.br/assets/alceu-neto-719ZI5UG.jpg",
@@ -35,14 +8,7 @@
     }
   },
   {
-    "name": "Walter Neto",
-    "photo": "https://media.licdn.com/dms/image/v2/D4D03AQFKRJsiylYNdA/profile-displayphoto-shrink_400_400/B4DZQEEGj8GgAg-/0/1735234972579?e=2147483647&v=beta&t=p9LVE4XSCrpUk0PFG_bFE1LKcz9LBVo7860JjisT1xc",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/wnascimentoneto/"
-    }
-  },
-  {
-    "name": "Daiane Dalavi",
+    "name": "Daiane Dalavi - AWS UG Canoas ",
     "photo": "https://ipnews.com.br/wp-content/uploads/2026/05/Daiane-Dalavi_CEO-SquadGo-800x694.jpg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/daiane-dalavi/"
@@ -54,5 +20,41 @@
     "social": {
       "linkedin": "https://www.linkedin.com/in/epiresdasilva/"
     }
+  },
+  {
+    "name": "Jefferson Machado - AWS UG Criciuma",
+    "photo": "https://awscommunityday.com.br/hist/2024-nov/assets/img/team/team-02.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/jeffersonfm/"
+    }
+  },
+  {
+    "name": "Julia Werlang",
+    "photo": "https://awscommunityday.com.br/hist/2025-dec/assets/img/team/team-15.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/julia-fernanda-werlang-5762581b9/"
+    }
+  },
+  {
+    "name": "Leandro Venâncio",
+    "photo": "leandro.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/leandro-venancio/"
+    }
+  },
+    {
+    "name": "Stephanie Ribeiro",
+    "photo": "https://cdn.thedevconf.com.br/photos/fd66c67bcbf79da1f5f58897c8cb8af8cbab85bc.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/stephanie-s-ribeiro/"
+    }
+  },
+  {
+    "name": "Walter Neto",
+    "photo": "https://media.licdn.com/dms/image/v2/D4D03AQFKRJsiylYNdA/profile-displayphoto-shrink_400_400/B4DZQEEGj8GgAg-/0/1735234972579?e=2147483647&v=beta&t=p9LVE4XSCrpUk0PFG_bFE1LKcz9LBVo7860JjisT1xc",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/wnascimentoneto/"
+    }
   }
+  
 ]

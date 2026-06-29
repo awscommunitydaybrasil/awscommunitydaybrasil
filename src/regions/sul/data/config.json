@@ -9,23 +9,23 @@
     "city": "Curitiba/PR"
   },
   "registration": {
-    "status": "Em Breve!",
-    "url": ""
+    "status": "Garanta já!",
+    "url": "https://www.sympla.com.br/evento/aws-community-day-2026-edicao-sul/3433163"
   },
   "socialLinks": {
-    "instagram": "https://www.instagram.com/awscommunitydaybr/",
-    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
+    "instagram": "https://www.instagram.com/awscommunitybrasil/",
+    "linkedin": "https://www.linkedin.com/company/aws-community-brasil/",
     "twitter": "https://twitter.com/awscommunitybr",
     "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
   },
   "userGroups": [
-    { "name": "AWS User Group Curitiba", "url": "https://www.meetup.com/pt-br/aws-curitiba-user-group/" },
-    { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-br/aws-ug-rs/" },
-    { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-br/aws-user-group-floripa/" },
-    { "name": "AWS User Group Criciúma", "url": "https://www.meetup.com/criciumaops/" },
-    { "name": "AWS User Group Tubarão", "url": "https://www.meetup.com/pt-br/tubaraoops/" },
     { "name": "AWS User Group Blumenau", "url": "https://www.meetup.com/pt-br/aws-usergroup-blumenau/" },
-    { "name": "AWS User Group Canoas", "url": "https://www.meetup.com/aws-user-group-canoas/" }
+    { "name": "AWS User Group Canoas", "url": "https://www.meetup.com/aws-user-group-canoas/" },
+    { "name": "AWS User Group Criciúma", "url": "https://www.meetup.com/criciumaops/" },
+    { "name": "AWS User Group Curitiba", "url": "https://www.meetup.com/pt-br/aws-curitiba-user-group/" },
+    { "name": "AWS User Group Florianópolis", "url": "https://www.meetup.com/pt-br/aws-user-group-floripa/" },
+    { "name": "AWS User Group Porto Alegre", "url": "https://www.meetup.com/pt-br/aws-ug-rs/" },
+    { "name": "AWS User Group Tubarão", "url": "https://www.meetup.com/pt-br/tubaraoops/" }
   ],
   "callForSpeakersUrl": "https://sessionize.com/aws-community-day-brasil-2026-sul/",
   "contact": {
