@@ -23,6 +23,7 @@ import darkoPhoto from "./assets/speakers/darko-mesaros.jpg";
 
 import dayrellLogo from "./assets/sponsors/dayrell.png";
 import escolaawsLogo from "./assets/sponsors/escola-aws.png";
+import netminasLogo from "./assets/sponsors/net-minas.jpeg";
 
 const photoMap: Record<string, string> = {
   "rafaela-vidotti.jpg": rafaelaPhoto,
@@ -45,7 +46,8 @@ const speakerPhotoMap: Record<string, string> = {
 
 const logoMap: Record<string, string> = {
   "dayrell.png": dayrellLogo,
-  "escola-aws.png": escolaawsLogo
+  "escola-aws.png": escolaawsLogo,
+  "net-minas.jpeg": netminasLogo
 };
 
 const resolvedOrganizers = organizers.map((org) => ({

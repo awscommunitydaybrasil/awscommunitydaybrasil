@@ -10,5 +10,11 @@
     "logo": "sponsors/dayrell.png",
     "url": "https://www.dayrell.com.br/",
     "tier": "support"
+  },
+  {
+    "name": ".NET Minas",
+    "logo": "sponsors/net-minas.jpeg",
+    "url": "https://www.linkedin.com/company/net-mg/",
+    "tier": "support"
   }
 ]
