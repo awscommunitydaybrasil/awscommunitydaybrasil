@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import postcardBrasilia from "@/assets/postcard-brasilia.png";
 import postcardBH from "@/assets/postcard-bh.png";
 import postcardSalvador from "@/assets/postcard-salvador.png";
@@ -64,6 +65,18 @@ const leaders = [
   },
 ];
 
+function parseDate(dateStr: string): Date {
+  const [day, month, year] = dateStr.split("/").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function isPastEvent(dateStr: string): boolean {
+  const eventDate = parseDate(dateStr);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return eventDate < today;
+}
+
 const LeaderCard = ({
   name,
   city,
@@ -73,18 +86,26 @@ const LeaderCard = ({
   leaderPhoto,
   leaderLinkedin,
   link,
-}: (typeof leaders)[number]) => (
+  past,
+}: (typeof leaders)[number] & { past: boolean }) => (
   <div
-    className="group relative overflow-hidden rounded-lg aspect-[3/4]"
+    className={`group relative overflow-hidden rounded-lg aspect-[3/4] ${past ? "opacity-75 hover:opacity-100 transition-opacity" : ""}`}
     style={{ boxShadow: "var(--shadow-card)" }}
   >
     <img
       src={image}
       alt={`${city} - ${name}`}
-      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${past ? "grayscale-[30%]" : ""}`}
     />
     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
     <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary transition-colors duration-300" />
+    {past && (
+      <div className="absolute top-3 right-3 z-10">
+        <span className="px-2.5 py-1 text-xs font-bold uppercase tracking-wider bg-primary/90 text-primary-foreground rounded-full font-display">
+          Realizado
+        </span>
+      </div>
+    )}
     <div className="relative h-full flex flex-col items-center justify-center p-5 text-center">
       <a
         href={leaderLinkedin}
@@ -114,7 +135,7 @@ const LeaderCard = ({
             to={link}
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
           >
-            Ver evento
+            {past ? "Ver como foi" : "Ver evento"}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -126,7 +147,7 @@ const LeaderCard = ({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors font-display mt-4"
           >
-            Ver evento
+            {past ? "Ver como foi" : "Ver evento"}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -140,6 +161,15 @@ const LeaderCard = ({
 const LeadersSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
+
+  const sortedLeaders = useMemo(() => {
+    const future = leaders.filter((l) => !isPastEvent(l.date));
+    const past = leaders.filter((l) => isPastEvent(l.date));
+    // Future events sorted by date ascending, past events sorted by date descending (most recent first)
+    future.sort((a, b) => parseDate(a.date).getTime() - parseDate(b.date).getTime());
+    past.sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
+    return [...future, ...past];
+  }, []);
 
   return (
     <section id="lideres" className="py-24">
@@ -156,13 +186,13 @@ const LeadersSection = () => {
           </h2>
         </div>
         <div ref={gridRef} className="flex flex-wrap justify-center gap-6">
-          {leaders.slice(0, 6).map((l, i) => (
+          {sortedLeaders.map((l, i) => (
             <div
               key={l.name}
               className={`w-full max-w-sm md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] transition-all duration-700 ease-out ${gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <LeaderCard {...l} />
+              <LeaderCard {...l} past={isPastEvent(l.date)} />
             </div>
           ))}
         </div>

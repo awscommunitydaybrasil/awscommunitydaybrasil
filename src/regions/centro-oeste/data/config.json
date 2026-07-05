@@ -31,5 +31,25 @@
   "contact": {
     "email": "centrooeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
+  },
+  "pastEvent": {
+    "photosUrl": "https://photos.app.goo.gl/K2NxYNw5ySWGgxC7A",
+    "communities": [
+      {
+        "name": "AWS User Group Brasília",
+        "url": "https://www.instagram.com/awsbrasilia/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Goiânia",
+        "url": "https://www.instagram.com/awsgoiania/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Anápolis",
+        "url": "https://www.instagram.com/awsusergroupanapolis/",
+        "icon": "instagram"
+      }
+    ]
   }
 }

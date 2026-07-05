@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado — AWS Community Day Centro-Oeste 2026</title>
+  <meta name="description" content="Relatório de participação do AWS Community Day Centro-Oeste 2026 — 204 participantes presentes em Brasília." />
+  <link rel="icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --card: #232938;
+      --border: #2e3548;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 40px; }
+    header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--primary-light); }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+    }
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(232, 132, 26, 0.12);
+      border: 1px solid rgba(232, 132, 26, 0.3);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .kpi:hover { border-color: rgba(232, 132, 26, 0.5); transform: translateY(-2px); }
+    .kpi .value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .kpi .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    .section { margin: 4rem 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-title h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .chart-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card canvas { width: 100% !important; max-height: 300px; }
+
+    .chart-card-full {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    .chart-card-full h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card-full canvas { width: 100% !important; max-height: 280px; }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .highlight-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transition: border-color 0.3s;
+    }
+    .highlight-item:hover { border-color: rgba(232, 132, 26, 0.4); }
+    .highlight-item .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(232, 132, 26, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .highlight-item .icon svg { width: 18px; height: 18px; color: var(--primary); }
+    .highlight-item .content h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .highlight-item .content p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    .table-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: rgba(232, 132, 26, 0.08);
+      padding: 0.875rem 1.25rem;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    td {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    tr:hover td { background: rgba(232, 132, 26, 0.03); }
+    .bar-cell { display: flex; align-items: center; gap: 0.75rem; }
+    .bar-bg {
+      flex: 1;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpi .value { font-size: 2rem; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+
+    .photos-banner { margin: 2.5rem 0 1rem; }
+    .photo-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .photo-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .photo-card-image {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+    }
+    .photo-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .photo-card:hover .photo-card-image img { transform: scale(1.05); }
+    .photo-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,31,46,0.3), rgba(232,132,26,0.1));
+    }
+    .photo-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.875rem;
+      border-radius: 9999px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .photo-card-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .photo-card-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .photo-card-content p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .photo-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: gap 0.3s;
+    }
+    .photo-card:hover .photo-card-cta { gap: 0.75rem; }
+    @media (max-width: 640px) {
+      .photo-card { grid-template-columns: 1fr; }
+      .photo-card-image { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/centro-oeste/"><img src="/favicon.png" alt="AWS Community Day" /></a>
+      <a href="/centro-oeste/">← Voltar para o evento</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Evento Realizado — 27/06/2026
+      </div>
+      <h1>Resultado do Evento</h1>
+      <p>AWS Community Day Centro-Oeste 2026 — Brasília/DF</p>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">204</div><div class="label">Participantes presentes</div></div>
+      <div class="kpi"><div class="value">20</div><div class="label">Palestrantes</div></div>
+      <div class="kpi"><div class="value">88%</div><div class="label">Credenciados até 9h</div></div>
+      <div class="kpi"><div class="value">75%</div><div class="label">Vindos do DF</div></div>
+    </section>
+
+    <section class="photos-banner">
+      <a href="https://photos.app.goo.gl/K2NxYNw5ySWGgxC7A" target="_blank" rel="noopener noreferrer" class="photo-card">
+        <div class="photo-card-image">
+          <img src="event-photo.jpg" alt="Fotos do AWS Community Day Centro-Oeste 2026" />
+          <div class="photo-card-overlay"></div>
+          <div class="photo-card-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Galeria de Fotos
+          </div>
+        </div>
+        <div class="photo-card-content">
+          <h3>📸 Veja as fotos do evento</h3>
+          <p>Reviva os melhores momentos do AWS Community Day Centro-Oeste 2026. Palestras, networking, comunidade e muito mais!</p>
+          <span class="photo-card-cta">
+            Abrir galeria
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Composição do Público</h2>
+        <p>Distribuição por categoria de credencial e perfil profissional</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Categoria de Credencial</h3>
+          <canvas id="chartCategoria"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Perfil Profissional</h3>
+          <canvas id="chartPerfil"></canvas>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Categoria</th><th>Quantidade</th><th>% do Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Participante</td><td>159</td><td>77,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:77.9%"></div></div></div></td></tr>
+            <tr><td>Palestrante</td><td>20</td><td>9,8%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:9.8%"></div></div></div></td></tr>
+            <tr><td>Staff</td><td>16</td><td>7,8%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:7.8%"></div></div></div></td></tr>
+            <tr><td>Organização</td><td>5</td><td>2,5%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2.5%"></div></div></div></td></tr>
+            <tr><td>Expositor</td><td>4</td><td>2,0%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2.0%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Fluxo de Credenciamento</h2>
+        <p>Distribuição de check-ins por faixa de horário — intervalos de 15 minutos</p>
+      </div>
+      <div class="chart-card-full">
+        <h3>Credenciamentos ao Longo do Dia</h3>
+        <canvas id="chartFluxo"></canvas>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Origem Geográfica</h2>
+        <p>De onde vieram os participantes — análise por DDD telefônico</p>
+      </div>
+      <div class="chart-card-full">
+        <h3>Participantes por Estado</h3>
+        <canvas id="chartGeo"></canvas>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Destaques</h2>
+      </div>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="content"><h4>100% de retenção</h4><p>Todos os 204 credenciados permaneceram até o fim do evento. Nenhum descredenciamento.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="content"><h4>Pico: 08:15–08:30</h4><p>41 credenciamentos em 15 minutos — maior concentração de chegada do dia.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="content"><h4>Público técnico</h4><p>Desenvolvimento de Software (29,4%), Infra (20,6%) e Estudantes (20,6%) somam +70% do público.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="content"><h4>Atração regional</h4><p>25% do público veio de fora do DF, com destaque para GO (11,8%), SP e MG.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <div class="content"><h4>Perfil individual</h4><p>Apenas 9,8% dos e-mails são de domínios corporativos — público majoritariamente pessoa física.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <div class="content"><h4>Transição de carreira</h4><p>4,4% dos participantes estão migrando para tecnologia — oportunidade para trilhas de capacitação.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 — Centro-Oeste · <a href="/centro-oeste/">Ver página do evento</a></p>
+      <p style="margin-top: 0.5rem;">Dados extraídos da plataforma Hub Connect — Relatório gerado em 29/06/2026</p>
+    </div>
+  </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#2e3548';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    // Categoria de Credencial - Doughnut
+    new Chart(document.getElementById('chartCategoria'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Participante', 'Palestrante', 'Staff', 'Organização', 'Expositor'],
+        datasets: [{
+          data: [159, 20, 16, 5, 4],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492', '#77889d', '#322f5a'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/204)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%',
+      }
+    });
+
+    // Perfil Profissional - Horizontal Bar
+    new Chart(document.getElementById('chartPerfil'), {
+      type: 'bar',
+      data: {
+        labels: ['Dev Software', 'Infraestrutura', 'Estudante', 'Outros', 'Gestão de TI', 'Transição', 'Exec. Negócios', 'N/I'],
+        datasets: [{
+          data: [60, 42, 42, 27, 14, 9, 7, 3],
+          backgroundColor: '#e8841a',
+          borderRadius: 4,
+          barThickness: 20,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/204)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, ticks: { stepSize: 10 } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Fluxo de Credenciamento - Line/Area
+    new Chart(document.getElementById('chartFluxo'), {
+      type: 'bar',
+      data: {
+        labels: ['07:45', '08:00', '08:15', '08:30', '08:45', '09:00', '09:15', '09:30', '09:45', '10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '12:00', '13:45', '14:00', '14:30', '15:00', '15:45'],
+        datasets: [{
+          label: 'Credenciamentos',
+          data: [5, 22, 41, 32, 15, 20, 12, 8, 6, 5, 4, 3, 2, 3, 2, 1, 1, 3, 5, 4, 2, 1],
+          backgroundColor: (ctx) => {
+            const v = ctx.raw;
+            return v >= 30 ? '#e8841a' : v >= 15 ? '#fbc064' : 'rgba(232, 132, 26, 0.4)';
+          },
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => `Horário: ${items[0].label}`,
+              label: (ctx) => `${ctx.raw} check-ins`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxRotation: 45 } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Origem Geográfica - Bar
+    new Chart(document.getElementById('chartGeo'), {
+      type: 'bar',
+      data: {
+        labels: ['DF (Brasília)', 'GO (Goiás)', 'SP (São Paulo)', 'Outros', 'MG (Minas Gerais)', 'AP (Amapá)', 'Outros estados'],
+        datasets: [{
+          data: [153, 24, 9, 6, 3, 2, 7],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492', '#77889d', '#322f5a', '#94a3b8', '#4a5568'],
+          borderRadius: 6,
+          barThickness: 40,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/204)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
