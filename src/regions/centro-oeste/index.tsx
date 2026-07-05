@@ -39,6 +39,8 @@ import daredeLogo from "./assets/sponsors/darede.png";
 import uniprojecaoLogo from "./assets/sponsors/uniprojecao.jpg";
 import partycommunityLogo from "./assets/sponsors/party-community.jpg";
 
+import eventPhoto from "./assets/event-photo.jpg";
+
 const photoMap: Record<string, string> = {
   "deivid.jpg": deividPhoto,
   "marcelopaiva.jpg": marcelopaivaPhoto,
@@ -104,6 +106,7 @@ const CentroOeste = () => (
     schedule={schedule}
     sponsors={resolvedSponsors}
     heroImage={heroImage}
+    eventPhoto={eventPhoto}
   />
 );
 

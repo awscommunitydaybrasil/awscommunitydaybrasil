@@ -10,6 +10,7 @@ import SpeakersSection from "./components/SpeakersSection";
 import ScheduleSection from "./components/ScheduleSection";
 import SponsorsSection from "./components/SponsorsSection";
 import CommunitiesSection from "./components/CommunitiesSection";
+import PhotoGalleryCard from "./components/PhotoGalleryCard";
 import OrganizersSection from "./components/OrganizersSection";
 import RegionFooter from "./components/RegionFooter";
 import SeoHead from "@/components/SeoHead";
@@ -21,6 +22,7 @@ interface RegionPageProps {
   schedule: ScheduleItem[];
   sponsors: Sponsor[];
   heroImage: string;
+  eventPhoto?: string;
 }
 
 const BASE_URL = "https://awscommunityday.com.br";
@@ -32,7 +34,7 @@ function isPastEvent(targetDate: string): boolean {
   return eventDate < today;
 }
 
-const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImage }: RegionPageProps) => {
+const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImage, eventPhoto }: RegionPageProps) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const past = isPastEvent(config.targetDate);
@@ -98,6 +100,9 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
       />
       <RegionHeader registrationUrl={past ? undefined : config.registration.url} />
       <RegionHero config={config} heroImage={heroImage} past={past} />
+      {past && config.pastEvent?.photosUrl && eventPhoto && (
+        <PhotoGalleryCard photosUrl={config.pastEvent.photosUrl} photoImage={eventPhoto} />
+      )}
       <InfoCardsSection config={config} formattedDate={formattedDate} past={past} />
       {!past && config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} config={config} formattedDate={formattedDate} />}
       {!past && <ExpectationsSection />}

@@ -31,33 +31,91 @@ const GalleryCarousel = () => {
 
     let animationId: number;
     let scrollPos = 0;
-    const speed = 0.5;
+    const speed = 1.2;
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let paused = false;
 
     const animate = () => {
-      scrollPos += speed;
-      // Reset when we've scrolled past the first set of images
-      if (scrollPos >= el.scrollWidth / 2) {
-        scrollPos = 0;
+      if (!paused && !isDragging) {
+        scrollPos += speed;
+        if (scrollPos >= el.scrollWidth / 2) {
+          scrollPos = 0;
+        }
+        el.scrollLeft = scrollPos;
       }
-      el.scrollLeft = scrollPos;
       animationId = requestAnimationFrame(animate);
     };
 
     animationId = requestAnimationFrame(animate);
 
-    const handleMouseEnter = () => cancelAnimationFrame(animationId);
+    const handleMouseEnter = () => { paused = true; };
     const handleMouseLeave = () => {
+      paused = false;
+      isDragging = false;
+      el.style.cursor = "grab";
       scrollPos = el.scrollLeft;
-      animationId = requestAnimationFrame(animate);
+    };
+
+    // Drag support
+    const handleMouseDown = (e: MouseEvent) => {
+      isDragging = true;
+      startX = e.pageX - el.offsetLeft;
+      scrollStart = el.scrollLeft;
+      el.style.cursor = "grabbing";
+    };
+    const handleMouseUp = () => {
+      isDragging = false;
+      el.style.cursor = "grab";
+      scrollPos = el.scrollLeft;
+    };
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      el.scrollLeft = scrollStart - walk;
+    };
+
+    // Touch drag support
+    const handleTouchStart = (e: TouchEvent) => {
+      isDragging = true;
+      paused = true;
+      startX = e.touches[0].pageX - el.offsetLeft;
+      scrollStart = el.scrollLeft;
+    };
+    const handleTouchEnd = () => {
+      isDragging = false;
+      paused = false;
+      scrollPos = el.scrollLeft;
+    };
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX - el.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      el.scrollLeft = scrollStart - walk;
     };
 
     el.addEventListener("mouseenter", handleMouseEnter);
     el.addEventListener("mouseleave", handleMouseLeave);
+    el.addEventListener("mousedown", handleMouseDown);
+    el.addEventListener("mouseup", handleMouseUp);
+    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener("touchstart", handleTouchStart);
+    el.addEventListener("touchend", handleTouchEnd);
+    el.addEventListener("touchmove", handleTouchMove);
 
     return () => {
       cancelAnimationFrame(animationId);
       el.removeEventListener("mouseenter", handleMouseEnter);
       el.removeEventListener("mouseleave", handleMouseLeave);
+      el.removeEventListener("mousedown", handleMouseDown);
+      el.removeEventListener("mouseup", handleMouseUp);
+      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchend", handleTouchEnd);
+      el.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
@@ -81,8 +139,8 @@ const GalleryCarousel = () => {
       </div>
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-hidden"
-        style={{ scrollBehavior: "auto" }}
+        className="flex gap-4 overflow-hidden select-none"
+        style={{ scrollBehavior: "auto", cursor: "grab" }}
       >
         {allImages.map((img, i) => (
           <div
