@@ -9,6 +9,7 @@ import CallForSponsorsSection from "./components/CallForSponsorsSection";
 import SpeakersSection from "./components/SpeakersSection";
 import ScheduleSection from "./components/ScheduleSection";
 import SponsorsSection from "./components/SponsorsSection";
+import CommunitiesSection from "./components/CommunitiesSection";
 import OrganizersSection from "./components/OrganizersSection";
 import RegionFooter from "./components/RegionFooter";
 import SeoHead from "@/components/SeoHead";
@@ -24,8 +25,17 @@ interface RegionPageProps {
 
 const BASE_URL = "https://awscommunityday.com.br";
 
+function isPastEvent(targetDate: string): boolean {
+  const eventDate = new Date(targetDate);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return eventDate < today;
+}
+
 const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImage }: RegionPageProps) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  const past = isPastEvent(config.targetDate);
 
   const targetDateObj = new Date(config.targetDate);
   const formattedDate = `${String(targetDateObj.getDate()).padStart(2, "0")}/${String(targetDateObj.getMonth() + 1).padStart(2, "0")}/${targetDateObj.getFullYear()}`;
@@ -42,7 +52,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
     name: `AWS Community Day Brasil 2026 - ${config.regionName}`,
     startDate: config.targetDate,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: past ? "https://schema.org/EventCompleted" : "https://schema.org/EventScheduled",
     location: {
       "@type": "Place",
       name: config.location.venue,
@@ -86,15 +96,16 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
           jsonLd: [eventJsonLd],
         }}
       />
-      <RegionHeader registrationUrl={config.registration.url} />
-      <RegionHero config={config} heroImage={heroImage} />
-      <InfoCardsSection config={config} formattedDate={formattedDate} />
-      {config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} config={config} formattedDate={formattedDate} />}
-      <ExpectationsSection />
-      <SpeakersSection speakers={speakers} />
+      <RegionHeader registrationUrl={past ? undefined : config.registration.url} />
+      <RegionHero config={config} heroImage={heroImage} past={past} />
+      <InfoCardsSection config={config} formattedDate={formattedDate} past={past} />
+      {!past && config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} config={config} formattedDate={formattedDate} />}
+      {!past && <ExpectationsSection />}
+      <SpeakersSection speakers={speakers} past={past} />
       <ScheduleSection schedule={schedule} hasSpeakers={speakers.length > 0} />
-      {config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} config={config} />}
+      {!past && config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} config={config} />}
       <SponsorsSection sponsors={sponsors} />
+      {past && config.pastEvent?.communities && <CommunitiesSection communities={config.pastEvent.communities} />}
       <OrganizersSection organizers={organizers} />
       <RegionFooter config={config} />
     </div>

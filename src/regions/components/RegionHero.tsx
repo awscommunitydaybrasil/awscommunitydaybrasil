@@ -27,9 +27,10 @@ function useCountdown(targetDate: string) {
 interface RegionHeroProps {
   config: RegionConfig;
   heroImage: string;
+  past?: boolean;
 }
 
-const RegionHero = ({ config, heroImage }: RegionHeroProps) => {
+const RegionHero = ({ config, heroImage, past = false }: RegionHeroProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const countdown = useCountdown(config.targetDate);
 
@@ -48,16 +49,42 @@ const RegionHero = ({ config, heroImage }: RegionHeroProps) => {
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body mb-10">
           {config.subtitle}
         </p>
-        <div className="flex justify-center gap-4 md:gap-8">
-          {([["days", "Dias"], ["hours", "Horas"], ["minutes", "Min"], ["seconds", "Seg"]] as const).map(([key, label]) => (
-            <div key={key} className="flex flex-col items-center">
-              <span className="text-4xl md:text-6xl font-bold font-display text-primary tabular-nums">
-                {String(countdown[key]).padStart(2, "0")}
-              </span>
-              <span className="text-xs md:text-sm text-muted-foreground mt-1 font-display uppercase tracking-wider">{label}</span>
-            </div>
-          ))}
-        </div>
+        {past ? (
+          <div className="flex flex-col items-center gap-4">
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/15 border border-primary/30 text-primary font-bold font-display text-lg uppercase tracking-wider">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Evento Realizado
+            </span>
+            {config.pastEvent?.photosUrl && (
+              <a
+                href={config.pastEvent.photosUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-colors text-sm"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                Ver fotos do evento
+              </a>
+            )}
+          </div>
+        ) : (
+          <div className="flex justify-center gap-4 md:gap-8">
+            {([["days", "Dias"], ["hours", "Horas"], ["minutes", "Min"], ["seconds", "Seg"]] as const).map(([key, label]) => (
+              <div key={key} className="flex flex-col items-center">
+                <span className="text-4xl md:text-6xl font-bold font-display text-primary tabular-nums">
+                  {String(countdown[key]).padStart(2, "0")}
+                </span>
+                <span className="text-xs md:text-sm text-muted-foreground mt-1 font-display uppercase tracking-wider">{label}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
