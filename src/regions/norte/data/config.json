@@ -9,8 +9,8 @@
     "city": "Belém/PA"
   },
   "registration": {
-    "status": "Em Breve!",
-    "url": ""
+    "status": "Garanta já!",
+    "url": "https://abicora.com/aws-community-day-brasil-edicao-norte-belem-pa"
   },
   "socialLinks": {
     "instagram": "https://www.instagram.com/awscommunitydaybr/",
@@ -20,16 +20,19 @@
   },
   "userGroups": [
     { "name": "AWS User Group Belém", "url": "https://www.meetup.com/pt-BR/awsbelem/" },
-    { "name": "AWS User Group Castanhal", "url": "https://www.meetup.com/pt-BR/aws-user-group-castanhal/" }
+    { "name": "AWS User Group Castanhal", "url": "https://www.meetup.com/pt-BR/aws-user-group-castanhal/" },
+    { "name": "AWS User Group Manaus", "url": "https://www.meetup.com/aws-user-group-manaus/" }
+
   ],
   "studentBuilderGroups": [
     { "name": "AWS Student Builder Group UEPA", "url": "https://www.meetup.com/pt-BR/aws-sbg-uepa/" },
     { "name": "AWS Student Builder Group IFPA", "url": "https://www.meetup.com/pt-BR/aws-sbg-at-federal-institute-of-para/" },
-    { "name": "AWS Student Builder Group UNAMA", "url": "https://www.meetup.com/pt-BR/aws-sbg-at-university-of-the-amazon/" }
+    { "name": "AWS Student Builder Group UNAMA", "url": "https://www.meetup.com/pt-BR/aws-sbg-at-university-of-the-amazon/" },
+    { "name": "AWS Student Builder Group UFPA", "url": "https://www.meetup.com/aws-sbg-at-federal-university-of-para" }
   ],
   "callForSpeakersUrl": "https://abicora.com/aws-community-day-brasil-edicao-norte-belem-pa/cfp",
   "contact": {
-    "email": "contato@awscommunityday.com.br",
+    "email": "norte@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
   }
 }
