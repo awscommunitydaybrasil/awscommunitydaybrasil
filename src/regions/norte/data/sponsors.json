@@ -16,5 +16,11 @@
     "logo": "ideal.png",
     "url": "https://www.grupoideal.com.br/",
     "tier": "support"
+  },
+  {
+    "name": "Abicora",
+    "logo": "abicora.png",
+    "url": "https://abicora.com/",
+    "tier": "support"
   }
 ]
