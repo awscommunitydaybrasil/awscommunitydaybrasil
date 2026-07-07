@@ -10,5 +10,83 @@
         "social": {
             "linkedin": "https://www.linkedin.com/in/darko-mesaros/"
         }
+    },
+    {
+        "name": "Lays Rodrigues",
+        "photo": "lays-rodrigues.jpg",
+        "title": "Staff Software Engineer",
+        "company": "Neon",
+        "talk": "Tagging além de key-values: Controle de acesso baseado em Tags",
+        "bio": "Especialista em Golang, Python e AWS, Lays Rodrigues atua há mais de uma década unindo engenharia de software e arquitetura de nuvem — ajudando times a sair do 'funciona na minha máquina' para infraestrutura resiliente em escala. AWS Community Builder e palestrante em eventos como AWS re:Invent, AWS Summit e Community Day. Quando não está desenhando arquiteturas, está desvendando as partituras ao tocar piano.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/laysrodrigues147/",
+            "instagram": "https://www.instagram.com/lays147/"
+        }
+    },
+    {
+        "name": "Lucas Israel",
+        "photo": "lucas-israel.jpg",
+        "title": "Engenheiro Cloud & DevOps",
+        "company": "LLZ Garantidora",
+        "talk": "",
+        "bio": "Me chamo Lucas Israel, tenho 31 anos. Estou no ultimo semestre de ciências da computação, comecei a estudar cloud computing no inicio de 2022, hoje possuo 3 certificações aws, sendo elas: cloud practitioner, developer associate e solutions architect, atualmente trabalho na LLZ Garantidora como engenheiro cloud e devops pleno, atuo também como technical mentor na escola da nuvem. Gosto de ensinar e por isso pretendo iniciar como palestrante e começar a criar conteúdos educativos sobre tecnologia e desenvolvimento de carreira.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/lucasisraelsilva/",
+            "instagram": "https://www.instagram.com/lucasliuzao/"
+        }
+    },
+    {
+        "name": "Dan Rezende",
+        "photo": "dan-rezende.jpg",
+        "title": "Cloud Solutions Architect | Instrutor",
+        "company": "CloudFaster",
+        "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
+        "bio": "Dan Rezende é Arquiteto de Soluções, Instrutor e AWS Golden Jacket, atuando na CloudFaster. São 14 anos de mercado, sendo 4 deles direto na AWS. Hoje conduz projetos de migração, modernização, segurança e otimização de custos na AWS, e tem se dedicado a como a IA muda a forma de construir e proteger ambientes em nuvem. Forma profissionais pela CloudFaster Academy e é também AWS Community Builder, palestrante e participa da liderança do AWS User Group Goiânia.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/danrezende/",
+            "instagram": "https://www.instagram.com/odanrezende/"
+        }
+    },
+    {
+        "name": "Mariana Mercier",
+        "photo": "mariana-mercier.jpg",
+        "title": "Database Engineer",
+        "company": "Creditas",
+        "talk": "PGVector no Aurora PostgreSQL Serverless v2: armazenamento e recuperação vetorial para Agentes de IA",
+        "bio": "Database Engineer na Creditas e AWS Community Builder. Pós graduanda em em Engenharia e Administração de Sistemas de Banco de Dados pela UNICAMP, atuo na administração de bancos de dados em ambientes críticos com foco em performance, escalabilidade e confiabilidade em arquiteturas modernas.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/marianamercier/",
+            "instagram": "https://www.instagram.com/marianamercier/"
+        }
+    },
+    {
+        "name": "Arthur Nycael",
+        "photo": "arthur-nycael.jpg",
+        "title": "Senior AWS Cloud Architect",
+        "company": "Compass UOL",
+        "talk": "Entendendo redes na AWS: VPC, subnets e conectividade na prática",
+        "bio": "Arquiteto Cloud AWS Sênior com mais de 13 anos de experiência em Infraestrutura de TI e foco em computação em nuvem. Atua no desenho e evolução de soluções AWS, com experiência em migração, modernização de infraestrutura, segurança, continuidade de negócios e otimização de ambientes.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/arthurnycael/",
+            "instagram": "https://www.instagram.com/cloud.arthurnycael/"
+        }
+    },
+    {
+        "name": "Samantha Chiachio",
+        "photo": "samantha-chiachio.jpg",
+        "title": "Cloud Engineer",
+        "company": "Caylent",
+        "talk": "K8S For Dummies: Venha Entender a Lógica por Trás do Kubernetes",
+        "bio": "Samantha Chiachio Cardoso é AWS Consultant e especialista em Infraestrutura como Código (IaC). Com sólida experiência no ecossistema AWS e automação com Terraform, atua auxiliando empresas a otimizarem suas arquiteturas de nuvem, desenhando soluções com foco em escala, segurança e eficiência operacional. É também uma entusiasta da cultura de Engenharia de Plataforma e atuante na comunidade técnica de computação em nuvem.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/samanthachiachio",
+            "instagram": "https://www.instagram.com/its_sassational/"
+        }
     }
 ]
