@@ -462,12 +462,92 @@
         </div>
       </div>
     </section>
+
+    <!-- Party Community Data -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Engajamento e Satisfação</h2>
+        <p>Dados da plataforma Party Community — avaliações e interações durante o evento</p>
+      </div>
+      <div class="kpis" style="margin: 0 0 2rem;">
+        <div class="kpi"><div class="value">95</div><div class="label">Inscritos</div></div>
+        <div class="kpi"><div class="value">53</div><div class="label">Presentes (check-in)</div></div>
+        <div class="kpi"><div class="value">55.8%</div><div class="label">Taxa de presença</div></div>
+        <div class="kpi"><div class="value" style="color: #22c55e;">4.9</div><div class="label">Nota média</div></div>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Satisfação (notas 1-5)</h3>
+          <canvas id="chartSatisfacao"></canvas>
+          <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">621 respostas · 174 pessoas · 99% das notas foram 4 ou 5</p>
+        </div>
+        <div class="chart-card">
+          <h3>Check-ins por Horário</h3>
+          <canvas id="chartCheckins"></canvas>
+          <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">53 check-ins realizados na plataforma</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Top 10 Palestras por Avaliação</h2>
+        <p>Ranking pela nota média, desempate por número de respostas</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Palestra</th><th>Palestrante</th><th>Respostas</th><th>Nota</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Aristóteles tinha Atenas! Uma keynote sobre acesso ao conhecimento...</td><td>Marcelo Palladino</td><td>96</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>2</td><td>De pip install a Root: Ataques de Supply Chain Escalam para Comprometimento total</td><td>Leonardo Ciccone</td><td>59</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>3</td><td>Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent</td><td>Dan Rezende</td><td>55</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>4</td><td>Agentic AI vai te custar caro! A menos que você domine FinOps na AWS</td><td>Cícero Moura</td><td>22</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>5</td><td>AWS Lambda além do código: decisões arquiteturais que ninguém te conta</td><td>Tiago Jorge</td><td>19</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>6</td><td>Workshop: Criando Pipeline de Dados com Terraform</td><td>Fellipe Mendonça</td><td>18</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>7</td><td>Workshop: DBOps Autônomo: IA Baseada em Agentes para Manutenção de BD</td><td>William Lino</td><td>9</td><td><span style="color:#22c55e;font-weight:700;">5.0</span></td></tr>
+            <tr><td>8</td><td>Do Dado ao Produto de Dados: por que precisamos mais de governança</td><td>Erika Nagamine</td><td>70</td><td><span style="color:var(--primary);font-weight:700;">4.9</span></td></tr>
+            <tr><td>9</td><td>Como desenvolver um sistema com IA nos dias atuais?</td><td>Raphael Moura</td><td>54</td><td><span style="color:var(--primary);font-weight:700;">4.9</span></td></tr>
+            <tr><td>10</td><td>Estratégia de Dados e GenAI</td><td>Carlos Marangon</td><td>53</td><td><span style="color:var(--primary);font-weight:700;">4.9</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">+ 12 outras palestras (7 sem avaliação)</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Números do Evento</h2>
+        <p>Métricas consolidadas da plataforma Party Community</p>
+      </div>
+      <div class="kpis" style="margin: 0;">
+        <div class="kpi"><div class="value">5520</div><div class="label">XP distribuído</div></div>
+        <div class="kpi"><div class="value">95</div><div class="label">Itens no sorteio</div></div>
+        <div class="kpi"><div class="value">38</div><div class="label">Ganhadores sorteados</div></div>
+        <div class="kpi"><div class="value">621</div><div class="label">Respostas de avaliação</div></div>
+      </div>
+      <div class="highlights" style="margin-top: 1.5rem;">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="content"><h4>Funil de conversão</h4><p>95 inscritos → 95 confirmados (100%) → 53 check-ins (55.8%) → 174 engajados na plataforma</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
+          <div class="content"><h4>Satisfação excepcional</h4><p>99% das avaliações foram positivas (notas 4-5). Apenas 9 avaliações negativas em 621 respostas.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20v-4"/></svg></div>
+          <div class="content"><h4>Voluntariado</h4><p>2 de 20 vagas de voluntariado preenchidas — oportunidade de ampliar engajamento em próximas edições.</p></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container">
       <p>AWS Community Day Brasil 2026 — Centro-Oeste · <a href="/centro-oeste/">Ver página do evento</a></p>
-      <p style="margin-top: 0.5rem;">Dados extraídos da plataforma Hub Connect — Relatório gerado em 29/06/2026</p>
+      <p style="margin-top: 0.5rem;">Dados: Hub Connect (credenciamento) + Party Community (engajamento) — Julho 2026</p>
     </div>
   </footer>
 
@@ -590,6 +670,67 @@
         scales: {
           x: { grid: { display: false } },
           y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Satisfação - Horizontal Bar
+    new Chart(document.getElementById('chartSatisfacao'), {
+      type: 'bar',
+      data: {
+        labels: ['Nota 5', 'Nota 4', 'Nota 3', 'Nota 2', 'Nota 1'],
+        datasets: [{
+          data: [1761, 75, 18, 3, 6],
+          backgroundColor: ['#22c55e', '#4ade80', '#fbc064', '#f87171', '#ef4444'],
+          borderRadius: 4,
+          barThickness: 28,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} avaliações (${((ctx.raw/1863)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, beginAtZero: true },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Check-ins por horário (Party Community)
+    new Chart(document.getElementById('chartCheckins'), {
+      type: 'bar',
+      data: {
+        labels: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Check-ins',
+          data: [4, 3, 4, 3, 3, 1, 6, 3, 5, 1],
+          backgroundColor: '#7c3aed',
+          borderRadius: 6,
+          barThickness: 28,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => `${items[0].label}h`,
+              label: (ctx) => `${ctx.raw} check-ins`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true, ticks: { stepSize: 1 } }
         }
       }
     });

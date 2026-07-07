@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Community Day Brasil 2026 — Protótipo Home</title>
+  <link rel="icon" href="/favicon.png" />
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --bg-light: #232938;
+      --card: #2a3042;
+      --border: #333b50;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --text: #f1f5f9;
+      --muted: #8494a7;
+      --success: #22c55e;
+      --shadow: 0 4px 32px rgba(0,0,0,0.35);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,31,46,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.1rem; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--primary); }
+    header nav { display: flex; gap: 0.25rem; }
+    header nav a { padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); text-decoration: none; border-radius: 99px; transition: all 0.2s; }
+    header nav a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    header nav a.active { background: var(--primary); color: #fff; }
+
+    /* Hero */
+    .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 1.5rem 4rem; position: relative; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(232,132,26,0.06) 0%, transparent 70%); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; border-radius: 99px; background: rgba(232,132,26,0.1); border: 1px solid rgba(232,132,26,0.25); color: var(--primary); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 550px; margin: 0 auto 2.5rem; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--primary); color: #fff; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 12px; text-decoration: none; transition: all 0.3s; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,132,26,0.3); }
+
+    /* Journey Section */
+    .journey { padding: 5rem 0; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; }
+    .section-header p { color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem; }
+
+    /* Timeline */
+    .timeline { position: relative; padding: 2rem 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--primary), var(--border) 30%, var(--border) 70%, var(--border)); transform: translateX(-50%); border-radius: 3px; }
+    .timeline-item { position: relative; display: flex; align-items: center; margin-bottom: 3rem; }
+    .timeline-item:nth-child(odd) { flex-direction: row; }
+    .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+    .timeline-item .card { width: calc(50% - 3rem); }
+    .timeline-item:nth-child(odd) .card { margin-right: auto; }
+    .timeline-item:nth-child(even) .card { margin-left: auto; }
+    .timeline-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--border); background: var(--bg); z-index: 2; }
+    .timeline-item.active .timeline-dot { border-color: var(--primary); background: var(--primary); box-shadow: 0 0 16px rgba(232,132,26,0.5); }
+    .timeline-item.done .timeline-dot { border-color: var(--success); background: var(--success); }
+
+    /* Cards */
+    .card { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--card); transition: all 0.3s; text-decoration: none; color: inherit; display: block; }
+    .card:hover { border-color: rgba(232,132,26,0.4); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .card-img { height: 140px; position: relative; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .card:hover .card-img img { transform: scale(1.08); }
+    .card-img .overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--card), transparent 60%); }
+    .card-body { padding: 1.25rem; }
+    .card-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .card-body .city { font-size: 0.8rem; color: var(--muted); }
+    .card-body .date { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-top: 0.4rem; }
+    .card-tag { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 99px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .tag-next { background: rgba(232,132,26,0.15); color: var(--primary); border: 1px solid rgba(232,132,26,0.3); }
+    .tag-upcoming { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
+    .tag-done { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
+
+    /* Active card highlight */
+    .card.highlight { border-color: var(--primary); box-shadow: 0 0 32px rgba(232,132,26,0.15); }
+
+    /* Done card */
+    .card.done { opacity: 0.6; }
+    .card.done:hover { opacity: 1; }
+    .card.done .card-img img { filter: grayscale(30%); }
+    .card.done:hover .card-img img { filter: grayscale(0); }
+    .card.done .date { color: var(--muted); }
+
+    /* Quick nav grid below timeline (mobile alternative) */
+    .events-grid { display: none; }
+
+    /* Stats */
+    .stats { padding: 4rem 0; background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .stat .number { font-size: 2.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .stat .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.4rem; }
+
+    /* Past editions */
+    .past-editions { padding: 5rem 0; }
+    .editions-scroll { display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; cursor: grab; }
+    .editions-scroll::-webkit-scrollbar { display: none; }
+    .edition-card { flex-shrink: 0; width: 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--card); transition: all 0.3s; text-decoration: none; color: inherit; }
+    .edition-card:hover { border-color: rgba(232,132,26,0.4); transform: translateY(-2px); }
+    .edition-card img { width: 100%; height: 160px; object-fit: cover; }
+    .edition-card .info { padding: 1rem; }
+    .edition-card .info h4 { font-size: 0.9rem; font-weight: 700; }
+    .edition-card .info p { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+    /* Footer */
+    footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .timeline { display: none; }
+      .events-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+      .events-grid .card { width: 100%; }
+      header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="#" class="logo"><span>aws</span> Community Day Brasil</a>
+      <nav>
+        <a href="#jornada" class="active">Jornada</a>
+        <a href="#numeros">Números</a>
+        <a href="#anteriores">Anteriores</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+        5 Regiões · 2026
+      </div>
+      <h1>Uma jornada por<br/>todo o <span>Brasil</span></h1>
+      <p>Acompanhe a trilha dos eventos AWS Community Day em cada região do país — do próximo ao já realizado.</p>
+      <a href="#jornada" class="hero-cta">
+        Ver jornada
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="journey" id="jornada">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Jornada 2026</p>
+        <h2>A trilha dos eventos</h2>
+        <p>Do primeiro ao último, acompanhe o status de cada edição regional</p>
+      </div>
+
+      <!-- Desktop Timeline -->
+      <div class="timeline">
+        <!-- 1. Centro-Oeste - Done -->
+        <div class="timeline-item done">
+          <a href="/centro-oeste/" class="card done">
+            <div class="card-img">
+              <img src="/centro-oeste/resultado/event-photo.jpg" alt="Centro-Oeste" />
+              <div class="overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tag tag-done">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                Realizado
+              </div>
+              <h3>Centro-Oeste</h3>
+              <p class="city">Brasília/DF</p>
+              <p class="date">27 Jun 2026</p>
+            </div>
+          </a>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- 2. Sudeste - Next -->
+        <div class="timeline-item active">
+          <a href="/sudeste/" class="card highlight">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1597220869819-83067d0b1518?w=600&q=80" alt="Sudeste" />
+              <div class="overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tag tag-next">
+                <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);animation:pulse 2s infinite;"></span>
+                Próximo
+              </div>
+              <h3>Sudeste</h3>
+              <p class="city">Belo Horizonte/MG</p>
+              <p class="date">22 Ago 2026</p>
+            </div>
+          </a>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- 3. Sul -->
+        <div class="timeline-item">
+          <a href="/sul/" class="card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1598181279671-4484c03e2431?w=600&q=80" alt="Sul" />
+              <div class="overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tag tag-upcoming">Em breve</div>
+              <h3>Sul</h3>
+              <p class="city">Curitiba/PR</p>
+              <p class="date">19 Set 2026</p>
+            </div>
+          </a>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- 4. Nordeste -->
+        <div class="timeline-item">
+          <a href="/nordeste/" class="card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=600&q=80" alt="Nordeste" />
+              <div class="overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tag tag-upcoming">Em breve</div>
+              <h3>Nordeste</h3>
+              <p class="city">Salvador/BA</p>
+              <p class="date">10 Out 2026</p>
+            </div>
+          </a>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- 5. Norte -->
+        <div class="timeline-item">
+          <a href="/norte/" class="card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1618953980269-99e6e93fa4dd?w=600&q=80" alt="Norte" />
+              <div class="overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tag tag-upcoming">Em breve</div>
+              <h3>Norte</h3>
+              <p class="city">Belém/PA</p>
+              <p class="date">31 Out 2026</p>
+            </div>
+          </a>
+          <div class="timeline-dot"></div>
+        </div>
+      </div>
+
+      <!-- Mobile Grid -->
+      <div class="events-grid">
+        <a href="/sudeste/" class="card highlight">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1597220869819-83067d0b1518?w=600&q=80" alt="Sudeste" /><div class="overlay"></div></div>
+          <div class="card-body">
+            <div class="card-tag tag-next"><span style="width:6px;height:6px;border-radius:50%;background:var(--primary);"></span> Próximo</div>
+            <h3>Sudeste</h3><p class="city">Belo Horizonte/MG</p><p class="date">22 Ago 2026</p>
+          </div>
+        </a>
+        <a href="/sul/" class="card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1598181279671-4484c03e2431?w=600&q=80" alt="Sul" /><div class="overlay"></div></div>
+          <div class="card-body"><div class="card-tag tag-upcoming">Em breve</div><h3>Sul</h3><p class="city">Curitiba/PR</p><p class="date">19 Set 2026</p></div>
+        </a>
+        <a href="/nordeste/" class="card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=600&q=80" alt="Nordeste" /><div class="overlay"></div></div>
+          <div class="card-body"><div class="card-tag tag-upcoming">Em breve</div><h3>Nordeste</h3><p class="city">Salvador/BA</p><p class="date">10 Out 2026</p></div>
+        </a>
+        <a href="/norte/" class="card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1618953980269-99e6e93fa4dd?w=600&q=80" alt="Norte" /><div class="overlay"></div></div>
+          <div class="card-body"><div class="card-tag tag-upcoming">Em breve</div><h3>Norte</h3><p class="city">Belém/PA</p><p class="date">31 Out 2026</p></div>
+        </a>
+        <a href="/centro-oeste/" class="card done">
+          <div class="card-img"><img src="/centro-oeste/resultado/event-photo.jpg" alt="Centro-Oeste" /><div class="overlay"></div></div>
+          <div class="card-body"><div class="card-tag tag-done"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Realizado</div><h3>Centro-Oeste</h3><p class="city">Brasília/DF</p><p class="date">27 Jun 2026</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="numeros">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Impacto</p>
+        <h2>Números que inspiram</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><div class="number">5</div><div class="label">Regiões</div></div>
+        <div class="stat"><div class="number">5</div><div class="label">Cidades</div></div>
+        <div class="stat"><div class="number">100+</div><div class="label">Palestrantes</div></div>
+        <div class="stat"><div class="number">1000+</div><div class="label">Participantes esperados</div></div>
+        <div class="stat"><div class="number">3</div><div class="label">Anos de história</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="past-editions" id="anteriores">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Histórico</p>
+        <h2>Edições Anteriores</h2>
+        <p>A jornada começou lá atrás — confira as edições passadas</p>
+      </div>
+      <div class="editions-scroll">
+        <a href="/hist/2025-dec/" class="edition-card">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Dezembro 2025" />
+          <div class="info"><h4>Nacional — Dezembro 2025</h4><p>São Paulo/SP · 1ª edição nacional</p></div>
+        </a>
+        <a href="/hist/2024-nov/" class="edition-card">
+          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&q=80" alt="Novembro 2024" />
+          <div class="info"><h4>Nacional — Novembro 2024</h4><p>Florianópolis/SC + Goiânia/GO</p></div>
+        </a>
+        <a href="#" class="edition-card">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&q=80" alt="2023" />
+          <div class="info"><h4>Edição 2023</h4><p>Onde tudo começou</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 · <a href="/">Voltar para o site atual</a></p>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    html { scroll-behavior: smooth; }
+  </style>
+</body>
+</html>
