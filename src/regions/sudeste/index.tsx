@@ -20,6 +20,12 @@ import rafaelPhoto from "./assets/rafael-fernandes.jpg";
 import veronicaPhoto from "./assets/veronica-torres.jpg";
 
 import darkoPhoto from "./assets/speakers/darko-mesaros.jpg";
+import arthurPhoto from "./assets/speakers/arthur-nycael.jpg";
+import danPhoto from "./assets/speakers/dan-rezende.jpg";
+import laysPhoto from "./assets/speakers/lays-rodrigues.jpg";
+import lucasPhoto from "./assets/speakers/lucas-israel.jpg";
+import marianaPhoto from "./assets/speakers/mariana-mercier.jpg";
+import samanthaPhoto from "./assets/speakers/samantha-chiachio.jpg";
 
 import dayrellLogo from "./assets/sponsors/dayrell.png";
 import escolaawsLogo from "./assets/sponsors/escola-aws.png";
@@ -41,7 +47,13 @@ const photoMap: Record<string, string> = {
 };
 
 const speakerPhotoMap: Record<string, string> = {
-  "darko-mesaros.jpg": darkoPhoto
+  "darko-mesaros.jpg": darkoPhoto,
+  "arthur-nycael.jpg": arthurPhoto,
+  "dan-rezende.jpg": danPhoto,
+  "lays-rodrigues.jpg": laysPhoto,
+  "lucas-israel.jpg": lucasPhoto,
+  "mariana-mercier.jpg": marianaPhoto,
+  "samantha-chiachio.jpg": samanthaPhoto
 };
 
 const logoMap: Record<string, string> = {
