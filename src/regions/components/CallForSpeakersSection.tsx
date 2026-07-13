@@ -30,7 +30,7 @@ const CallForSpeakersSection = ({ url, config, formattedDate }: CallForSpeakersS
             Se você quer compartilhar experiências, aprendizados, ideias ou soluções com a comunidade AWS, convidamos você a submeter sua palestra e fazer parte deste grande encontro.
           </p>
           <p className="text-sm text-muted-foreground mb-8">
-            {config.location.city} · {formattedDate}
+            Data limite para submissão de propostas: 31/08/2026
           </p>
           <a
             href={url}
