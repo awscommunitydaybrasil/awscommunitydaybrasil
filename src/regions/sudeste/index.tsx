@@ -26,6 +26,15 @@ import laysPhoto from "./assets/speakers/lays-rodrigues.jpg";
 import lucasPhoto from "./assets/speakers/lucas-israel.jpg";
 import marianaPhoto from "./assets/speakers/mariana-mercier.jpg";
 import samanthaPhoto from "./assets/speakers/samantha-chiachio.jpg";
+import marangonPhoto from "./assets/speakers/carlos-marangon.jpg";
+import edCarlosPhoto from "./assets/speakers/ed-carlos-marinho.jpg";
+import camiloPhoto from "./assets/speakers/camilo-giannella.jpg";
+import naiaraPhoto from "./assets/speakers/naiara-medeiros.jpg";
+import evandroPhoto from "./assets/speakers/evandro-pires.jpg";
+import raphaelPhoto from "./assets/speakers/raphael-moura.jpg";
+import linoPhoto from "./assets/speakers/william-lino.jpg";
+import tiagoPhoto from "./assets/speakers/tiago-reichert.jpg";
+import joaoPhoto from "./assets/speakers/joao-cesar.jpg";
 
 import dayrellLogo from "./assets/sponsors/dayrell.png";
 import escolaawsLogo from "./assets/sponsors/escola-aws.png";
@@ -53,7 +62,16 @@ const speakerPhotoMap: Record<string, string> = {
   "lays-rodrigues.jpg": laysPhoto,
   "lucas-israel.jpg": lucasPhoto,
   "mariana-mercier.jpg": marianaPhoto,
-  "samantha-chiachio.jpg": samanthaPhoto
+  "samantha-chiachio.jpg": samanthaPhoto,
+  "carlos-marangon.jpg": marangonPhoto,
+  "ed-carlos-marinho.jpg": edCarlosPhoto,
+  "camilo-giannella.jpg": camiloPhoto,
+  "naiara-medeiros.jpg": naiaraPhoto,
+  "evandro-pires.jpg": evandroPhoto,
+  "raphael-moura.jpg": raphaelPhoto,
+  "william-lino.jpg": linoPhoto,
+  "tiago-reichert.jpg": tiagoPhoto,
+  "joao-cesar.jpg": joaoPhoto
 };
 
 const logoMap: Record<string, string> = {
