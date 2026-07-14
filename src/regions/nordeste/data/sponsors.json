@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "AWS",
+    "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/aws.png",
+    "url": "https://aws.amazon.com/",
+    "tier": "diamond"
+  },
+  {
+    "name": "Universidade SENAI CIMATEC",
+    "logo": "senai-cimatec.png",
+    "url": "https://www.senaicimatec.com.br/",
+    "tier": "support"
+  }
+]

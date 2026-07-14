@@ -110,7 +110,9 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
       <ScheduleSection schedule={schedule} hasSpeakers={speakers.length > 0} />
       {!past && config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} config={config} />}
       <SponsorsSection sponsors={sponsors} />
-      {past && config.pastEvent?.communities && <CommunitiesSection communities={config.pastEvent.communities} />}
+      {(config.communities || config.pastEvent?.communities) && (
+        <CommunitiesSection communities={config.communities || config.pastEvent?.communities || []} />
+      )}
       <OrganizersSection organizers={organizers} />
       <RegionFooter config={config} />
     </div>

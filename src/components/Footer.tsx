@@ -15,7 +15,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/awscommunitybrasil"
+            href="https://www.instagram.com/awscommunitydaysalvador/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"

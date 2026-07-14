@@ -7,10 +7,24 @@
     }
   },
   {
+    "name": "Marcos Menezes",
+    "photo": "marcos-menezes.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcos-menezes-27354a263"
+    }
+  },
+  {
     "name": "Daniel Carneiro",
     "photo": "daniel-carneiro.jpg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/danielcarneiro--/"
+    }
+  },
+  {
+    "name": "Flavio Fox",
+    "photo": "flavio-fox.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaviofox/"
     }
   },
   {
@@ -21,10 +35,10 @@
     }
   },
   {
-    "name": "Flavio Fox",
-    "photo": "flavio-fox.jpg",
+    "name": "Rodrigo Gandarela",
+    "photo": "rodrigo-gandarela.jpg",
     "social": {
-      "linkedin": "https://www.linkedin.com/in/flaviofox/"
+      "linkedin": "https://www.linkedin.com/in/rodrigo-gandarela"
     }
   },
   {
@@ -39,20 +53,6 @@
     "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-05.jpg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
-    }
-  },
-  {
-    "name": "Marcos Menezes",
-    "photo": "marcos-menezes.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/marcos-menezes-27354a263"
-    }
-  },
-  {
-    "name": "Rodrigo Gandarela",
-    "photo": "rodrigo-gandarela.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/rodrigo-gandarela"
     }
   }
 ]
