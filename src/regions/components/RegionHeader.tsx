@@ -5,7 +5,6 @@ import siteLogo from "@/assets/logo-brasil-generico.png";
 
 const navSections = [
   { id: "sobre", label: "Sobre" },
-  { id: "palestrantes", label: "Palestrantes" },
   { id: "programacao", label: "Programação" },
   { id: "patrocinadores", label: "Patrocinadores" },
   { id: "organizadores", label: "Organizadores" },
