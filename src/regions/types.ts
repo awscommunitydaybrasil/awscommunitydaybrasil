@@ -69,5 +69,5 @@ export interface Sponsor {
   name: string;
   logo: string;
   url: string;
-  tier: "diamond" | "gold" | "silver" | "bronze" | "community" | "support";
+  tier: "diamond" | "platinum" | "gold" | "silver" | "bronze" | "community" | "support";
 }

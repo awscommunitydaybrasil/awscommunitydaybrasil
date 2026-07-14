@@ -1,4 +1,4 @@
-import { Mic } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { RegionConfig } from "@/regions/types";
 
@@ -38,7 +38,7 @@ const CallForSpeakersSection = ({ url, config, formattedDate }: CallForSpeakersS
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:bg-primary/90 transition-colors"
           >
-            <Mic className="w-5 h-5" />
+            <Mail className="w-5 h-5" />
             Submeter proposta
           </a>
         </div>

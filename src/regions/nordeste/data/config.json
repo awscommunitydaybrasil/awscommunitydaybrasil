@@ -1,11 +1,11 @@
 {
   "regionName": "Nordeste",
   "subtitle": "O maior evento de comunidades AWS do Nordeste brasileiro",
-  "targetDate": "2026-10-10T09:00:00-03:00",
-  "eventTime": "7h às 19h",
+  "targetDate": "2026-10-10T08:00:00-03:00",
+  "eventTime": "08h as 17h",
   "heroImage": "./assets/postcard-salvador.png",
   "location": {
-    "venue": "Universidade SENAI CIMATEC",
+    "venue": "Universidade\nSENAI CIMATEC",
     "city": "Salvador/BA"
   },
   "registration": {
@@ -14,8 +14,7 @@
   },
   "socialLinks": {
     "instagram": "https://www.instagram.com/awscommunitydaybr/",
-    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
-    "twitter": "https://twitter.com/awscommunitybr",
+    "linkedin": "https://www.linkedin.com/showcase/aws-community-day-salvador",
     "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
   },
   "userGroups": [
@@ -25,7 +24,7 @@
   ],
   "callForSpeakersUrl": "https://sessionize.com/aws-community-day-salvador",
   "contact": {
-    "email": "contato@awscommunityday.com.br",
+    "email": "nordeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
   }
 }
