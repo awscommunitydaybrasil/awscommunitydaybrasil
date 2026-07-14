@@ -5,7 +5,7 @@
   "eventTime": "7h às 19h",
   "heroImage": "./assets/postcard-salvador.png",
   "location": {
-    "venue": "SENAI CIMATEC",
+    "venue": "Universidade SENAI CIMATEC",
     "city": "Salvador/BA"
   },
   "registration": {
@@ -23,7 +23,7 @@
     { "name": "AWS User Group Recife", "url": "https://www.meetup.com/pt-BR/awsrec/" },
     { "name": "AWS User Group Fortaleza", "url": "https://www.meetup.com/pt-BR/awsfor/" }
   ],
-  "callForSpeakersUrl": "",
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-salvador",
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
