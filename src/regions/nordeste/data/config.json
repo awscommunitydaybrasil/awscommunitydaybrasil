@@ -26,5 +26,17 @@
   "contact": {
     "email": "nordeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
-  }
+  },
+  "communities": [
+    {
+      "name": "AWS User Group Salvador",
+      "url": "https://www.instagram.com/aws_ug_salvador.ba/",
+      "icon": "instagram"
+    },
+    {
+      "name": "AWS Student Builder Group Senai Cimatec",
+      "url": "https://www.instagram.com/aws.senaicimatec/",
+      "icon": "instagram"
+    }
+  ]
 }

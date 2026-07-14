@@ -26,6 +26,7 @@ export interface RegionConfig {
     email: string;
     website: string;
   };
+  communities?: Array<{ name: string; url: string; icon?: string }>;
   pastEvent?: {
     photosUrl?: string;
     communities?: Array<{ name: string; url: string; icon?: string }>;
