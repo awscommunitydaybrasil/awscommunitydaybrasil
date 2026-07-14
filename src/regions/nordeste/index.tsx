@@ -11,6 +11,7 @@ import caioPhoto from "./assets/caio-nunes.jpg";
 import danielPhoto from "./assets/daniel-carneiro.jpg";
 import daviPhoto from "./assets/davi-brito-chagas.jpg";
 import flavioFoxPhoto from "./assets/flavio-fox.jpg";
+import flavioPimentaPhoto from "./assets/flavio-pimenta.jpg";
 import marcosPhoto from "./assets/marcos-menezes.jpg";
 import rodrigoPhoto from "./assets/rodrigo-gandarela.jpg";
 
@@ -19,6 +20,7 @@ const photoMap: Record<string, string> = {
   "daniel-carneiro.jpg": danielPhoto,
   "davi-brito-chagas.jpg": daviPhoto,
   "flavio-fox.jpg": flavioFoxPhoto,
+  "flavio-pimenta.jpg": flavioPimentaPhoto,
   "marcos-menezes.jpg": marcosPhoto,
   "rodrigo-gandarela.jpg": rodrigoPhoto,
 };
