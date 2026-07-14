@@ -98,7 +98,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
           jsonLd: [eventJsonLd],
         }}
       />
-      <RegionHeader registrationUrl={past ? undefined : config.registration.url} />
+      <RegionHeader registrationUrl={past ? undefined : config.registration.url} hasSpeakers={speakers.length > 0} />
       <RegionHero config={config} heroImage={heroImage} past={past} />
       {past && config.pastEvent?.photosUrl && eventPhoto && (
         <PhotoGalleryCard photosUrl={config.pastEvent.photosUrl} photoImage={eventPhoto} />

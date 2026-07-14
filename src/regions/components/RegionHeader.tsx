@@ -1,22 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import siteLogo from "@/assets/logo-brasil-generico.png";
 
-const navSections = [
-  { id: "sobre", label: "Sobre" },
-  { id: "programacao", label: "Programação" },
-  { id: "patrocinadores", label: "Patrocinadores" },
-  { id: "organizadores", label: "Organizadores" },
-];
-
 interface RegionHeaderProps {
   registrationUrl?: string;
+  hasSpeakers?: boolean;
 }
 
-const RegionHeader = ({ registrationUrl }: RegionHeaderProps) => {
+const RegionHeader = ({ registrationUrl, hasSpeakers = false }: RegionHeaderProps) => {
   const [activeNav, setActiveNav] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navSections = useMemo(() => {
+    const sections = [
+      { id: "sobre", label: "Sobre" },
+    ];
+    if (hasSpeakers) {
+      sections.push({ id: "palestrantes", label: "Palestrantes" });
+    }
+    sections.push(
+      { id: "programacao", label: "Programação" },
+      { id: "patrocinadores", label: "Patrocinadores" },
+      { id: "organizadores", label: "Organizadores" },
+    );
+    return sections;
+  }, [hasSpeakers]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,7 +40,7 @@ const RegionHeader = ({ registrationUrl }: RegionHeaderProps) => {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [navSections]);
 
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
