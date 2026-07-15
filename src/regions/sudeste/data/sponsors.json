@@ -1,5 +1,11 @@
 [
   {
+    "name": "AWS",
+    "logo": "aws.png",
+    "url": "https://aws.amazon.com/",
+    "tier": "diamond"
+  },
+  {
     "name": "Escola AWS",
     "logo": "sponsors/escola-aws.png",
     "url": "https://www.escolaaws.com.br/",

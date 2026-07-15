@@ -36,6 +36,7 @@ import linoPhoto from "./assets/speakers/william-lino.jpg";
 import tiagoPhoto from "./assets/speakers/tiago-reichert.jpg";
 import joaoPhoto from "./assets/speakers/joao-cesar.jpg";
 
+import awsLogo from "./assets/sponsors/aws.png";
 import dayrellLogo from "./assets/sponsors/dayrell.png";
 import escolaawsLogo from "./assets/sponsors/escola-aws.png";
 import netminasLogo from "./assets/sponsors/net-minas.jpeg";
@@ -75,6 +76,7 @@ const speakerPhotoMap: Record<string, string> = {
 };
 
 const logoMap: Record<string, string> = {
+  "aws.png": awsLogo,
   "dayrell.png": dayrellLogo,
   "escola-aws.png": escolaawsLogo,
   "net-minas.jpeg": netminasLogo
