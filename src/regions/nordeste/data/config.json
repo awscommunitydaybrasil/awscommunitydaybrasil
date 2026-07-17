@@ -9,8 +9,8 @@
     "city": "Salvador/BA"
   },
   "registration": {
-    "status": "Em breve",
-    "url": ""
+    "status": "Garanta já!",
+    "url": "https://hubconnecteventos.com.br/evento/awscommunitydaysalvador"
   },
   "socialLinks": {
     "instagram": "https://www.instagram.com/awscommunitydaybr/",
@@ -23,6 +23,7 @@
     { "name": "AWS User Group Fortaleza", "url": "https://www.meetup.com/pt-BR/awsfor/" }
   ],
   "callForSpeakersUrl": "https://sessionize.com/aws-community-day-salvador",
+  "callForSpeakersIcon": "mail",
   "contact": {
     "email": "nordeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
