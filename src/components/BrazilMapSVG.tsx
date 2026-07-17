@@ -82,7 +82,7 @@ const states: StateData[] = [
 const hostMarkerPositions: Record<string, { x: number; y: number }> = {
   PA: { x: 240, y: 118 },
   DF: { x: 292, y: 246 },
-  BA: { x: 365, y: 205 },
+  BA: { x: 392, y: 230 },
   MG: { x: 340, y: 280 },
   PR: { x: 255, y: 358 },
 };

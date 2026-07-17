@@ -21,6 +21,7 @@ export interface RegionConfig {
   userGroups: Array<{ name: string; url: string }>;
   studentBuilderGroups?: Array<{ name: string; url: string }>;
   callForSpeakersUrl?: string;
+  callForSpeakersIcon?: "mic" | "mail";
   callForSponsorsUrl?: string;
   contact: {
     email: string;
