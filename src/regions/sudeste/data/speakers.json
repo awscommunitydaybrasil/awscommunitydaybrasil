@@ -14,8 +14,8 @@
     {
         "name": "Lays Rodrigues",
         "photo": "lays-rodrigues.jpg",
-        "title": "Staff Software Engineer",
-        "company": "Neon",
+        "title": "Senior Software Engineer",
+        "company": "",
         "talk": "Tagging além de key-values: Controle de acesso baseado em Tags",
         "bio": "Especialista em Golang, Python e AWS, Lays Rodrigues atua há mais de uma década unindo engenharia de software e arquitetura de nuvem — ajudando times a sair do 'funciona na minha máquina' para infraestrutura resiliente em escala. AWS Community Builder e palestrante em eventos como AWS re:Invent, AWS Summit e Community Day. Quando não está desenhando arquiteturas, está desvendando as partituras ao tocar piano.",
         "keynote": false,
@@ -87,6 +87,121 @@
         "social": {
             "linkedin": "https://www.linkedin.com/in/samanthachiachio",
             "instagram": "https://www.instagram.com/its_sassational/"
+        }
+    },
+    {
+        "name": "Carlos Marangon",
+        "photo": "carlos-marangon.jpg",
+        "title": "Principal AWS Solutions Architect",
+        "company": "Ingram Micro",
+        "talk": "Hands-on Kiro",
+        "bio": "Carlos Marangon é Principal AWS Solutions Architect @Ingram Micro Company e Ambassador da AWS LATAM e AWS Community Builder. Graduado em Computação - Sistemas de Informação, possui mais de 25 de anos de experiência trabalhando com TI. Atua com a AWS desde 2014, e já soma nove certificações AWS, o que comprova o seu profundo conhecimento nessa nuvem. Compartilhar conhecimento e ajudar no desenvolvimento técnico são suas paixões.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/carlosmarangon"
+        }
+    },
+    {
+        "name": "Ed Carlos Marinho",
+        "photo": "ed-carlos-marinho.jpg",
+        "title": "Arquiteto de Soluções em Nuvem, IA e DevOps",
+        "company": "",
+        "talk": "Seu agente de IA irá para produção?",
+        "bio": "Arquiteto de Soluções em Nuvem, Inteligência Artificial e DevOps, com mais de 20 anos de experiência em tecnologia e mais de 8 anos atuando com computação em nuvem. Ao longo da carreira, liderou projetos de transformação digital, arquitetura cloud e automação, com foco na construção de soluções escaláveis. É AWS Authorized Instructor Champion e possui múltiplas certificações em AWS e Azure. Atua como palestrante, mentor, instrutor e criador de conteúdo técnico, capacitando profissionais em temas como IA Generativa, Agentes de IA, Amazon Bedrock, AWS AgentCore, RAG, Serverless, Containers e Arquitetura Cloud.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/edcarlosmarinho/",
+            "instagram": "https://www.instagram.com/edcmarinho/"
+        }
+    },
+    {
+        "name": "Camilo Giannella",
+        "photo": "camilo-giannella.jpg",
+        "title": "Executivo de TI | Cloud, SRE, FinOps",
+        "company": "Smart Fit",
+        "talk": "Como a estratégia de FinOps pode direcionar as estratégias de modernização tecnológica",
+        "bio": "Sou um executivo de TI com ampla experiência em Cloud, SRE, FinOps (especialista em AWS), DevOps e infraestrutura, atuando na liderança de times e em projetos estratégicos que geram impacto real no negócio.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/camilogiannella/",
+            "instagram": "https://www.instagram.com/camilogiannella/"
+        }
+    },
+    {
+        "name": "Naiara Medeiros",
+        "photo": "naiara-medeiros.jpg",
+        "title": "Client Engagement Manager",
+        "company": "R/GA",
+        "talk": "Tech como ecossistema: como se encontrar entre áreas, escolhas e transições",
+        "bio": "Naiara Medeiros constrói sua trajetória na interseção entre tecnologia, comunicação e negócio. Com um caminho não linear — que vai de Letras a ambientes técnicos e à gestão com foco em new business —, hoje atua como Client Engagement Manager e se aprofunda em liderança e gestão de pessoas. Se interessa por transições de carreira e por ampliar a forma como enxergamos a tecnologia, criando pontes para que mais pessoas encontrem seu lugar nesse ecossistema.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/naiara-medeiros-0048721b0/",
+            "instagram": "https://www.instagram.com/naimedeiross_/"
+        }
+    },
+    {
+        "name": "Evandro Pires",
+        "photo": "evandro-pires.jpg",
+        "title": "AWS Serverless Hero | Empreendedor",
+        "company": "tnkr / Select",
+        "talk": "Agora serverless tem servidores. E agora?",
+        "bio": "Evandro Pires é empreendedor em diferentes segmentos, com trajetória marcada pela criação e escala de produtos e negócios de tecnologia. Atuou como CTO de uma das maiores empresas de tecnologia do Brasil, onde liderou áreas como Cloud Native, Dados, IA e inovação. É reconhecido como o primeiro AWS Serverless Hero da América Latina e atua como embaixador da sls.guru na região. É criador do podcast Sem Servidor e organizador de eventos como Sem Servidor Conf e ServerlessDays São Paulo. Atualmente, é cofundador da tnkr e Chief Visionary Officer (CVO) na Select.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/epiresdasilva/",
+            "instagram": "https://www.instagram.com/epiresdasilva/"
+        }
+    },
+    {
+        "name": "Raphael Moura",
+        "photo": "raphael-moura.jpg",
+        "title": "Senior Cloud Architect",
+        "company": "sls.guru",
+        "talk": "Do vibe coding à engenharia: Desenvolvendo sistemas com IA",
+        "bio": "Arquiteto Sênior de Cloud com mais de 10 anos projetando sistemas distribuídos de alta escala, hoje focado em engenharia agêntica: construo, em torno dos agentes de código com IA, o sistema operacional que torna a produção deles verificável e segura para merge.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/raphamoura/",
+            "instagram": "https://www.instagram.com/mouraraphael/"
+        }
+    },
+    {
+        "name": "William Lino",
+        "photo": "william-lino.jpg",
+        "title": "Arquiteto de Soluções | Bancos de Dados AWS",
+        "company": "AWS",
+        "talk": "Construa uma Solução de IA Multi-Agente com Amazon Aurora e Bedrock AgentCore",
+        "bio": "Esposo, pai de gatas e apaixonado por tecnologia, cloud, infraestrutura e bancos de dados possui mais de 20 anos de experiência tendo passado por diversas empresas, principalmente do mercado financeiro e hoje atua como arquiteto de soluções com foco em serviços de bancos de dados na AWS.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/williamlinooliveira",
+            "instagram": "https://www.instagram.com/willonil/"
+        }
+    },
+    {
+        "name": "Tiago Reichert",
+        "photo": "tiago-reichert.jpg",
+        "title": "Principal Solutions Architect",
+        "company": "AWS",
+        "talk": "Workshop Gen AI EKS",
+        "bio": "Tiago is a Principal Solutions Architect at AWS, focused on helping startups across Latin America to optimize their container strategies. With a deep passion for Containers, DevOps, and SaaS, he collaborates with businesses to design scalable and efficient cloud solutions. Tiago also actively contributes to the tech community as an organizer of KCD Brazil and meetups focused on promoting cloud-native technologies.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/tiago-reichert/",
+            "instagram": "https://www.instagram.com/reichert_tiago/"
+        }
+    },
+    {
+        "name": "João Cesar",
+        "photo": "joao-cesar.jpg",
+        "title": "Solutions Architect",
+        "company": "AWS",
+        "talk": "Workshop Gen AI EKS",
+        "bio": "Joao Guilherme Cesar é Solutions Architect na Amazon Web Services (AWS), com foco em modernização de aplicações e arquiteturas cloud-native. Com mais de 15 anos de experiência na área de TI, traz uma visão prática e aprofundada sobre containers, Kubernetes e infraestrutura como código. Atualmente, ajuda startups a desenvolverem seus workloads na nuvem de maneira escalável, custo-efetiva e resiliente, combinando experiência de campo com as melhores práticas AWS.",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/joaogac"
         }
     }
 ]
