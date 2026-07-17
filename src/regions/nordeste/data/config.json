@@ -1,21 +1,20 @@
 {
   "regionName": "Nordeste",
   "subtitle": "O maior evento de comunidades AWS do Nordeste brasileiro",
-  "targetDate": "2026-10-10T09:00:00-03:00",
-  "eventTime": "7h às 19h",
+  "targetDate": "2026-10-10T08:00:00-03:00",
+  "eventTime": "08h as 17h",
   "heroImage": "./assets/postcard-salvador.png",
   "location": {
-    "venue": "SENAI CIMATEC",
+    "venue": "Universidade\nSENAI CIMATEC",
     "city": "Salvador/BA"
   },
   "registration": {
-    "status": "Em breve",
-    "url": ""
+    "status": "Garanta já!",
+    "url": "https://hubconnecteventos.com.br/evento/awscommunitydaysalvador"
   },
   "socialLinks": {
     "instagram": "https://www.instagram.com/awscommunitydaybr/",
-    "linkedin": "https://www.linkedin.com/company/aws-community-day-brasil/",
-    "twitter": "https://twitter.com/awscommunitybr",
+    "linkedin": "https://www.linkedin.com/showcase/aws-community-day-salvador",
     "youtube": "https://www.youtube.com/@AWSUserGroupBrasil"
   },
   "userGroups": [
@@ -23,9 +22,22 @@
     { "name": "AWS User Group Recife", "url": "https://www.meetup.com/pt-BR/awsrec/" },
     { "name": "AWS User Group Fortaleza", "url": "https://www.meetup.com/pt-BR/awsfor/" }
   ],
-  "callForSpeakersUrl": "",
+  "callForSpeakersUrl": "https://sessionize.com/aws-community-day-salvador",
+  "callForSpeakersIcon": "mail",
   "contact": {
-    "email": "contato@awscommunityday.com.br",
+    "email": "nordeste@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
-  }
+  },
+  "communities": [
+    {
+      "name": "AWS User Group Salvador",
+      "url": "https://www.instagram.com/aws_ug_salvador.ba/",
+      "icon": "instagram"
+    },
+    {
+      "name": "AWS Student Builder Group Senai Cimatec",
+      "url": "https://www.instagram.com/aws.senaicimatec/",
+      "icon": "instagram"
+    }
+  ]
 }

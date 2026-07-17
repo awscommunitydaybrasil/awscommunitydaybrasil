@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "name": "Caio Nunes",
+    "photo": "caio-nunes.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/caionscloud/"
+    }
+  },
+  {
+    "name": "Marcos Menezes",
+    "photo": "marcos-menezes.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcos-menezes-27354a263"
+    }
+  },
+  {
+    "name": "Daniel Carneiro",
+    "photo": "daniel-carneiro.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/danielcarneiro--/"
+    }
+  },
+  {
+    "name": "Flavio Fox",
+    "photo": "flavio-fox.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaviofox/"
+    }
+  },
+  {
+    "name": "Davi Brito Chagas",
+    "photo": "davi-brito-chagas.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/davi-brito-chagas-3503b9351/"
+    }
+  },
+  {
+    "name": "Rodrigo Gandarela",
+    "photo": "rodrigo-gandarela.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rodrigo-gandarela"
+    }
+  },
+  {
+    "name": "Flávio Pimenta",
+    "photo": "flavio-pimenta.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flap"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-05.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
+    }
+  }
+]

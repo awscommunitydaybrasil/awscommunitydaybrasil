@@ -21,11 +21,13 @@ export interface RegionConfig {
   userGroups: Array<{ name: string; url: string }>;
   studentBuilderGroups?: Array<{ name: string; url: string }>;
   callForSpeakersUrl?: string;
+  callForSpeakersIcon?: "mic" | "mail";
   callForSponsorsUrl?: string;
   contact: {
     email: string;
     website: string;
   };
+  communities?: Array<{ name: string; url: string; icon?: string }>;
   pastEvent?: {
     photosUrl?: string;
     communities?: Array<{ name: string; url: string; icon?: string }>;
@@ -69,5 +71,5 @@ export interface Sponsor {
   name: string;
   logo: string;
   url: string;
-  tier: "diamond" | "gold" | "silver" | "bronze" | "community" | "support";
+  tier: "diamond" | "platinum" | "gold" | "silver" | "bronze" | "community" | "support";
 }

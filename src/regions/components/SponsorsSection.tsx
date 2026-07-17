@@ -3,12 +3,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { Sponsor } from "@/regions/types";
 
 const tierConfig: Record<string, { label: string; logoSize: string; order: number }> = {
-  diamond: { label: "Platina", logoSize: "max-h-32", order: 0 },
-  gold: { label: "Ouro", logoSize: "max-h-20", order: 1 },
-  silver: { label: "Prata", logoSize: "max-h-14", order: 2 },
-  bronze: { label: "Bronze", logoSize: "max-h-10", order: 3 },
-  community: { label: "Comunidade", logoSize: "max-h-10", order: 4 },
-  support: { label: "Apoio", logoSize: "max-h-20", order: 5 },
+  platinum: { label: "Platina", logoSize: "max-h-32", order: 0 },
+  diamond: { label: "Platina", logoSize: "max-h-32", order: 1 },
+  gold: { label: "Ouro", logoSize: "max-h-20", order: 2 },
+  silver: { label: "Prata", logoSize: "max-h-14", order: 3 },
+  bronze: { label: "Bronze", logoSize: "max-h-10", order: 4 },
+  community: { label: "Comunidade", logoSize: "max-h-10", order: 5 },
+  support: { label: "Apoio", logoSize: "max-h-20", order: 6 },
 };
 
 interface SponsorsSectionProps {

@@ -31,8 +31,9 @@
     { "name": "AWS Student Builder Group UFPA", "url": "https://www.meetup.com/aws-sbg-at-federal-university-of-para" }
   ],
   "callForSpeakersUrl": "https://abicora.com/aws-community-day-brasil-edicao-norte-belem-pa/cfp",
+  "callForSponsorsUrl": "https://forms.gle/5RgK9mwAALkDT4XG6",
   "contact": {
-    "email": "norte@awscommunityday.com.br",
+    "email": "norte@awscommunity.com.br",
     "website": "https://www.awscommunityday.com.br"
   }
 }
