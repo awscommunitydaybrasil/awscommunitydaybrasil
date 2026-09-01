@@ -2,25 +2,35 @@
   {
     "name": "AWS",
     "logo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/sponsors/aws.png",
-    "url": "https://aws.amazon.com/",
-    "tier": "platinum"
+    "url": "https://aws.amazon.com/pt/",
+    "tier": "platinum",
+    "logoSize": "1.8"
   },
   {
     "name": "Datti",
     "logo": "datti.png",
-    "url": "https://www.datti.com.br/",
+    "url": "https://www.dati.com.br/",
     "tier": "platinum"
   },
   {
     "name": "Universidade SENAI CIMATEC",
     "logo": "senai-cimatec.png",
-    "url": "https://www.senaicimatec.com.br/",
+    "url": "https://senaicimatec.com.br/",
     "tier": "support"
   },
   {
     "name": "Lamit",
     "logo": "lamit.png",
-    "url": "https://www.instagram.com/lamit.ssa/",
-    "tier": "partner"
+    "url": "https://www.instagram.com/lamit.ucsal/",
+    "tier": "partner",
+    "logoSize": "1.3"
+  },
+  {
+    "name": "Tech Sisters",
+    "logo": "tech-sisters.png",
+    "url": "https://www.instagram.com/tech.sisterss/",
+    "tier": "partner",
+    "logoSize": "1.4"
   }
 ]
+

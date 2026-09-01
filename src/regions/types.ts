@@ -73,4 +73,5 @@ export interface Sponsor {
   logo: string;
   url: string;
   tier: "diamond" | "platinum" | "gold" | "silver" | "bronze" | "community" | "support" | "partner";
+  logoSize?: string;
 }

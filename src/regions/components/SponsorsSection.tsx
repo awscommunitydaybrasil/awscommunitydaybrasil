@@ -2,15 +2,15 @@ import { useMemo } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { Sponsor } from "@/regions/types";
 
-const tierConfig: Record<string, { label: string; logoSize: string; order: number }> = {
-  platinum: { label: "Platina", logoSize: "max-h-32", order: 0 },
-  diamond: { label: "Platina", logoSize: "max-h-32", order: 1 },
-  gold: { label: "Ouro", logoSize: "max-h-20", order: 2 },
-  silver: { label: "Prata", logoSize: "max-h-14", order: 3 },
-  bronze: { label: "Bronze", logoSize: "max-h-10", order: 4 },
-  community: { label: "Comunidade", logoSize: "max-h-10", order: 5 },
-  support: { label: "Apoio", logoSize: "max-h-20", order: 6 },
-  partner: { label: "Parceiro", logoSize: "max-h-20", order: 7 },
+const tierConfig: Record<string, { label: string; logoSize: string; cardClass: string; order: number }> = {
+  platinum: { label: "Platina",    logoSize: "max-h-24", cardClass: "w-56 md:w-64", order: 0 },
+  diamond:  { label: "Platina",    logoSize: "max-h-24", cardClass: "w-56 md:w-64", order: 1 },
+  gold:     { label: "Ouro",       logoSize: "max-h-20", cardClass: "w-48 md:w-56", order: 2 },
+  silver:   { label: "Prata",      logoSize: "max-h-16", cardClass: "w-44 md:w-48", order: 3 },
+  bronze:   { label: "Bronze",     logoSize: "max-h-12", cardClass: "w-40 md:w-44", order: 4 },
+  community:{ label: "Comunidade", logoSize: "max-h-12", cardClass: "w-40 md:w-44", order: 5 },
+  support:  { label: "Apoio",      logoSize: "max-h-20", cardClass: "w-48 md:w-52", order: 6 },
+  partner:  { label: "Parceiro",   logoSize: "max-h-14", cardClass: "w-36 md:w-40", order: 7 },
 };
 
 interface SponsorsSectionProps {
@@ -52,9 +52,14 @@ const SponsorsSection = ({ sponsors }: SponsorsSectionProps) => {
                         href={sponsor.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-lg border border-border bg-white p-5 flex items-center justify-center hover:border-primary/50 transition-all w-40 md:w-48"
+                        className={`rounded-lg border border-border bg-white p-5 flex items-center justify-center hover:border-primary/50 transition-all ${tc.cardClass} ${sponsor.logoSize ? "overflow-hidden" : ""}`}
                       >
-                        <img src={sponsor.logo} alt={sponsor.name} className={`${tc.logoSize} object-contain`} />
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          className={`${tc.logoSize} object-contain`}
+                          style={sponsor.logoSize ? { transform: `scale(${sponsor.logoSize})` } : undefined}
+                        />
                       </a>
                     ))}
                   </div>
