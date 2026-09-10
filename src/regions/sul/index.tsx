@@ -19,8 +19,12 @@ import eduardoPhoto from "./assets/speakers/eduardo.jpg";
 import danPhoto from "./assets/speakers/dan.png";
 import agataPhoto from "./assets/speakers/agata.png";
 import robertoPhoto from "./assets/speakers/roberto.jpeg";
+import pimentaPhoto from "./assets/speakers/Pimenta.jpeg";
+import brunoPhoto from "./assets/speakers/bruno.jpg";
 
 import datiLogo from "./assets/sponsor/dati.png";
+import daredeLogo from "./assets/sponsor/darede.png";
+import dottedLogo from "./assets/sponsor/dotted.png";
 
 const photoMap: Record<string, string> = {
   "daiane.jpg": daianePhoto,
@@ -37,10 +41,15 @@ const speakerPhotoMap: Record<string, string> = {
   "dan.png": danPhoto,
   "agata.png": agataPhoto,
   "roberto.jpeg": robertoPhoto,
+  "pimenta.jpeg" : pimentaPhoto,
+  "bruno.jpg" : brunoPhoto
 };
 
 const logoMap: Record<string, string> = {
-  "dati.png": datiLogo
+  "dati.png": datiLogo,
+  "darede.png": daredeLogo,
+  "dotted.png": dottedLogo
+
 };
 
 const resolvedOrganizers = organizers.map((org) => ({

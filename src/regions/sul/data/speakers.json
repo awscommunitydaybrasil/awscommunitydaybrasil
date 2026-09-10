@@ -94,5 +94,29 @@
         "social": {
             "linkedin": "https://www.linkedin.com/in/robertolunarojas"
         }
+    },
+     {
+        "name": "Flávio Pimenta",
+        "photo": "pimenta.jpeg",
+        "title": "Staff Engineer",
+        "company": "Select Soluções",
+        "talk": "Workshop: Desenvolvimento avançado com Kiro CLI",
+        "bio": "Na Select Soluções, é Staff Engineer, com cerca de 25 anos de carreira, mais de 14 anos atuando com cloud AWS, tenho 4 certificações destacando as 2 do tipo Professional. Como Arquiteto de Soluções, transformar desafios de negócio em soluções técnicas eficientes, seguras e com o custo aderente ao uso é o meu foco. ",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/flaap/"
+        }
+    },
+    {
+        "name": "Bruno Lopes",
+        "photo": "bruno.jpg",
+        "title": "Sr. Specialist Solutions Architect",
+        "company": "AWS",
+        "talk": "Workshop: AWS Transform Custom – Automatize suas Transformações de Código e Elimine a Dívida Técnica em Escala ",
+        "bio": "",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/blopesinfo/"
+        }
     }
 ]
