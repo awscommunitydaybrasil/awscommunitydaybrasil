@@ -1,8 +1,20 @@
 [
      {
     "name": "Dati",
-    "logo": "sponsors/dati.png",
+    "logo": "sponsor/dati.png",
     "url": "https://www.dati.com.br/",
     "tier": "diamond"
+  },
+   {
+    "name": "Darede",
+    "logo": "sponsor/darede.png",
+    "url": "https://darede.com.br/",
+    "tier": "diamond"
+  },
+  {
+    "name": "Dotted.ia",
+    "logo": "sponsor/dotted.png",
+    "url": "https://www.usedotted.com/?lang=pt",
+    "tier": "gold"
   }
 ]

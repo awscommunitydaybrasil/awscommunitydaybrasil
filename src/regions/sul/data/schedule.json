@@ -21,6 +21,13 @@
         "level": ""
     },
     {
+        "time": "09:15 - 11:00",
+        "title": "Workshop: AWS Transform Custom – Automatize suas Transformações de Código e Elimine a Dívida Técnica em Escala ",
+        "speaker": "Bruno Lopes",
+        "track": "",
+        "level": ""
+    },
+    {
         "time": "10:00 - 10:45",
         "title": "Explorando o Streaming de Vídeo com IA e ML",
         "speaker": "Leo Matayoshi",
@@ -53,6 +60,13 @@
         "title": "Previsão de demanda no varejo com AWS: lições de um projeto real com Amazon SageMaker",
         "speaker": "Murilo Lang",
         "track": "Palco Principal",
+        "level": ""
+    },
+    {
+        "time": "14:00 - 16:00",
+        "title": "Workshop: Desenvolvimento avançado com Kiro CLI",
+        "speaker": "Flávio Pimenta",
+        "track": "",
         "level": ""
     },
     {
