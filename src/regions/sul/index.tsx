@@ -19,7 +19,7 @@ import eduardoPhoto from "./assets/speakers/eduardo.jpg";
 import danPhoto from "./assets/speakers/dan.png";
 import agataPhoto from "./assets/speakers/agata.png";
 import robertoPhoto from "./assets/speakers/roberto.jpeg";
-import pimentaPhoto from "./assets/speakers/Pimenta.jpeg";
+import pimentaPhoto from "./assets/speakers/pimenta.jpeg";
 import brunoPhoto from "./assets/speakers/bruno.jpg";
 
 import datiLogo from "./assets/sponsor/dati.png";
