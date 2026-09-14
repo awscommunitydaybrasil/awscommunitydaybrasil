@@ -6,6 +6,7 @@ import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
 import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
+import volunteers from "./data/volunteers.json";
 import heroImage from "./assets/postcard-curitiba.png";
 
 import daianePhoto from "./assets/daiane.jpg";
@@ -25,6 +26,10 @@ import brunoPhoto from "./assets/speakers/bruno.jpg";
 import datiLogo from "./assets/sponsor/dati.png";
 import daredeLogo from "./assets/sponsor/darede.png";
 import dottedLogo from "./assets/sponsor/dotted.png";
+import dssrLogo from "./assets/sponsor/dssr.png";
+
+import thiagoVolPhoto from "./assets/volunteers/thiago.jpeg";
+import danielVolPhoto from "./assets/volunteers/daniel.jpg"
 
 const photoMap: Record<string, string> = {
   "daiane.jpg": daianePhoto,
@@ -48,7 +53,8 @@ const speakerPhotoMap: Record<string, string> = {
 const logoMap: Record<string, string> = {
   "dati.png": datiLogo,
   "darede.png": daredeLogo,
-  "dotted.png": dottedLogo
+  "dotted.png": dottedLogo,
+  "dssr.png" : dssrLogo,
 
 };
 
@@ -71,6 +77,16 @@ const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
   };
 });
 
+const volunteerPhotoMap: Record<string, string> = {
+  "thiago.jpeg": thiagoVolPhoto,
+  "daniel.jpg" : danielVolPhoto
+};
+
+const resolvedVolunteers = volunteers.map((vol) => ({
+  ...vol,
+  photo: volunteerPhotoMap[vol.photo] || vol.photo,
+}));
+
 const Sul = () => (
   <RegionPage
     config={config}
@@ -78,6 +94,7 @@ const Sul = () => (
     speakers={resolvedSpeakers}
     schedule={schedule}
     sponsors={resolvedSponsors}
+    volunteers={resolvedVolunteers}
     heroImage={heroImage}
   />
 );

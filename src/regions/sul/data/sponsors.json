@@ -16,5 +16,11 @@
     "logo": "sponsor/dotted.png",
     "url": "https://www.usedotted.com/?lang=pt",
     "tier": "gold"
+  },
+  {
+    "name": "DS Summit Brasil",
+    "logo": "sponsor/dssr.png",
+    "url": "https://dssbr.com.br",
+    "tier": "support"
   }
 ]
