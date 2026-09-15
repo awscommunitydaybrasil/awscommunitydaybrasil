@@ -112,11 +112,24 @@
         "photo": "bruno.jpg",
         "title": "Sr. Specialist Solutions Architect",
         "company": "AWS",
-        "talk": "Workshop: AWS Transform Custom – Automatize suas Transformações de Código e Elimine a Dívida Técnica em Escala ",
+        "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
         "bio": "",
         "keynote": false,
         "social": {
             "linkedin": "https://www.linkedin.com/in/blopesinfo/"
         }
+    },
+     {
+        "name": "Valdeci Gomes",
+        "photo": "valdeci.jpg",
+        "title": "Sr. Cloud Application Architect",
+        "company": "AWS",
+        "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
+        "bio": "",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/valdeci/"
+        }
     }
+
 ]
