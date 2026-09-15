@@ -22,6 +22,7 @@ import agataPhoto from "./assets/speakers/agata.png";
 import robertoPhoto from "./assets/speakers/roberto.jpeg";
 import pimentaPhoto from "./assets/speakers/pimenta.jpeg";
 import brunoPhoto from "./assets/speakers/bruno.jpg";
+import valdeciPhoto from "./assets/speakers/valdeci.jpeg";
 
 import datiLogo from "./assets/sponsor/dati.png";
 import daredeLogo from "./assets/sponsor/darede.png";
@@ -29,7 +30,8 @@ import dottedLogo from "./assets/sponsor/dotted.png";
 import dssrLogo from "./assets/sponsor/dssr.png";
 
 import thiagoVolPhoto from "./assets/volunteers/thiago.jpeg";
-import danielVolPhoto from "./assets/volunteers/daniel.jpg"
+import danielVolPhoto from "./assets/volunteers/daniel.jpg";
+import elielsonVolPhoto from "./assets/volunteers/elielson.jpg";
 
 const photoMap: Record<string, string> = {
   "daiane.jpg": daianePhoto,
@@ -47,7 +49,8 @@ const speakerPhotoMap: Record<string, string> = {
   "agata.png": agataPhoto,
   "roberto.jpeg": robertoPhoto,
   "pimenta.jpeg" : pimentaPhoto,
-  "bruno.jpg" : brunoPhoto
+  "bruno.jpg" : brunoPhoto,
+  "valdeci.jpg" : valdeciPhoto
 };
 
 const logoMap: Record<string, string> = {
@@ -79,7 +82,8 @@ const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
 
 const volunteerPhotoMap: Record<string, string> = {
   "thiago.jpeg": thiagoVolPhoto,
-  "daniel.jpg" : danielVolPhoto
+  "daniel.jpg" : danielVolPhoto,
+  "elielson.jpg" : elielsonVolPhoto
 };
 
 const resolvedVolunteers = volunteers.map((vol) => ({
