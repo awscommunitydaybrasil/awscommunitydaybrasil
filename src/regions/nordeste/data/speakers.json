@@ -1,17 +1,5 @@
 [
   {
-    "name": "Amaury Borges",
-    "photo": "amaury-borges.jpg",
-    "title": "Cloud Security Engineer | Instructor",
-    "company": "CI&T | FIAP | Alura",
-    "talk": "AI-Assisted Cloud Security on AWS",
-    "bio": "",
-    "keynote": false,
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/amaurybsouza/"
-    }
-  },
-  {
     "name": "Izabela Guimarães",
     "photo": "izabela-guimaraes.jpg",
     "title": "Estudante de Engenharia de Software",
