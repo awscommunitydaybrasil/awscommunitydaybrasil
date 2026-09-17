@@ -22,5 +22,11 @@
     "logo": "sponsor/dssr.png",
     "url": "https://dssbr.com.br",
     "tier": "support"
+  },
+  {
+    "name": "Party Community",
+    "logo": "sponsor/party.png",
+    "url": "https://www.linkedin.com/company/party-community/home/?viewAsMember=true",
+    "tier": "support"
   }
 ]
