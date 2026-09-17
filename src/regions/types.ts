@@ -38,6 +38,11 @@ export interface RegionConfig {
 export interface Organizer {
   name: string;
   photo: string;
+  role?: string;
+  subtitle?: string;
+  photoScale?: string;
+  photoPosition?: string;
+  photoTranslate?: string;
   social?: {
     linkedin?: string;
     instagram?: string;

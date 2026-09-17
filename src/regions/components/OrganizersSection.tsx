@@ -22,16 +22,36 @@ const OrganizersSection = ({ organizers }: OrganizersSectionProps) => {
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">Quem faz acontecer</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {organizers.map((org, i) => (
-            <div
-              key={org.name}
-              className={`group text-center transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: `${i * 120}ms` }}
-            >
-              <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-[3px] border-primary transition-transform duration-500 group-hover:scale-110" style={{ boxShadow: "var(--shadow-glow)" }}>
-                <img src={org.photo} alt={org.name} className="w-full h-full object-cover" />
-              </div>
+          {organizers.map((org, i) => {
+            const cleanPosition = org.photoPosition?.startsWith("object-")
+              ? org.photoPosition.replace("object-", "")
+              : org.photoPosition;
+
+            return (
+              <div
+                key={org.name}
+                className={`group text-center transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                style={{ transitionDelay: `${i * 120}ms` }}
+              >
+                <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-[3px] border-primary transition-transform duration-500 group-hover:scale-110" style={{ boxShadow: "var(--shadow-glow)" }}>
+                  <img
+                    src={org.photo}
+                    alt={org.name}
+                    className="w-full h-full object-cover transition-transform duration-300"
+                    style={{
+                      transform: org.photoScale ? `scale(${org.photoScale})` : undefined,
+                      transformOrigin: cleanPosition || undefined,
+                      translate: org.photoTranslate || undefined,
+                      objectPosition: cleanPosition || undefined,
+                    }}
+                  />
+                </div>
               <p className="mt-3 text-sm font-bold font-display text-foreground">{org.name}</p>
+              {(org.subtitle || org.role) && (
+                <p className="text-[11px] font-normal font-display text-muted-foreground mt-0.5">
+                  {org.subtitle || org.role}
+                </p>
+              )}
               <div className="flex items-center justify-center gap-3 mt-2">
                 {getLinkedin(org) && (
                   <a href={getLinkedin(org)} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`LinkedIn de ${org.name}`}>
@@ -56,7 +76,8 @@ const OrganizersSection = ({ organizers }: OrganizersSectionProps) => {
                 )}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
