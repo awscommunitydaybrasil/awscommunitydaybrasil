@@ -18,6 +18,22 @@
     "photoPosition": "45% 60%"
   },
   {
+    "name": "Flávio Pimenta",
+    "subtitle": "AWS Community Builder",
+    "photo": "flavio-pimenta.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flap"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "subtitle": "AWS Hero",
+    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-05.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
+    }
+  },
+    {
     "name": "Flavio Fox",
     "subtitle": "AWS CoreTeam Member",
     "photo": "flavio-fox.jpg",
@@ -36,22 +52,6 @@
     "photoPosition": "60% 0%"
   },
   {
-    "name": "Flávio Pimenta",
-    "subtitle": "AWS Community Builder",
-    "photo": "flavio-pimenta.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/flap"
-    }
-  },
-  {
-    "name": "Marcelo Paiva",
-    "subtitle": "AWS Hero",
-    "photo": "https://www.awscommunityday.com.br/hist/2025-dec/assets/img/team/team-05.jpg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
-    }
-  },
-  {
     "name": "Rodrigo Gandarela",
     "subtitle": "AWS CoreTeam Member",
     "photo": "rodrigo-gandarela.jpg",
@@ -63,7 +63,7 @@
   },
   {
     "name": "Davi Brito",
-    "subtitle": "AWS CoreTeam Member",
+    "subtitle": "AWS SBG Member",
     "photo": "davi-brito-chagas.jpg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/davi-brito-chagas-3503b9351/"
