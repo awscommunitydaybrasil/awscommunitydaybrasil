@@ -1,1 +1,170 @@
-[]
+[
+  {
+    "name": "Izabela Guimarães",
+    "photo": "izabela-guimaraes.jpg",
+    "title": "Estudante de Engenharia de Software",
+    "company": "Unifacs",
+    "talk": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/izabela-guimar%C3%A3es-nascimento/"
+    }
+  },
+  {
+    "name": "Janaina Ferreira",
+    "photo": "janaina-ferreira.jpg",
+    "title": "AWS SBGL & SBCL | Estudante de Ciência da Computação",
+    "company": "AWS | Unifacs",
+    "talk": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/janaina-ferreira-monteiro-28105926b/"
+    }
+  },
+  {
+    "name": "Leonardo Cardia",
+    "photo": "leonardo-cardia.jpg",
+    "title": "Professor",
+    "company": "Universidade SENAI CIMATEC",
+    "talk": "Deploy de Machine Learning na AWS: do Notebook a uma API em Produção",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/leonardocardia/"
+    }
+  },
+  {
+    "name": "Leonardo Magalhães",
+    "photo": "leonardo-magalhaes.jpg",
+    "title": "Bolsista na área de Big Data e Inteligência Artificial",
+    "company": "SENAI CIMATEC",
+    "talk": "Do Zero ao Deploy: Construindo um Pipeline Completo de Visão Computacional na AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/leonardo-magalh%C3%A3es-3b6bba1a9/"
+    }
+  },
+  {
+    "name": "Luiz Gustavo",
+    "photo": "luiz-gustavo.jpg",
+    "title": "Solutions Architect | 12x AWS Certified | Community Builder for Serveless",
+    "company": "Minsait",
+    "talk": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/gugananuvem"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "marcelo-paiva.jpg",
+    "title": "AWS Hero",
+    "company": "AWS",
+    "talk": "Desenvolvedor Renascentista: Muito Além do Prompt",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
+    }
+  },
+  {
+    "name": "Marcelo Vinicius",
+    "photo": "marcelo-vinicius.jpg",
+    "title": "AI Engineer and Founder of Sapucaia",
+    "company": "Sapucaia",
+    "talk": "Code with AI: Como Construir um Workflow de Desenvolvimento Inteligente",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://linkedin.com/in/MaViniciusDev"
+    }
+  },
+  {
+    "name": "Priscila Araujo",
+    "photo": "priscila-araujo.jpg",
+    "title": "AI Consultant & Specialist",
+    "company": "CAPCO",
+    "talk": "Engenharia de IA a Longo Prazo: Descomplicando MLops e Finops na AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/priscila-c-ara%C3%BAjo/"
+    }
+  },
+  {
+    "name": "Rafael Gomes",
+    "photo": "rafael-gomes.jpg",
+    "title": "Senior Platform Engineer",
+    "company": "DNSFilter",
+    "talk": "Melhores práticas para gerenciar recursos da AWS com terraform",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/gomex/"
+    }
+  },
+  {
+    "name": "Rafael Guerra",
+    "photo": "rafael-guerra.jpg",
+    "title": "Bolsista em Inteligência Artificial aplicada a saúde",
+    "company": "SENAI CIMATEC",
+    "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rafael-guerra-de-oliveira/"
+    }
+  },
+  {
+    "name": "Rafael Levi",
+    "photo": "rafael-levi.jpg",
+    "title": "Msc. Prof.",
+    "company": "",
+    "talk": "Infraestrutura para sistemas distribuídos modernos, uma abordagem pedagógica",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rafaellevissa/"
+    }
+  },
+  {
+    "name": "Rian Dultra",
+    "photo": "rian-dultra.jpg",
+    "title": "Bolsista na área de Big Data e Inteligência Artificial",
+    "company": "SENAI CIMATEC",
+    "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rian-albert-dos-santos-dultra-898318288/"
+    }
+  },
+  {
+    "name": "Thamiris Adriano",
+    "photo": "thamiris-adriano.jpg",
+    "title": "Coordenadora de pós graduação - Professora de IA em Pós",
+    "company": "FIAP",
+    "talk": "Observabilidade para aplicações web: o que monitorar além do “está no ar?”",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/thamiadriano/"
+    }
+  },
+  {
+    "name": "Victor Mendes",
+    "photo": "victor-mendes.jpg",
+    "title": "Estagiário em Análise de Dados",
+    "company": "Neoenergia Coelba",
+    "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/victormfb/"
+    }
+  }
+]

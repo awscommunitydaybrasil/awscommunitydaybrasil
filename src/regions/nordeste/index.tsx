@@ -4,8 +4,9 @@ import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
 import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
+import volunteers from "./data/volunteers.json";
 import heroImage from "./assets/postcard-salvador.png";
-import type { Sponsor } from "@/regions/types";
+import type { Sponsor, Speaker, Organizer } from "@/regions/types";
 
 import caioPhoto from "./assets/caio-nunes.jpg";
 import danielPhoto from "./assets/daniel-carneiro.jpg";
@@ -45,6 +46,46 @@ const logoMap: Record<string, string> = Object.fromEntries(
   ]),
 );
 
+const speakerPhotoModules = import.meta.glob(
+  "./assets/speakers/*.{png,jpg,jpeg,svg,webp,avif}",
+  {
+    eager: true,
+    import: "default",
+  },
+) as Record<string, string>;
+
+const speakerPhotoMap: Record<string, string> = Object.fromEntries(
+  Object.entries(speakerPhotoModules).map(([path, url]) => [
+    path.split("/").pop() ?? path,
+    url,
+  ]),
+);
+
+const resolvedSpeakers: Speaker[] = (speakers as Speaker[]).map((speaker) => ({
+  ...speaker,
+  photo: speakerPhotoMap[speaker.photo] || speaker.photo,
+}));
+
+const volunteerPhotoModules = import.meta.glob(
+  "./assets/volunteers/*.{png,jpg,jpeg,svg,webp,avif}",
+  {
+    eager: true,
+    import: "default",
+  },
+) as Record<string, string>;
+
+const volunteerPhotoMap: Record<string, string> = Object.fromEntries(
+  Object.entries(volunteerPhotoModules).map(([path, url]) => [
+    path.split("/").pop() ?? path,
+    url,
+  ]),
+);
+
+const resolvedVolunteers: Organizer[] = (volunteers as Organizer[]).map((vol) => ({
+  ...vol,
+  photo: volunteerPhotoMap[vol.photo] || vol.photo,
+}));
+
 const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
   const filename = sponsor.logo.split("/").pop() || "";
   return {
@@ -58,9 +99,10 @@ const Nordeste = () => (
   <RegionPage
     config={config}
     organizers={resolvedOrganizers}
-    speakers={speakers}
+    speakers={resolvedSpeakers}
     schedule={schedule}
     sponsors={resolvedSponsors}
+    volunteers={resolvedVolunteers}
     heroImage={heroImage}
   />
 );
