@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Thiago Bardelli",
+    "photo": "thiago.jpeg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/thiagobardelli/"
+    }
+  },
+  {
+    "name": "Daniel Villegas",
+    "photo": "daniel.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/vdaniel07/"
+    }
+  },
+  {
+    "name": "Elielson Oliveira",
+    "photo": "elielson.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/elielson-oliveira/"
+    }
+  }
+]

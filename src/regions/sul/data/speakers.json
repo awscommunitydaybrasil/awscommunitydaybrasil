@@ -66,7 +66,7 @@
         "company": "CloudFaster",
         "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
         "bio": "Profissional com 14 anos de mercado, Goiano, com atuação em diversos projetos de migração para AWS, projetos de modernização, otimização de custos, tendo trabalhado diretamente na AWS por 4 anos e hoje conduzindo treinamentos e projetos pela CloudFaster além de criar conteúdo para comunidade e participar ativamente na liderança do AWS User Group Goiânia.",
-        "keynote": false,
+        "keynote": true,
         "social": {
             "linkedin": "https://www.linkedin.com/in/danrezende/"
         }
@@ -90,9 +90,46 @@
         "company": "AWS",
         "talk": "Open Source como Base para a Era da IA: da Infraestrutura Essencial às Aplicações Agênticas",
         "bio": "Na AWS, atua em transformações estratégicas de bancos de dados e aplicações de IA/ML para grandes clientes enterprise, com foco em setores como viagens, saúde e high tech, entregando arquiteturas de dados escaláveis que aceleram a adoção de serviços AWS. Seu trabalho une profundidade técnica e influência executiva, promovendo decisões orientadas a dados e relações de confiança com clientes.\n\nContribuiu para o crescimento das indústrias de Telco e Mídia com aplicações distribuídas e bancos NoSQL de throughput em escala global e baixa latência, usando Amazon ElastiCache e MemoryDB. É defensor do Valkey e da democratização das tecnologias de IA/ML.",
-        "keynote": false,
+        "keynote": true,
         "social": {
             "linkedin": "https://www.linkedin.com/in/robertolunarojas"
         }
+    },
+     {
+        "name": "Flávio Pimenta",
+        "photo": "pimenta.jpeg",
+        "title": "Staff Engineer",
+        "company": "Select Soluções",
+        "talk": "Workshop: Desenvolvimento avançado com Kiro CLI",
+        "bio": "Na Select Soluções, é Staff Engineer, com cerca de 25 anos de carreira, mais de 14 anos atuando com cloud AWS, tenho 4 certificações destacando as 2 do tipo Professional. Como Arquiteto de Soluções, transformar desafios de negócio em soluções técnicas eficientes, seguras e com o custo aderente ao uso é o meu foco. ",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/flaap/"
+        }
+    },
+    {
+        "name": "Bruno Lopes",
+        "photo": "bruno.jpg",
+        "title": "Sr. Specialist Solutions Architect",
+        "company": "AWS",
+        "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
+        "bio": "",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/blopesinfo/"
+        }
+    },
+     {
+        "name": "Valdeci Gomes",
+        "photo": "valdeci.jpg",
+        "title": "Sr. Cloud Application Architect",
+        "company": "AWS",
+        "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
+        "bio": "",
+        "keynote": false,
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/valdeci/"
+        }
     }
+
 ]
