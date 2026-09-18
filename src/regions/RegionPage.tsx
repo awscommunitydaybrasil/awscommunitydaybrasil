@@ -118,7 +118,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
         <CommunitiesSection communities={config.communities || config.pastEvent?.communities || []} />
       )}
       <OrganizersSection organizers={organizers} />
-      {volunteers && volunteers.length > 0 && <VolunteersSection volunteers={volunteers} />}
+      {volunteers && <VolunteersSection volunteers={volunteers} />}
       <RegionFooter config={config} />
     </div>
   );
