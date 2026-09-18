@@ -28,6 +28,7 @@ import datiLogo from "./assets/sponsor/dati.png";
 import daredeLogo from "./assets/sponsor/darede.png";
 import dottedLogo from "./assets/sponsor/dotted.png";
 import dssrLogo from "./assets/sponsor/dssr.png";
+import partyLogo from "./assets/sponsor/party.png";
 
 import thiagoVolPhoto from "./assets/volunteers/thiago.jpeg";
 import danielVolPhoto from "./assets/volunteers/daniel.jpg";
@@ -58,6 +59,7 @@ const logoMap: Record<string, string> = {
   "darede.png": daredeLogo,
   "dotted.png": dottedLogo,
   "dssr.png" : dssrLogo,
+  "party.png" : partyLogo,
 
 };
 
