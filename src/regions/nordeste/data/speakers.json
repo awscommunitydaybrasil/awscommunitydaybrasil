@@ -1,5 +1,17 @@
 [
   {
+    "name": "Amaury Borges",
+    "photo": "amaury-borges.jpg",
+    "title": "Senior Cloud Security Engineer | AWS Community Builder",
+    "company": "FIAP",
+    "talk": "AI-Assisted Cloud Security on AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/amaurybsouza/"
+    }
+  },
+  {
     "name": "Izabela Guimarães",
     "photo": "izabela-guimaraes.jpg",
     "title": "Estudante de Engenharia de Software",
@@ -15,12 +27,24 @@
     "name": "Janaina Ferreira",
     "photo": "janaina-ferreira.jpg",
     "title": "AWS SBGL & SBCL | Estudante de Ciência da Computação",
-    "company": "AWS | Unifacs",
+    "company": "Unifacs",
     "talk": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
     "bio": "",
     "keynote": false,
     "social": {
       "linkedin": "https://www.linkedin.com/in/janaina-ferreira-monteiro-28105926b/"
+    }
+  },
+  {
+    "name": "João Santana",
+    "photo": "joao-santana.jpg",
+    "title": "CEO & Co-founder | Especialista em Open Finance",
+    "company": "DataInLabs",
+    "talk": "Open Finance por dentro: da autorização do cliente à arquitetura na nuvem",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/jloliveiras"
     }
   },
   {
@@ -38,7 +62,7 @@
   {
     "name": "Leonardo Magalhães",
     "photo": "leonardo-magalhaes.jpg",
-    "title": "Bolsista na área de Big Data e Inteligência Artificial",
+    "title": "Bolsista de Big Data e IA",
     "company": "SENAI CIMATEC",
     "talk": "Do Zero ao Deploy: Construindo um Pipeline Completo de Visão Computacional na AWS",
     "bio": "",
@@ -50,7 +74,7 @@
   {
     "name": "Luiz Gustavo",
     "photo": "luiz-gustavo.jpg",
-    "title": "Solutions Architect | 12x AWS Certified | Community Builder for Serveless",
+    "title": "Solutions Architect | 12x AWS Certified",
     "company": "Minsait",
     "talk": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
     "bio": "",
@@ -62,8 +86,8 @@
   {
     "name": "Marcelo Paiva",
     "photo": "marcelo-paiva.jpg",
-    "title": "AWS Hero",
-    "company": "AWS",
+    "title": "CTO | AWS Hero",
+    "company": "Softprime Soluções em Sistemas",
     "talk": "Desenvolvedor Renascentista: Muito Além do Prompt",
     "bio": "",
     "keynote": false,
@@ -110,7 +134,7 @@
   {
     "name": "Rafael Guerra",
     "photo": "rafael-guerra.jpg",
-    "title": "Bolsista em Inteligência Artificial aplicada a saúde",
+    "title": "Bolsista de IA Aplicada à Saúde",
     "company": "SENAI CIMATEC",
     "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
     "bio": "",
@@ -134,7 +158,7 @@
   {
     "name": "Rian Dultra",
     "photo": "rian-dultra.jpg",
-    "title": "Bolsista na área de Big Data e Inteligência Artificial",
+    "title": "Bolsista de Big Data e IA",
     "company": "SENAI CIMATEC",
     "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
     "bio": "",
@@ -146,7 +170,7 @@
   {
     "name": "Thamiris Adriano",
     "photo": "thamiris-adriano.jpg",
-    "title": "Coordenadora de pós graduação - Professora de IA em Pós",
+    "title": "Coordenadora de Pós-Graduação e Professora de IA",
     "company": "FIAP",
     "talk": "Observabilidade para aplicações web: o que monitorar além do “está no ar?”",
     "bio": "",
