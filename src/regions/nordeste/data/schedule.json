@@ -1,1 +1,121 @@
-[]
+[
+  {
+    "time": "07:30 - 08:00",
+    "title": "Abertura oficial",
+    "speaker": "Organização do evento",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "08:00 - 09:00",
+    "title": "Desenvolvedor Renascentista: Muito Além do Prompt",
+    "speaker": "Marcelo Paiva",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "08:00 - 09:00",
+    "title": "Melhores práticas para gerenciar recursos da AWS com terraform",
+    "speaker": "Rafael Gomes",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "09:00 - 10:00",
+    "title": "AI-Assisted Cloud Security on AWS",
+    "speaker": "Amaury Borges",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "09:00 - 10:00",
+    "title": "Infraestrutura para sistemas distribuídos modernos, uma abordagem pedagógica",
+    "speaker": "Rafael Levi",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "10:00 - 11:00",
+    "title": "Code with AI: Como Construir um Workflow de Desenvolvimento Inteligente",
+    "speaker": "Marcelo Vinicius",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "10:00 - 11:00",
+    "title": "Do Zero ao Deploy: Construindo um Pipeline Completo de Visão Computacional na AWS",
+    "speaker": "Leonardo Magalhães",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "11:00 - 12:00",
+    "title": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
+    "speaker": "Luiz Gustavo",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "11:00 - 12:00",
+    "title": "Deploy de Machine Learning na AWS: do Notebook a uma API em Produção",
+    "speaker": "Leonardo Cardia",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "12:00 - 13:00",
+    "title": "Almoço",
+    "speaker": "",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "13:00 - 14:00",
+    "title": "Observabilidade para aplicações web: o que monitorar além do \"está no ar?\"",
+    "speaker": "Thamiris Adriano",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "13:00 - 14:00",
+    "title": "Open Finance por dentro: da autorização do cliente à arquitetura na nuvem",
+    "speaker": "João Santana",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "14:00 - 15:00",
+    "title": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
+    "speaker": "Rafael Guerra, Victor Mendes, Rian Dultra",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "14:00 - 15:00",
+    "title": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
+    "speaker": "Izabela Guimarães, Janaina Ferreira",
+    "track": "Hands-on",
+    "level": ""
+  },
+  {
+    "time": "15:00 - 16:00",
+    "title": "Engenharia de IA a Longo Prazo: Descomplicando MLops e Finops na AWS",
+    "speaker": "Priscila Araujo",
+    "track": "Palco Principal",
+    "level": ""
+  },
+  {
+    "time": "16:00 - 16:20",
+    "title": "Encerramento + Sorteio",
+    "speaker": "Organização do evento",
+    "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "16:20 - 17:00",
+    "title": "Happy Hour + Som ao vivo",
+    "speaker": "",
+    "track": "Geral",
+    "level": ""
+  }
+]
