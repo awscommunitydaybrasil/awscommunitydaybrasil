@@ -8,6 +8,11 @@ const levelColors: Record<string, string> = {
   Avançado: "bg-red-500/20 text-red-400",
 };
 
+const trackColors: Record<string, string> = {
+  "Hands-on": "bg-red-500/15 text-red-400",
+  Geral: "bg-accent/10 text-accent",
+};
+
 interface ScheduleSectionProps {
   schedule: ScheduleItem[];
   hasSpeakers: boolean;
@@ -63,7 +68,7 @@ const ScheduleSection = ({ schedule, hasSpeakers }: ScheduleSectionProps) => {
                   {item.speaker && <p className="text-sm text-muted-foreground">{item.speaker}</p>}
                   <div className="flex flex-wrap gap-2 mt-2">
                     {item.track && item.track !== "Geral" && (
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">{item.track}</span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${trackColors[item.track] ?? "bg-primary/10 text-primary"}`}>{item.track}</span>
                     )}
                     {item.track === "Geral" && (
                       <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">{item.track}</span>
