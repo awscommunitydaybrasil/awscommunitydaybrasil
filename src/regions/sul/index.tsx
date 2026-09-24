@@ -34,6 +34,8 @@ import thiagoVolPhoto from "./assets/volunteers/thiago.jpeg";
 import danielVolPhoto from "./assets/volunteers/daniel.jpg";
 import elielsonVolPhoto from "./assets/volunteers/elielson.jpg";
 
+import eventPhoto from "./assets/eventPhoto.jpg";
+
 const photoMap: Record<string, string> = {
   "daiane.jpg": daianePhoto,
   "leandro.jpg": leandroPhoto,
@@ -102,6 +104,7 @@ const Sul = () => (
     sponsors={resolvedSponsors}
     volunteers={resolvedVolunteers}
     heroImage={heroImage}
+    eventPhoto={eventPhoto}
   />
 );
 
