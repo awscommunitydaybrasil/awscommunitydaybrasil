@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "name": "Arthur Gabriel",
+    "photo": "arthur-gabriel.jpg"
+  },
+  {
+    "name": "Caio Santos",
+    "photo": "caio-santos.png"
+  },
+  {
+    "name": "Eder Natan",
+    "photo": "eder-natan.png"
+  },
+  {
+    "name": "Edwu Morais",
+    "photo": "edwu-morais.jpg"
+  },
+  {
+    "name": "João Pedro",
+    "photo": "joao-pedro.jpg"
+  },
+  {
+    "name": "Julia Tizuey",
+    "photo": "julia-tizuey.jpg"
+  },
+  {
+    "name": "Lilian Gobi",
+    "photo": "lilian-gobi.jpg"
+  },
+  {
+    "name": "Lucas Mercês",
+    "photo": "lucas-merces.png"
+  },
+  {
+    "name": "Lucca Badaró",
+    "photo": "lucca-badaro.png"
+  },
+  {
+    "name": "Mariana Barreto",
+    "photo": "mariana-barreto.jpg"
+  },
+  {
+    "name": "Mateus Pauperio",
+    "photo": "mateus-pauperio.png"
+  },
+  {
+    "name": "Pedro Henrique",
+    "photo": "pedro-henrique.png"
+  },
+  {
+    "name": "Raphael Teixeira",
+    "photo": "raphael-teixeira.png"
+  },
+  {
+    "name": "Rodrigo Haum",
+    "photo": "rodrigo-haum.jpg"
+  }
+]

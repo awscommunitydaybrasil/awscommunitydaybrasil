@@ -13,6 +13,12 @@
     "tier": "platinum"
   },
   {
+    "name": "Darede",
+    "logo": "darede.png",
+    "url": "https://darede.com.br/",
+    "tier": "platinum"
+  },
+  {
     "name": "Universidade SENAI CIMATEC",
     "logo": "senai-cimatec.png",
     "url": "https://senaicimatec.com.br/",
@@ -38,6 +44,18 @@
     "url": "https://www.instagram.com/infojrufba/",
     "tier": "partner",
     "logoSize": "1.3"
+  },
+  {
+    "name": "Nexupp",
+    "logo": "nexupp.png",
+    "url": "https://www.instagram.com/nex.upp/",
+    "tier": "partner",
+    "logoSize": "1.3"
+  },
+  {
+    "name": "Salutar",
+    "logo": "salutar.png",
+    "tier": "partner",
+    "logoSize": "1.3"
   }
 ]
-

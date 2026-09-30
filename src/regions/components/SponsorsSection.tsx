@@ -46,22 +46,33 @@ const SponsorsSection = ({ sponsors }: SponsorsSectionProps) => {
                     {tc.label}
                   </h3>
                   <div className="flex flex-wrap justify-center gap-4">
-                    {tierSponsors.map((sponsor) => (
-                      <a
-                        key={sponsor.name}
-                        href={sponsor.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`rounded-lg border border-border bg-white p-5 flex items-center justify-center hover:border-primary/50 transition-all ${tc.cardClass} ${sponsor.logoSize ? "overflow-hidden" : ""}`}
-                      >
+                    {tierSponsors.map((sponsor) => {
+                      const cardClasses = `rounded-lg border border-border bg-white p-5 flex items-center justify-center transition-all ${tc.cardClass} ${sponsor.logoSize ? "overflow-hidden" : ""} ${sponsor.url ? "hover:border-primary/50 cursor-pointer" : "cursor-default"}`;
+                      const image = (
                         <img
                           src={sponsor.logo}
                           alt={sponsor.name}
                           className={`${tc.logoSize} object-contain`}
                           style={sponsor.logoSize ? { transform: `scale(${sponsor.logoSize})` } : undefined}
                         />
-                      </a>
-                    ))}
+                      );
+
+                      return sponsor.url ? (
+                        <a
+                          key={sponsor.name}
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cardClasses}
+                        >
+                          {image}
+                        </a>
+                      ) : (
+                        <div key={sponsor.name} className={cardClasses}>
+                          {image}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               );
