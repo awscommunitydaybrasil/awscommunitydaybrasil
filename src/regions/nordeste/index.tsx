@@ -81,10 +81,12 @@ const volunteerPhotoMap: Record<string, string> = Object.fromEntries(
   ]),
 );
 
-const resolvedVolunteers: Organizer[] = (volunteers as Organizer[]).map((vol) => ({
-  ...vol,
-  photo: volunteerPhotoMap[vol.photo] || vol.photo,
-}));
+const resolvedVolunteers: Organizer[] = (volunteers as Organizer[])
+  .map((vol) => ({
+    ...vol,
+    photo: volunteerPhotoMap[vol.photo] || vol.photo,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name, "pt-BR"));
 
 const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
   const filename = sponsor.logo.split("/").pop() || "";
