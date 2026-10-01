@@ -47,7 +47,7 @@ const PhotoGalleryCard = ({ photosUrl, photoImage }: PhotoGalleryCardProps) => {
               📸 Veja as fotos do evento
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              Reviva os melhores momentos do AWS Community Day Centro-Oeste 2026. Palestras, networking, comunidade e muito mais!
+              Reviva os melhores momentos do AWS Community Day 2026. Palestras, networking, comunidade e muito mais!
             </p>
             <span className="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all duration-300">
               Abrir galeria

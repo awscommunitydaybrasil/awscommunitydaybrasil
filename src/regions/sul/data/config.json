@@ -28,5 +28,40 @@
   "contact": {
     "email": "contato@awscommunityday.com.br",
     "website": "https://www.awscommunityday.com.br"
+  },
+  "pastEvent": {
+    "photosUrl": "https://drive.google.com/drive/folders/1MAFc5i5q1UYbIHaDrmBtcRm0_k2NMze9?usp=sharing",
+    "communities": [
+      {
+        "name": "AWS User Group Blumenau",
+        "url": "https://www.instagram.com/awsusergroup/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Canoas",
+        "url": "https://www.instagram.com/aws_usergroup_canoas/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Criciúma",
+        "url": "https://www.instagram.com/criciumaops/",
+        "icon": "instagram"
+      },
+       {
+        "name": "AWS User Group Curitiba",
+        "url": "https://www.instagram.com/awsugcwb/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Florianópolis",
+        "url": "https://www.instagram.com/awsugfln/",
+        "icon": "instagram"
+      },
+      {
+        "name": "AWS User Group Porto Alegre",
+        "url": "https://www.instagram.com/awsusergrouprs/",
+        "icon": "instagram"
+      }
+    ]
   }
 }
