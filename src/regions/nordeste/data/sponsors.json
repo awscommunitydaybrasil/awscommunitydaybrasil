@@ -57,5 +57,11 @@
     "logo": "salutar.png",
     "tier": "partner",
     "logoSize": "1.3"
+  },
+  {
+    "name": "Casa do Código",
+    "logo": "casa-do-codigo.png",
+    "tier": "partner",
+    "logoSize": "1.3"
   }
 ]
