@@ -12,6 +12,18 @@
     }
   },
   {
+    "name": "Flávio Pimenta",
+    "photo": "flavio-pimenta.jpg",
+    "title": "Staff Engineer",
+    "company": "Select Soluções",
+    "talk": "Kiro Workflow Hands-On: Agentes Especializados que Trabalham por Você",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaap/"
+    }
+  },
+  {
     "name": "Izabela Guimarães",
     "photo": "izabela-guimaraes.jpg",
     "title": "Estudante de Engenharia de Software",
@@ -38,7 +50,7 @@
   {
     "name": "João Santana",
     "photo": "joao-santana.jpg",
-    "title": "CEO & Co-founder | Especialista em Open Finance",
+    "title": "CTO & Co-founder | Especialista em Open Finance",
     "company": "DataInLabs",
     "talk": "Open Finance por dentro: da autorização do cliente à arquitetura na nuvem",
     "bio": "",
@@ -88,9 +100,9 @@
     "photo": "marcelo-paiva.jpg",
     "title": "CTO | AWS Hero",
     "company": "Softprime Soluções em Sistemas",
-    "talk": "Desenvolvedor Renascentista: Muito Além do Prompt",
+    "talk": "Desenvolvedor Renascentista: KIRO - Muito Além do Prompt",
     "bio": "",
-    "keynote": false,
+    "keynote": true,
     "social": {
       "linkedin": "https://www.linkedin.com/in/marcelopaiva/"
     }

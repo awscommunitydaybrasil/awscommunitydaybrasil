@@ -63,7 +63,7 @@ const speakerPhotoMap: Record<string, string> = Object.fromEntries(
 
 const resolvedSpeakers: Speaker[] = (speakers as Speaker[]).map((speaker) => ({
   ...speaker,
-  photo: speakerPhotoMap[speaker.photo] || speaker.photo,
+  photo: speakerPhotoMap[speaker.photo] || photoMap[speaker.photo] || speaker.photo,
 }));
 
 const volunteerPhotoModules = import.meta.glob(

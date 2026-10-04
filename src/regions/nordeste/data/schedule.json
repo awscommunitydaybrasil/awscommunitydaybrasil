@@ -8,7 +8,7 @@
   },
   {
     "time": "08:00 - 09:00",
-    "title": "Desenvolvedor Renascentista: Muito Além do Prompt",
+    "title": "Keynote - Desenvolvedor Renascentista: KIRO - Muito Além do Prompt",
     "speaker": "Marcelo Paiva",
     "track": "Palco Principal",
     "level": ""
@@ -17,7 +17,7 @@
     "time": "08:00 - 09:00",
     "title": "Melhores práticas para gerenciar recursos da AWS com terraform",
     "speaker": "Rafael Gomes",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -31,7 +31,7 @@
     "time": "09:00 - 10:00",
     "title": "Infraestrutura para sistemas distribuídos modernos, uma abordagem pedagógica",
     "speaker": "Rafael Levi",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -45,7 +45,7 @@
     "time": "10:00 - 11:00",
     "title": "Do Zero ao Deploy: Construindo um Pipeline Completo de Visão Computacional na AWS",
     "speaker": "Leonardo Magalhães",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -59,7 +59,7 @@
     "time": "11:00 - 12:00",
     "title": "Deploy de Machine Learning na AWS: do Notebook a uma API em Produção",
     "speaker": "Leonardo Cardia",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -67,6 +67,13 @@
     "title": "Almoço",
     "speaker": "",
     "track": "Geral",
+    "level": ""
+  },
+  {
+    "time": "12:30 - 13:00",
+    "title": "Kiro Workflow Hands-On: Agentes Especializados que Trabalham por Você",
+    "speaker": "Flávio Pimenta",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -80,7 +87,7 @@
     "time": "13:00 - 14:00",
     "title": "Open Finance por dentro: da autorização do cliente à arquitetura na nuvem",
     "speaker": "João Santana",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
@@ -94,7 +101,7 @@
     "time": "14:00 - 15:00",
     "title": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
     "speaker": "Izabela Guimarães, Janaina Ferreira",
-    "track": "Hands-on",
+    "track": "Workshop",
     "level": ""
   },
   {
