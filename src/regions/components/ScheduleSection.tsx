@@ -10,6 +10,7 @@ const levelColors: Record<string, string> = {
 
 const trackColors: Record<string, string> = {
   "Hands-on": "bg-red-500/15 text-red-400",
+  Workshop: "bg-red-500/15 text-red-400",
   Geral: "bg-accent/10 text-accent",
 };
 
