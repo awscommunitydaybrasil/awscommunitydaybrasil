@@ -78,5 +78,19 @@
     "url": "https://www.instagram.com/garotas4.0stem/",
     "tier": "partner",
     "logoSize": "1.3"
+  },
+  {
+    "name": "LIAO",
+    "logo": "liao.png",
+    "url": "https://www.instagram.com/liaoufba/",
+    "tier": "partner",
+    "logoSize": "1.3"
+  },
+  {
+    "name": "ATC Falcons",
+    "logo": "falcons.png",
+    "url": "https://www.instagram.com/atcfalcons/",
+    "tier": "partner",
+    "logoSize": "1.3"
   }
 ]
