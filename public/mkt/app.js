@@ -117,6 +117,10 @@ async function selectTalk(index) {
 async function selectEdition(slug) {
   state.region = regionBySlug(slug);
   if (!state.region) return;
+  // Load this edition's postcard background (fallback to Salvador postcard).
+  state.postcardImg = await loadImage(
+    state.region.postcard || "./postcard-salvador.png"
+  );
   populateTalks();
   els.talk.value = "0";
   await selectTalk(0);
@@ -141,11 +145,9 @@ async function init() {
     els.edition.appendChild(opt);
   }
 
-  // Preload brand assets.
-  [state.logoImg, state.postcardImg] = await Promise.all([
-    loadImage("./logo-community-day.png"),
-    loadImage("./postcard-salvador.png"),
-  ]);
+  // Preload brand logo. The postcard background is per-edition and loaded
+  // when an edition is selected (with the Salvador postcard as fallback).
+  state.logoImg = await loadImage("./logo-community-day.png");
 
   // Ensure webfonts are ready before the first draw.
   if (document.fonts && document.fonts.ready) {
@@ -221,7 +223,7 @@ window.__renderCardToDataURL = async function (opts) {
 
   const [logoImg, postcardImg, photoImg] = await Promise.all([
     state.logoImg ? Promise.resolve(state.logoImg) : loadImage("./logo-community-day.png"),
-    state.postcardImg ? Promise.resolve(state.postcardImg) : loadImage("./postcard-salvador.png"),
+    loadImage(region.postcard || "./postcard-salvador.png"),
     loadImage(entry.photo),
   ]);
 

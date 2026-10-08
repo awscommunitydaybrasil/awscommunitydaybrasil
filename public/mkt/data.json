@@ -7,6 +7,7 @@
       "venue": "UniProjeção - Campus I Área Especial",
       "targetDate": "2026-06-27T09:00:00-03:00",
       "eventTime": "08:30h às 17h",
+      "postcard": "./postcards/centro-oeste.png",
       "talks": [
         {
           "speakerName": "Marcelo Palladino",
@@ -143,6 +144,7 @@
       "venue": "Universidade\nSENAI CIMATEC",
       "targetDate": "2026-10-10T08:00:00-03:00",
       "eventTime": "08h as 17h",
+      "postcard": "./postcards/nordeste.png",
       "talks": [
         {
           "speakerName": "Amaury Borges",
@@ -255,6 +257,7 @@
       "venue": "Dayrell Hotel & Centro de Convenções",
       "targetDate": "2026-08-22T09:00:00-03:00",
       "eventTime": "09h às 18h",
+      "postcard": "./postcards/sudeste.png",
       "talks": [
         {
           "speakerName": "Marcelo Palladino",
@@ -385,6 +388,7 @@
       "venue": "Aldeia Estação - Av. Sete de Setembro, 2775 – Andar G6 Rebouças",
       "targetDate": "2026-09-19T09:00:00-03:00",
       "eventTime": "09h às 18h",
+      "postcard": "./postcards/sul.png",
       "talks": [
         {
           "speakerName": "Murilo Lang",

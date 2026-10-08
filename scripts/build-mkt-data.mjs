@@ -21,9 +21,20 @@ const ROOT = path.resolve(__dirname, "..");
 const SRC_REGIONS = path.join(ROOT, "src", "regions");
 const PUBLIC_MKT = path.join(ROOT, "public", "mkt");
 const PHOTOS_DIR = path.join(PUBLIC_MKT, "photos");
+const POSTCARDS_DIR = path.join(PUBLIC_MKT, "postcards");
 
 // Regions to consider (regiaomodelo is a template -> ignored).
 const REGIONS = ["centro-oeste", "nordeste", "norte", "sudeste", "sul"];
+
+// Postcard (card background) filename per region, relative to the region's
+// assets/ directory. Each edition uses its own city postcard.
+const POSTCARD_BY_REGION = {
+  "centro-oeste": "postcard-brasilia.png",
+  nordeste: "postcard-salvador.png",
+  norte: "postcard-belem.png",
+  sudeste: "postcard-bh.png",
+  sul: "postcard-curitiba.png",
+};
 
 /** Lowercase, strip accents, non-alphanumerics -> hyphen, trim hyphens. */
 function slugify(str) {
@@ -63,9 +74,10 @@ function rmrf(dir) {
 }
 
 function main() {
-  // Fresh photos directory for idempotency.
+  // Fresh photos & postcards directories for idempotency.
   rmrf(PHOTOS_DIR);
   fs.mkdirSync(PHOTOS_DIR, { recursive: true });
+  rmrf(POSTCARDS_DIR);
 
   const regions = [];
   const summary = [];
@@ -95,6 +107,19 @@ function main() {
 
     const regionPhotosDir = path.join(PHOTOS_DIR, slug);
     fs.mkdirSync(regionPhotosDir, { recursive: true });
+
+    // Copy this edition's postcard (card background) into public/mkt/postcards/.
+    let postcardRel = "";
+    const postcardFile = POSTCARD_BY_REGION[slug];
+    if (postcardFile) {
+      const postcardAbs = path.join(regionDir, "assets", postcardFile);
+      if (fs.existsSync(postcardAbs)) {
+        fs.mkdirSync(POSTCARDS_DIR, { recursive: true });
+        const destName = `${slug}.png`;
+        fs.copyFileSync(postcardAbs, path.join(POSTCARDS_DIR, destName));
+        postcardRel = `./postcards/${destName}`;
+      }
+    }
 
     const speakersAssetsDir = path.join(regionDir, "assets", "speakers");
     const talks = [];
@@ -132,6 +157,7 @@ function main() {
       venue: config.location?.venue ?? "",
       targetDate: config.targetDate ?? "",
       eventTime: config.eventTime ?? "",
+      postcard: postcardRel,
       talks,
     });
 
