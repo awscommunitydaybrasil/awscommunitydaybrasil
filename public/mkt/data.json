@@ -10,130 +10,214 @@
       "postcard": "./postcards/centro-oeste.png",
       "talks": [
         {
-          "speakerName": "Marcelo Palladino",
           "talk": "Aristóteles tinha Atenas",
-          "photo": "./photos/centro-oeste/marcelo-palladino.png",
-          "slug": "marcelo-palladino"
+          "slug": "aristoteles-tinha-atenas",
+          "speakers": [
+            {
+              "name": "Marcelo Palladino",
+              "photo": "./photos/centro-oeste/marcelo-palladino.png"
+            }
+          ]
         },
         {
-          "speakerName": "Paloma Lataliza",
           "talk": "Além do código: como o individualismo afeta ambientes de tecnologia",
-          "photo": "./photos/centro-oeste/paloma-lataliza.png",
-          "slug": "paloma-lataliza"
+          "slug": "alem-do-codigo-como-o-individualismo-afeta-ambientes-de-tecnologia",
+          "speakers": [
+            {
+              "name": "Paloma Lataliza",
+              "photo": "./photos/centro-oeste/paloma-lataliza.png"
+            }
+          ]
         },
         {
-          "speakerName": "Aldo Henrique",
           "talk": "Desenvolvendo Além do ChatGPT: Da Teoria à Produção — Agentes, Automação e LLMOps",
-          "photo": "./photos/centro-oeste/aldo-henrique.jpg",
-          "slug": "aldo-henrique"
+          "slug": "desenvolvendo-alem-do-chatgpt-da-teoria-a-producao-agentes-automacao-e-llmops",
+          "speakers": [
+            {
+              "name": "Aldo Henrique",
+              "photo": "./photos/centro-oeste/aldo-henrique.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Carlos Alberto Marangon",
           "talk": "Estratégia de Dados e GenAI",
-          "photo": "./photos/centro-oeste/carlos-marangon.png",
-          "slug": "carlos-alberto-marangon"
+          "slug": "estrategia-de-dados-e-genai",
+          "speakers": [
+            {
+              "name": "Carlos Alberto Marangon",
+              "photo": "./photos/centro-oeste/carlos-marangon.png"
+            }
+          ]
         },
         {
-          "speakerName": "Cícero Moura",
           "talk": "Agentic AI vai te custar caro! A menos que você domine FinOps na AWS",
-          "photo": "./photos/centro-oeste/cicero-moura.jpg",
-          "slug": "cicero-moura"
+          "slug": "agentic-ai-vai-te-custar-caro-a-menos-que-voce-domine-finops-na-aws",
+          "speakers": [
+            {
+              "name": "Cícero Moura",
+              "photo": "./photos/centro-oeste/cicero-moura.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Dan Rezende",
           "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
-          "photo": "./photos/centro-oeste/dan-rezende.png",
-          "slug": "dan-rezende"
+          "slug": "seguranca-na-era-do-desenvolvimento-com-ia-kiro-e-aws-security-agent-em-pratica",
+          "speakers": [
+            {
+              "name": "Dan Rezende",
+              "photo": "./photos/centro-oeste/dan-rezende.png"
+            }
+          ]
         },
         {
-          "speakerName": "Erika Nagamine",
           "talk": "Do Dado ao Produto de Dados: por que precisamos mais do que nunca de governança de dados",
-          "photo": "./photos/centro-oeste/erika-nagamine.jpg",
-          "slug": "erika-nagamine"
+          "slug": "do-dado-ao-produto-de-dados-por-que-precisamos-mais-do-que-nunca-de-governanca-de-dados",
+          "speakers": [
+            {
+              "name": "Erika Nagamine",
+              "photo": "./photos/centro-oeste/erika-nagamine.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Fellipe Mendonça",
           "talk": "Criando Pipeline de Dados com Terraform",
-          "photo": "./photos/centro-oeste/fellipe-mendonca.jpg",
-          "slug": "fellipe-mendonca"
+          "slug": "criando-pipeline-de-dados-com-terraform",
+          "speakers": [
+            {
+              "name": "Fellipe Mendonça",
+              "photo": "./photos/centro-oeste/fellipe-mendonca.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Flávio Pimenta",
           "talk": "Do git clone ao Pull Request em 30 minutos: contribuindo com open source usando Kiro",
-          "photo": "./photos/centro-oeste/flavio-pimenta.png",
-          "slug": "flavio-pimenta"
+          "slug": "do-git-clone-ao-pull-request-em-30-minutos-contribuindo-com-open-source-usando-kiro",
+          "speakers": [
+            {
+              "name": "Flávio Pimenta",
+              "photo": "./photos/centro-oeste/flavio-pimenta.png"
+            }
+          ]
         },
         {
-          "speakerName": "Leo Ciccone",
           "talk": "De pip install a Root: Como Ataques de Supply Chain Escalam para Comprometimento total de contas AWS",
-          "photo": "./photos/centro-oeste/leo-ciccone.png",
-          "slug": "leo-ciccone"
+          "slug": "de-pip-install-a-root-como-ataques-de-supply-chain-escalam-para-comprometimento-total-de-contas-aws",
+          "speakers": [
+            {
+              "name": "Leo Ciccone",
+              "photo": "./photos/centro-oeste/leo-ciccone.png"
+            }
+          ]
         },
         {
-          "speakerName": "Luiz Gustavo Ribeiro",
           "talk": "Precisa de AWS para desenvolver na AWS? Conheça o simulador livre que roda no seu laptop",
-          "photo": "./photos/centro-oeste/luiz-gustavo.jpg",
-          "slug": "luiz-gustavo-ribeiro"
+          "slug": "precisa-de-aws-para-desenvolver-na-aws-conheca-o-simulador-livre-que-roda-no-seu-laptop",
+          "speakers": [
+            {
+              "name": "Luiz Gustavo Ribeiro",
+              "photo": "./photos/centro-oeste/luiz-gustavo.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Luiz Machado",
           "talk": "Seu Agente de IA Tem AdministratorAccess. Você Sabia?",
-          "photo": "./photos/centro-oeste/luiz-machado.jpg",
-          "slug": "luiz-machado"
+          "slug": "seu-agente-de-ia-tem-administratoraccess-voce-sabia",
+          "speakers": [
+            {
+              "name": "Luiz Machado",
+              "photo": "./photos/centro-oeste/luiz-machado.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Naiara Medeiros",
           "talk": "Tech não é linha reta: comunicação, visão sistêmica e carreiras em transição",
-          "photo": "./photos/centro-oeste/naiara-medeiros.jpg",
-          "slug": "naiara-medeiros"
+          "slug": "tech-nao-e-linha-reta-comunicacao-visao-sistemica-e-carreiras-em-transicao",
+          "speakers": [
+            {
+              "name": "Naiara Medeiros",
+              "photo": "./photos/centro-oeste/naiara-medeiros.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Nina Soraya Oliveira Pires",
           "talk": "Darwin, Dopamina e Deploy: o que a neurociência do consumo ensina sobre ética no código",
-          "photo": "./photos/centro-oeste/nina-soraya.jpg",
-          "slug": "nina-soraya-oliveira-pires"
+          "slug": "darwin-dopamina-e-deploy-o-que-a-neurociencia-do-consumo-ensina-sobre-etica-no-codigo",
+          "speakers": [
+            {
+              "name": "Nina Soraya Oliveira Pires",
+              "photo": "./photos/centro-oeste/nina-soraya.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Raphael Moura",
           "talk": "Como desenvolver um sistema com IA nos dias atuais?",
-          "photo": "./photos/centro-oeste/raphael-moura.jpg",
-          "slug": "raphael-moura"
+          "slug": "como-desenvolver-um-sistema-com-ia-nos-dias-atuais",
+          "speakers": [
+            {
+              "name": "Raphael Moura",
+              "photo": "./photos/centro-oeste/raphael-moura.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Sulamita Dantas",
           "talk": "AI Agent Architect",
-          "photo": "./photos/centro-oeste/sulamita-dantas.jpg",
-          "slug": "sulamita-dantas"
+          "slug": "ai-agent-architect",
+          "speakers": [
+            {
+              "name": "Sulamita Dantas",
+              "photo": "./photos/centro-oeste/sulamita-dantas.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Thayane Rodrigues Viana",
           "talk": "Migração de VMware para a AWS com o AWS Transform usando IA agêntica",
-          "photo": "./photos/centro-oeste/thayane-rodrigues.jpg",
-          "slug": "thayane-rodrigues-viana"
+          "slug": "migracao-de-vmware-para-a-aws-com-o-aws-transform-usando-ia-agentica",
+          "speakers": [
+            {
+              "name": "Thayane Rodrigues Viana",
+              "photo": "./photos/centro-oeste/thayane-rodrigues.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Tiago Jorge",
           "talk": "AWS Lambda além do código: decisões arquiteturais que ninguém te conta",
-          "photo": "./photos/centro-oeste/tiago-jorge.png",
-          "slug": "tiago-jorge"
+          "slug": "aws-lambda-alem-do-codigo-decisoes-arquiteturais-que-ninguem-te-conta",
+          "speakers": [
+            {
+              "name": "Tiago Jorge",
+              "photo": "./photos/centro-oeste/tiago-jorge.png"
+            }
+          ]
         },
         {
-          "speakerName": "Weder Mariano Sousa",
           "talk": "Do \"Prompt Passivo\" à Autonomia Real Desmistificando o Abismo de Execução da Inteligência Artificial",
-          "photo": "./photos/centro-oeste/weder-mariano.png",
-          "slug": "weder-mariano-sousa"
+          "slug": "do-prompt-passivo-a-autonomia-real-desmistificando-o-abismo-de-execucao-da-inteligencia-artificial",
+          "speakers": [
+            {
+              "name": "Weder Mariano Sousa",
+              "photo": "./photos/centro-oeste/weder-mariano.png"
+            }
+          ]
         },
         {
-          "speakerName": "William Lino",
           "talk": "DBOps Autônomo: IA Baseada em Agentes para Manutenção de Bancos de Dados",
-          "photo": "./photos/centro-oeste/william-lino.jpg",
-          "slug": "william-lino"
+          "slug": "dbops-autonomo-ia-baseada-em-agentes-para-manutencao-de-bancos-de-dados",
+          "speakers": [
+            {
+              "name": "William Lino",
+              "photo": "./photos/centro-oeste/william-lino.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Yasmin Costa",
           "talk": "Por dentro do Mobile - Como SO, Arquitetura e Linguagens Moldam um APP",
-          "photo": "./photos/centro-oeste/yasmin-costa.jpg",
-          "slug": "yasmin-costa"
+          "slug": "por-dentro-do-mobile-como-so-arquitetura-e-linguagens-moldam-um-app",
+          "speakers": [
+            {
+              "name": "Yasmin Costa",
+              "photo": "./photos/centro-oeste/yasmin-costa.jpg"
+            }
+          ]
         }
       ]
     },
@@ -147,106 +231,156 @@
       "postcard": "./postcards/nordeste.png",
       "talks": [
         {
-          "speakerName": "Amaury Borges",
           "talk": "AI-Assisted Cloud Security on AWS",
-          "photo": "./photos/nordeste/amaury-borges.jpg",
-          "slug": "amaury-borges"
+          "slug": "ai-assisted-cloud-security-on-aws",
+          "speakers": [
+            {
+              "name": "Amaury Borges",
+              "photo": "./photos/nordeste/amaury-borges.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Flávio Pimenta",
           "talk": "Kiro Workflow Hands-On: Agentes Especializados que Trabalham por Você",
-          "photo": "./photos/nordeste/flavio-pimenta.jpg",
-          "slug": "flavio-pimenta"
+          "slug": "kiro-workflow-hands-on-agentes-especializados-que-trabalham-por-voce",
+          "speakers": [
+            {
+              "name": "Flávio Pimenta",
+              "photo": "./photos/nordeste/flavio-pimenta.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Izabela Guimarães",
           "talk": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
-          "photo": "./photos/nordeste/izabela-guimaraes.jpg",
-          "slug": "izabela-guimaraes"
+          "slug": "seu-primeiro-workflow-com-amazon-rekognition-no-free-tier",
+          "speakers": [
+            {
+              "name": "Izabela Guimarães",
+              "photo": "./photos/nordeste/izabela-guimaraes.jpg"
+            },
+            {
+              "name": "Janaina Ferreira",
+              "photo": "./photos/nordeste/janaina-ferreira.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Janaina Ferreira",
-          "talk": "Seu Primeiro Workflow com Amazon Rekognition no Free Tier",
-          "photo": "./photos/nordeste/janaina-ferreira.jpg",
-          "slug": "janaina-ferreira"
-        },
-        {
-          "speakerName": "João Santana",
           "talk": "Open Finance por dentro: da autorização do cliente à arquitetura na nuvem",
-          "photo": "./photos/nordeste/joao-santana.jpg",
-          "slug": "joao-santana"
+          "slug": "open-finance-por-dentro-da-autorizacao-do-cliente-a-arquitetura-na-nuvem",
+          "speakers": [
+            {
+              "name": "João Santana",
+              "photo": "./photos/nordeste/joao-santana.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Leonardo Cardia",
           "talk": "Deploy de Machine Learning na AWS: do Notebook a uma API em Produção",
-          "photo": "./photos/nordeste/leonardo-cardia.jpg",
-          "slug": "leonardo-cardia"
+          "slug": "deploy-de-machine-learning-na-aws-do-notebook-a-uma-api-em-producao",
+          "speakers": [
+            {
+              "name": "Leonardo Cardia",
+              "photo": "./photos/nordeste/leonardo-cardia.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Leonardo Magalhães",
           "talk": "Do Zero ao Deploy: Construindo um Pipeline Completo de Visão Computacional na AWS",
-          "photo": "./photos/nordeste/leonardo-magalhaes.jpg",
-          "slug": "leonardo-magalhaes"
+          "slug": "do-zero-ao-deploy-construindo-um-pipeline-completo-de-visao-computacional-na-aws",
+          "speakers": [
+            {
+              "name": "Leonardo Magalhães",
+              "photo": "./photos/nordeste/leonardo-magalhaes.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Luiz Gustavo",
           "talk": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
-          "photo": "./photos/nordeste/luiz-gustavo.jpg",
-          "slug": "luiz-gustavo"
+          "slug": "do-zero-a-golden-jacket-como-conquistei-12-certificacoes-aws-em-14-meses",
+          "speakers": [
+            {
+              "name": "Luiz Gustavo",
+              "photo": "./photos/nordeste/luiz-gustavo.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Marcelo Paiva",
           "talk": "Desenvolvedor Renascentista: KIRO - Muito Além do Prompt",
-          "photo": "./photos/nordeste/marcelo-paiva.jpg",
-          "slug": "marcelo-paiva"
+          "slug": "desenvolvedor-renascentista-kiro-muito-alem-do-prompt",
+          "speakers": [
+            {
+              "name": "Marcelo Paiva",
+              "photo": "./photos/nordeste/marcelo-paiva.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Marcelo Vinicius",
           "talk": "Code with AI: Como Construir um Workflow de Desenvolvimento Inteligente",
-          "photo": "./photos/nordeste/marcelo-vinicius.jpg",
-          "slug": "marcelo-vinicius"
+          "slug": "code-with-ai-como-construir-um-workflow-de-desenvolvimento-inteligente",
+          "speakers": [
+            {
+              "name": "Marcelo Vinicius",
+              "photo": "./photos/nordeste/marcelo-vinicius.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Priscila Araujo",
           "talk": "Engenharia de IA a Longo Prazo: Descomplicando MLops e Finops na AWS",
-          "photo": "./photos/nordeste/priscila-araujo.jpg",
-          "slug": "priscila-araujo"
+          "slug": "engenharia-de-ia-a-longo-prazo-descomplicando-mlops-e-finops-na-aws",
+          "speakers": [
+            {
+              "name": "Priscila Araujo",
+              "photo": "./photos/nordeste/priscila-araujo.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Rafael Gomes",
           "talk": "Melhores práticas para gerenciar recursos da AWS com terraform",
-          "photo": "./photos/nordeste/rafael-gomes.jpg",
-          "slug": "rafael-gomes"
+          "slug": "melhores-praticas-para-gerenciar-recursos-da-aws-com-terraform",
+          "speakers": [
+            {
+              "name": "Rafael Gomes",
+              "photo": "./photos/nordeste/rafael-gomes.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Rafael Guerra",
           "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
-          "photo": "./photos/nordeste/rafael-guerra.jpg",
-          "slug": "rafael-guerra"
+          "slug": "primeiros-passos-em-mensageria-sqs-kafka-e-o-mundo-dos-eventos",
+          "speakers": [
+            {
+              "name": "Rafael Guerra",
+              "photo": "./photos/nordeste/rafael-guerra.jpg"
+            },
+            {
+              "name": "Rian Dultra",
+              "photo": "./photos/nordeste/rian-dultra.jpg"
+            },
+            {
+              "name": "Victor Mendes",
+              "photo": "./photos/nordeste/victor-mendes.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Rafael Levi",
           "talk": "Infraestrutura para sistemas distribuídos modernos, uma abordagem pedagógica",
-          "photo": "./photos/nordeste/rafael-levi.jpg",
-          "slug": "rafael-levi"
+          "slug": "infraestrutura-para-sistemas-distribuidos-modernos-uma-abordagem-pedagogica",
+          "speakers": [
+            {
+              "name": "Rafael Levi",
+              "photo": "./photos/nordeste/rafael-levi.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Rian Dultra",
-          "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
-          "photo": "./photos/nordeste/rian-dultra.jpg",
-          "slug": "rian-dultra"
-        },
-        {
-          "speakerName": "Thamiris Adriano",
           "talk": "Observabilidade para aplicações web: o que monitorar além do “está no ar?”",
-          "photo": "./photos/nordeste/thamiris-adriano.jpg",
-          "slug": "thamiris-adriano"
-        },
-        {
-          "speakerName": "Victor Mendes",
-          "talk": "Primeiros Passos em Mensageria: SQS, Kafka e o Mundo dos Eventos",
-          "photo": "./photos/nordeste/victor-mendes.jpg",
-          "slug": "victor-mendes"
+          "slug": "observabilidade-para-aplicacoes-web-o-que-monitorar-alem-do-esta-no-ar",
+          "speakers": [
+            {
+              "name": "Thamiris Adriano",
+              "photo": "./photos/nordeste/thamiris-adriano.jpg"
+            }
+          ]
         }
       ]
     },
@@ -260,124 +394,198 @@
       "postcard": "./postcards/sudeste.png",
       "talks": [
         {
-          "speakerName": "Marcelo Palladino",
           "talk": "Liderar na era da IA: o que um modelo de IA não entrega",
-          "photo": "./photos/sudeste/palla.jpg",
-          "slug": "marcelo-palladino"
+          "slug": "liderar-na-era-da-ia-o-que-um-modelo-de-ia-nao-entrega",
+          "speakers": [
+            {
+              "name": "Marcelo Palladino",
+              "photo": "./photos/sudeste/palla.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Lays Rodrigues",
           "talk": "Tagging além de key-values: Controle de acesso baseado em Tags",
-          "photo": "./photos/sudeste/lays-rodrigues.jpg",
-          "slug": "lays-rodrigues"
+          "slug": "tagging-alem-de-key-values-controle-de-acesso-baseado-em-tags",
+          "speakers": [
+            {
+              "name": "Lays Rodrigues",
+              "photo": "./photos/sudeste/lays-rodrigues.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Lucas Israel",
           "talk": "Kiro IDE na prática: Como entregamos engenharia com IA",
-          "photo": "./photos/sudeste/lucas-israel.jpg",
-          "slug": "lucas-israel"
+          "slug": "kiro-ide-na-pratica-como-entregamos-engenharia-com-ia",
+          "speakers": [
+            {
+              "name": "Lucas Israel",
+              "photo": "./photos/sudeste/lucas-israel.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Dan Rezende",
           "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
-          "photo": "./photos/sudeste/dan-rezende.jpg",
-          "slug": "dan-rezende"
+          "slug": "seguranca-na-era-do-desenvolvimento-com-ia-kiro-e-aws-security-agent-em-pratica",
+          "speakers": [
+            {
+              "name": "Dan Rezende",
+              "photo": "./photos/sudeste/dan-rezende.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Mariana Mercier",
           "talk": "PGVector no Aurora PostgreSQL Serverless v2: armazenamento e recuperação vetorial para Agentes de IA",
-          "photo": "./photos/sudeste/mariana-mercier.jpg",
-          "slug": "mariana-mercier"
+          "slug": "pgvector-no-aurora-postgresql-serverless-v2-armazenamento-e-recuperacao-vetorial-para-agentes-de-ia",
+          "speakers": [
+            {
+              "name": "Mariana Mercier",
+              "photo": "./photos/sudeste/mariana-mercier.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Arthur Nycael",
           "talk": "Entendendo redes na AWS: VPC, subnets e conectividade na prática",
-          "photo": "./photos/sudeste/arthur-nycael.jpg",
-          "slug": "arthur-nycael"
+          "slug": "entendendo-redes-na-aws-vpc-subnets-e-conectividade-na-pratica",
+          "speakers": [
+            {
+              "name": "Arthur Nycael",
+              "photo": "./photos/sudeste/arthur-nycael.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Samantha Chiachio",
           "talk": "K8S For Dummies: Venha Entender a Lógica por Trás do Kubernetes",
-          "photo": "./photos/sudeste/samantha-chiachio.jpg",
-          "slug": "samantha-chiachio"
+          "slug": "k8s-for-dummies-venha-entender-a-logica-por-tras-do-kubernetes",
+          "speakers": [
+            {
+              "name": "Samantha Chiachio",
+              "photo": "./photos/sudeste/samantha-chiachio.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Carlos Marangon",
           "talk": "Hands-on Kiro",
-          "photo": "./photos/sudeste/carlos-marangon.jpg",
-          "slug": "carlos-marangon"
+          "slug": "hands-on-kiro",
+          "speakers": [
+            {
+              "name": "Carlos Marangon",
+              "photo": "./photos/sudeste/carlos-marangon.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Ed Carlos Marinho",
           "talk": "Seu agente de IA irá para produção?",
-          "photo": "./photos/sudeste/ed-carlos-marinho.jpg",
-          "slug": "ed-carlos-marinho"
+          "slug": "seu-agente-de-ia-ira-para-producao",
+          "speakers": [
+            {
+              "name": "Ed Carlos Marinho",
+              "photo": "./photos/sudeste/ed-carlos-marinho.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Camilo Giannella",
           "talk": "Como a estratégia de FinOps pode direcionar as estratégias de modernização tecnológica",
-          "photo": "./photos/sudeste/camilo-giannella.jpg",
-          "slug": "camilo-giannella"
+          "slug": "como-a-estrategia-de-finops-pode-direcionar-as-estrategias-de-modernizacao-tecnologica",
+          "speakers": [
+            {
+              "name": "Camilo Giannella",
+              "photo": "./photos/sudeste/camilo-giannella.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Naiara Medeiros",
           "talk": "Tech como ecossistema: como se encontrar entre áreas, escolhas e transições",
-          "photo": "./photos/sudeste/naiara-medeiros.jpg",
-          "slug": "naiara-medeiros"
+          "slug": "tech-como-ecossistema-como-se-encontrar-entre-areas-escolhas-e-transicoes",
+          "speakers": [
+            {
+              "name": "Naiara Medeiros",
+              "photo": "./photos/sudeste/naiara-medeiros.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Evandro Pires",
           "talk": "Agora serverless tem servidores. E agora?",
-          "photo": "./photos/sudeste/evandro-pires.jpg",
-          "slug": "evandro-pires"
+          "slug": "agora-serverless-tem-servidores-e-agora",
+          "speakers": [
+            {
+              "name": "Evandro Pires",
+              "photo": "./photos/sudeste/evandro-pires.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Raphael Moura",
           "talk": "Do vibe coding à engenharia: Desenvolvendo sistemas com IA",
-          "photo": "./photos/sudeste/raphael-moura.jpg",
-          "slug": "raphael-moura"
+          "slug": "do-vibe-coding-a-engenharia-desenvolvendo-sistemas-com-ia",
+          "speakers": [
+            {
+              "name": "Raphael Moura",
+              "photo": "./photos/sudeste/raphael-moura.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "William Lino",
           "talk": "Construa uma Solução de IA Multi-Agente com Amazon Aurora e Bedrock AgentCore",
-          "photo": "./photos/sudeste/william-lino.jpg",
-          "slug": "william-lino"
+          "slug": "construa-uma-solucao-de-ia-multi-agente-com-amazon-aurora-e-bedrock-agentcore",
+          "speakers": [
+            {
+              "name": "William Lino",
+              "photo": "./photos/sudeste/william-lino.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Tiago Reichert",
           "talk": "Workshop Gen AI EKS",
-          "photo": "./photos/sudeste/tiago-reichert.jpg",
-          "slug": "tiago-reichert"
+          "slug": "workshop-gen-ai-eks",
+          "speakers": [
+            {
+              "name": "Tiago Reichert",
+              "photo": "./photos/sudeste/tiago-reichert.jpg"
+            },
+            {
+              "name": "João Cesar",
+              "photo": "./photos/sudeste/joao-cesar.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "João Cesar",
-          "talk": "Workshop Gen AI EKS",
-          "photo": "./photos/sudeste/joao-cesar.jpg",
-          "slug": "joao-cesar"
-        },
-        {
-          "speakerName": "Ricardo Gulias",
           "talk": "Construí em 72h a plataforma inteira de uma comunidade técnica global, sem escrever código manualmente",
-          "photo": "./photos/sudeste/ricardo-gulias.jpg",
-          "slug": "ricardo-gulias"
+          "slug": "construi-em-72h-a-plataforma-inteira-de-uma-comunidade-tecnica-global-sem-escrever-codigo-manualmente",
+          "speakers": [
+            {
+              "name": "Ricardo Gulias",
+              "photo": "./photos/sudeste/ricardo-gulias.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Thamiris Adriano",
           "talk": "Observabilidade para aplicações web: o que monitorar além do \"está no ar?\"",
-          "photo": "./photos/sudeste/thamiris-adriano.jpg",
-          "slug": "thamiris-adriano"
+          "slug": "observabilidade-para-aplicacoes-web-o-que-monitorar-alem-do-esta-no-ar",
+          "speakers": [
+            {
+              "name": "Thamiris Adriano",
+              "photo": "./photos/sudeste/thamiris-adriano.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Livia Mor",
           "talk": "Negócios perdem clientes porque ninguém responde fora do horário: a solução com Amazon Bedrock",
-          "photo": "./photos/sudeste/livia-mor.jpg",
-          "slug": "livia-mor"
+          "slug": "negocios-perdem-clientes-porque-ninguem-responde-fora-do-horario-a-solucao-com-amazon-bedrock",
+          "speakers": [
+            {
+              "name": "Livia Mor",
+              "photo": "./photos/sudeste/livia-mor.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Fabio Viana",
           "talk": "Como subir um cluster EKS e colocar sua aplicação no ar em menos de 20 minutos?",
-          "photo": "./photos/sudeste/fabio-viana.jpg",
-          "slug": "fabio-viana"
+          "slug": "como-subir-um-cluster-eks-e-colocar-sua-aplicacao-no-ar-em-menos-de-20-minutos",
+          "speakers": [
+            {
+              "name": "Fabio Viana",
+              "photo": "./photos/sudeste/fabio-viana.jpg"
+            }
+          ]
         }
       ]
     },
@@ -391,70 +599,108 @@
       "postcard": "./postcards/sul.png",
       "talks": [
         {
-          "speakerName": "Murilo Lang",
           "talk": "Previsão de demanda no varejo com AWS: lições de um projeto real com Amazon SageMaker",
-          "photo": "./photos/sul/murilo.png",
-          "slug": "murilo-lang"
+          "slug": "previsao-de-demanda-no-varejo-com-aws-licoes-de-um-projeto-real-com-amazon-sagemaker",
+          "speakers": [
+            {
+              "name": "Murilo Lang",
+              "photo": "./photos/sul/murilo.png"
+            }
+          ]
         },
         {
-          "speakerName": "Luciano Libardi",
           "talk": "Sua carreira é um sistema legado? Refatorando 30 anos de TI na era da IA",
-          "photo": "./photos/sul/luciano.jpg",
-          "slug": "luciano-libardi"
+          "slug": "sua-carreira-e-um-sistema-legado-refatorando-30-anos-de-ti-na-era-da-ia",
+          "speakers": [
+            {
+              "name": "Luciano Libardi",
+              "photo": "./photos/sul/luciano.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Leo Matayoshi",
           "talk": "Explorando o Streaming de Vídeo com IA e ML",
-          "photo": "./photos/sul/leo.png",
-          "slug": "leo-matayoshi"
+          "slug": "explorando-o-streaming-de-video-com-ia-e-ml",
+          "speakers": [
+            {
+              "name": "Leo Matayoshi",
+              "photo": "./photos/sul/leo.png"
+            }
+          ]
         },
         {
-          "speakerName": "Egon Hilgenstieler",
           "talk": "Lições de uma plataforma que processa milhões de notas fiscais por mês na AWS",
-          "photo": "./photos/sul/egon.jpg",
-          "slug": "egon-hilgenstieler"
+          "slug": "licoes-de-uma-plataforma-que-processa-milhoes-de-notas-fiscais-por-mes-na-aws",
+          "speakers": [
+            {
+              "name": "Egon Hilgenstieler",
+              "photo": "./photos/sul/egon.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Eduardo Gutkoski",
           "talk": "De rotas HTTP a eventos: uma jornada prática para pensar EDA",
-          "photo": "./photos/sul/eduardo.jpg",
-          "slug": "eduardo-gutkoski"
+          "slug": "de-rotas-http-a-eventos-uma-jornada-pratica-para-pensar-eda",
+          "speakers": [
+            {
+              "name": "Eduardo Gutkoski",
+              "photo": "./photos/sul/eduardo.jpg"
+            }
+          ]
         },
         {
-          "speakerName": "Dan Rezende",
           "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
-          "photo": "./photos/sul/dan.png",
-          "slug": "dan-rezende"
+          "slug": "seguranca-na-era-do-desenvolvimento-com-ia-kiro-e-aws-security-agent-em-pratica",
+          "speakers": [
+            {
+              "name": "Dan Rezende",
+              "photo": "./photos/sul/dan.png"
+            }
+          ]
         },
         {
-          "speakerName": "Ágata Araújo",
           "talk": "Antes do Machine Learning: construindo fundamentos sólidos na AWS para dados e IA",
-          "photo": "./photos/sul/agata.png",
-          "slug": "agata-araujo"
+          "slug": "antes-do-machine-learning-construindo-fundamentos-solidos-na-aws-para-dados-e-ia",
+          "speakers": [
+            {
+              "name": "Ágata Araújo",
+              "photo": "./photos/sul/agata.png"
+            }
+          ]
         },
         {
-          "speakerName": "Roberto Rojas",
           "talk": "Open Source como Base para a Era da IA: da Infraestrutura Essencial às Aplicações Agênticas",
-          "photo": "./photos/sul/roberto.jpeg",
-          "slug": "roberto-rojas"
+          "slug": "open-source-como-base-para-a-era-da-ia-da-infraestrutura-essencial-as-aplicacoes-agenticas",
+          "speakers": [
+            {
+              "name": "Roberto Rojas",
+              "photo": "./photos/sul/roberto.jpeg"
+            }
+          ]
         },
         {
-          "speakerName": "Flávio Pimenta",
           "talk": "Workshop: Desenvolvimento avançado com Kiro CLI",
-          "photo": "./photos/sul/pimenta.jpeg",
-          "slug": "flavio-pimenta"
+          "slug": "workshop-desenvolvimento-avancado-com-kiro-cli",
+          "speakers": [
+            {
+              "name": "Flávio Pimenta",
+              "photo": "./photos/sul/pimenta.jpeg"
+            }
+          ]
         },
         {
-          "speakerName": "Bruno Lopes",
           "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
-          "photo": "./photos/sul/bruno.jpg",
-          "slug": "bruno-lopes"
-        },
-        {
-          "speakerName": "Valdeci Gomes",
-          "talk": "Workshop: Modernize aplicações .NET para Linux com o AWS Transform e o Kiro",
-          "photo": "./photos/sul/valdeci.jpeg",
-          "slug": "valdeci-gomes"
+          "slug": "workshop-modernize-aplicacoes-net-para-linux-com-o-aws-transform-e-o-kiro",
+          "speakers": [
+            {
+              "name": "Bruno Lopes",
+              "photo": "./photos/sul/bruno.jpg"
+            },
+            {
+              "name": "Valdeci Gomes",
+              "photo": "./photos/sul/valdeci.jpeg"
+            }
+          ]
         }
       ]
     }

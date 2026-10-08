@@ -2,8 +2,9 @@
  * app.js — UI wiring for the /mkt/ marketing card generator.
  *
  * Fetches ./data.json, populates edition/talk dropdowns, lets the user edit
- * the title/name, replace the photo, toggle square/story format, and download
- * the card as a PNG. Imports the shared pure drawCard() from ./card.js.
+ * the title and EACH speaker's name, replace EACH speaker's photo, toggle
+ * square/story format, and download the card as a PNG. A talk with 2+ speakers
+ * renders ONE combined card. Imports the shared pure drawCard() from ./card.js.
  *
  * Also exposes window.__renderCardToDataURL({region, slug, format}) used by the
  * FEAT-002 Playwright pre-generation script.
@@ -18,9 +19,7 @@ const els = {
   edition: document.getElementById("edition"),
   talk: document.getElementById("talk"),
   title: document.getElementById("title-input"),
-  name: document.getElementById("name-input"),
-  photo: document.getElementById("photo-input"),
-  photoPreview: document.getElementById("photo-preview-img"),
+  speakers: document.getElementById("speakers"),
   fmtSquare: document.getElementById("fmt-square"),
   fmtStory: document.getElementById("fmt-story"),
   download: document.getElementById("download"),
@@ -44,12 +43,13 @@ function loadImage(src) {
 const state = {
   data: null,
   region: null, // region object
-  talkEntry: null, // selected talk object
+  talkEntry: null, // selected talk group object { talk, slug, speakers: [] }
   format: "square",
   logoImg: null,
   postcardImg: null,
-  photoImg: null,
-  customPhotoURL: null, // object URL for uploaded photo (overrides talkEntry.photo)
+  // Per-speaker UI state, parallel to talkEntry.speakers.
+  // Each: { name, defaultPhoto, customPhotoURL, photoImg, nameInput, photoInput, previewImg }
+  speakers: [],
 };
 
 function regionBySlug(slug) {
@@ -67,25 +67,94 @@ function render(targetCtx = ctx, targetCanvas = els.canvas) {
     format: state.format,
     logoImg: state.logoImg,
     postcardImg: state.postcardImg,
-    photoImg: state.photoImg,
+    speakers: state.speakers.map((s) => ({
+      photoImg: s.photoImg,
+      name: s.nameInput ? s.nameInput.value : s.name,
+    })),
     talk: els.title.value || (state.talkEntry ? state.talkEntry.talk : ""),
-    speakerName: els.name.value || (state.talkEntry ? state.talkEntry.speakerName : ""),
     city: region ? region.city : "",
     dateStr: region ? formatDatePtBR(region.targetDate) : "",
   });
 }
 
-async function loadPhotoForEntry(entry) {
-  // A user-uploaded photo overrides the default when present.
-  if (state.customPhotoURL) {
-    state.photoImg = await loadImage(state.customPhotoURL);
-  } else if (entry) {
-    state.photoImg = await loadImage(entry.photo);
-  } else {
-    state.photoImg = null;
+/** Build the per-speaker UI (name input + photo-replace control) and load photos. */
+function buildSpeakerControls() {
+  // Revoke any previous object URLs before rebuilding.
+  for (const s of state.speakers) {
+    if (s.customPhotoURL) URL.revokeObjectURL(s.customPhotoURL);
   }
-  els.photoPreview.src =
-    state.customPhotoURL || (entry ? entry.photo : "");
+  els.speakers.innerHTML = "";
+  state.speakers = [];
+
+  const group = state.talkEntry;
+  if (!group) return;
+
+  group.speakers.forEach((sp, i) => {
+    const entry = {
+      name: sp.name,
+      defaultPhoto: sp.photo,
+      customPhotoURL: null,
+      photoImg: null,
+      nameInput: null,
+      photoInput: null,
+      previewImg: null,
+    };
+
+    const single = group.speakers.length === 1;
+    const nameLabel = single ? "Nome do palestrante" : `Palestrante ${i + 1}`;
+
+    const field = document.createElement("div");
+    field.className = "field speaker-field";
+
+    const nameFieldLabel = document.createElement("label");
+    nameFieldLabel.textContent = nameLabel;
+    field.appendChild(nameFieldLabel);
+
+    const nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.value = sp.name;
+    nameInput.addEventListener("input", () => render());
+    field.appendChild(nameInput);
+    entry.nameInput = nameInput;
+
+    const photoRow = document.createElement("div");
+    photoRow.className = "photo-preview";
+
+    const previewImg = document.createElement("img");
+    previewImg.alt = `Prévia da foto de ${sp.name}`;
+    previewImg.src = sp.photo;
+    photoRow.appendChild(previewImg);
+    entry.previewImg = previewImg;
+
+    const photoInput = document.createElement("input");
+    photoInput.type = "file";
+    photoInput.accept = "image/*";
+    photoInput.addEventListener("change", async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      if (entry.customPhotoURL) URL.revokeObjectURL(entry.customPhotoURL);
+      entry.customPhotoURL = URL.createObjectURL(file);
+      entry.photoImg = await loadImage(entry.customPhotoURL);
+      previewImg.src = entry.customPhotoURL;
+      render();
+    });
+    photoRow.appendChild(photoInput);
+    entry.photoInput = photoInput;
+
+    field.appendChild(photoRow);
+    els.speakers.appendChild(field);
+
+    state.speakers.push(entry);
+  });
+}
+
+async function loadSpeakerPhotos() {
+  await Promise.all(
+    state.speakers.map(async (s) => {
+      const src = s.customPhotoURL || s.defaultPhoto;
+      s.photoImg = await loadImage(src);
+    })
+  );
 }
 
 function populateTalks() {
@@ -94,23 +163,18 @@ function populateTalks() {
     const t = state.region.talks[i];
     const opt = document.createElement("option");
     opt.value = String(i);
-    opt.textContent = `${t.talk} — ${t.speakerName}`;
+    opt.textContent = `${t.talk} — ${t.speakers.map((s) => s.name).join(", ")}`;
     els.talk.appendChild(opt);
   }
 }
 
 async function selectTalk(index) {
   state.talkEntry = state.region.talks[index] || null;
-  // Reset any custom upload when switching talk.
-  if (state.customPhotoURL) {
-    URL.revokeObjectURL(state.customPhotoURL);
-    state.customPhotoURL = null;
-  }
   if (state.talkEntry) {
     els.title.value = state.talkEntry.talk;
-    els.name.value = state.talkEntry.speakerName;
   }
-  await loadPhotoForEntry(state.talkEntry);
+  buildSpeakerControls();
+  await loadSpeakerPhotos();
   render();
 }
 
@@ -160,24 +224,13 @@ async function init() {
     selectTalk(parseInt(e.target.value, 10))
   );
   els.title.addEventListener("input", () => render());
-  els.name.addEventListener("input", () => render());
   els.fmtSquare.addEventListener("click", () => setFormat("square"));
   els.fmtStory.addEventListener("click", () => setFormat("story"));
 
-  els.photo.addEventListener("change", async (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    if (state.customPhotoURL) URL.revokeObjectURL(state.customPhotoURL);
-    state.customPhotoURL = URL.createObjectURL(file);
-    state.photoImg = await loadImage(state.customPhotoURL);
-    els.photoPreview.src = state.customPhotoURL;
-    render();
-  });
-
   els.download.addEventListener("click", () => {
     const region = state.region ? state.region.slug : "card";
-    const speakerSlug = state.talkEntry ? state.talkEntry.slug : "card";
-    const filename = `${region}-${speakerSlug}-${state.format}.png`;
+    const talkSlug = state.talkEntry ? state.talkEntry.slug : "card";
+    const filename = `${region}-${talkSlug}-${state.format}.png`;
     els.canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -201,12 +254,12 @@ async function init() {
 }
 
 /**
- * Headless render for FEAT-002 pre-generation. Loads the needed images for the
- * given region/slug, draws onto an offscreen canvas, and returns a PNG dataURL.
+ * Headless render for FEAT-002 pre-generation. Loads ALL speaker photos for the
+ * given region/slug group, draws onto an offscreen canvas, and returns a PNG
+ * dataURL.
  *   window.__renderCardToDataURL({ region, slug, format })
  *     region: region slug (e.g. "nordeste")
- *     slug:   speaker slug (data.json talks[].slug); if a speaker shares a
- *             talk, the first matching entry is used
+ *     slug:   talk group slug (data.json talks[].slug)
  *     format: "square" | "story" (default "square")
  *   -> Promise<string> dataURL ("data:image/png;base64,...")
  */
@@ -221,11 +274,19 @@ window.__renderCardToDataURL = async function (opts) {
     await document.fonts.ready;
   }
 
-  const [logoImg, postcardImg, photoImg] = await Promise.all([
-    state.logoImg ? Promise.resolve(state.logoImg) : loadImage("./logo-community-day.png"),
-    loadImage(region.postcard || "./postcard-salvador.png"),
-    loadImage(entry.photo),
-  ]);
+  const logoImg = state.logoImg
+    ? state.logoImg
+    : await loadImage("./logo-community-day.png");
+  const postcardImg = await loadImage(
+    region.postcard || "./postcard-salvador.png"
+  );
+  const speakerImgs = await Promise.all(
+    entry.speakers.map((s) => loadImage(s.photo))
+  );
+  const speakers = entry.speakers.map((s, i) => ({
+    photoImg: speakerImgs[i],
+    name: s.name,
+  }));
 
   const dims = FORMATS[format] || FORMATS.square;
   const off = document.createElement("canvas");
@@ -236,9 +297,8 @@ window.__renderCardToDataURL = async function (opts) {
     format,
     logoImg,
     postcardImg,
-    photoImg,
+    speakers,
     talk: entry.talk,
-    speakerName: entry.speakerName,
     city: region.city,
     dateStr: formatDatePtBR(region.targetDate),
   });

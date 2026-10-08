@@ -10,8 +10,8 @@
  *   2. Em outro terminal: npm run gen:mkt-cards
  *      (ou: node scripts/gen-mkt-cards.mjs)
  *
- * Saída: public/mkt/cards/nordeste/<speakerSlug>-<talkSlug>.png (17 arquivos,
- * 1080×1080).
+ * Saída: public/mkt/cards/nordeste/<talkSlug>.png (um por grupo de palestra;
+ * palestras com 2+ palestrantes geram UM card combinado), 1080×1080.
  */
 
 import { chromium } from "@playwright/test";
@@ -28,16 +28,6 @@ const FORMAT = "square";
 const DATA_FILE = path.resolve(__dirname, "../public/mkt/data.json");
 const OUTPUT_DIR = path.resolve(__dirname, `../public/mkt/cards/${REGION}`);
 
-/** accent-stripped, lowercased, hyphenated slug (mesma regra do build-mkt-data). */
-function slugify(str) {
-  return String(str)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
 async function main() {
   const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
   const region = data.regions.find((r) => r.slug === REGION);
@@ -46,6 +36,9 @@ async function main() {
   const talks = region.talks;
   console.log(`🗂️  ${talks.length} palestras em ${region.regionName}`);
 
+  // Recria o diretório para remover PNGs obsoletos (ex.: arquivos antigos
+  // por palestrante) e deixar apenas um arquivo por grupo de palestra.
+  fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const browser = await chromium.launch();
@@ -61,18 +54,17 @@ async function main() {
 
   let count = 0;
   for (const talk of talks) {
-    const speakerSlug = talk.slug;
-    const talkSlug = slugify(talk.talk);
-    const outFile = path.join(OUTPUT_DIR, `${speakerSlug}-${talkSlug}.png`);
+    const talkSlug = talk.slug;
+    const outFile = path.join(OUTPUT_DIR, `${talkSlug}.png`);
 
     const dataUrl = await page.evaluate(
       ({ region, slug, format }) =>
         window.__renderCardToDataURL({ region, slug, format }),
-      { region: REGION, slug: speakerSlug, format: FORMAT }
+      { region: REGION, slug: talkSlug, format: FORMAT }
     );
 
     if (!dataUrl || !dataUrl.startsWith("data:image/png;base64,")) {
-      throw new Error(`dataURL inválido para ${speakerSlug}`);
+      throw new Error(`dataURL inválido para ${talkSlug}`);
     }
 
     const base64 = dataUrl.slice("data:image/png;base64,".length);

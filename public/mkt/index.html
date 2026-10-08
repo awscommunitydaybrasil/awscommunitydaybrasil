@@ -57,7 +57,16 @@
       gap: 18px;
     }
     .field { display: flex; flex-direction: column; gap: 6px; }
+    #speakers { display: flex; flex-direction: column; gap: 18px; }
+    .speaker-field { display: flex; flex-direction: column; gap: 6px; }
     .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .speaker-field label {
       font-size: 13px;
       font-weight: 600;
       color: var(--muted);
@@ -155,18 +164,7 @@
         <input type="text" id="title-input" />
       </div>
 
-      <div class="field">
-        <label for="name-input">Nome do palestrante</label>
-        <input type="text" id="name-input" />
-      </div>
-
-      <div class="field">
-        <label for="photo-input">Foto do palestrante</label>
-        <div class="photo-preview">
-          <img id="photo-preview-img" alt="Prévia da foto" />
-          <input type="file" id="photo-input" accept="image/*" />
-        </div>
-      </div>
+      <div id="speakers"></div>
 
       <div class="field">
         <label>Formato</label>

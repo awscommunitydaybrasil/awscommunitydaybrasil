@@ -154,11 +154,116 @@ function navyGradient(ctx, x, y, w, h, stops) {
 }
 
 /**
+ * Photo-row geometry per speaker count and format. Returns the shared radius,
+ * ring width, and the array of horizontal center x positions (group centered
+ * on x=540). Values were tuned by rendering 1/2/3-speaker cards in both
+ * formats and inspecting the PNGs for even gaps and no overflow/overlap.
+ */
+function photoRowLayout(format, count) {
+  const n = Math.max(1, Math.min(3, count));
+  if (format === "story") {
+    // Group center x=540, cy=760. Title box is x[110,970].
+    if (n === 1) return { r: 210, ring: 10, centers: [540] };
+    if (n === 2) {
+      const r = 165, gap = 44;
+      const off = r + gap / 2; // 187
+      return { r, ring: 9, centers: [540 - off, 540 + off] }; // 353 / 727
+    }
+    // n === 3: keep outermost edge inside the title box width.
+    const r = 130, c2c = 2 * r + 34; // 294
+    return { r, ring: 8, centers: [540 - c2c, 540, 540 + c2c] }; // 246/540/834, edges 116..964
+  }
+  // square — group center x=540, cy=430. Title box is x[90,990].
+  if (n === 1) return { r: 150, ring: 8, centers: [540] };
+  if (n === 2) {
+    const r = 120, gap = 36;
+    const off = r + gap / 2; // 138
+    return { r, ring: 7, centers: [540 - off, 540 + off] }; // 402 / 678
+  }
+  // n === 3
+  const r = 95, c2c = 2 * r + 30; // 220
+  return { r, ring: 6, centers: [540 - c2c, 540, 540 + c2c] }; // 320/540/760, edges 225..855
+}
+
+/**
+ * Draw the photo row: for each speaker draw the orange ring + cover-fit photo
+ * (or a card-fill placeholder circle when the image is missing), centered as a
+ * group on x=540 at the format's vertical center cy.
+ */
+function drawPhotoRow(ctx, speakers, format, cy) {
+  const { r, ring, centers } = photoRowLayout(format, speakers.length);
+  for (let i = 0; i < centers.length; i++) {
+    const cx = centers[i];
+    const sp = speakers[i] || {};
+    drawPhotoRing(ctx, cx, cy, r, ring);
+    if (sp.photoImg) {
+      drawCircleImageCover(ctx, sp.photoImg, cx, cy, r);
+    } else {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = COLORS.card;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+}
+
+/** Join speaker names: "A", "A  &  B", "A, B & C" (… & last). */
+function joinNames(names) {
+  const list = names.filter((n) => n && String(n).trim());
+  if (list.length === 0) return "";
+  if (list.length === 1) return list[0];
+  if (list.length === 2) return `${list[0]}  &  ${list[1]}`;
+  return `${list.slice(0, -1).join(", ")} & ${list[list.length - 1]}`;
+}
+
+/**
+ * Draw the joined speaker name line (orange Montserrat) centered at cx, fitting
+ * the box width. Shrinks from startSize in 2px steps; if still too wide at
+ * minSize, wraps to at most 2 lines. Returns the y baseline AFTER the last
+ * drawn name line so the caller can place the edition/date line below it.
+ */
+function drawNames(ctx, names, { cx, baseY, boxW, startSize, minSize }) {
+  const text = joinNames(names);
+  const { lines, fontSize } = fitText(ctx, text, {
+    fontFamily: "Montserrat",
+    fontWeight: "700",
+    startSize,
+    minSize,
+    maxWidth: boxW,
+    maxLines: 2,
+  });
+  ctx.fillStyle = COLORS.orange;
+  ctx.font = `700 ${fontSize}px Montserrat`;
+  const lineH = Math.round(fontSize * 1.2);
+  let y = baseY;
+  for (const line of lines) {
+    ctx.fillText(line, cx, y);
+    y += lineH;
+  }
+  return y - lineH; // baseline of the last line drawn
+}
+
+/** Normalize opts.speakers, mapping legacy single photoImg/speakerName. */
+function normalizeSpeakers(opts) {
+  if (Array.isArray(opts.speakers) && opts.speakers.length > 0) {
+    return opts.speakers.map((s) => ({
+      photoImg: s.photoImg || null,
+      name: s.name || "",
+    }));
+  }
+  return [{ photoImg: opts.photoImg || null, name: opts.speakerName || "" }];
+}
+
+/**
  * drawCard(ctx, opts)
  *   opts = {
  *     format: "square" | "story",
- *     logoImg, postcardImg, photoImg,   // loaded Image objects (photoImg optional)
- *     talk, speakerName, city, dateStr, // strings
+ *     logoImg, postcardImg,             // loaded Image objects
+ *     speakers: [ { photoImg, name } ], // 1..3 speakers (preferred)
+ *     photoImg, speakerName,            // legacy single-speaker (mapped)
+ *     talk, city, dateStr,              // strings
  *   }
  * Draws the full card onto ctx. Caller sizes the canvas to FORMATS[format].
  */
@@ -167,13 +272,12 @@ export function drawCard(ctx, opts) {
     format = "square",
     logoImg,
     postcardImg,
-    photoImg,
     talk = "",
-    speakerName = "",
     city = "",
     dateStr = "",
   } = opts || {};
 
+  const speakers = normalizeSpeakers(opts || {});
   const { w, h } = FORMATS[format] || FORMATS.square;
 
   // Base navy fill.
@@ -184,9 +288,9 @@ export function drawCard(ctx, opts) {
   ctx.textBaseline = "alphabetic";
 
   if (format === "story") {
-    drawStory(ctx, { w, h, logoImg, postcardImg, photoImg, talk, speakerName, city, dateStr });
+    drawStory(ctx, { w, h, logoImg, postcardImg, speakers, talk, city, dateStr });
   } else {
-    drawSquare(ctx, { w, h, logoImg, postcardImg, photoImg, talk, speakerName, city, dateStr });
+    drawSquare(ctx, { w, h, logoImg, postcardImg, speakers, talk, city, dateStr });
   }
 }
 
@@ -205,7 +309,7 @@ function editionLine(regionCity, dateStr) {
 }
 
 function drawSquare(ctx, o) {
-  const { w, logoImg, postcardImg, photoImg, talk, speakerName, city, dateStr } = o;
+  const { w, logoImg, postcardImg, speakers, talk, city, dateStr } = o;
 
   // Postcard top band 0..360 cover with navy scrim.
   const bandH = 360;
@@ -219,19 +323,9 @@ function drawSquare(ctx, o) {
   // Logo over the band.
   drawLogo(ctx, logoImg, w / 2, 40, 140);
 
-  // Speaker photo circle d=300 center (540,430).
-  const cx = 540, cy = 430, r = 150;
-  drawPhotoRing(ctx, cx, cy, r, 8);
-  if (photoImg) {
-    drawCircleImageCover(ctx, photoImg, cx, cy, r);
-  } else {
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fillStyle = COLORS.card;
-    ctx.fill();
-    ctx.restore();
-  }
+  // Speaker photo row, group-centered on x=540 at cy=430 (same as the single
+  // photo today); 1/2/3 speakers side by side.
+  drawPhotoRow(ctx, speakers, "square", 430);
 
   // Talk title box x[90,990], start y ~640, max 3 lines.
   const boxX = 90, boxW = 990 - 90;
@@ -252,20 +346,24 @@ function drawSquare(ctx, o) {
     ty += lineH;
   }
 
-  // Speaker name orange ~44px, below title (anchor ~900 but keep below title).
-  const nameY = Math.max(900, ty + 20);
-  ctx.fillStyle = COLORS.orange;
-  ctx.font = "700 44px Montserrat";
-  ctx.fillText(ellipsize(ctx, speakerName, boxW), w / 2, nameY);
+  // Joined speaker names orange ~44px, below title (anchor ~900, keep below).
+  const nameBaseY = Math.max(900, ty + 20);
+  const lastNameY = drawNames(ctx, speakers.map((s) => s.name), {
+    cx: w / 2,
+    baseY: nameBaseY,
+    boxW,
+    startSize: 44,
+    minSize: 28,
+  });
 
-  // Edition/date line muted Inter ~30px.
+  // Edition/date line muted Inter ~30px, below the (possibly wrapped) names.
   ctx.fillStyle = COLORS.muted;
   ctx.font = "500 30px Inter";
-  ctx.fillText(editionLine(city, dateStr), w / 2, nameY + 48);
+  ctx.fillText(editionLine(city, dateStr), w / 2, lastNameY + 48);
 }
 
 function drawStory(ctx, o) {
-  const { w, h, logoImg, postcardImg, photoImg, talk, speakerName, city, dateStr } = o;
+  const { w, h, logoImg, postcardImg, speakers, talk, city, dateStr } = o;
 
   // Postcard full-width top 0..720 cover, gradient to navy.
   const bandH = 720;
@@ -279,19 +377,9 @@ function drawStory(ctx, o) {
   // Logo ~y=90 height ~180 (2x).
   drawLogo(ctx, logoImg, w / 2, 90, 180);
 
-  // Speaker photo circle d=420 center (540,760).
-  const cx = 540, cy = 760, r = 210;
-  drawPhotoRing(ctx, cx, cy, r, 10);
-  if (photoImg) {
-    drawCircleImageCover(ctx, photoImg, cx, cy, r);
-  } else {
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fillStyle = COLORS.card;
-    ctx.fill();
-    ctx.restore();
-  }
+  // Speaker photo row, group-centered on x=540 at cy=760 (same as the single
+  // photo today); 1/2/3 speakers side by side.
+  drawPhotoRow(ctx, speakers, "story", 760);
 
   // Talk title box x[110,970] start y ~1120 max 4 lines, start 76px.
   const boxX = 110, boxW = 970 - 110;
@@ -312,16 +400,20 @@ function drawStory(ctx, o) {
     ty += lineH;
   }
 
-  // Speaker name orange ~56px ~y=1560 (keep below title).
-  const nameY = Math.max(1560, ty + 30);
-  ctx.fillStyle = COLORS.orange;
-  ctx.font = "700 56px Montserrat";
-  ctx.fillText(ellipsize(ctx, speakerName, boxW), w / 2, nameY);
+  // Joined speaker names orange ~56px ~y=1560 (keep below title).
+  const nameBaseY = Math.max(1560, ty + 30);
+  const lastNameY = drawNames(ctx, speakers.map((s) => s.name), {
+    cx: w / 2,
+    baseY: nameBaseY,
+    boxW,
+    startSize: 56,
+    minSize: 34,
+  });
 
-  // Edition/date line muted Inter ~38px ~y=1660.
+  // Edition/date line muted Inter ~38px, below the (possibly wrapped) names.
   ctx.fillStyle = COLORS.muted;
   ctx.font = "500 38px Inter";
-  ctx.fillText(editionLine(city, dateStr), w / 2, nameY + 60);
+  ctx.fillText(editionLine(city, dateStr), w / 2, lastNameY + 60);
 
   // Footer orange CTA-gradient bar with site URL.
   const barH = 110;

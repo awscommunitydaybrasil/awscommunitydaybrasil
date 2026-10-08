@@ -122,7 +122,11 @@ function main() {
     }
 
     const speakersAssetsDir = path.join(regionDir, "assets", "speakers");
-    const talks = [];
+
+    // Group kept speakers by exact talk title, preserving first-appearance
+    // order. Each group becomes ONE card entry with a speakers[] array so a
+    // talk with 2+ speakers renders a single combined card.
+    const groups = new Map(); // talk title -> { talk, slug, speakers: [] }
     for (const s of kept) {
       // The filename recorded in speakers.json may use a different image
       // extension than the file actually on disk (e.g. .jpg recorded but
@@ -142,13 +146,21 @@ function main() {
         path.join(regionPhotosDir, photoFile)
       );
 
-      talks.push({
-        speakerName: s.name,
-        talk: s.talk,
+      const key = s.talk;
+      let group = groups.get(key);
+      if (!group) {
+        // Slug is talk-based so it is stable regardless of speaker order and
+        // identical for every speaker of the same talk. Talk titles are unique
+        // within a region in the current data.
+        group = { talk: s.talk, slug: slugify(s.talk), speakers: [] };
+        groups.set(key, group);
+      }
+      group.speakers.push({
+        name: s.name,
         photo: `./photos/${slug}/${photoFile}`,
-        slug: slugify(s.name),
       });
     }
+    const talks = Array.from(groups.values());
 
     regions.push({
       slug,
