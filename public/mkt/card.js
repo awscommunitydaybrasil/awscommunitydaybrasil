@@ -217,7 +217,7 @@ function drawSquare(ctx, o) {
   ]);
 
   // Logo over the band.
-  drawLogo(ctx, logoImg, w / 2, 40, 70);
+  drawLogo(ctx, logoImg, w / 2, 40, 140);
 
   // Speaker photo circle d=300 center (540,430).
   const cx = 540, cy = 430, r = 150;
@@ -276,8 +276,8 @@ function drawStory(ctx, o) {
     [1, "rgba(13,21,38,1)"],
   ]);
 
-  // Logo ~y=90 height ~90.
-  drawLogo(ctx, logoImg, w / 2, 90, 90);
+  // Logo ~y=90 height ~180 (2x).
+  drawLogo(ctx, logoImg, w / 2, 90, 180);
 
   // Speaker photo circle d=420 center (540,760).
   const cx = 540, cy = 760, r = 210;
