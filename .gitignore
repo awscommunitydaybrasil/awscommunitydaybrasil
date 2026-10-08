@@ -26,3 +26,5 @@ dist-ssr
 # Kiro CLI
 .chat
 .chat.json
+.agents/
+.worktrees/
