@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Cards — AWS Community Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --navy: #0d1526;
+      --card: #1e293b;
+      --orange: #ff8c00;
+      --white: #ffffff;
+      --muted: #94a3b8;
+      --border: #2b3a52;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--navy);
+      color: var(--white);
+      font-family: "Inter", system-ui, sans-serif;
+      min-height: 100vh;
+    }
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0;
+    }
+    header p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      padding: 32px;
+      align-items: flex-start;
+    }
+    .controls {
+      flex: 1 1 340px;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    #speakers { display: flex; flex-direction: column; gap: 18px; }
+    .speaker-field { display: flex; flex-direction: column; gap: 6px; }
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .speaker-field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    select, input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+    }
+    input[type="file"] { padding: 8px; }
+    .format-toggle { display: flex; gap: 8px; }
+    .format-toggle button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--white);
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .format-toggle button.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--navy);
+    }
+    .photo-preview {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .photo-preview img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--orange);
+    }
+    .btn-download {
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: var(--orange);
+      color: var(--navy);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-download:hover { filter: brightness(1.05); }
+    .preview {
+      flex: 1 1 420px;
+      display: flex;
+      justify-content: center;
+    }
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--navy);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gerador de Cards de Divulgação</h1>
+    <p>AWS Community Day — escolha a edição e a palestra, ajuste os textos e baixe o card.</p>
+  </header>
+
+  <div class="layout">
+    <div class="controls">
+      <div class="field">
+        <label for="edition">Edição</label>
+        <select id="edition"></select>
+      </div>
+
+      <div class="field">
+        <label for="talk">Palestra</label>
+        <select id="talk"></select>
+      </div>
+
+      <div class="field">
+        <label for="title-input">Título da palestra</label>
+        <input type="text" id="title-input" />
+      </div>
+
+      <div id="speakers"></div>
+
+      <div class="field">
+        <label>Formato</label>
+        <div class="format-toggle">
+          <button type="button" id="fmt-square" class="active" data-format="square">Feed 1:1</button>
+          <button type="button" id="fmt-story" data-format="story">Story 9:16</button>
+        </div>
+      </div>
+
+      <button type="button" id="download" class="btn-download">Baixar PNG</button>
+    </div>
+
+    <div class="preview">
+      <canvas id="card-canvas" width="1080" height="1080"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

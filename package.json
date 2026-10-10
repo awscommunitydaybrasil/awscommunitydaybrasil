@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "gen:og": "npx tsx scripts/generate-og-images.ts"
+    "gen:og": "npx tsx scripts/generate-og-images.ts",
+    "build:mkt-data": "node scripts/build-mkt-data.mjs",
+    "gen:mkt-cards": "node scripts/gen-mkt-cards.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
