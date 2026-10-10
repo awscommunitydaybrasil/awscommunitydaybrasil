@@ -25,6 +25,12 @@
     "tier": "support"
   },
   {
+    "name": "Audio R",
+    "logo": "audio-r.png",
+    "tier": "support",
+    "logoSize": "1.25"
+  },
+  {
     "name": "Lamit",
     "logo": "lamit.png",
     "url": "https://www.instagram.com/lamit.ucsal/",
