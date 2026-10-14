@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "name": "Ana Lourenço",
+    "photo": "ana-lourenco.jpg",
+    "title": "Analista de Segurança Júnior",
+    "company": "IT Protect",
+    "talk": "Além do crachá: o risco das identidades humanas e não humanas na AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/ana-louren%C3%A7o-b764612b4/?locale=en"
+    }
+  },
+  {
+    "name": "Artemísia Weyl",
+    "photo": "artemisia-weyl.jpg",
+    "title": "Líder de Projetos/Arquiteta de Dados e IA",
+    "company": "Base dos Dados",
+    "talk": "Se a Base dos Dados nascesse hoje na AWS: arquitetura e governança para dados públicos em escala",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/arteweyl"
+    }
+  },
+  {
+    "name": "Belém Campelo Ribeiro",
+    "photo": "belem-campelo-ribeiro.jpg",
+    "title": "Analista de Dados",
+    "company": "",
+    "talk": "Detecção de transações financeiras suspeitas com Python, Amazon S3, AWS Lambda, DynamoDB e Amazon SNS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://linkedin.com/in/belemdebelem"
+    }
+  },
+  {
+    "name": "Bianca Deyse Pinto Ramos",
+    "photo": "bianca-deyse-pinto-ramos.jpg",
+    "title": "Especialista DevOps",
+    "company": "",
+    "talk": "Além do básico: Estratégias avançadas de Arquitetura em Nuvem na AWS.",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://linkedin.com/in/bia-ramos"
+    }
+  },
+  {
+    "name": "Carlos Augusto Oeiras",
+    "photo": "carlos-augusto-oeiras.jpg",
+    "title": "AI Systems Architect",
+    "company": "",
+    "talk": "Menos prompts, mais ação: Desenvolvendo Agentes com Amazon Bedrock AgentCore",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/carlosoeiras/"
+    }
+  },
+  {
+    "name": "Christian Amarildo Amorim Morais",
+    "photo": "christian-amarildo-amorim-morais.jpg",
+    "title": "Perito judicial",
+    "company": "",
+    "talk": "A Nuvem Quando o Céu Está Caindo: Estratégias Práticas de Resiliência e Redundância na AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/christian-amarildo/"
+    }
+  },
+  {
+    "name": "Cleber Soares",
+    "photo": "cleber-soares.jpg",
+    "title": "Analista de Segurança da Informação",
+    "company": "",
+    "talk": "Trago suas informações amadas em 3 dias",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://br.linkedin.com/in/clebersoaresbelem"
+    }
+  },
+  {
+    "name": "Dan Rezende",
+    "photo": "dan-rezende.jpg",
+    "title": "Arquiteto de Soluções",
+    "company": "CloudFaster",
+    "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent na prática",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/danrezende/"
+    }
+  },
+  {
+    "name": "Erick Eloi Pimenta Pimentel",
+    "photo": "erick-eloi-pimenta-pimentel.jpg",
+    "title": "Arquiteto Cloud Sênior",
+    "company": "",
+    "talk": "Agentes de IA em produção: boas práticas para um uso seguro e produtivo",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/erick-eloi/"
+    }
+  },
+  {
+    "name": "Giovana Armani",
+    "photo": "giovana-armani.jpg",
+    "title": "Developer Advocate",
+    "company": "AWS",
+    "talk": "Olhos na nuvem: seus primeiros passos com cloud",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/giovana-armani/"
+    }
+  },
+  {
+    "name": "Josilene Silva",
+    "photo": "josilene-silva.jpg",
+    "title": "Engenheira de Software",
+    "company": "Santander Corretora",
+    "talk": "Sua carreira está bem arquitetada? Descubra em 6 pilares",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/josilene-v-s-silva/"
+    }
+  },
+  {
+    "name": "Luiz Gustavo Ribeiro",
+    "photo": "luiz-gustavo-ribeiro.jpg",
+    "title": "Arquiteto de Soluções",
+    "company": "",
+    "talk": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/gugananuvem"
+    }
+  },
+  {
+    "name": "Mairton Silviano Rodrigues Leal",
+    "photo": "mairton-silviano-rodrigues-leal.jpg",
+    "title": "iOS Engineer",
+    "company": "",
+    "talk": "Eu só queria codar… aí chegou o Kiro",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/project-spiders/"
+    }
+  },
+  {
+    "name": "Marcelo Daniel Nunes Brasil",
+    "photo": "marcelo-daniel-nunes-brasil.jpg",
+    "title": "Specialist Software Engineer",
+    "company": "CI&T",
+    "talk": "Construa sua primeira arquitetura orientada a eventos na AWS",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/mdnbras"
+    }
+  },
+  {
+    "name": "Marcelo Paiva",
+    "photo": "marcelo-paiva.jpg",
+    "title": "CTO – AWS Community Hero",
+    "company": "",
+    "talk": "",
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/marcelopaiva"
+    }
+  },
+  {
+    "name": "Raphael Moura",
+    "photo": "raphael-moura.jpg",
+    "title": "Sr. Serverless Developer",
+    "company": "Serverless Guru",
+    "talk": "Do vibe coding à engenharia: desenvolvendo sistemas com IA",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/raphamoura/"
+    }
+  },
+  {
+    "name": "Ricardo Gulias",
+    "photo": "ricardo-gulias.jpg",
+    "title": "TAM – Technical Account Manager",
+    "company": "DaRede",
+    "talk": "Do zero a comunidade: como construí a Golden Jackets Brazil em 72h com Kiro e AWS Serverless",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/gulias/"
+    }
+  },
+  {
+    "name": "Vanessa Alves dos Santos",
+    "photo": "https://abicora.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6ImZjZWUxNzQzLTI2YTQtNDMxOS1iNzFjLWQ3NWUyZDgwZDg3NSIsInB1ciI6ImJsb2JfaWQifX0=--f582a63b0b63e69266aaf77b86d38fb99c112c6c/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOlsxNTAsMTUwXSwic2F2ZXIiOnsicXVhbGl0eSI6ODAsInN0cmlwIjp0cnVlfX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--082bdf56160a04335aedbd23b9be7ca289606336/1769824192158.jpg",
+    "title": "Executiva Sênior de Global Advisory - AWS Community Hero",
+    "company": "",
+    "talk": "",
+    "bio": "",
+    "keynote": true,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/vanessa-alves-dos-santos/"
+    }
+  }
+]
