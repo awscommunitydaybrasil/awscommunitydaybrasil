@@ -6,6 +6,7 @@ import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
 import volunteers from "./data/volunteers.json";
 import heroImage from "./assets/postcard-salvador.png";
+import eventPhoto from "./assets/eventPhoto.jpg";
 import type { Sponsor, Speaker, Organizer } from "@/regions/types";
 
 import caioPhoto from "./assets/caio-nunes.jpg";
@@ -106,6 +107,7 @@ const Nordeste = () => (
     sponsors={resolvedSponsors}
     volunteers={resolvedVolunteers}
     heroImage={heroImage}
+    eventPhoto={eventPhoto}
   />
 );
 

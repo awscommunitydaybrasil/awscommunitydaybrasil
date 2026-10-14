@@ -28,3 +28,9 @@ dist-ssr
 .chat.json
 .agents/
 .worktrees/
+
+# Dados pessoais de participantes (nao versionar - LGPD)
+scripts/_tmp-*.xml
+scripts/_tmp-*
+*.xlsx
+Participantes-*
