@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado Brasil — AWS Community Day Brasil 2026</title>
+  <meta name="description" content="Consolidação dos números do AWS Community Day Brasil 2026 — resultado parcial das edições regionais." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --card: #232938;
+      --border: #2e3548;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 40px; }
+    header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--primary-light); }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(232, 132, 26, 0.12);
+      border: 1px solid rgba(232, 132, 26, 0.3);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 640px; margin: 0 auto; }
+
+    .partial-note {
+      max-width: 760px;
+      margin: 1.5rem auto 0;
+      background: rgba(232, 132, 26, 0.08);
+      border: 1px solid rgba(232, 132, 26, 0.3);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--primary-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      text-align: left;
+    }
+    .partial-note svg { flex-shrink: 0; margin-top: 2px; }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .kpi:hover { border-color: rgba(232, 132, 26, 0.5); transform: translateY(-2px); }
+    .kpi .value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .kpi .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    .section { margin: 4rem 0; }
+    .section-title { text-align: center; margin-bottom: 2rem; }
+    .section-title h2 { font-size: 1.5rem; font-weight: 700; }
+    .section-title p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .chart-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card canvas { width: 100% !important; max-height: 300px; }
+
+    .table-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: rgba(232, 132, 26, 0.08);
+      padding: 0.875rem 1.25rem;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    td {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    tr:hover td { background: rgba(232, 132, 26, 0.03); }
+    td a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    td a:hover { color: var(--primary-light); }
+    .pending { color: var(--muted); font-style: italic; }
+    .badge-done { color: #22c55e; font-weight: 700; }
+    .badge-wait { color: var(--muted); }
+
+    .bar-cell { display: flex; align-items: center; gap: 0.75rem; }
+    .bar-bg { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width 1s ease; }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .highlight-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transition: border-color 0.3s;
+    }
+    .highlight-item:hover { border-color: rgba(232, 132, 26, 0.4); }
+    .highlight-item .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(232, 132, 26, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .highlight-item .icon svg { width: 18px; height: 18px; color: var(--primary); }
+    .highlight-item .content h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .highlight-item .content p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpi .value { font-size: 2rem; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/"><img src="/favicon.png" alt="AWS Community Day Brasil" /></a>
+      <a href="/">← Voltar para o site</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Temporada 2026 — Resultado Parcial
+      </div>
+      <h1>AWS Community Day Brasil 2026</h1>
+      <p>O ano em números — consolidação das edições regionais</p>
+      <div class="partial-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Resultado parcial:</strong> os números abaixo somam apenas as edições já consolidadas (Centro-Oeste e Nordeste). Sudeste, Sul e Norte serão incorporados assim que seus relatórios forem publicados. O número nacional final será fechado após a edição Norte (Belém, 31/10/2026).</span>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">2<span style="font-size:1.25rem;color:var(--muted)">/5</span></div><div class="label">Edições consolidadas</div></div>
+      <div class="kpi"><div class="value">833</div><div class="label">Participantes presentes</div></div>
+      <div class="kpi"><div class="value">37</div><div class="label">Palestrantes</div></div>
+      <div class="kpi"><div class="value">56</div><div class="label">Voluntários/Staff</div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Edição por Edição</h2>
+        <p>Panorama das cinco regionais da temporada 2026</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Edição</th><th>Cidade</th><th>Data</th><th>Presentes</th><th>Palestrantes</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="/centro-oeste/resultado/">Centro-Oeste</a></td><td>Brasília/DF</td><td>27/06</td><td>204</td><td>20</td><td><span class="badge-done">● Consolidada</span></td></tr>
+            <tr><td>Sudeste</td><td>Belo Horizonte/MG</td><td>22/08</td><td class="pending">aguardando</td><td class="pending">—</td><td><span class="badge-wait">○ Pendente</span></td></tr>
+            <tr><td>Sul</td><td>Curitiba/PR</td><td>19/09</td><td class="pending">aguardando</td><td class="pending">—</td><td><span class="badge-wait">○ Pendente</span></td></tr>
+            <tr><td><a href="/nordeste/resultado/">Nordeste</a></td><td>Salvador/BA</td><td>10/10</td><td>629</td><td>17</td><td><span class="badge-done">● Consolidada</span></td></tr>
+            <tr><td>Norte</td><td>Belém/PA</td><td>31/10</td><td class="pending">a realizar</td><td class="pending">—</td><td><span class="badge-wait">○ Futuro evento</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Clique nas edições consolidadas para ver o relatório detalhado de cada uma.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Comparativo entre Edições</h2>
+        <p>Participantes presentes por edição consolidada</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Presentes por Edição</h3>
+          <canvas id="chartEdicoes"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Participação no Total Parcial</h3>
+          <canvas id="chartParticipacao"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Perfil Profissional Agregado</h2>
+        <p>Soma dos perfis declarados nas edições consolidadas (Centro-Oeste + Nordeste)</p>
+      </div>
+      <div class="chart-card" style="margin-top:0;">
+        <h3>Distribuição do Público</h3>
+        <canvas id="chartPerfil"></canvas>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Perfil Profissional</th><th>Quantidade</th><th>% do Total Parcial</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Estudante</td><td>292</td><td>37,2%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:37.2%"></div></div></div></td></tr>
+            <tr><td>Desenvolvimento de software</td><td>259</td><td>33,0%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:33.0%"></div></div></div></td></tr>
+            <tr><td>Infraestrutura</td><td>93</td><td>11,8%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:11.8%"></div></div></div></td></tr>
+            <tr><td>Outros</td><td>72</td><td>9,2%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:9.2%"></div></div></div></td></tr>
+            <tr><td>Gestão de TI</td><td>31</td><td>3,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:3.9%"></div></div></div></td></tr>
+            <tr><td>Em transição de carreira para tecnologia</td><td>26</td><td>3,3%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:3.3%"></div></div></div></td></tr>
+            <tr><td>Executivo de Negócios</td><td>11</td><td>1,4%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:1.4%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Categorias de perfil normalizadas entre as edições. Base: 784 respostas das duas edições consolidadas.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Destaques Nacionais (parcial)</h2>
+      </div>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="content"><h4>833 participantes</h4><p>Soma das presenças de Centro-Oeste e Nordeste. O total nacional cresce a cada edição incorporada.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="content"><h4>Maior edição até aqui</h4><p>Salvador (Nordeste) lidera com 629 presentes — mais de 3x o público da edição Centro-Oeste.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20v-4"/></svg></div>
+          <div class="content"><h4>Público técnico e jovem</h4><p>Estudantes (37,2%) e Desenvolvimento de Software (33%) somam 70% do público agregado.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div class="content"><h4>Comunidade mobilizada</h4><p>37 palestrantes e 56 voluntários/staff já engajados nas duas edições consolidadas.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 — Consolidação Nacional (resultado parcial) · <a href="/">Ver site</a></p>
+      <p style="margin-top: 0.5rem;">Fontes: relatórios de credenciamento das edições regionais (Hub Connect Eventos). Documento interno — atualizado conforme novas edições são consolidadas.</p>
+    </div>
+  </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#2e3548';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    // Presentes por Edição - Bar (consolidadas vs pendentes)
+    new Chart(document.getElementById('chartEdicoes'), {
+      type: 'bar',
+      data: {
+        labels: ['Centro-Oeste', 'Nordeste', 'Sudeste', 'Sul', 'Norte'],
+        datasets: [{
+          label: 'Presentes',
+          data: [204, 629, null, null, null],
+          backgroundColor: ['#e8841a', '#e8841a', '#2e3548', '#2e3548', '#2e3548'],
+          borderRadius: 6,
+          barThickness: 44,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ctx.raw == null ? 'Aguardando dados' : `${ctx.raw} presentes`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Participação no total parcial - Doughnut
+    new Chart(document.getElementById('chartParticipacao'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Nordeste (Salvador)', 'Centro-Oeste (Brasília)'],
+        datasets: [{
+          data: [629, 204],
+          backgroundColor: ['#e8841a', '#fbc064'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/833)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%',
+      }
+    });
+
+    // Perfil agregado - Horizontal Bar
+    new Chart(document.getElementById('chartPerfil'), {
+      type: 'bar',
+      data: {
+        labels: ['Estudante', 'Dev Software', 'Infraestrutura', 'Outros', 'Gestão de TI', 'Transição', 'Exec. Negócios'],
+        datasets: [{
+          data: [292, 259, 93, 72, 31, 26, 11],
+          backgroundColor: '#e8841a',
+          borderRadius: 4,
+          barThickness: 22,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/784)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, ticks: { stepSize: 25 } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

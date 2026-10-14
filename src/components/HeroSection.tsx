@@ -18,16 +18,6 @@ const HeroSection = () => {
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body hero-fade-in" style={{ animationDelay: "0.8s" }}>
           O maior movimento de comunidades AWS do Brasil
         </p>
-        <a
-          href="#regioes"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all hero-fade-in"
-          style={{ animationDelay: "1.1s" }}
-        >
-          Explorar regiões
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
-        </a>
       </div>
     </section>
   );
