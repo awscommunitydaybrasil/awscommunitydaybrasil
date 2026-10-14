@@ -40,5 +40,8 @@
       "url": "https://www.instagram.com/aws.senaicimatec/",
       "icon": "instagram"
     }
-  ]
+  ],
+  "pastEvent": {
+    "photosUrl": "#"
+  }
 }

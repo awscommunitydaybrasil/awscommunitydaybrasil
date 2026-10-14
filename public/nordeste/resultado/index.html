@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado — AWS Community Day Nordeste 2026</title>
+  <meta name="description" content="Relatório de participação do AWS Community Day Nordeste 2026 — 629 participantes presentes em Salvador." />
+  <link rel="icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --card: #232938;
+      --border: #2e3548;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 40px; }
+    header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--primary-light); }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+    }
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(232, 132, 26, 0.12);
+      border: 1px solid rgba(232, 132, 26, 0.3);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .kpi:hover { border-color: rgba(232, 132, 26, 0.5); transform: translateY(-2px); }
+    .kpi .value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .kpi .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    .section { margin: 4rem 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-title h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .chart-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card canvas { width: 100% !important; max-height: 300px; }
+
+    .chart-card-full {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    .chart-card-full h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card-full canvas { width: 100% !important; max-height: 280px; }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .highlight-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transition: border-color 0.3s;
+    }
+    .highlight-item:hover { border-color: rgba(232, 132, 26, 0.4); }
+    .highlight-item .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(232, 132, 26, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .highlight-item .icon svg { width: 18px; height: 18px; color: var(--primary); }
+    .highlight-item .content h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .highlight-item .content p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    .table-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: rgba(232, 132, 26, 0.08);
+      padding: 0.875rem 1.25rem;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    td {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    tr:hover td { background: rgba(232, 132, 26, 0.03); }
+    .bar-cell { display: flex; align-items: center; gap: 0.75rem; }
+    .bar-bg {
+      flex: 1;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpi .value { font-size: 2rem; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+
+    .testimonials {
+      columns: 2;
+      column-gap: 1.25rem;
+    }
+    .testimonial {
+      break-inside: avoid;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .testimonial:hover { border-color: rgba(232, 132, 26, 0.4); transform: translateY(-2px); }
+    .testimonial .quote-mark {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--primary);
+      font-family: Georgia, serif;
+      height: 1rem;
+    }
+    .testimonial p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0.5rem 0 1.25rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a1f2e;
+      flex-shrink: 0;
+    }
+    .testimonial-author .name { font-size: 0.9rem; font-weight: 700; }
+    .testimonial-author .role { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 760px) {
+      .testimonials { columns: 1; }
+    }
+
+    .photos-banner { margin: 2.5rem 0 1rem; }
+    .photo-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .photo-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .photo-card-image {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+    }
+    .photo-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .photo-card:hover .photo-card-image img { transform: scale(1.05); }
+    .photo-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,31,46,0.3), rgba(232,132,26,0.1));
+    }
+    .photo-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.875rem;
+      border-radius: 9999px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .photo-card-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .photo-card-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .photo-card-content p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .photo-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: gap 0.3s;
+    }
+    .photo-card:hover .photo-card-cta { gap: 0.75rem; }
+    @media (max-width: 640px) {
+      .photo-card { grid-template-columns: 1fr; }
+      .photo-card-image { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/nordeste/"><img src="/favicon.png" alt="AWS Community Day" /></a>
+      <a href="/nordeste/">← Voltar para o evento</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Evento Realizado — 10/10/2026
+      </div>
+      <h1>Resultado do Evento</h1>
+      <p>AWS Community Day Nordeste 2026 — Salvador/BA</p>
+    </section>
+
+    <section class="photos-banner">
+      <!-- TODO: substituir href="#" pelo link da galeria de fotos quando disponível -->
+      <a href="#" class="photo-card">
+        <div class="photo-card-image">
+          <img src="event-photo.jpg" alt="Fotos do AWS Community Day Nordeste 2026" />
+          <div class="photo-card-overlay"></div>
+          <div class="photo-card-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Galeria de Fotos
+          </div>
+        </div>
+        <div class="photo-card-content">
+          <h3>📸 Veja as fotos do evento</h3>
+          <p>Reviva os melhores momentos do AWS Community Day Nordeste 2026. Palestras, networking, comunidade e muito mais!</p>
+          <span class="photo-card-cta">
+            Abrir galeria
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">629</div><div class="label">Participantes presentes</div></div>
+      <div class="kpi"><div class="value">795</div><div class="label">Total de inscritos</div></div>
+      <div class="kpi"><div class="value">79,1%</div><div class="label">Taxa de presença</div></div>
+      <div class="kpi"><div class="value">77</div><div class="label">Cadastros no dia</div></div>
+      <div class="kpi"><div class="value">17</div><div class="label">Palestrantes</div></div>
+      <div class="kpi"><div class="value">35</div><div class="label">Voluntários</div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Distribuição de Presença</h2>
+        <p>Participantes presentes e ausentes sobre o total de inscritos</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Presença Geral</h3>
+          <canvas id="chartPresenca"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Indicadores</h3>
+          <div class="table-wrapper" style="margin-top:0; box-shadow:none; border:none;">
+            <table>
+              <tbody>
+                <tr><td>Total de Inscritos</td><td style="text-align:right;font-weight:700;">795</td></tr>
+                <tr><td>Presentes</td><td style="text-align:right;font-weight:700;color:#22c55e;">629</td></tr>
+                <tr><td>Ausentes</td><td style="text-align:right;font-weight:700;color:#ef4444;">166</td></tr>
+                <tr><td>Cadastros do Dia</td><td style="text-align:right;font-weight:700;color:var(--primary);">77</td></tr>
+                <tr><td>Taxa de Presença</td><td style="text-align:right;font-weight:700;color:var(--primary-light);">79,1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Composição do Público</h2>
+        <p>Distribuição por categoria de credencial e perfil profissional</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Categoria de Credencial</h3>
+          <canvas id="chartCategoria"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Perfil Profissional</h3>
+          <canvas id="chartPerfil"></canvas>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Categoria</th><th>Quantidade</th><th>% do Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Participante</td><td>614</td><td>92,2%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:92.2%"></div></div></div></td></tr>
+            <tr><td>Voluntário</td><td>35</td><td>5,3%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:5.3%"></div></div></div></td></tr>
+            <tr><td>Palestrante</td><td>17</td><td>2,6%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2.6%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Perfil Profissional</h2>
+        <p>Distribuição dos participantes por perfil declarado na inscrição</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Perfil Profissional</th><th>Quantidade</th><th>% do Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Estudante</td><td>250</td><td>42,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:42.9%"></div></div></div></td></tr>
+            <tr><td>Desenvolvimento de software</td><td>199</td><td>34,1%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:34.1%"></div></div></div></td></tr>
+            <tr><td>Infraestrutura</td><td>51</td><td>8,7%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:8.7%"></div></div></div></td></tr>
+            <tr><td>Outros</td><td>45</td><td>7,7%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:7.7%"></div></div></div></td></tr>
+            <tr><td>Gestão de TI</td><td>17</td><td>2,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2.9%"></div></div></div></td></tr>
+            <tr><td>Em transição de carreira para tecnologia</td><td>17</td><td>2,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2.9%"></div></div></div></td></tr>
+            <tr><td>Executivo de Negócios</td><td>4</td><td>0,7%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:0.7%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Origem Geográfica</h2>
+        <p>De onde vieram os participantes — estimativa por DDD do telefone</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Participantes por Estado</h3>
+          <canvas id="chartGeo"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Bahia por Região (DDD)</h3>
+          <canvas id="chartBahia"></canvas>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Estimativa baseada no DDD do telefone informado na inscrição. Cerca de 65 registros sem telefone não entram neste recorte. O DDD indica o estado com segurança, mas a cidade é aproximada.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Fluxo de Credenciamento</h2>
+        <p>Evolução de credenciamentos ao longo do dia</p>
+      </div>
+      <div class="chart-card-full">
+        <h3>Credenciamentos por Hora</h3>
+        <canvas id="chartFluxo"></canvas>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Destaques</h2>
+      </div>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="content"><h4>79,1% de presença</h4><p>629 dos 795 inscritos compareceram ao evento — forte taxa de comparecimento.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="content"><h4>Pico às 08:00</h4><p>242 credenciamentos concentrados na primeira hora da manhã — maior fluxo do dia.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="content"><h4>Público técnico e jovem</h4><p>Estudantes (42,9%) e Desenvolvimento de Software (34,1%) somam 77% do público.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="content"><h4>Cadastros no dia</h4><p>77 participantes se credenciaram diretamente no local, sem inscrição prévia.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="content"><h4>Público majoritariamente local</h4><p>Pela análise de DDD, mais de 95% do público é da Bahia, com forte concentração em Salvador e Região Metropolitana (DDD 71).</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <div class="content"><h4>Transição de carreira</h4><p>2,9% dos participantes estão migrando para tecnologia — oportunidade para trilhas de capacitação.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3-3m0 0l-3 3m3-3v8"/></svg></div>
+          <div class="content"><h4>Força da comunidade</h4><p>17 palestrantes e 35 voluntários conduziram um evento com mais de 600 presentes.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-title">
+        <h2>O que falaram do evento</h2>
+        <p>Depoimentos de participantes compartilhados no LinkedIn</p>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Ontem foi dia de muito aprendizado, inspiração e conexões. A energia da comunidade e a oportunidade de aprender com grandes referências como Marcelo Paiva tornam momentos como esse inesquecíveis. Palestras sobre Inteligência Artificial, Engenharia de Nuvem, Observabilidade e Confiabilidade reforçam o quanto a comunidade impulsiona nosso crescimento técnico e profissional.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MC</div>
+            <div><div class="name">Maria Clara Mota</div><div class="role">Estagiária de Suporte Técnico de TI · Polisystem</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Esse evento foi um marco gigantesco para a nossa região e um divisor de águas. Me emocionei, extraí o máximo de conhecimento e fiz conexões valiosas. Estar no meio de tantas referências, como a presença ilustre do AWS Hero Marcelo Paiva, e absorver conteúdos de altíssimo nível foi surreal. Ver a energia e a inteligência do meu time AWS SBG CIMATEC me deu um orgulho que não cabe no peito.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">IA</div>
+            <div><div class="name">Iasmin Angel</div><div class="role">Software Developer · AWS Trainee Projects, Cloud Architecture</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Que dia incrível! A energia deste lugar é indescritível. É muito gratificante estar cercado por tantos profissionais talentosos e mentes inovadoras que compartilham a mesma paixão por tecnologia. Saio daqui com a mente cheia de novas ideias, conexões renovadas e uma felicidade enorme por fazer parte de um ecossistema tão vibrante e acolhedor.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">VN</div>
+            <div><div class="name">Vitoria Neves</div><div class="role">Análise e Desenvolvimento de Sistemas · UCSAL</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Foi um evento espetacular, recheado de insights valiosos, trocas de experiências e networking com profissionais incríveis da área. Eventos como este reforçam o quanto a cultura de comunidade impulsiona o crescimento do nosso ecossistema de tecnologia. Saio do evento energizada e pronta para aplicar todo esse conhecimento nos próximos desafios!</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">GN</div>
+            <div><div class="name">Gabriele Natividade</div><div class="role">Engenharia de Software · Desenvolvedora, Análise de Dados</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Voltei do AWS Community Day Salvador com a cabeça cheia e o celular quase sem bateria. Uma frase da palestra &ldquo;Os 5 pilares do Desenvolvedor Renascentista&rdquo;, de Marcelo Paiva, não saiu da minha cabeça. Testei o Kiro pela primeira vez: a proposta de começar pela especificação e deixar a IDE executar me pegou, porque resolve uma dor do dia a dia.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MO</div>
+            <div><div class="name">Matheus Oliveira</div><div class="role">Senior Backend Engineer · AWS, Java, Python, Spring Boot</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Foi uma das melhores experiências que já tive! Duas se destacaram: o workshop &ldquo;Melhores práticas para gerenciar recursos da AWS com Terraform&rdquo;, de Rafael Gomes, e &ldquo;Infraestrutura para sistemas distribuídos modernos&rdquo;, do professor Rafael Levi Costa, sobre engenharia do caos. Obrigado à organização, aos palestrantes e voluntários por trazerem um evento desse porte para Salvador.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LS</div>
+            <div><div class="name">Luciano Silva</div><div class="role">Desenvolvedor Full Stack · Laravel, Angular, APIs REST</div></div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Um evento marcado por muito aprendizado, troca de experiências e contato com profissionais da área. Acompanhei palestras que ampliaram minha visão sobre o mercado de tecnologia, incluindo a de Marcelo Paiva. Como estudante de Engenharia de Software, experiências assim são fundamentais para complementar o aprendizado acadêmico. Saio com novos conhecimentos, boas conexões e ainda mais motivação.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MD</div>
+            <div><div class="name">Murilo Duarte</div><div class="role">Engenheiro de Software em Formação · UCSAL</div></div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Depoimentos públicos coletados no LinkedIn, resumidos para este relatório. Os textos originais pertencem aos respectivos autores.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 — Nordeste · <a href="/nordeste/">Ver página do evento</a></p>
+      <p style="margin-top: 0.5rem;">Dados: Hub Connect Eventos (credenciamento) · origem geográfica estimada por DDD — Outubro 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#2e3548';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    // Distribuição de Presença - Doughnut
+    new Chart(document.getElementById('chartPresenca'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Presentes', 'Ausentes'],
+        datasets: [{
+          data: [629, 166],
+          backgroundColor: ['#2563eb', '#ef4444'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/795)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%',
+      }
+    });
+
+    // Categoria de Credencial - Doughnut
+    new Chart(document.getElementById('chartCategoria'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Participante', 'Voluntário', 'Palestrante'],
+        datasets: [{
+          data: [614, 35, 17],
+          backgroundColor: ['#e8841a', '#554492', '#fbc064'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/666)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%',
+      }
+    });
+
+    // Perfil Profissional - Horizontal Bar
+    new Chart(document.getElementById('chartPerfil'), {
+      type: 'bar',
+      data: {
+        labels: ['Estudante', 'Dev Software', 'Infraestrutura', 'Outros', 'Gestão de TI', 'Transição', 'Exec. Negócios'],
+        datasets: [{
+          data: [250, 199, 51, 45, 17, 17, 4],
+          backgroundColor: '#e8841a',
+          borderRadius: 4,
+          barThickness: 20,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/583)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, ticks: { stepSize: 25 } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Fluxo de Credenciamento por Hora - Line/Area
+    new Chart(document.getElementById('chartFluxo'), {
+      type: 'line',
+      data: {
+        labels: ['6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+        datasets: [{
+          label: 'Credenciamentos',
+          data: [0, 97, 242, 97, 58, 42, 25, 32, 25, 5, 2, 1, 1, 1, 1, 1, 0, 1],
+          borderColor: '#2dd4bf',
+          backgroundColor: 'rgba(45, 212, 191, 0.15)',
+          fill: true,
+          tension: 0.3,
+          pointBackgroundColor: '#2dd4bf',
+          pointRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => `Horário: ${items[0].label}`,
+              label: (ctx) => `${ctx.raw} credenciamentos`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxRotation: 45 } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Origem Geográfica por Estado (estimativa via DDD)
+    new Chart(document.getElementById('chartGeo'), {
+      type: 'bar',
+      data: {
+        labels: ['BA (Bahia)', 'SP', 'PE', 'MG', 'Outros estados'],
+        datasets: [{
+          data: [705, 7, 4, 3, 11],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492', '#77889d', '#4a5568'],
+          borderRadius: 6,
+          barThickness: 38,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/730)*100).toFixed(1)}% dos com telefone)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: '#2e3548' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Bahia por Região (DDD)
+    new Chart(document.getElementById('chartBahia'), {
+      type: 'doughnut',
+      data: {
+        labels: ['71 — Salvador / RMS', '75 — Feira de Santana', '73/74/77/79 — Interior'],
+        datasets: [{
+          data: [560, 90, 55],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/705)*100).toFixed(1)}% da BA)`
+            }
+          }
+        },
+        cutout: '58%',
+      }
+    });
+  </script>
+</body>
+</html>
