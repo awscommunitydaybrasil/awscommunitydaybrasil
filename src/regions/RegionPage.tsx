@@ -21,6 +21,7 @@ interface RegionPageProps {
   organizers: Organizer[];
   speakers: Speaker[];
   schedule: ScheduleItem[];
+  scheduleLoading?: boolean;
   sponsors: Sponsor[];
   heroImage: string;
   eventPhoto?: string;
@@ -38,7 +39,7 @@ function isPastEvent(targetDate: string): boolean {
   return endOfEventDay < now;
 }
 
-const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImage, eventPhoto, volunteers }: RegionPageProps) => {
+const RegionPage = ({ config, organizers, speakers, schedule, scheduleLoading, sponsors, heroImage, eventPhoto, volunteers }: RegionPageProps) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const past = isPastEvent(config.targetDate);
@@ -111,7 +112,7 @@ const RegionPage = ({ config, organizers, speakers, schedule, sponsors, heroImag
       {!past && config.callForSpeakersUrl && <CallForSpeakersSection url={config.callForSpeakersUrl} config={config} formattedDate={formattedDate} />}
       {!past && <ExpectationsSection />}
       <SpeakersSection speakers={speakers} past={past} />
-      <ScheduleSection schedule={schedule} hasSpeakers={speakers.length > 0} />
+      <ScheduleSection schedule={schedule} hasSpeakers={speakers.length > 0} loading={scheduleLoading} />
       {!past && config.callForSponsorsUrl && <CallForSponsorsSection url={config.callForSponsorsUrl} config={config} />}
       <SponsorsSection sponsors={sponsors} />
       {(config.communities || config.pastEvent?.communities) && (

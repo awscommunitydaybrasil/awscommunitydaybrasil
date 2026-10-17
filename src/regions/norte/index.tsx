@@ -2,10 +2,10 @@ import RegionPage from "@/regions/RegionPage";
 import config from "./data/config.json";
 import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
-import schedule from "./data/schedule.json";
 import sponsors from "./data/sponsors.json";
 import heroImage from "./assets/postcard-belem.png";
 import type { Speaker, Sponsor } from "@/regions/types";
+import { useNorteSchedule } from "./hooks/useNorteSchedule";
 
 const sponsorLogoModules = import.meta.glob(
   "./assets/sponsors/*.{png,jpg,jpeg,svg,webp,avif}",
@@ -51,15 +51,20 @@ const resolvedSponsors: Sponsor[] = sponsors.map((sponsor) => {
   };
 });
 
-const Norte = () => (
-  <RegionPage
-    config={config}
-    organizers={organizers}
-    speakers={resolvedSpeakers}
-    schedule={schedule}
-    sponsors={resolvedSponsors}
-    heroImage={heroImage}
-  />
-);
+const Norte = () => {
+  const { schedule, loading } = useNorteSchedule();
+
+  return (
+    <RegionPage
+      config={config}
+      organizers={organizers}
+      speakers={resolvedSpeakers}
+      schedule={schedule}
+      scheduleLoading={loading}
+      sponsors={resolvedSponsors}
+      heroImage={heroImage}
+    />
+  );
+};
 
 export default Norte;
