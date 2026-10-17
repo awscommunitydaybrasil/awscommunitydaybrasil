@@ -1,9 +1,14 @@
 /**
  * build-mkt-data.mjs — Data pipeline for the /mkt/ marketing card generator.
  *
- * Reads each region's speakers.json + config.json, keeps speakers with a
- * non-empty talk, drops regions with 0 talks, copies the kept speaker photos
- * and the two brand assets into public/mkt/, and emits public/mkt/data.json.
+ * Derives talks from each region's schedule.json (the program source of truth):
+ * keeps every schedule row with a non-empty speaker AND title, dedupes on
+ * (title + speaker), parses the speaker string into individual people, and
+ * enriches each parsed person with a photo looked up in that region's
+ * speakers.json (matched by normalized name). Speakers with no match / no usable
+ * photo keep photo "" (rendered as a placeholder circle downstream — the talk is
+ * never dropped). Drops regions with 0 talks, copies kept photos + the two brand
+ * assets into public/mkt/, and emits public/mkt/data.json.
  *
  * Node ESM, built-in fs/path only (NO new deps). Idempotent — safe to re-run.
  *
@@ -46,6 +51,31 @@ function slugify(str) {
     .replace(/^-+|-+$/g, "");
 }
 
+/**
+ * Normalize a person name for matching: strip accents (combining marks),
+ * lowercase, collapse internal whitespace, trim.
+ */
+function normalizeName(s) {
+  return String(s)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Split a schedule `speaker` string into individual people. Splits on commas,
+ * the Portuguese " e " (whitespace REQUIRED on both sides so names like "Andre"
+ * are not split), and "&". Trims, drops empties, preserves order.
+ */
+function splitSpeakers(str) {
+  return String(str)
+    .split(/\s*,\s*|\s+e\s+|\s*&\s*/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+}
+
 function readJSON(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -73,6 +103,73 @@ function rmrf(dir) {
   }
 }
 
+/**
+ * Build a normalized name index for a region's speakers.json.
+ * Returns an array of { norm, tokens, photo } entries (photo = recorded
+ * filename/URL from speakers.json; resolved to a real file later).
+ */
+function buildSpeakerIndex(speakers) {
+  return speakers.map((s) => {
+    const norm = normalizeName(s.name);
+    return { norm, tokens: norm ? norm.split(" ") : [], photo: s.photo };
+  });
+}
+
+/**
+ * Two-tier name -> speakers.json entry matcher. Returns the matched entry's
+ * recorded photo string, or null if there is no confident match.
+ *
+ * (a) exact normalized full-name equality;
+ * (b) else conservative leading-word-subsequence: the shorter name's tokens are
+ *     a leading-word prefix of the longer name's tokens, requiring either
+ *     >= 2 words, or an exact single-token equality. Ambiguous (b) matches
+ *     (more than one candidate) are treated as NO match.
+ */
+function matchSpeakerPhoto(name, index) {
+  const norm = normalizeName(name);
+  if (!norm) return null;
+
+  // (a) exact normalized full-name match.
+  const exact = index.find((e) => e.norm === norm);
+  if (exact) return exact.photo;
+
+  // (b) conservative leading-word-subsequence match.
+  const tokens = norm.split(" ");
+  const candidates = index.filter((e) => {
+    if (!e.tokens.length) return false;
+    const [shortT, longT] =
+      tokens.length <= e.tokens.length ? [tokens, e.tokens] : [e.tokens, tokens];
+    if (shortT.length === 1) {
+      // Only accept an exact single-token equality (both single tokens).
+      return longT.length === 1 && shortT[0] === longT[0];
+    }
+    // >= 2 words: every leading word of the shorter must equal the longer's.
+    return shortT.every((t, i) => t === longT[i]);
+  });
+
+  if (candidates.length === 1) return candidates[0].photo;
+  // No candidate, or ambiguous -> prefer no photo over a wrong photo.
+  return null;
+}
+
+/**
+ * Resolve a usable photo path for a parsed speaker name. Matches against the
+ * region's speaker index; on a confident match whose photo resolves to a real
+ * file on disk, copies it into regionPhotosDir and returns the public ref.
+ * Otherwise returns "" (no match, or remote URL / missing file).
+ */
+function resolvePhotoForName(name, index, speakersAssetsDir, regionPhotosDir, slug) {
+  const recorded = matchSpeakerPhoto(name, index);
+  if (!recorded) return "";
+  const photoFile = resolvePhotoFile(speakersAssetsDir, recorded);
+  if (!photoFile) return ""; // remote URL or missing on disk.
+  fs.copyFileSync(
+    path.join(speakersAssetsDir, photoFile),
+    path.join(regionPhotosDir, photoFile)
+  );
+  return `./photos/${slug}/${photoFile}`;
+}
+
 function main() {
   // Fresh photos & postcards directories for idempotency.
   rmrf(PHOTOS_DIR);
@@ -84,23 +181,48 @@ function main() {
 
   for (const slug of REGIONS) {
     const regionDir = path.join(SRC_REGIONS, slug);
+    const schedulePath = path.join(regionDir, "data", "schedule.json");
     const speakersPath = path.join(regionDir, "data", "speakers.json");
     const configPath = path.join(regionDir, "data", "config.json");
 
-    if (!fs.existsSync(speakersPath) || !fs.existsSync(configPath)) {
-      summary.push(`${slug}: SKIP (missing speakers.json/config.json)`);
+    if (!fs.existsSync(schedulePath) || !fs.existsSync(configPath)) {
+      summary.push(`${slug}: SKIP (missing schedule.json/config.json)`);
       continue;
     }
 
-    const speakers = readJSON(speakersPath);
+    const schedule = readJSON(schedulePath);
     const config = readJSON(configPath);
 
-    // Keep speakers with a non-empty talk string.
-    const kept = speakers.filter(
-      (s) => typeof s.talk === "string" && s.talk.trim().length > 0
-    );
+    // speakers.json is used ONLY to enrich parsed speakers with photos.
+    // Absent -> empty index (all photos degrade to "").
+    const speakerIndex = fs.existsSync(speakersPath)
+      ? buildSpeakerIndex(readJSON(speakersPath))
+      : [];
 
-    if (kept.length === 0) {
+    // Keep schedule rows with a non-empty speaker AND a non-empty title.
+    // Then dedupe on (title + speaker), preserving first-appearance order:
+    // the same person with two DIFFERENT titles yields two talks; an identical
+    // title+speaker appearing twice yields one.
+    const seen = new Set();
+    const rows = [];
+    for (const row of schedule) {
+      if (
+        typeof row.speaker !== "string" ||
+        !row.speaker.trim() ||
+        typeof row.title !== "string" ||
+        !row.title.trim()
+      ) {
+        continue;
+      }
+      const title = row.title.trim();
+      const speaker = row.speaker.trim();
+      const key = `${title}||${speaker}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      rows.push({ title, speaker });
+    }
+
+    if (rows.length === 0) {
       summary.push(`${slug}: dropped (0 talks)`);
       continue;
     }
@@ -123,44 +245,36 @@ function main() {
 
     const speakersAssetsDir = path.join(regionDir, "assets", "speakers");
 
-    // Group kept speakers by exact talk title, preserving first-appearance
-    // order. Each group becomes ONE card entry with a speakers[] array so a
-    // talk with 2+ speakers renders a single combined card.
-    const groups = new Map(); // talk title -> { talk, slug, speakers: [] }
-    for (const s of kept) {
-      // The filename recorded in speakers.json may use a different image
-      // extension than the file actually on disk (e.g. .jpg recorded but
-      // .png/.jpeg present). src/ is read-only, so resolve the real file
-      // here and emit the entry using the actual copied filename.
-      const photoFile = resolvePhotoFile(speakersAssetsDir, s.photo);
-      if (!photoFile) {
-        throw new Error(
-          `Missing photo for ${slug}/${s.name}: ${path.join(
-            speakersAssetsDir,
-            s.photo
-          )}`
-        );
+    // Build one talk per kept row. Slugs are talk-based; collisions within a
+    // region are disambiguated deterministically (-2, -3, ...).
+    const usedSlugs = new Set();
+    const talks = [];
+    let noPhoto = 0;
+    let totalSpeakers = 0;
+    for (const row of rows) {
+      let slugValue = slugify(row.title);
+      if (usedSlugs.has(slugValue)) {
+        let n = 2;
+        while (usedSlugs.has(`${slugValue}-${n}`)) n += 1;
+        slugValue = `${slugValue}-${n}`;
       }
-      fs.copyFileSync(
-        path.join(speakersAssetsDir, photoFile),
-        path.join(regionPhotosDir, photoFile)
-      );
+      usedSlugs.add(slugValue);
 
-      const key = s.talk;
-      let group = groups.get(key);
-      if (!group) {
-        // Slug is talk-based so it is stable regardless of speaker order and
-        // identical for every speaker of the same talk. Talk titles are unique
-        // within a region in the current data.
-        group = { talk: s.talk, slug: slugify(s.talk), speakers: [] };
-        groups.set(key, group);
-      }
-      group.speakers.push({
-        name: s.name,
-        photo: `./photos/${slug}/${photoFile}`,
+      const speakers = splitSpeakers(row.speaker).map((name) => {
+        const photo = resolvePhotoForName(
+          name,
+          speakerIndex,
+          speakersAssetsDir,
+          regionPhotosDir,
+          slug
+        );
+        totalSpeakers += 1;
+        if (!photo) noPhoto += 1;
+        return { name, photo };
       });
+
+      talks.push({ talk: row.title, slug: slugValue, speakers });
     }
-    const talks = Array.from(groups.values());
 
     regions.push({
       slug,
@@ -173,7 +287,9 @@ function main() {
       talks,
     });
 
-    summary.push(`${slug}: ${talks.length} card(s)`);
+    summary.push(
+      `${slug}: ${talks.length} card(s), ${noPhoto}/${totalSpeakers} speaker(s) without photo (placeholder)`
+    );
   }
 
   // Copy brand assets.
