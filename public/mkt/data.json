@@ -385,6 +385,177 @@
       ]
     },
     {
+      "slug": "norte",
+      "regionName": "Norte",
+      "city": "Belém/PA",
+      "venue": "Faci Wyden",
+      "targetDate": "2026-10-31T09:00:00-03:00",
+      "eventTime": "08h às 18h",
+      "postcard": "./postcards/norte.png",
+      "talks": [
+        {
+          "talk": "Além do crachá: o risco das identidades humanas e não humanas na AWS",
+          "slug": "alem-do-cracha-o-risco-das-identidades-humanas-e-nao-humanas-na-aws",
+          "speakers": [
+            {
+              "name": "Ana Lourenço",
+              "photo": "./photos/norte/ana-lourenco.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Se a Base dos Dados nascesse hoje na AWS: arquitetura e governança para dados públicos em escala",
+          "slug": "se-a-base-dos-dados-nascesse-hoje-na-aws-arquitetura-e-governanca-para-dados-publicos-em-escala",
+          "speakers": [
+            {
+              "name": "Artemísia Weyl",
+              "photo": "./photos/norte/artemisia-weyl.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Detecção de transações financeiras suspeitas com Python, Amazon S3, AWS Lambda, DynamoDB e Amazon SNS",
+          "slug": "deteccao-de-transacoes-financeiras-suspeitas-com-python-amazon-s3-aws-lambda-dynamodb-e-amazon-sns",
+          "speakers": [
+            {
+              "name": "Belém Campelo Ribeiro",
+              "photo": "./photos/norte/belem-campelo-ribeiro.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Além do básico: Estratégias avançadas de Arquitetura em Nuvem na AWS.",
+          "slug": "alem-do-basico-estrategias-avancadas-de-arquitetura-em-nuvem-na-aws",
+          "speakers": [
+            {
+              "name": "Bianca Deyse Pinto Ramos",
+              "photo": "./photos/norte/bianca-deyse-pinto-ramos.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Menos prompts, mais ação: Desenvolvendo Agentes com Amazon Bedrock AgentCore",
+          "slug": "menos-prompts-mais-acao-desenvolvendo-agentes-com-amazon-bedrock-agentcore",
+          "speakers": [
+            {
+              "name": "Carlos Augusto Oeiras",
+              "photo": "./photos/norte/carlos-augusto-oeiras.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "A Nuvem Quando o Céu Está Caindo: Estratégias Práticas de Resiliência e Redundância na AWS",
+          "slug": "a-nuvem-quando-o-ceu-esta-caindo-estrategias-praticas-de-resiliencia-e-redundancia-na-aws",
+          "speakers": [
+            {
+              "name": "Christian Amarildo Amorim Morais",
+              "photo": "./photos/norte/christian-amarildo-amorim-morais.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Trago suas informações amadas em 3 dias",
+          "slug": "trago-suas-informacoes-amadas-em-3-dias",
+          "speakers": [
+            {
+              "name": "Cleber Soares",
+              "photo": "./photos/norte/cleber-soares.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent na prática",
+          "slug": "seguranca-na-era-do-desenvolvimento-com-ia-kiro-e-aws-security-agent-na-pratica",
+          "speakers": [
+            {
+              "name": "Dan Rezende",
+              "photo": "./photos/norte/dan-rezende.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Agentes de IA em produção: boas práticas para um uso seguro e produtivo",
+          "slug": "agentes-de-ia-em-producao-boas-praticas-para-um-uso-seguro-e-produtivo",
+          "speakers": [
+            {
+              "name": "Erick Eloi Pimenta Pimentel",
+              "photo": "./photos/norte/erick-eloi-pimenta-pimentel.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Olhos na nuvem: seus primeiros passos com cloud",
+          "slug": "olhos-na-nuvem-seus-primeiros-passos-com-cloud",
+          "speakers": [
+            {
+              "name": "Giovana Armani",
+              "photo": "./photos/norte/giovana-armani.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Sua carreira está bem arquitetada? Descubra em 6 pilares",
+          "slug": "sua-carreira-esta-bem-arquitetada-descubra-em-6-pilares",
+          "speakers": [
+            {
+              "name": "Josilene Silva",
+              "photo": "./photos/norte/josilene-silva.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Do Zero à Golden Jacket: Como Conquistei 12 Certificações AWS em 14 Meses",
+          "slug": "do-zero-a-golden-jacket-como-conquistei-12-certificacoes-aws-em-14-meses",
+          "speakers": [
+            {
+              "name": "Luiz Gustavo Ribeiro",
+              "photo": "./photos/norte/luiz-gustavo-ribeiro.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Eu só queria codar… aí chegou o Kiro",
+          "slug": "eu-so-queria-codar-ai-chegou-o-kiro",
+          "speakers": [
+            {
+              "name": "Mairton Silviano Rodrigues Leal",
+              "photo": "./photos/norte/mairton-silviano-rodrigues-leal.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Construa sua primeira arquitetura orientada a eventos na AWS",
+          "slug": "construa-sua-primeira-arquitetura-orientada-a-eventos-na-aws",
+          "speakers": [
+            {
+              "name": "Marcelo Daniel Nunes Brasil",
+              "photo": "./photos/norte/marcelo-daniel-nunes-brasil.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Do vibe coding à engenharia: desenvolvendo sistemas com IA",
+          "slug": "do-vibe-coding-a-engenharia-desenvolvendo-sistemas-com-ia",
+          "speakers": [
+            {
+              "name": "Raphael Moura",
+              "photo": "./photos/norte/raphael-moura.jpg"
+            }
+          ]
+        },
+        {
+          "talk": "Do zero a comunidade: como construí a Golden Jackets Brazil em 72h com Kiro e AWS Serverless",
+          "slug": "do-zero-a-comunidade-como-construi-a-golden-jackets-brazil-em-72h-com-kiro-e-aws-serverless",
+          "speakers": [
+            {
+              "name": "Ricardo Gulias",
+              "photo": "./photos/norte/ricardo-gulias.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "slug": "sudeste",
       "regionName": "Sudeste",
       "city": "Belo Horizonte/MG",

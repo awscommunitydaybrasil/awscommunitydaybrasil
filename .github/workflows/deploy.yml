@@ -31,6 +31,56 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # --- Regeneração do /mkt/ ANTES do build ---------------------------------
+      # Os artefatos do gerador de cards (/mkt/) são produzidos a partir das
+      # grades (src/regions/*). Rodamos a geração ANTES de `npm run build` para
+      # que o Vite copie o public/mkt/ já atualizado para dist/mkt/ por
+      # construção — sem passo frágil de cópia pós-build. Qualquer falha aqui
+      # deve derrubar o job (não publicar cards desatualizados).
+
+      # O chromium NÃO é instalado pelo `npm ci`; o gerador dirige a página real
+      # /mkt/ via Playwright, então precisamos do browser + libs do sistema.
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      # Reconstrói public/mkt/data.json + fotos + postcards a partir de src/,
+      # incluindo toda edição que agora tem palestras (ex.: Norte).
+      - name: Regenerate /mkt/ data
+        run: npm run build:mkt-data
+
+      # Sobe o dev server do Vite (único modo que serve /mkt/ corretamente, via
+      # o middleware publicIndexPlugin), aguarda ficar disponível com polling do
+      # HTTP 200 e então gera os cards de TODAS as edições. O código de saída do
+      # gerador é o que define o resultado do passo (falha => job falha).
+      - name: Serve /mkt/ and generate cards
+        run: |
+          # Inicia o dev server em background e guarda o PID.
+          npm run dev > /tmp/vite-dev.log 2>&1 &
+          VITE_PID=$!
+          # Garante o encerramento do servidor ao fim do passo (sucesso ou erro).
+          trap 'kill "$VITE_PID" 2>/dev/null || true' EXIT
+
+          # Poll /mkt/ até retornar HTTP 200 (timeout ~60s). Falha se não subir.
+          for i in $(seq 1 60); do
+            code="$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/mkt/ || true)"
+            if [ "$code" = "200" ]; then
+              echo "dev server pronto após ${i}s (/mkt/ => 200)"
+              break
+            fi
+            if [ "$i" = "60" ]; then
+              echo "::error::dev server não respondeu 200 em /mkt/ dentro do timeout"
+              cat /tmp/vite-dev.log || true
+              exit 1
+            fi
+            sleep 1
+          done
+
+          # Gera os cards de todas as edições. Se sair != 0, o job falha.
+          BASE_URL=http://localhost:8080 npm run gen:mkt-cards
+
+      # Build do site real. Como roda DEPOIS da regeneração acima, o Vite copia
+      # o public/mkt/ fresco (data.json, photos, postcards, cards) para dist/mkt/
+      # automaticamente — não é preciso ressincronizar cards para o dist.
       - name: Build
         run: npm run build
         env:
@@ -38,9 +88,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
-      - name: mkt images
-        run: npm run build:mkt-data
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -57,4 +104,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-   
