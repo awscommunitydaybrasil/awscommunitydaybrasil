@@ -203,6 +203,16 @@ function main() {
     // Then dedupe on (title + speaker), preserving first-appearance order:
     // the same person with two DIFFERENT titles yields two talks; an identical
     // title+speaker appearing twice yields one.
+    //
+    // Logistic rows (Abertura, Encerramento, Fechamento, etc.) carry no real
+    // speaker: in some schedules they have an empty speaker, in others the
+    // speaker is literally the event organization ("Organização" /
+    // "Organização do evento"). Both are excluded — a promo card only makes
+    // sense for an actual person giving a talk.
+    const isOrganization = (speaker) => {
+      const n = normalizeName(speaker);
+      return n === "organizacao" || n.startsWith("organizacao ");
+    };
     const seen = new Set();
     const rows = [];
     for (const row of schedule) {
@@ -214,6 +224,7 @@ function main() {
       ) {
         continue;
       }
+      if (isOrganization(row.speaker)) continue;
       const title = row.title.trim();
       const speaker = row.speaker.trim();
       const key = `${title}||${speaker}`;

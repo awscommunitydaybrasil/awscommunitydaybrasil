@@ -10,16 +10,6 @@
       "postcard": "./postcards/centro-oeste.png",
       "talks": [
         {
-          "talk": "Abertura",
-          "slug": "abertura",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
-            }
-          ]
-        },
-        {
           "talk": "Keynote - Aristóteles tinha Atenas",
           "slug": "keynote-aristoteles-tinha-atenas",
           "speakers": [
@@ -254,16 +244,6 @@
               "photo": "./photos/centro-oeste/paloma-lataliza.png"
             }
           ]
-        },
-        {
-          "talk": "Encerramento e Sorteios",
-          "slug": "encerramento-e-sorteios",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
-            }
-          ]
         }
       ]
     },
@@ -276,16 +256,6 @@
       "eventTime": "08h as 17h",
       "postcard": "./postcards/nordeste.png",
       "talks": [
-        {
-          "talk": "Abertura oficial",
-          "slug": "abertura-oficial",
-          "speakers": [
-            {
-              "name": "Organização do evento",
-              "photo": ""
-            }
-          ]
-        },
         {
           "talk": "Keynote - Desenvolvedor Renascentista: KIRO - Muito Além do Prompt",
           "slug": "keynote-desenvolvedor-renascentista-kiro-muito-alem-do-prompt",
@@ -435,16 +405,6 @@
             {
               "name": "Priscila Araujo",
               "photo": "./photos/nordeste/priscila-araujo.jpg"
-            }
-          ]
-        },
-        {
-          "talk": "Encerramento + Sorteio",
-          "slug": "encerramento-sorteio",
-          "speakers": [
-            {
-              "name": "Organização do evento",
-              "photo": ""
             }
           ]
         }
@@ -691,16 +651,6 @@
       "postcard": "./postcards/sudeste.png",
       "talks": [
         {
-          "talk": "Abertura",
-          "slug": "abertura",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
-            }
-          ]
-        },
-        {
           "talk": "Keynote — Liderar na era da IA, o que um modelo de IA não entrega",
           "slug": "keynote-liderar-na-era-da-ia-o-que-um-modelo-de-ia-nao-entrega",
           "speakers": [
@@ -903,16 +853,6 @@
               "photo": "./photos/sudeste/darko-mesaros.jpg"
             }
           ]
-        },
-        {
-          "talk": "Encerramento",
-          "slug": "encerramento",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
-            }
-          ]
         }
       ]
     },
@@ -925,16 +865,6 @@
       "eventTime": "09h às 18h",
       "postcard": "./postcards/sul.png",
       "talks": [
-        {
-          "talk": "Abertura oficial",
-          "slug": "abertura-oficial",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
-            }
-          ]
-        },
         {
           "talk": "Segurança na era do desenvolvimento com IA: Kiro e AWS Security Agent em prática",
           "slug": "seguranca-na-era-do-desenvolvimento-com-ia-kiro-e-aws-security-agent-em-pratica",
@@ -1036,16 +966,6 @@
             {
               "name": "Roberto Rojas",
               "photo": "./photos/sul/roberto.jpeg"
-            }
-          ]
-        },
-        {
-          "talk": "Fechamento do evento",
-          "slug": "fechamento-do-evento",
-          "speakers": [
-            {
-              "name": "Organização",
-              "photo": ""
             }
           ]
         }
