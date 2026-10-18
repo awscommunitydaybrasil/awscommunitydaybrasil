@@ -179,11 +179,11 @@
             },
             {
               "name": "Marcelo Paiva",
-              "photo": ""
+              "photo": "./photos/centro-oeste/marcelo-paiva.jpg"
             },
             {
               "name": "Priscila Araujo",
-              "photo": ""
+              "photo": "./photos/centro-oeste/priscila-araujo.jpg"
             },
             {
               "name": "Vanessa Santos",
@@ -545,7 +545,7 @@
           "speakers": [
             {
               "name": "William Lino Oliveira",
-              "photo": ""
+              "photo": "./photos/norte/william-lino.jpg"
             }
           ]
         },
@@ -565,7 +565,7 @@
           "speakers": [
             {
               "name": "Flavio Pimenta",
-              "photo": ""
+              "photo": "./photos/norte/flavio-pimenta.png"
             }
           ]
         },

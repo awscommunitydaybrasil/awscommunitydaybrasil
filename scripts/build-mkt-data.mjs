@@ -116,8 +116,29 @@ function buildSpeakerIndex(speakers) {
 }
 
 /**
- * Two-tier name -> speakers.json entry matcher. Returns the matched entry's
- * recorded photo string, or null if there is no confident match.
+ * Conservative leading-word-subsequence predicate between two token lists.
+ * The shorter list must be a leading-word prefix of the longer, requiring
+ * either >= 2 words, or (for single tokens) an exact single-token equality.
+ * This is the EXACT same rule used historically by matchSpeakerPhoto's tier (b).
+ */
+function isLeadingSubsequence(tokens, entryTokens) {
+  if (!entryTokens.length) return false;
+  const [shortT, longT] =
+    tokens.length <= entryTokens.length
+      ? [tokens, entryTokens]
+      : [entryTokens, tokens];
+  if (shortT.length === 1) {
+    // Only accept an exact single-token equality (both single tokens).
+    return longT.length === 1 && shortT[0] === longT[0];
+  }
+  // >= 2 words: every leading word of the shorter must equal the longer's.
+  return shortT.every((t, i) => t === longT[i]);
+}
+
+/**
+ * Two-tier name -> index entry matcher. Returns the matched entry OBJECT, or
+ * null if there is no confident match. Shared by the same-region and the
+ * global cross-region passes so there is a single matcher definition.
  *
  * (a) exact normalized full-name equality;
  * (b) else conservative leading-word-subsequence: the shorter name's tokens are
@@ -125,49 +146,176 @@ function buildSpeakerIndex(speakers) {
  *     >= 2 words, or an exact single-token equality. Ambiguous (b) matches
  *     (more than one candidate) are treated as NO match.
  */
-function matchSpeakerPhoto(name, index) {
+function findIndexEntry(name, index) {
   const norm = normalizeName(name);
   if (!norm) return null;
 
   // (a) exact normalized full-name match.
   const exact = index.find((e) => e.norm === norm);
-  if (exact) return exact.photo;
+  if (exact) return exact;
 
   // (b) conservative leading-word-subsequence match.
   const tokens = norm.split(" ");
-  const candidates = index.filter((e) => {
-    if (!e.tokens.length) return false;
-    const [shortT, longT] =
-      tokens.length <= e.tokens.length ? [tokens, e.tokens] : [e.tokens, tokens];
-    if (shortT.length === 1) {
-      // Only accept an exact single-token equality (both single tokens).
-      return longT.length === 1 && shortT[0] === longT[0];
-    }
-    // >= 2 words: every leading word of the shorter must equal the longer's.
-    return shortT.every((t, i) => t === longT[i]);
-  });
+  const candidates = index.filter((e) => isLeadingSubsequence(tokens, e.tokens));
 
-  if (candidates.length === 1) return candidates[0].photo;
+  if (candidates.length === 1) return candidates[0];
   // No candidate, or ambiguous -> prefer no photo over a wrong photo.
   return null;
 }
 
 /**
- * Resolve a usable photo path for a parsed speaker name. Matches against the
- * region's speaker index; on a confident match whose photo resolves to a real
- * file on disk, copies it into regionPhotosDir and returns the public ref.
- * Otherwise returns "" (no match, or remote URL / missing file).
+ * Same-region matcher: returns the matched entry's recorded photo string, or
+ * null. Re-expressed on top of findIndexEntry so same-region precedence and
+ * behavior are byte-for-byte unchanged.
  */
-function resolvePhotoForName(name, index, speakersAssetsDir, regionPhotosDir, slug) {
+function matchSpeakerPhoto(name, index) {
+  return findIndexEntry(name, index)?.photo ?? null;
+}
+
+/**
+ * Global cross-region matcher. The global index can hold the SAME person
+ * cataloged in several regions, so the raw leading-subseq filter may return
+ * multiple entries for one person — which the generic ambiguity rule would
+ * reject. To preserve region-order precedence WITHOUT loosening correctness:
+ *
+ *   (i)  exact normalized match: globalIndex.find — first in region order wins;
+ *   (ii) else collect leading-subseq candidates with the EXACT existing
+ *        predicate; if ALL surviving candidates share the same `norm` (same
+ *        person in multiple regions), pick the first in region order; if the
+ *        candidates have DIFFERENT `norm` values (genuinely different people),
+ *        treat as ambiguous -> null (never attach a wrong person's photo).
+ *
+ * Returns the matched entry object, or null.
+ */
+function matchGlobalPhotoEntry(name, globalIndex) {
+  const norm = normalizeName(name);
+  if (!norm) return null;
+
+  // (i) exact normalized match — region-ordered, first wins.
+  const exact = globalIndex.find((e) => e.norm === norm);
+  if (exact) return exact;
+
+  // (ii) leading-subseq candidates (same predicate as same-region).
+  const tokens = norm.split(" ");
+  const candidates = globalIndex.filter((e) =>
+    isLeadingSubsequence(tokens, e.tokens)
+  );
+  if (candidates.length === 0) return null;
+
+  // All candidates must be the SAME person (same norm) to be confident.
+  const firstNorm = candidates[0].norm;
+  if (candidates.every((e) => e.norm === firstNorm)) {
+    // Region-ordered: globalIndex is built in region order, so candidates[0]
+    // is the first region cataloging this person.
+    return candidates[0];
+  }
+  // Distinct people match -> ambiguous -> prefer no photo over a wrong photo.
+  return null;
+}
+
+/**
+ * Build a GLOBAL speaker-photo index once, across ALL regions, iterating
+ * REGIONS in the fixed order (centro-oeste, nordeste, norte, sudeste, sul) so
+ * the first region cataloging a given person deterministically wins. Only
+ * entries whose recorded photo resolves to a REAL on-disk file in that region's
+ * assets/speakers dir are kept (remote URLs / missing files are dropped).
+ *
+ * Each kept entry: { norm, tokens, srcRegion, srcAbsFile, srcBasename }.
+ */
+function buildGlobalPhotoIndex() {
+  const index = [];
+  for (const slug of REGIONS) {
+    const regionDir = path.join(SRC_REGIONS, slug);
+    const speakersPath = path.join(regionDir, "data", "speakers.json");
+    if (!fs.existsSync(speakersPath)) continue;
+    const assetsDir = path.join(regionDir, "assets", "speakers");
+    for (const s of readJSON(speakersPath)) {
+      const norm = normalizeName(s.name);
+      if (!norm) continue;
+      const resolved = resolvePhotoFile(assetsDir, s.photo);
+      if (!resolved) continue; // remote URL or missing on disk.
+      index.push({
+        norm,
+        tokens: norm.split(" "),
+        srcRegion: slug,
+        srcAbsFile: path.join(assetsDir, resolved),
+        srcBasename: resolved,
+      });
+    }
+  }
+  return index;
+}
+
+/**
+ * Resolve a usable photo path for a parsed speaker name via the SAME-REGION
+ * speaker index. On a confident match whose photo resolves to a real file on
+ * disk, copies it into regionPhotosDir, registers the dest basename, and
+ * returns the public ref. Otherwise returns "" (no match, remote URL, or
+ * missing file). `destRegistry` is a Map<destBasename, srcAbsFile> tracking
+ * which basenames are already present in regionPhotosDir (so a later global
+ * fallback never clobbers a same-region photo).
+ */
+function resolvePhotoForName(
+  name,
+  index,
+  speakersAssetsDir,
+  regionPhotosDir,
+  slug,
+  destRegistry
+) {
   const recorded = matchSpeakerPhoto(name, index);
   if (!recorded) return "";
   const photoFile = resolvePhotoFile(speakersAssetsDir, recorded);
   if (!photoFile) return ""; // remote URL or missing on disk.
-  fs.copyFileSync(
-    path.join(speakersAssetsDir, photoFile),
-    path.join(regionPhotosDir, photoFile)
-  );
+  const srcAbs = path.join(speakersAssetsDir, photoFile);
+  fs.copyFileSync(srcAbs, path.join(regionPhotosDir, photoFile));
+  destRegistry.set(photoFile, srcAbs);
   return `./photos/${slug}/${photoFile}`;
+}
+
+/**
+ * Resolve a photo for a name via the GLOBAL cross-region index (fallback,
+ * only used when the same-region pass returned ""). On a confident global
+ * match, PHYSICALLY copies the source region's photo into the CURRENT region's
+ * photos dir and returns `./photos/<slug>/<destBasename>` (never references
+ * another region's folder in data.json). Collision handling via destRegistry:
+ *   - basename unused            -> copy as-is, register.
+ *   - basename used, SAME source -> reuse without recopy (idempotent).
+ *   - basename used, DIFFERENT   -> append -2, -3, ... before the extension
+ *     until free, then copy + register.
+ * Returns "" when there is no confident global match.
+ */
+function resolvePhotoFromGlobal(name, globalIndex, regionPhotosDir, slug, destRegistry) {
+  const entry = matchGlobalPhotoEntry(name, globalIndex);
+  if (!entry) return "";
+
+  let destBasename = entry.srcBasename;
+  const existingSrc = destRegistry.get(destBasename);
+  if (existingSrc !== undefined && existingSrc !== entry.srcAbsFile) {
+    // True collision: a DIFFERENT source already claimed this basename.
+    const ext = path.extname(destBasename);
+    const stem = destBasename.slice(0, destBasename.length - ext.length);
+    let n = 2;
+    while (true) {
+      const candidate = `${stem}-${n}${ext}`;
+      const claimed = destRegistry.get(candidate);
+      if (claimed === undefined) {
+        destBasename = candidate;
+        break;
+      }
+      if (claimed === entry.srcAbsFile) {
+        destBasename = candidate; // same source already copied under this name.
+        break;
+      }
+      n += 1;
+    }
+  }
+
+  if (destRegistry.get(destBasename) !== entry.srcAbsFile) {
+    fs.copyFileSync(entry.srcAbsFile, path.join(regionPhotosDir, destBasename));
+    destRegistry.set(destBasename, entry.srcAbsFile);
+  }
+  return `./photos/${slug}/${destBasename}`;
 }
 
 function main() {
@@ -178,6 +326,9 @@ function main() {
 
   const regions = [];
   const summary = [];
+
+  // Build the GLOBAL cross-region speaker-photo index once, up front.
+  const globalIndex = buildGlobalPhotoIndex();
 
   for (const slug of REGIONS) {
     const regionDir = path.join(SRC_REGIONS, slug);
@@ -262,6 +413,11 @@ function main() {
     const talks = [];
     let noPhoto = 0;
     let totalSpeakers = 0;
+    let filledFromGlobal = 0;
+    // Tracks basenames copied into this region's photos dir -> their source
+    // abs path, so the global fallback never clobbers a same-region photo and
+    // distinct people sharing a basename are disambiguated deterministically.
+    const destRegistry = new Map();
     for (const row of rows) {
       let slugValue = slugify(row.title);
       if (usedSlugs.has(slugValue)) {
@@ -272,13 +428,28 @@ function main() {
       usedSlugs.add(slugValue);
 
       const speakers = splitSpeakers(row.speaker).map((name) => {
-        const photo = resolvePhotoForName(
+        let photo = resolvePhotoForName(
           name,
           speakerIndex,
           speakersAssetsDir,
           regionPhotosDir,
-          slug
+          slug,
+          destRegistry
         );
+        if (!photo) {
+          // Fall back to the GLOBAL cross-region index.
+          const globalPhoto = resolvePhotoFromGlobal(
+            name,
+            globalIndex,
+            regionPhotosDir,
+            slug,
+            destRegistry
+          );
+          if (globalPhoto) {
+            photo = globalPhoto;
+            filledFromGlobal += 1;
+          }
+        }
         totalSpeakers += 1;
         if (!photo) noPhoto += 1;
         return { name, photo };
@@ -299,7 +470,7 @@ function main() {
     });
 
     summary.push(
-      `${slug}: ${talks.length} card(s), ${noPhoto}/${totalSpeakers} speaker(s) without photo (placeholder)`
+      `${slug}: ${talks.length} card(s), ${noPhoto}/${totalSpeakers} speaker(s) without photo (placeholder), ${filledFromGlobal} filled via cross-region fallback`
     );
   }
 
