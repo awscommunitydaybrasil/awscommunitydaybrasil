@@ -62,6 +62,8 @@ export interface Speaker {
     instagram?: string;
     linkedin?: string;
     twitter?: string;
+    github?: string;
+    website?: string;
   };
 }
 
