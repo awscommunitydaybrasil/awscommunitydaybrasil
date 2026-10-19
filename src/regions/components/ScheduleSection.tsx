@@ -24,16 +24,26 @@ interface ScheduleSectionProps {
 const ScheduleSection = ({ schedule, hasSpeakers, loading }: ScheduleSectionProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const [trackFilter, setTrackFilter] = useState("Todas");
+  const [levelFilter, setLevelFilter] = useState("Todos");
 
   const tracks = useMemo(() => {
     const unique = [...new Set(schedule.map((s) => s.track))];
     return unique.length > 1 ? ["Todas", ...unique] : [];
   }, [schedule]);
 
+  const levels = useMemo(() => {
+    const order = ["Iniciante", "Intermediário", "Avançado"];
+    const present = order.filter((l) => schedule.some((s) => s.level === l));
+    return present.length > 0 ? ["Todos", ...present] : [];
+  }, [schedule]);
+
   const filteredSchedule = useMemo(() => {
-    if (trackFilter === "Todas") return schedule;
-    return schedule.filter((s) => s.track === trackFilter);
-  }, [schedule, trackFilter]);
+    return schedule.filter(
+      (s) =>
+        (trackFilter === "Todas" || s.track === trackFilter) &&
+        (levelFilter === "Todos" || s.level === levelFilter),
+    );
+  }, [schedule, trackFilter, levelFilter]);
 
   return (
     <section id="programacao" className={`py-20 scroll-mt-16 ${hasSpeakers ? "bg-secondary" : ""}`}>
@@ -60,6 +70,25 @@ const ScheduleSection = ({ schedule, hasSpeakers, loading }: ScheduleSectionProp
                     }`}
                   >
                     {track}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {levels.length > 0 && (
+              <div className="flex flex-wrap justify-center items-center gap-2 mb-8">
+                <span className="text-sm text-muted-foreground font-display">Nível:</span>
+                {levels.map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => setLevelFilter(level)}
+                    className={`px-4 py-2 text-sm font-display font-semibold rounded-full transition-all ${
+                      levelFilter === level
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+                    }`}
+                  >
+                    {level}
                   </button>
                 ))}
               </div>

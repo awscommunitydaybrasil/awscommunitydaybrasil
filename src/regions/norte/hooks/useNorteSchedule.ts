@@ -45,6 +45,14 @@ interface ApiResponse {
   };
 }
 
+const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
+
+const localLevelByTitle = new Map(
+  (fallbackSchedule as ScheduleItem[])
+    .filter((i) => i.level)
+    .map((i) => [normalize(i.title), i.level as string]),
+);
+
 function mapApiToSchedule(data: ApiResponse["data"]): ScheduleItem[] {
   const trackById = new Map(data.tracks.map((t) => [t.id, t.name]));
   const speakerById = new Map(data.speakers.map((s) => [s.id, s.name]));
@@ -57,7 +65,7 @@ function mapApiToSchedule(data: ApiResponse["data"]): ScheduleItem[] {
       .join(", ");
     const title = item.talk?.title || item.title;
     const rawLevel = item.talk?.knowledge_level ?? "";
-    const level = LEVEL_MAP[rawLevel] ?? "";
+    const level = LEVEL_MAP[rawLevel] || localLevelByTitle.get(normalize(title)) || "";
 
     return {
       time: `${item.start_time} - ${item.end_time}`,

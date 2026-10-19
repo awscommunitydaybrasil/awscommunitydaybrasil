@@ -1,4 +1,4 @@
-import { Star, Linkedin, Instagram } from "lucide-react";
+import { Star, Linkedin, Instagram, Github, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Speaker } from "@/regions/types";
 
@@ -37,7 +37,7 @@ const SpeakerCard = ({ speaker, index, isVisible }: SpeakerCardProps) => (
     <p className="text-sm text-primary font-medium">{speaker.title}</p>
     <p className="text-xs text-muted-foreground">{speaker.company}</p>
     {speaker.talk && <p className="text-sm text-muted-foreground mt-3 italic">"{speaker.talk}"</p>}
-    {speaker.social && (speaker.social.instagram || speaker.social.linkedin || speaker.social.twitter) && (
+    {speaker.social && Object.values(speaker.social).some(Boolean) && (
       <div className="flex items-center justify-center gap-3 mt-4">
         {speaker.social.linkedin && (
           <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
@@ -52,6 +52,16 @@ const SpeakerCard = ({ speaker, index, isVisible }: SpeakerCardProps) => (
         {speaker.social.twitter && (
           <a href={speaker.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
             <XIcon />
+          </a>
+        )}
+        {speaker.social.github && (
+          <a href={speaker.social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors">
+            <Github className="h-5 w-5" />
+          </a>
+        )}
+        {speaker.social.website && (
+          <a href={speaker.social.website} target="_blank" rel="noopener noreferrer" aria-label="Website" className="text-muted-foreground hover:text-primary transition-colors">
+            <Globe className="h-5 w-5" />
           </a>
         )}
       </div>

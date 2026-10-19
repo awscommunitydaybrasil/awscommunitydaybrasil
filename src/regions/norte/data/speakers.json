@@ -20,7 +20,9 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/arteweyl"
+      "linkedin": "https://www.linkedin.com/in/arteweyl",
+      "github": "https://github.com/arteweyl",
+      "website": "https://blog.artemisiaweyl.com.br/"
     }
   },
   {
@@ -32,7 +34,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://linkedin.com/in/belemdebelem"
+      "linkedin": "https://linkedin.com/in/belemdebelem",
+      "github": "https://github.com/belemdebelem/"
     }
   },
   {
@@ -44,7 +47,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://linkedin.com/in/bia-ramos"
+      "linkedin": "https://linkedin.com/in/bia-ramos",
+      "github": "https://github.com/ramosbianca"
     }
   },
   {
@@ -68,7 +72,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/christian-amarildo/"
+      "linkedin": "https://www.linkedin.com/in/christian-amarildo/",
+      "website": "https://linktr.ee/cyberchristian"
     }
   },
   {
@@ -92,7 +97,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/danrezende/"
+      "linkedin": "https://www.linkedin.com/in/danrezende/",
+      "website": "https://danrezende.com/"
     }
   },
   {
@@ -104,7 +110,21 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/erick-eloi/"
+      "linkedin": "https://www.linkedin.com/in/erick-eloi/",
+      "github": "https://github.com/erickeloi/"
+    }
+  },
+  {
+    "name": "Flavio Pimenta",
+    "photo": "flavio-pimenta.webp",
+    "title": "Staff Engineer · AWS Community Builder · Líder do UG Campinas",
+    "company": "Select Soluções",
+    "talk": "Kiro na prática! Como guiar a IA para seguir o caminho que você definir.",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/flaap/",
+      "website": "https://pimenta.dev"
     }
   },
   {
@@ -116,7 +136,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/giovana-armani/"
+      "linkedin": "https://www.linkedin.com/in/giovana-armani/",
+      "github": "https://github.com/gi-armani"
     }
   },
   {
@@ -128,7 +149,8 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/josilene-v-s-silva/"
+      "linkedin": "https://www.linkedin.com/in/josilene-v-s-silva/",
+      "website": "https://linktr.ee/josilenevitoriasilva"
     }
   },
   {
@@ -164,7 +186,9 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/mdnbras"
+      "linkedin": "https://www.linkedin.com/in/mdnbras",
+      "github": "https://github.com/mdnbras",
+      "website": "https://mdnbras.com.br"
     }
   },
   {
@@ -188,7 +212,9 @@
     "bio": "",
     "keynote": false,
     "social": {
-      "linkedin": "https://www.linkedin.com/in/raphamoura/"
+      "twitter": "https://x.com/oraphaelmoura",
+      "linkedin": "https://www.linkedin.com/in/raphamoura/",
+      "website": "https://raphamoura.dev"
     }
   },
   {
@@ -201,6 +227,33 @@
     "keynote": false,
     "social": {
       "linkedin": "https://www.linkedin.com/in/gulias/"
+    }
+  },
+  {
+    "name": "Suzana Melo",
+    "photo": "suzana-melo.webp",
+    "title": "Full-stack dev | Women in Tech advocate | AWS Community Builder | AWS User Group líder | Comunicadora",
+    "company": "",
+    "talk": "AWS Amplify: Tire seus projetos do papel em poucos cliques sem ser especialista em cloud",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/suzanamelo-m/",
+      "website": "https://suzanamelo.com"
+    }
+  },
+  {
+    "name": "William Lino Oliveira",
+    "photo": "william-lino-oliveira.webp",
+    "title": "Sr. Database Specialist Solutions Architect",
+    "company": "AWS",
+    "talk": "Construa uma Solução de IA Multi-Agente com Amazon Aurora e Bedrock AgentCore",
+    "bio": "",
+    "keynote": false,
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/williamlinooliveira/",
+      "github": "https://github.com/williamloliveira",
+      "website": "https://codedataops.com"
     }
   },
   {
