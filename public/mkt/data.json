@@ -425,7 +425,7 @@
           "speakers": [
             {
               "name": "Vanessa Alves dos Santos",
-              "photo": ""
+              "photo": "./photos/norte/vanessa-alves-dos-santos.jpg"
             }
           ]
         },
@@ -545,7 +545,7 @@
           "speakers": [
             {
               "name": "William Lino Oliveira",
-              "photo": "./photos/norte/william-lino.jpg"
+              "photo": "./photos/norte/william-lino-oliveira.webp"
             }
           ]
         },
@@ -565,7 +565,7 @@
           "speakers": [
             {
               "name": "Flavio Pimenta",
-              "photo": "./photos/norte/flavio-pimenta.png"
+              "photo": "./photos/norte/flavio-pimenta.webp"
             }
           ]
         },
@@ -585,7 +585,7 @@
           "speakers": [
             {
               "name": "Suzana Melo",
-              "photo": ""
+              "photo": "./photos/norte/suzana-melo.webp"
             }
           ]
         },
