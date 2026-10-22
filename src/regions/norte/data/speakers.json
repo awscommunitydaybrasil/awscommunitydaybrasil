@@ -218,18 +218,6 @@
     }
   },
   {
-    "name": "Ricardo Gulias",
-    "photo": "ricardo-gulias.jpg",
-    "title": "TAM – Technical Account Manager",
-    "company": "DaRede",
-    "talk": "Do zero a comunidade: como construí a Golden Jackets Brazil em 72h com Kiro e AWS Serverless",
-    "bio": "",
-    "keynote": false,
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/gulias/"
-    }
-  },
-  {
     "name": "Suzana Melo",
     "photo": "suzana-melo.webp",
     "title": "Full-stack dev | Women in Tech advocate | AWS Community Builder | AWS User Group líder | Comunicadora",
