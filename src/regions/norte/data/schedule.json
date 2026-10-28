@@ -15,7 +15,6 @@
   { "time": "12:30 - 13:45", "title": "Intervalo do Almoço", "speaker": "", "track": "Geral", "level": "" },
   { "time": "13:45 - 14:00", "title": "Retorno", "speaker": "", "track": "Geral", "level": "" },
   { "time": "14:00 - 14:40", "title": "Detecção de transações financeiras suspeitas com Python, Amazon S3, AWS Lambda, DynamoDB e Amazon SNS", "speaker": "Belém Campelo Ribeiro", "track": "6º andar - Auditório", "level": "Iniciante" },
-  { "time": "14:00 - 14:40", "title": "Do zero a comunidade: como construí a Golden Jackets Brazil em 72h com Kiro e AWS Serverless", "speaker": "Ricardo Gulias", "track": "6º andar - Sala 605", "level": "Intermediário" },
   { "time": "14:00 - 16:00", "title": "Construa uma Solução de IA Multi-Agente com Amazon Aurora e Bedrock AgentCore", "speaker": "William Lino Oliveira", "track": "2º andar - L203A", "level": "Intermediário" },
   { "time": "14:00 - 14:40", "title": "A Nuvem Quando o Céu Está Caindo: Estratégias Práticas de Resiliência e Redundância na AWS", "speaker": "Christian Amarildo Amorim Morais", "track": "6º andar - Sala 601", "level": "Intermediário" },
   { "time": "14:00 - 16:00", "title": "Kiro na prática! Como guiar a IA para seguir o caminho que você definir.", "speaker": "Flavio Pimenta", "track": "2º andar - L204A", "level": "Iniciante" },
