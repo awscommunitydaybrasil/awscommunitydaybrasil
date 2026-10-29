@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado — AWS Community Day Sul 2026</title>
+  <meta name="description" content="Relatório de participação do AWS Community Day Sul 2026 — 161 participantes presentes em Curitiba." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --card: #232938;
+      --border: #2e3548;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 40px; }
+    header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--primary-light); }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+    }
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(232, 132, 26, 0.12);
+      border: 1px solid rgba(232, 132, 26, 0.3);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .kpi:hover { border-color: rgba(232, 132, 26, 0.5); transform: translateY(-2px); }
+    .kpi .value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .kpi .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    .section { margin: 4rem 0; }
+    .section-title { text-align: center; margin-bottom: 2rem; }
+    .section-title h2 { font-size: 1.5rem; font-weight: 700; }
+    .section-title p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .chart-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .chart-card canvas { width: 100% !important; max-height: 300px; }
+
+    .table-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: rgba(232, 132, 26, 0.08);
+      padding: 0.875rem 1.25rem;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    td {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    tr:hover td { background: rgba(232, 132, 26, 0.03); }
+    .bar-cell { display: flex; align-items: center; gap: 0.75rem; }
+    .bar-bg { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width 1s ease; }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .highlight-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transition: border-color 0.3s;
+    }
+    .highlight-item:hover { border-color: rgba(232, 132, 26, 0.4); }
+    .highlight-item .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(232, 132, 26, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .highlight-item .icon svg { width: 18px; height: 18px; color: var(--primary); }
+    .highlight-item .content h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .highlight-item .content p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpi .value { font-size: 2rem; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+
+    .photos-banner { margin: 2.5rem 0 1rem; }
+    .photo-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .photo-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .photo-card-image { position: relative; min-height: 220px; overflow: hidden; }
+    .photo-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .photo-card:hover .photo-card-image img { transform: scale(1.05); }
+    .photo-card-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,31,46,0.3), rgba(232,132,26,0.1)); }
+    .photo-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.875rem;
+      border-radius: 9999px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .photo-card-content { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+    .photo-card-content h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .photo-card-content p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    .photo-card-cta { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; font-size: 0.9rem; transition: gap 0.3s; }
+    .photo-card:hover .photo-card-cta { gap: 0.75rem; }
+    @media (max-width: 640px) {
+      .photo-card { grid-template-columns: 1fr; }
+      .photo-card-image { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/sul/"><img src="/favicon.png" alt="AWS Community Day" /></a>
+      <a href="/sul/">← Voltar para o evento</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Evento Realizado — 19/09/2026
+      </div>
+      <h1>Resultado do Evento</h1>
+      <p>AWS Community Day Sul 2026 — Curitiba/PR</p>
+    </section>
+
+    <section class="photos-banner">
+      <a href="https://drive.google.com/drive/folders/1MAFc5i5q1UYbIHaDrmBtcRm0_k2NMze9?usp=sharing" target="_blank" rel="noopener noreferrer" class="photo-card">
+        <div class="photo-card-image">
+          <img src="event-photo.jpg" alt="Fotos do AWS Community Day Sul 2026" />
+          <div class="photo-card-overlay"></div>
+          <div class="photo-card-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Galeria de Fotos
+          </div>
+        </div>
+        <div class="photo-card-content">
+          <h3>📸 Veja as fotos do evento</h3>
+          <p>Reviva os melhores momentos do AWS Community Day Sul 2026. Palestras, networking, comunidade e muito mais!</p>
+          <span class="photo-card-cta">
+            Abrir galeria
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">230</div><div class="label">Inscritos</div></div>
+      <div class="kpi"><div class="value">161</div><div class="label">Participantes presentes</div></div>
+      <div class="kpi"><div class="value">30,0%</div><div class="label">Taxa de quebra (no-show)</div></div>
+      <div class="kpi"><div class="value">11</div><div class="label">Palestrantes</div></div>
+      <div class="kpi"><div class="value">3</div><div class="label">Voluntários</div></div>
+      <div class="kpi"><div class="value">8</div><div class="label">Organizadores</div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Perfil Profissional</h2>
+        <p>Distribuição estimada dos participantes presentes, por perfil declarado na inscrição</p>
+      </div>
+      <div class="chart-card" style="margin-top:0;">
+        <h3>Distribuição do Público</h3>
+        <canvas id="chartPerfil"></canvas>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Perfil Profissional</th><th>Participantes</th><th>% do Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Desenvolvimento de software</td><td>58</td><td>36,1%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:36.1%"></div></div></div></td></tr>
+            <tr><td>Infraestrutura (Cloud ou On-premises)</td><td>34</td><td>21,3%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:21.3%"></div></div></div></td></tr>
+            <tr><td>Arquitetura de Soluções ou Sistemas</td><td>18</td><td>11,3%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:11.3%"></div></div></div></td></tr>
+            <tr><td>Estudante</td><td>18</td><td>10,9%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:10.9%"></div></div></div></td></tr>
+            <tr><td>Gestão de TI</td><td>14</td><td>8,7%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:8.7%"></div></div></div></td></tr>
+            <tr><td>Outros</td><td>14</td><td>8,7%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:8.7%"></div></div></div></td></tr>
+            <tr><td>Executivo de Negócios</td><td>5</td><td>3,0%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:3.0%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Nível de Conhecimento</h2>
+        <p>Distribuição estimada dos participantes presentes por nível declarado</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Nível de Conhecimento</h3>
+          <canvas id="chartNivel"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Resumo</h3>
+          <div class="table-wrapper" style="margin-top:0; box-shadow:none; border:none;">
+            <table>
+              <tbody>
+                <tr><td>Intermediário</td><td style="text-align:right;font-weight:700;">68</td><td style="text-align:right;color:var(--muted);">42,0%</td></tr>
+                <tr><td>Avançado</td><td style="text-align:right;font-weight:700;">56</td><td style="text-align:right;color:var(--muted);">35,0%</td></tr>
+                <tr><td>Iniciante</td><td style="text-align:right;font-weight:700;">37</td><td style="text-align:right;color:var(--muted);">23,0%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Destaques</h2>
+      </div>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="content"><h4>161 participantes</h4><p>Público presente no AWS Community Day Sul 2026, em Curitiba/PR.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20v-4"/></svg></div>
+          <div class="content"><h4>Público técnico</h4><p>Desenvolvimento de Software (36,1%) e Infraestrutura (21,3%) somam quase 60% do público.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="content"><h4>Senioridade elevada</h4><p>77% do público se declara em nível intermediário ou avançado de conhecimento.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3-3m0 0l-3 3m3-3v8"/></svg></div>
+          <div class="content"><h4>Força da comunidade</h4><p>11 palestrantes, 3 voluntários e 8 organizadores conduziram a edição Sul.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 — Sul · <a href="/sul/">Ver página do evento</a></p>
+      <p style="margin-top: 0.5rem;">Perfil e nível de conhecimento: percentuais da base de inscritos aplicados proporcionalmente aos 161 presentes — Setembro 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#2e3548';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    // Perfil Profissional - Horizontal Bar
+    new Chart(document.getElementById('chartPerfil'), {
+      type: 'bar',
+      data: {
+        labels: ['Dev Software', 'Infraestrutura', 'Arquitetura', 'Estudante', 'Gestão de TI', 'Outros', 'Exec. Negócios'],
+        datasets: [{
+          data: [58, 34, 18, 18, 14, 14, 5],
+          backgroundColor: '#e8841a',
+          borderRadius: 4,
+          barThickness: 22,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/161)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, ticks: { stepSize: 10 } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Nível de Conhecimento - Doughnut
+    new Chart(document.getElementById('chartNivel'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Intermediário', 'Avançado', 'Iniciante'],
+        datasets: [{
+          data: [68, 56, 37],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/161)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        cutout: '60%',
+      }
+    });
+  </script>
+</body>
+</html>
