@@ -78,5 +78,8 @@
       "url": "https://www.meetup.com/aws-sbg-at-university-of-the-amazonia-belem/",
       "icon": "meetup"
     }
-  ]
+  ],
+   "pastEvent": {
+    "photosUrl": "https://aws-belem.woox.be/day"
+  }
 }
