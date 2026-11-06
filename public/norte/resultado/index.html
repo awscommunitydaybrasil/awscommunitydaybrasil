@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado — AWS Community Day Norte 2026</title>
+  <meta name="description" content="Relatório de participação do AWS Community Day Norte 2026 — 354 pessoas presentes em Belém." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #1a1f2e;
+      --card: #232938;
+      --border: #2e3548;
+      --primary: #e8841a;
+      --primary-light: #fbc064;
+      --accent: #7c3aed;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header { background: var(--card); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    header img { height: 40px; }
+    header a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.875rem; transition: color 0.2s; }
+    header a:hover { color: var(--primary-light); }
+
+    .hero { text-align: center; padding: 4rem 0 3rem; }
+    .hero .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: 9999px; background: rgba(232,132,26,0.12); border: 1px solid rgba(232,132,26,0.3); color: var(--primary); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; margin: 3rem 0; }
+    .kpi { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem 1.25rem; text-align: center; box-shadow: var(--shadow); transition: border-color 0.3s, transform 0.3s; }
+    .kpi:hover { border-color: rgba(232,132,26,0.5); transform: translateY(-2px); }
+    .kpi .value { font-size: 2.5rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+    .kpi .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
+
+    .section { margin: 4rem 0; }
+    .section-title { text-align: center; margin-bottom: 2rem; }
+    .section-title h2 { font-size: 1.5rem; font-weight: 700; }
+    .section-title p { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); }
+    .chart-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; text-align: center; }
+    .chart-card canvas { width: 100% !important; max-height: 300px; }
+    .chart-card-full { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); margin-top: 1.5rem; }
+    .chart-card-full h3 { font-size: 0.9rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; text-align: center; }
+    .chart-card-full canvas { width: 100% !important; max-height: 280px; }
+
+    .table-wrapper { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: rgba(232,132,26,0.08); padding: 0.875rem 1.25rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+    td { padding: 0.75rem 1.25rem; border-top: 1px solid var(--border); font-size: 0.875rem; }
+    tr:hover td { background: rgba(232,132,26,0.03); }
+    .bar-cell { display: flex; align-items: center; gap: 0.75rem; }
+    .bar-bg { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width 1s ease; }
+
+    .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .highlight-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; transition: border-color 0.3s; }
+    .highlight-item:hover { border-color: rgba(232,132,26,0.4); }
+    .highlight-item .icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(232,132,26,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .highlight-item .icon svg { width: 18px; height: 18px; color: var(--primary); }
+    .highlight-item .content h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .highlight-item .content p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    footer { text-align: center; padding: 3rem 0; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpi .value { font-size: 2rem; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+
+    .photos-banner { margin: 2.5rem 0 1rem; }
+    .photo-card { display: grid; grid-template-columns: 1fr 1fr; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: border-color 0.3s, transform 0.3s; }
+    .photo-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .photo-card-image { position: relative; min-height: 220px; overflow: hidden; }
+    .photo-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .photo-card:hover .photo-card-image img { transform: scale(1.05); }
+    .photo-card-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,31,46,0.3), rgba(232,132,26,0.1)); }
+    .photo-card-badge { position: absolute; top: 1rem; left: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.875rem; border-radius: 9999px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #fff; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .photo-card-content { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+    .photo-card-content h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .photo-card-content p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    .photo-card-cta { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; font-size: 0.9rem; transition: gap 0.3s; }
+    .photo-card:hover .photo-card-cta { gap: 0.75rem; }
+    @media (max-width: 640px) { .photo-card { grid-template-columns: 1fr; } .photo-card-image { min-height: 180px; } }
+
+    .nps-badge { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width:140px; height:140px; border-radius:50%; background:rgba(34,197,94,0.12); border:3px solid #22c55e; }
+    .nps-badge .n { font-size:2.6rem; font-weight:800; color:#22c55e; line-height:1; }
+    .nps-badge .t { font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/norte/"><img src="/favicon.png" alt="AWS Community Day" /></a>
+      <a href="/norte/">← Voltar para o evento</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Evento Realizado — 31/10/2026
+      </div>
+      <h1>Resultado do Evento</h1>
+      <p>AWS Community Day Norte 2026 — Belém/PA · FACI Wyden</p>
+    </section>
+
+    <section class="photos-banner">
+      <a href="https://aws-belem.woox.be/day" target="_blank" rel="noopener noreferrer" class="photo-card">
+        <div class="photo-card-image">
+          <img src="/og/norte.png" alt="Fotos do AWS Community Day Norte 2026" />
+          <div class="photo-card-overlay"></div>
+          <div class="photo-card-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Galeria de Fotos
+          </div>
+        </div>
+        <div class="photo-card-content">
+          <h3>📸 Veja as fotos do evento</h3>
+          <p>Reviva os melhores momentos do AWS Community Day Norte 2026. A galeria teve 724 aberturas e 758 downloads no dia.</p>
+          <span class="photo-card-cta">
+            Abrir galeria
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">453</div><div class="label">Inscritos</div></div>
+      <div class="kpi"><div class="value">354</div><div class="label">Participantes presentes</div></div>
+      <div class="kpi"><div class="value">21,9%</div><div class="label">Taxa de quebra (no-show)</div></div>
+      <div class="kpi"><div class="value">19</div><div class="label">Palestrantes</div></div>
+      <div class="kpi"><div class="value">34</div><div class="label">Voluntários</div></div>
+      <div class="kpi"><div class="value" style="color:#22c55e;">+84</div><div class="label">NPS</div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Da Inscrição à Presença</h2>
+        <p>Funil de credenciamento — 80% de comparecimento entre participantes confirmados</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Funil de Inscrição</h3>
+          <canvas id="chartFunil"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Composição dos Presentes</h3>
+          <canvas id="chartComposicao"></canvas>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">354 presentes: 301 participantes, 19 palestrantes e 34 voluntários. Das 378 inscrições confirmadas de participantes, 80% compareceram.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Perfil do Público</h2>
+        <p>Público jovem, estudante e local — idade mediana de 24 anos</p>
+      </div>
+      <div class="kpis" style="margin: 0 0 1.5rem;">
+        <div class="kpi"><div class="value">76%</div><div class="label">Estudantes</div></div>
+        <div class="kpi"><div class="value">24</div><div class="label">Idade mediana</div></div>
+        <div class="kpi"><div class="value">93%</div><div class="label">Região Metrop. de Belém</div></div>
+        <div class="kpi"><div class="value">82%</div><div class="label">Iniciante/Intermediário</div></div>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Faixa Etária</h3>
+          <canvas id="chartIdade"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Nível Técnico Autodeclarado</h3>
+          <canvas id="chartNivel"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Origem Geográfica</h2>
+        <p>Evento metropolitano — cidade informada por 371 participantes</p>
+      </div>
+      <div class="chart-card-full">
+        <h3>Participantes por Cidade</h3>
+        <canvas id="chartCidade"></canvas>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">93% moram na Região Metropolitana de Belém; 96% têm telefone com DDD do Pará. A atração de fora do estado ainda é pontual (15 pessoas).</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Fluxo de Credenciamento</h2>
+        <p>Credenciamentos por hora — 74% antes das 10h, pico de 49 entre 08h15 e 08h30</p>
+      </div>
+      <div class="chart-card-full">
+        <h3>Credenciamentos por Hora — 31/10</h3>
+        <canvas id="chartFluxo"></canvas>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Diversidade e Inclusão</h2>
+        <p>Base de 375 participantes confirmados que informaram os campos</p>
+      </div>
+      <div class="kpis" style="margin: 0;">
+        <div class="kpi"><div class="value">25%</div><div class="label">Mulheres (cis e trans)</div></div>
+        <div class="kpi"><div class="value">13%</div><div class="label">LGBTQIA+</div></div>
+        <div class="kpi"><div class="value">20</div><div class="label">Pessoas com deficiência</div></div>
+        <div class="kpi"><div class="value">6</div><div class="label">Pediram adaptação</div></div>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Mulheres compareceram na mesma proporção que os homens (78% contra 79%). TEA foi a deficiência mais declarada (12 pessoas). A edição contratou intérpretes de Libras para três palcos.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Satisfação</h2>
+        <p>Pesquisa anônima com 80 respostas (23% dos presentes)</p>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+          <div class="nps-badge"><div class="n">+84</div><div class="t">NPS</div></div>
+          <p style="text-align:center; font-size:0.8rem; color:var(--muted); margin-top:1.25rem;">69 promotores · 9 neutros · 2 detratores<br>Nota média 9,4 de 10</p>
+        </div>
+        <div class="chart-card">
+          <h3>Notas por Dimensão (de 5)</h3>
+          <canvas id="chartNotas"></canvas>
+          <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">74 de 76 respondentes estavam no primeiro AWS Community Day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Destaques</h2>
+      </div>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="content"><h4>354 presentes</h4><p>Primeira edição Norte do AWS Community Day, em Belém — 80% de comparecimento entre confirmados.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="content"><h4>NPS +84</h4><p>61 pessoas deram nota máxima. Conteúdo (4,78) e organização (4,68) muito bem avaliados.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20v-4"/></svg></div>
+          <div class="content"><h4>Evento de formação</h4><p>76% estudantes e faixa de 18 a 24 anos como maioria — público ideal para trilhas de carreira e certificação.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="content"><h4>Pico 08h15–08h30</h4><p>49 credenciamentos em 15 minutos; 99 pessoas entraram em meia hora. 52% já credenciados antes das 9h.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <div class="content"><h4>Galeria engajou</h4><p>724 aberturas e 758 downloads na galeria de fotos — cerca de 2 de cada por pessoa presente.</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="content"><h4>Âncora em Belém</h4><p>UFPA, FACI Wyden e UNAMA concentram 56% dos estudantes. Belém e Ananindeua somam 91% do público.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil 2026 — Norte · <a href="/norte/">Ver página do evento</a></p>
+      <p style="margin-top: 0.5rem;">Fontes: plataforma de inscrições, lista de credenciamento, pesquisa de satisfação (Opinou) e galeria de fotos — Novembro 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#2e3548';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    // Funil de inscrição
+    new Chart(document.getElementById('chartFunil'), {
+      type: 'bar',
+      data: {
+        labels: ['Inscrições registradas', 'Inscrições confirmadas', 'Presentes (check-in)'],
+        datasets: [{
+          data: [453, 432, 354],
+          backgroundColor: ['#554492', '#7c3aed', '#e8841a'],
+          borderRadius: 4,
+          barThickness: 32,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw}` } } },
+        scales: { x: { grid: { color: '#2e3548' }, beginAtZero: true }, y: { grid: { display: false } } }
+      }
+    });
+
+    // Composição dos presentes - Doughnut
+    new Chart(document.getElementById('chartComposicao'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Participantes', 'Voluntários', 'Palestrantes'],
+        datasets: [{
+          data: [301, 34, 19],
+          backgroundColor: ['#e8841a', '#554492', '#fbc064'],
+          borderColor: '#232938',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${ctx.raw} (${((ctx.raw/354)*100).toFixed(1)}%)` } }
+        },
+        cutout: '60%',
+      }
+    });
+
+    // Faixa etária
+    new Chart(document.getElementById('chartIdade'), {
+      type: 'bar',
+      data: {
+        labels: ['Até 17', '18–20', '21–24', '25–29', '30–34', '35–44', '45+'],
+        datasets: [{
+          data: [3, 98, 106, 54, 41, 39, 21],
+          backgroundColor: (ctx) => (ctx.dataIndex === 1 || ctx.dataIndex === 2) ? '#e8841a' : '#554492',
+          borderRadius: 4,
+          barThickness: 26,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw} participantes` } } },
+        scales: { x: { grid: { display: false } }, y: { grid: { color: '#2e3548' }, beginAtZero: true } }
+      }
+    });
+
+    // Nível técnico (presentes)
+    new Chart(document.getElementById('chartNivel'), {
+      type: 'bar',
+      data: {
+        labels: ['Não técnico', 'Iniciante (100)', 'Intermediário (200)', 'Avançado (300)', 'Especialista (400)'],
+        datasets: [{
+          data: [31, 106, 109, 29, 23],
+          backgroundColor: '#e8841a',
+          borderRadius: 4,
+          barThickness: 22,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw} presentes` } } },
+        scales: { x: { grid: { color: '#2e3548' }, beginAtZero: true }, y: { grid: { display: false } } }
+      }
+    });
+
+    // Cidade de origem
+    new Chart(document.getElementById('chartCidade'), {
+      type: 'bar',
+      data: {
+        labels: ['Belém', 'Ananindeua', 'Castanhal', 'Marituba', 'Benevides', 'Outras 15 cidades'],
+        datasets: [{
+          data: [284, 52, 7, 4, 3, 21],
+          backgroundColor: (ctx) => ctx.dataIndex === 0 ? '#e8841a' : '#554492',
+          borderRadius: 4,
+          barThickness: 26,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw} participantes (${((ctx.raw/371)*100).toFixed(0)}%)` } } },
+        scales: { x: { grid: { color: '#2e3548' }, beginAtZero: true }, y: { grid: { display: false } } }
+      }
+    });
+
+    // Fluxo de credenciamento por hora
+    new Chart(document.getElementById('chartFluxo'), {
+      type: 'bar',
+      data: {
+        labels: ['08h', '09h', '10h', '11h', '12h', '13h', '14h', '15h'],
+        datasets: [{
+          label: 'Credenciamentos',
+          data: [145, 79, 40, 16, 2, 11, 15, 7],
+          backgroundColor: (ctx) => { const v = ctx.raw; return v >= 100 ? '#e8841a' : v >= 40 ? '#fbc064' : 'rgba(232,132,26,0.4)'; },
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: (items) => `Horário: ${items[0].label}`, label: (ctx) => `${ctx.raw} credenciamentos` } } },
+        scales: { x: { grid: { display: false } }, y: { grid: { color: '#2e3548' }, beginAtZero: true } }
+      }
+    });
+
+    // Notas por dimensão
+    new Chart(document.getElementById('chartNotas'), {
+      type: 'bar',
+      data: {
+        labels: ['Conteúdo', 'Organização', 'Plataforma de inscrição'],
+        datasets: [{
+          data: [4.78, 4.68, 4.60],
+          backgroundColor: ['#22c55e', '#4ade80', '#fbc064'],
+          borderRadius: 4,
+          barThickness: 30,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.raw} de 5` } } },
+        scales: { x: { grid: { color: '#2e3548' }, beginAtZero: true, max: 5 }, y: { grid: { display: false } } }
+      }
+    });
+  </script>
+</body>
+</html>

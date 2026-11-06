@@ -4,6 +4,7 @@ import organizers from "./data/organizers.json";
 import speakers from "./data/speakers.json";
 import sponsors from "./data/sponsors.json";
 import heroImage from "./assets/postcard-belem.png";
+import eventPhoto from "./assets/eventPhoto.jpg";
 import type { Speaker, Sponsor } from "@/regions/types";
 import { useNorteSchedule } from "./hooks/useNorteSchedule";
 
@@ -63,6 +64,7 @@ const Norte = () => {
       scheduleLoading={loading}
       sponsors={resolvedSponsors}
       heroImage={heroImage}
+      eventPhoto={eventPhoto}
     />
   );
 };
