@@ -334,6 +334,32 @@
 
     <section class="section">
       <div class="section-title">
+        <h2>Senioridade do Público</h2>
+        <p>Nível técnico declarado em Sudeste e Norte (as edições que mediram senioridade em vez de perfil)</p>
+      </div>
+      <div class="chart-card" style="margin-top:0;">
+        <h3>Distribuição por Nível Técnico</h3>
+        <canvas id="chartSenioridade"></canvas>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Nível Técnico</th><th>Quantidade</th><th>% da base</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Intermediário</td><td>190</td><td>35,2%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:35.2%"></div></div></div></td></tr>
+            <tr><td>Iniciante</td><td>176</td><td>32,6%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:32.6%"></div></div></div></td></tr>
+            <tr><td>Avançado</td><td>82</td><td>15,2%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:15.2%"></div></div></div></td></tr>
+            <tr><td>Especialista</td><td>52</td><td>9,6%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:9.6%"></div></div></div></td></tr>
+            <tr><td>Não técnico</td><td>40</td><td>7,4%</td><td><div class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:7.4%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:1rem;">Soma do nível técnico declarado em Sudeste (165) e Norte (375). Base: 540 respostas. &ldquo;Não técnico&rdquo; só foi oferecido como opção na edição Norte. Iniciante e intermediário somam 68% — público em formação.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
         <h2>Destaques Nacionais</h2>
       </div>
       <div class="highlights">
@@ -347,7 +373,7 @@
         </div>
         <div class="highlight-item">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <div class="content"><h4>Maior edição do ano</h4><p>Salvador (Nordeste) liderou com 629 presentes — mais de 3x o público da edição Centro-Oeste.</p></div>
+          <div class="content"><h4>Maior edição do ano</h4><p>Salvador (Nordeste) liderou o público da temporada, com 629 presentes.</p></div>
         </div>
         <div class="highlight-item">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20v-4"/></svg></div>
@@ -454,6 +480,36 @@
         },
         scales: {
           x: { grid: { color: '#2e3548' }, ticks: { stepSize: 25 } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Senioridade agregada (Sudeste + Norte) - Horizontal Bar
+    new Chart(document.getElementById('chartSenioridade'), {
+      type: 'bar',
+      data: {
+        labels: ['Intermediário', 'Iniciante', 'Avançado', 'Especialista', 'Não técnico'],
+        datasets: [{
+          data: [190, 176, 82, 52, 40],
+          backgroundColor: ['#e8841a', '#fbc064', '#554492', '#7c3aed', '#77889d'],
+          borderRadius: 4,
+          barThickness: 26,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw} pessoas (${((ctx.raw/540)*100).toFixed(1)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: '#2e3548' }, beginAtZero: true },
           y: { grid: { display: false } }
         }
       }
