@@ -123,13 +123,13 @@ const GalleryCarousel = () => {
   const allImages = [...images, ...images];
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section id="momentos" className="scroll-mt-20 overflow-hidden py-20">
       <div className="container">
         <div
           ref={titleRef}
-          className={`text-center mb-12 transition-all duration-700 ease-out ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`mb-8 transition-all duration-700 ease-out ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-3 font-display">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary font-display">
             Momentos
           </p>
           <h2 className="text-3xl md:text-5xl font-bold font-display text-foreground">
@@ -138,7 +138,11 @@ const GalleryCarousel = () => {
         </div>
       </div>
       <div
+        id="gallery-viewport"
         ref={scrollRef}
+        role="region"
+        aria-label="Carrossel de fotos das edições anteriores"
+        tabIndex={0}
         className="flex gap-4 overflow-hidden select-none"
         style={{ scrollBehavior: "auto", cursor: "grab" }}
       >

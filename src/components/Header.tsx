@@ -4,8 +4,10 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-brasil-generico.png";
 
 const navLinks = [
-  { href: "#regioes", label: "Edições 2026" },
+  { href: "#edicoes", label: "Edições 2026" },
+  { href: "#2027", label: "Temporada 2027" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#momentos", label: "Momentos" },
   { href: "#anteriores", label: "Edições Anteriores" },
 ];
 
@@ -16,7 +18,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <Link to="/"><img src={logo} alt="AWS Community Day Brasil" className="h-10" /></Link>
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Navegação principal" className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               {link.label}
@@ -35,7 +37,7 @@ const Header = () => {
       </div>
       {menuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
-          <nav id="mobile-nav" className="container flex flex-col gap-4 py-4">
+          <nav id="mobile-nav" aria-label="Navegação principal" className="container flex flex-col gap-4 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}

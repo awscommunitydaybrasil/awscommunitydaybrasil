@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retrospectiva 2026 — AWS Community Day Brasil</title>
+  <meta name="description" content="Cinco edições regionais, uma comunidade. Relembre o AWS Community Day Brasil 2026." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101725;
+      --surface: #172235;
+      --surface-raised: #1c2a3f;
+      --border: rgba(148, 163, 184, 0.16);
+      --primary: #ff9900;
+      --primary-light: #ffc15a;
+      --text: #f8fafc;
+      --muted: #9eacc0;
+      --max-width: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 78% 5%, rgba(255, 153, 0, 0.1), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(var(--max-width), calc(100% - 3rem)); margin: 0 auto; }
+    .preview-flag {
+      padding: 0.45rem 1rem;
+      border-bottom: 1px solid rgba(255, 153, 0, 0.24);
+      background: rgba(255, 153, 0, 0.07);
+      color: var(--primary-light);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--border);
+      background: rgba(16, 23, 37, 0.86);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+    }
+    .brand img { width: auto; height: 40px; }
+    .nav-links { display: flex; gap: 1.25rem; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary-light); }
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .menu-toggle svg { width: 21px; height: 21px; }
+    .menu-toggle .icon-close { display: none; }
+    .menu-toggle[aria-expanded="true"] .icon-menu { display: none; }
+    .menu-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+    .hero { padding: clamp(4rem, 8vw, 7rem) 0 5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 0.92fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1.25rem;
+      color: var(--primary-light);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 1.3rem; height: 2px; background: var(--primary); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Montserrat", sans-serif; }
+    h1 { max-width: 680px; margin-bottom: 1.25rem; font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.03; letter-spacing: -0.055em; }
+    h1 span { color: var(--primary); }
+    .hero-copy > p:not(.eyebrow) { max-width: 580px; margin-bottom: 1.8rem; color: #b7c3d4; font-size: clamp(1rem, 1.5vw, 1.16rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.8rem 1.25rem;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #161b24;
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: transform 0.2s, filter 0.2s, border-color 0.2s;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .button.secondary { border-color: var(--border); background: transparent; color: var(--text); }
+    .button.secondary:hover { border-color: rgba(255, 153, 0, 0.55); }
+    .hero-visual { position: relative; }
+    .hero-photo {
+      position: relative;
+      aspect-ratio: 1.12;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    }
+    .hero-photo::after {
+      position: absolute;
+      inset: 30% 0 0;
+      background: linear-gradient(transparent, rgba(10, 15, 25, 0.8));
+      content: "";
+    }
+    .hero-photo img { height: 100%; object-fit: cover; }
+    .hero-photo figcaption { position: absolute; z-index: 1; right: 1.35rem; bottom: 1.25rem; left: 1.35rem; }
+    .hero-photo figcaption strong { display: block; font-family: "Montserrat", sans-serif; font-size: 1.15rem; }
+    .hero-photo figcaption span { color: #d3d9e3; font-size: 0.82rem; }
+    .hero-stamp {
+      position: absolute;
+      top: -1rem;
+      left: -1.1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 153, 0, 0.4);
+      border-radius: 12px;
+      background: #1b2639;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      color: var(--primary-light);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transform: rotate(-4deg);
+    }
+    .hero-orbit {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: -2rem;
+      width: 55%;
+      height: 55%;
+      border: 1px solid rgba(255, 153, 0, 0.22);
+      border-radius: 50%;
+    }
+
+    .season-stats { padding: 0 0 5.5rem; }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(28, 42, 63, 0.96), rgba(23, 34, 53, 0.92));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+    .stat { min-height: 140px; display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; text-align: center; }
+    .stat + .stat { border-left: 1px solid var(--border); }
+    .stat strong { color: var(--primary); font-family: "Montserrat", sans-serif; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
+    .stat span { margin-top: 0.45rem; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .editions-section { padding: 5rem 0 6rem; background: linear-gradient(180deg, rgba(23, 34, 53, 0.55), rgba(16, 23, 37, 0)); }
+    .section-heading { max-width: 720px; margin: 0 auto 2.7rem; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    .section-heading h2 { margin-bottom: 0.75rem; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; }
+    .section-heading p { margin-bottom: 0; color: var(--muted); }
+    .region-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.1rem; }
+    .region-card {
+      grid-column: span 4;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .region-card:nth-child(4) { grid-column: 3 / span 4; }
+    .region-card:nth-child(5) { grid-column: 7 / span 4; }
+    .region-card:hover { transform: translateY(-5px); border-color: rgba(255, 153, 0, 0.55); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24); }
+    .region-photo { position: relative; height: 205px; overflow: hidden; background: var(--surface-raised); }
+    .region-photo::after { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(13, 19, 30, 0.7)); content: ""; }
+    .region-photo img { height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .region-card:hover .region-photo img { transform: scale(1.045); }
+    .region-photo-caption { position: absolute; z-index: 1; right: 1rem; bottom: 0.8rem; left: 1rem; color: #fff; font-size: 0.72rem; font-weight: 600; }
+    .region-content { padding: 1.1rem 1.15rem 1.2rem; }
+    .region-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.8rem; }
+    .region-topline h3 { margin: 0; font-size: 1.12rem; }
+    .attendance { color: var(--primary-light); font-family: "Montserrat", sans-serif; font-size: 1.4rem; font-weight: 800; white-space: nowrap; }
+    .attendance small { display: block; color: var(--muted); font-family: "Inter", sans-serif; font-size: 0.62rem; font-weight: 600; text-align: right; }
+    .region-meta { margin: 0.25rem 0 1rem; color: var(--muted); font-size: 0.78rem; }
+    .organizer { display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+    .organizer-link { position: relative; flex: 0 0 auto; width: 48px; height: 48px; border: 2px solid var(--primary); border-radius: 50%; }
+    .organizer-link img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+    .organizer-linkedin { position: absolute; right: -0.35rem; bottom: -0.2rem; display: grid; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: var(--primary); color: #161b24; font-size: 0.62rem; font-weight: 800; }
+    .organizer-caption { display: block; color: var(--muted); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .organizer-name { display: block; margin-top: 0.12rem; font-size: 0.82rem; font-weight: 700; }
+    .bar-track { height: 5px; overflow: hidden; border-radius: 9px; background: #29364a; }
+    .bar-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #f28c00, #ffc15a); }
+    .region-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 0.85rem; }
+    .region-rank { color: var(--muted); font-size: 0.68rem; }
+    .region-link { color: var(--primary-light); font-size: 0.76rem; font-weight: 800; }
+    .region-link span { display: inline-block; margin-left: 0.2rem; transition: transform 0.2s; }
+    .region-card:hover .region-link span { transform: translateX(3px); }
+
+    .closing { padding: 1rem 0 6rem; }
+    .closing-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 5vw, 4rem);
+      border: 1px solid rgba(255, 153, 0, 0.28);
+      border-radius: 22px;
+      background:
+        radial-gradient(ellipse at 90% 15%, rgba(255, 153, 0, 0.18), transparent 25rem),
+        linear-gradient(125deg, #1a2940, #172235 65%);
+      text-align: center;
+    }
+    .closing-panel h2 { margin-bottom: 0.8rem; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.04em; }
+    .closing-panel p { max-width: 620px; margin: 0 auto 1.5rem; color: #b5c1d0; }
+    .closing-panel .eyebrow { justify-content: center; }
+
+    .about-section { padding: 5.5rem 0; background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+    .about-illustration { display: flex; justify-content: center; }
+    .about-illustration img { width: min(100%, 430px); border-radius: 12px; }
+    .about-copy h2 { margin-bottom: 1.5rem; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.12; }
+    .about-copy p { margin-bottom: 1rem; color: var(--muted); line-height: 1.8; }
+    .about-copy a { color: var(--primary); }
+    .about-copy a:hover { text-decoration: underline; }
+
+    .gallery-section { padding: 5.5rem 0; overflow: hidden; }
+    .gallery-topline { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+    .gallery-topline .section-heading { margin: 0; text-align: left; }
+    .gallery-topline .section-heading .eyebrow { justify-content: flex-start; }
+    .gallery-topline .section-heading h2 { margin-bottom: 0; }
+    .gallery-viewport { overflow-x: auto; scroll-behavior: auto; scrollbar-width: none; cursor: grab; touch-action: pan-y; user-select: none; }
+    .gallery-viewport::-webkit-scrollbar { display: none; }
+    .gallery-viewport:active { cursor: grabbing; }
+    .gallery-track { display: flex; width: max-content; gap: 1rem; padding: 0 1.5rem 0 max(1.5rem, calc((100vw - var(--max-width)) / 2)); }
+    .gallery-slide { flex: 0 0 clamp(280px, 38vw, 450px); overflow: hidden; aspect-ratio: 16 / 10; margin: 0; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+    .gallery-slide img { height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-slide:hover img { transform: scale(1.04); }
+    .gallery-hint { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.72rem; }
+
+    .past-editions { padding: 5.5rem 0; background: var(--surface); }
+    .past-editions-inner { max-width: 820px; }
+    .past-editions .section-heading { margin-bottom: 2rem; }
+    .past-list { display: grid; gap: 0.8rem; }
+    .past-edition {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(16, 23, 37, 0.45);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .past-edition:hover { transform: translateY(-2px); border-color: rgba(255, 153, 0, 0.5); }
+    .past-year { flex: 0 0 150px; color: var(--primary-light); font-family: "Montserrat", sans-serif; font-size: 0.94rem; font-weight: 800; }
+    .past-divider { flex: 1; height: 1px; background: var(--border); }
+    .past-details { flex: 0 1 270px; text-align: right; }
+    .past-details strong { display: block; font-size: 0.88rem; font-weight: 600; }
+    .past-details span { color: var(--muted); font-size: 0.76rem; }
+    .past-arrow { color: var(--muted); font-size: 1.15rem; }
+
+    footer { padding: 1.5rem 0 2.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.76rem; text-align: center; }
+    footer a { color: var(--primary-light); }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 0.8fr; gap: 2rem; }
+      .stat-grid { grid-template-columns: repeat(3, 1fr); }
+      .stat { min-height: 120px; padding: 1rem 0.5rem; }
+      .region-card { grid-column: span 6; }
+      .region-card:nth-child(4) { grid-column: 1 / span 6; }
+      .region-card:nth-child(5) { grid-column: 7 / span 6; }
+    }
+    @media (max-width: 760px) {
+      .nav { min-height: 64px; }
+      .brand img { height: 36px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.45rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(16, 23, 37, 0.98);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3);
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 0.8rem 0; }
+      .nav-links a + a { border-top: 1px solid var(--border); }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-illustration img { width: min(100%, 390px); }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(var(--max-width), calc(100% - 2rem)); }
+      .hero { padding: 3.5rem 0 3rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .hero-copy .eyebrow, .hero-actions { justify-content: center; }
+      .hero-copy > p:not(.eyebrow) { margin-right: auto; margin-left: auto; }
+      h1 { margin-right: auto; margin-left: auto; font-size: clamp(2.7rem, 13vw, 4.2rem); }
+      .hero-visual { width: min(100%, 440px); margin: 0 auto; }
+      .hero-stamp { left: 0.4rem; }
+      .season-stats { padding-bottom: 3.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { min-height: 112px; }
+      .stat + .stat { border-left: 0; }
+      .stat:nth-child(even) { border-left: 1px solid var(--border); }
+      .stat:nth-child(n + 3) { border-top: 1px solid var(--border); }
+      .stat:last-child { grid-column: span 2; }
+      .editions-section { padding: 3.5rem 0 4rem; }
+      .region-card, .region-card:nth-child(4), .region-card:nth-child(5) { grid-column: 1 / -1; }
+      .region-photo { height: 220px; }
+      .closing { padding-bottom: 4rem; }
+      .about-section, .gallery-section, .past-editions { padding: 4rem 0; }
+      .gallery-topline { align-items: center; }
+      .gallery-topline .section-heading h2 { font-size: 1.8rem; }
+      .gallery-track { gap: 0.75rem; padding-left: 1rem; padding-right: 1rem; }
+      .gallery-slide { flex-basis: 82vw; }
+      .past-edition { gap: 0.75rem; padding: 1rem; }
+      .past-year { flex-basis: 105px; font-size: 0.78rem; }
+      .past-details { flex-basis: 150px; }
+      .past-details strong { font-size: 0.76rem; }
+      .past-details span { font-size: 0.68rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-flag">Preview de design · retrospectiva pública da temporada 2026</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="AWS Community Day Brasil, página inicial"><img src="assets/logo-brasil-generico.png" alt="AWS Community Day Brasil" /></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12" /></svg>
+      </button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Navegação principal">
+        <a href="#edicoes">Edições 2026</a>
+        <a href="#2027">Temporada 2027</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#momentos">Momentos</a>
+        <a href="#anteriores">Edições Anteriores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Temporada encerrada · 2026</p>
+          <h1>Cinco regiões.<br /><span>Uma comunidade.</span></h1>
+          <p>Uma temporada inteira de encontros, ideias e conexões. Relembre os momentos que aproximaram a comunidade AWS de todo o Brasil.</p>
+          <div class="hero-actions">
+            <a class="button" href="#edicoes">Reviver a temporada <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="#impacto">Ver o impacto</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="hero-stamp">Brasil · 2026</span>
+          <div class="hero-orbit" aria-hidden="true"></div>
+          <figure class="hero-photo">
+            <img src="/nordeste/resultado/event-photo.jpg" alt="Participantes reunidos no AWS Community Day Nordeste, em Salvador" fetchpriority="high" />
+            <figcaption>
+              <strong>Conhecimento que conecta</strong>
+              <span>Momentos vividos pela comunidade em 2026</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="season-stats" id="impacto" aria-label="Impacto da temporada 2026">
+      <div class="container stat-grid">
+        <div class="stat"><strong>5</strong><span>Edições regionais</span></div>
+        <div class="stat"><strong>1.548</strong><span>Presenças registradas</span></div>
+        <div class="stat"><strong>88</strong><span>Palestrantes</span></div>
+        <div class="stat"><strong>117</strong><span>Voluntários e staff</span></div>
+        <div class="stat"><strong>5</strong><span>Capitais brasileiras</span></div>
+      </div>
+    </section>
+
+    <section class="editions-section" id="edicoes">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Uma temporada, cinco encontros</p>
+          <h2>O Brasil se encontrou</h2>
+          <p>Veja um pouco de cada edição e quantas pessoas estiveram presentes em cada região.</p>
+        </div>
+
+        <div class="region-grid">
+          <article class="region-card">
+            <a href="/centro-oeste/" aria-label="Conheça a edição Centro-Oeste em Brasília">
+              <div class="region-photo">
+                <img src="/centro-oeste/resultado/event-photo.jpg" alt="Participantes do AWS Community Day Centro-Oeste reunidos em Brasília" loading="lazy" />
+                <span class="region-photo-caption">Brasília · 27 de junho</span>
+              </div>
+            </a>
+            <div class="region-content">
+              <div class="region-topline"><h3>Centro-Oeste</h3><div class="attendance">204<small>presentes</small></div></div>
+              <p class="region-meta">Brasília, DF · 27 jun 2026</p>
+              <div class="organizer">
+                <a class="organizer-link" href="https://www.linkedin.com/in/wagnerlandim/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Wagner Landim no LinkedIn">
+                  <img src="assets/organizer-wagner-landim.jpg" alt="" loading="lazy" />
+                  <span class="organizer-linkedin" aria-hidden="true">in</span>
+                </a>
+                <div><span class="organizer-caption">Organizador</span><strong class="organizer-name">Wagner Landim</strong></div>
+              </div>
+              <div class="bar-track" role="img" aria-label="204 presentes, 32 por cento do maior público regional"><span style="width:32.4%"></span></div>
+              <div class="region-footer"><span class="region-rank">Edição 01 de 05</span><a class="region-link" href="/centro-oeste/">Conheça a edição <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <a href="/sudeste/" aria-label="Conheça a edição Sudeste em Belo Horizonte">
+              <div class="region-photo">
+                <img src="assets/sudeste-cover.png" alt="Imagem da edição Sudeste do AWS Community Day em Belo Horizonte" loading="lazy" />
+                <span class="region-photo-caption">Belo Horizonte · 22 de agosto</span>
+              </div>
+            </a>
+            <div class="region-content">
+              <div class="region-topline"><h3>Sudeste</h3><div class="attendance">200<small>presentes</small></div></div>
+              <p class="region-meta">Belo Horizonte, MG · 22 ago 2026</p>
+              <div class="organizer">
+                <a class="organizer-link" href="https://www.linkedin.com/in/rafaelavidotti/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Rafaela Vidotti no LinkedIn">
+                  <img src="assets/organizer-rafaela-vidotti.jpg" alt="" loading="lazy" />
+                  <span class="organizer-linkedin" aria-hidden="true">in</span>
+                </a>
+                <div><span class="organizer-caption">Organizadora</span><strong class="organizer-name">Rafaela Vidotti</strong></div>
+              </div>
+              <div class="bar-track" role="img" aria-label="200 presentes, 32 por cento do maior público regional"><span style="width:31.8%"></span></div>
+              <div class="region-footer"><span class="region-rank">Edição 02 de 05</span><a class="region-link" href="/sudeste/">Conheça a edição <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <a href="/sul/" aria-label="Conheça a edição Sul em Curitiba">
+              <div class="region-photo">
+                <img src="/sul/resultado/event-photo.jpg" alt="Participantes do AWS Community Day Sul reunidos em Curitiba" loading="lazy" />
+                <span class="region-photo-caption">Curitiba · 19 de setembro</span>
+              </div>
+            </a>
+            <div class="region-content">
+              <div class="region-topline"><h3>Sul</h3><div class="attendance">161<small>presentes</small></div></div>
+              <p class="region-meta">Curitiba, PR · 19 set 2026</p>
+              <div class="organizer">
+                <a class="organizer-link" href="https://www.linkedin.com/in/alceu-conerado-neto-0b4b6334/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Alceu Neto no LinkedIn">
+                  <img src="assets/organizer-alceu-neto.jpg" alt="" loading="lazy" />
+                  <span class="organizer-linkedin" aria-hidden="true">in</span>
+                </a>
+                <div><span class="organizer-caption">Organizador</span><strong class="organizer-name">Alceu Neto</strong></div>
+              </div>
+              <div class="bar-track" role="img" aria-label="161 presentes, 26 por cento do maior público regional"><span style="width:25.6%"></span></div>
+              <div class="region-footer"><span class="region-rank">Edição 03 de 05</span><a class="region-link" href="/sul/">Conheça a edição <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <a href="/nordeste/" aria-label="Conheça a edição Nordeste em Salvador">
+              <div class="region-photo">
+                <img src="/nordeste/resultado/event-photo.jpg" alt="Público do AWS Community Day Nordeste reunido em Salvador" loading="lazy" />
+                <span class="region-photo-caption">Salvador · 10 de outubro</span>
+              </div>
+            </a>
+            <div class="region-content">
+              <div class="region-topline"><h3>Nordeste</h3><div class="attendance">629<small>presentes</small></div></div>
+              <p class="region-meta">Salvador, BA · 10 out 2026</p>
+              <div class="organizer">
+                <a class="organizer-link" href="https://www.linkedin.com/in/caionscloud/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Caio Nunes no LinkedIn">
+                  <img src="assets/organizer-caio-nunes.jpg" alt="" loading="lazy" />
+                  <span class="organizer-linkedin" aria-hidden="true">in</span>
+                </a>
+                <div><span class="organizer-caption">Organizador</span><strong class="organizer-name">Caio Nunes</strong></div>
+              </div>
+              <div class="bar-track" role="img" aria-label="629 presentes, maior público regional"><span style="width:100%"></span></div>
+              <div class="region-footer"><span class="region-rank">Edição 04 de 05</span><a class="region-link" href="/nordeste/">Conheça a edição <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <a href="/norte/" aria-label="Conheça a edição Norte em Belém">
+              <div class="region-photo">
+                <img src="assets/norte-event.jpg" alt="Participantes do AWS Community Day Norte reunidos em Belém" loading="lazy" />
+                <span class="region-photo-caption">Belém · 31 de outubro</span>
+              </div>
+            </a>
+            <div class="region-content">
+              <div class="region-topline"><h3>Norte</h3><div class="attendance">354<small>presentes</small></div></div>
+              <p class="region-meta">Belém, PA · 31 out 2026</p>
+              <div class="organizer">
+                <a class="organizer-link" href="https://www.linkedin.com/in/thayanacmamore/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Thayana Mamoré no LinkedIn">
+                  <img src="assets/organizer-thayana-mamore.png" alt="" loading="lazy" />
+                  <span class="organizer-linkedin" aria-hidden="true">in</span>
+                </a>
+                <div><span class="organizer-caption">Organizadora</span><strong class="organizer-name">Thayana Mamoré</strong></div>
+              </div>
+              <div class="bar-track" role="img" aria-label="354 presentes, 56 por cento do maior público regional"><span style="width:56.3%"></span></div>
+              <div class="region-footer"><span class="region-rank">Edição 05 de 05</span><a class="region-link" href="/norte/">Conheça a edição <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="2027">
+      <div class="container">
+        <div class="closing-panel">
+          <p class="eyebrow">A comunidade continua</p>
+          <h2>Nos vemos na próxima temporada.</h2>
+          <p>Obrigado a quem participou, palestrou, organizou, patrocinou e fez cada encontro acontecer. Acompanhe os canais da comunidade para saber das novidades.</p>
+          <a class="button" href="https://www.instagram.com/awscommunitybrasil/" target="_blank" rel="noopener noreferrer">Acompanhar a comunidade <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-illustration">
+          <img src="assets/community-illustration.png" alt="Somos uma Comunidade, Brasil!" loading="lazy" />
+        </div>
+        <div class="about-copy">
+          <h2>Sobre o AWS Community Day Brasil</h2>
+          <p>Os AWS Community Days são eventos organizados pelos grupos de usuários AWS do mundo inteiro, com o objetivo de proporcionar discussões e demonstrações de serviços AWS, lideradas por usuários e empresas que são referência no Brasil e no mundo.</p>
+          <p>Acreditamos firmemente que aprender em comunidade é uma das melhores formas de se aprofundar em conceitos, se conectando a pessoas com um objetivo comum: aprender e compartilhar conhecimento de forma igualitária, segura, justa e acessível.</p>
+          <p>Todas as pessoas são bem-vindas para colaborar e fazer parte desta jornada de conhecimento e compartilhamento. As atividades do AWS Community Day Brasil são guiadas pelo <a href="https://github.com/awscommunitydaybrasil/codigo-de-conduta" target="_blank" rel="noopener noreferrer">Código de conduta</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="momentos">
+      <div class="container gallery-topline">
+        <div class="section-heading">
+          <p class="eyebrow">Momentos</p>
+          <h2>Edições Anteriores</h2>
+        </div>
+      </div>
+      <div class="gallery-viewport" id="gallery-viewport" tabindex="0" role="region" aria-label="Carrossel de fotos das edições anteriores">
+        <div class="gallery-track" id="gallery-track"></div>
+      </div>
+    </section>
+
+    <section class="past-editions" id="anteriores">
+      <div class="container past-editions-inner">
+        <div class="section-heading">
+          <h2>Edições Anteriores</h2>
+          <p>Confira como foram as edições anteriores do AWS Community Day Brasil.</p>
+        </div>
+        <div class="past-list">
+          <a class="past-edition" href="/hist/2025-dec/index.html" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">Setembro 2025</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Campinas / SP</strong><span>Edição realizada no Expo Dom Pedro</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="past-edition" href="/hist/2024-nov/index.html" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">Novembro 2024</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Goiânia e Florianópolis</strong><span>Edição simultânea em duas cidades</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="past-edition" href="https://youtube.com/playlist?list=PLM7HrN8Vfc3o3H6LK-iR7SNq5pPNWfgtF&amp;si=duFt9rD1N78tyF3Z" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">2023</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Ribeirão Preto / SP</strong><span>Confira os podcasts da edição</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="past-edition" href="https://youtube.com/playlist?list=PLM7HrN8Vfc3qkHf4siwu-S6TI3MzQBQ25&amp;si=MbGxr-45Ku2PeB32" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">2022</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Online</strong><span>Edição on-line</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="past-edition" href="https://youtube.com/playlist?list=PL7D77BqXy3EPzqoHxUtT2ZfJ4uRLV2Apt&amp;si=dhI8shGmEX08sXAB" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">2021</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Online</strong><span>Edição on-line</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="past-edition" href="https://www.youtube.com/playlist?list=PL7D77BqXy3EP7qajLWNW6UYOsaGXKj69Q" target="_blank" rel="noopener noreferrer">
+            <span class="past-year">2020</span>
+            <span class="past-divider" aria-hidden="true"></span>
+            <span class="past-details"><strong>Online</strong><span>Edição on-line</span></span>
+            <span class="past-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AWS Community Day Brasil · Retrospectiva 2026 · <a href="/">Voltar ao site</a></p>
+      <p>Preview de proposta visual; os conteúdos e links regionais são públicos.</p>
+    </div>
+  </footer>
+  <script>
+    const galleryViewport = document.getElementById("gallery-viewport");
+    const galleryTrack = document.getElementById("gallery-track");
+    const galleryImages = Array.from({ length: 17 }, (_, index) =>
+      `assets/gallery/gallery-${String(index + 1).padStart(2, "0")}.jpg`
+    );
+    const allGalleryImages = [...galleryImages, ...galleryImages];
+
+    allGalleryImages.forEach((src, index) => {
+      const slide = document.createElement("figure");
+      slide.className = "gallery-slide";
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = `AWS Community Day Brasil — foto ${(index % galleryImages.length) + 1}`;
+      image.loading = "lazy";
+      slide.append(image);
+      galleryTrack.append(slide);
+    });
+
+    let isDragging = false;
+    let isPaused = false;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+    let scrollPosition = 0;
+    let loopPoint = 0;
+    let animationId;
+
+    const updateLoopPoint = () => {
+      const firstSlide = galleryTrack.children[0];
+      const firstDuplicate = galleryTrack.children[galleryImages.length];
+      if (firstSlide && firstDuplicate) {
+        loopPoint = firstDuplicate.getBoundingClientRect().left - firstSlide.getBoundingClientRect().left;
+      }
+    };
+
+    const animateGallery = () => {
+      if (!isPaused && !isDragging && loopPoint > 0) {
+        scrollPosition = (galleryViewport.scrollLeft + 1.2) % loopPoint;
+        galleryViewport.scrollLeft = scrollPosition;
+      }
+      animationId = requestAnimationFrame(animateGallery);
+    };
+
+    updateLoopPoint();
+    window.addEventListener("resize", updateLoopPoint);
+    animationId = requestAnimationFrame(animateGallery);
+
+    galleryViewport.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") isPaused = true;
+    });
+    galleryViewport.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse") isPaused = false;
+    });
+    galleryViewport.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      isDragging = true;
+      dragStartX = event.clientX;
+      dragStartScroll = galleryViewport.scrollLeft;
+      galleryViewport.setPointerCapture(event.pointerId);
+    });
+    galleryViewport.addEventListener("pointermove", (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      galleryViewport.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+    });
+    const finishDragging = () => {
+      isDragging = false;
+      scrollPosition = galleryViewport.scrollLeft;
+      if (loopPoint > 0 && scrollPosition >= loopPoint) {
+        scrollPosition %= loopPoint;
+        galleryViewport.scrollLeft = scrollPosition;
+      }
+    };
+    galleryViewport.addEventListener("pointerup", finishDragging);
+    galleryViewport.addEventListener("pointercancel", finishDragging);
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.getElementById("primary-navigation");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -24,8 +24,9 @@ Site oficial do **AWS Community Day Brasil 2026**, um evento de comunidade com e
 ```
 src/
 ├── assets/                        # Assets globais (logos, imagens)
-├── components/                    # Componentes da página principal
+├── components/                    # Componentes da interface
 │   ├── Header.tsx
+│   ├── SeasonRetrospective.tsx    # Hero, impacto, cards regionais e CTA da temporada 2027
 │   ├── HeroSection.tsx
 │   ├── UpcomingEventsSection.tsx   # Cards de próximas edições + realizadas
 │   ├── AboutSection.tsx
@@ -59,6 +60,7 @@ src/
 │   │   ├── ExpectationsSection.tsx
 │   │   ├── CallForSpeakersSection.tsx
 │   │   ├── CallForSponsorsSection.tsx
+│   │   ├── VolunteersSection.tsx
 │   │   └── RegionFooter.tsx
 │   ├── centro-oeste/              # ← Região exemplo
 │   │   ├── index.tsx              # Ponto de entrada (importa dados + assets)
@@ -71,7 +73,8 @@ src/
 │   │       ├── speakers.json
 │   │       ├── schedule.json
 │   │       ├── sponsors.json
-│   │       └── organizers.json
+│   │       ├── organizers.json
+│   │       └── volunteers.json            # Opcional
 │   ├── nordeste/
 │   ├── norte/
 │   ├── sudeste/
@@ -79,11 +82,17 @@ src/
 │   └── regiaomodelo/              # Região de referência com dados completos
 public/
 ├── favicon.png
+├── mkt/                           # Gerador de cards de divulgação
+├── brasil/resultado/              # Página nacional de resultados
 ├── centro-oeste/
 │   ├── index.html                 # Fallback SPA para a região
 │   └── resultado/                 # Página estática de resultados do evento
 │       ├── index.html
 │       └── event-photo.jpg
+├── norte/resultado/
+├── nordeste/resultado/
+├── sudeste/resultado/
+├── sul/resultado/
 ├── hist/                          # Edições anteriores (HTML estático)
 │   ├── 2024-nov/index.html
 │   └── 2025-dec/index.html
@@ -98,9 +107,9 @@ O projeto usa uma **arquitetura modular por região**. Cada região é uma pasta
 
 1. **`index.tsx`** — Importa os JSONs de dados e assets locais, passa tudo para o `RegionPage`
 2. **`assets/`** — Imagens locais (postcards, fotos de organizadores, sponsors, evento)
-3. **`data/`** — 5 arquivos JSON que alimentam toda a página
+3. **`data/`** — arquivos JSON que alimentam a página: `config.json`, `speakers.json`, `schedule.json`, `sponsors.json` e `organizers.json`. `volunteers.json` é opcional e usado pelas regiões que exibem voluntários.
 
-O componente **`RegionPage.tsx`** é o renderizador unificado que recebe todos os dados via props e monta a página completa usando subcomponentes atômicos. Ele detecta automaticamente se o evento já aconteceu (baseado na `targetDate`) e adapta a interface.
+O componente **`RegionPage.tsx`** é o renderizador unificado que recebe os dados via props e monta a página completa usando subcomponentes. Ele detecta automaticamente se o evento já aconteceu (baseado na `targetDate`) e adapta a interface. A edição Norte busca a programação atualizada na API do Abicora e usa `schedule.json` como fallback.
 
 > **Importante:** Imagens locais (fotos de organizadores, postcards, logos de sponsors) devem ser importadas no `index.tsx` via `import` para que o Vite processe corretamente. URLs externas (https) podem ser usadas diretamente nos JSONs.
 
@@ -158,26 +167,15 @@ const MinhaRegiao = () => (
 
 ### Página de resultados (opcional)
 
-Para eventos passados, é possível criar uma página estática de resultados em `public/[regiao]/resultado/index.html` com dados de credenciamento, gráficos interativos (Chart.js) e métricas do evento.
+As páginas estáticas de resultados ficam em `public/[regiao]/resultado/index.html` e apresentam dados de credenciamento, gráficos interativos (Chart.js) e métricas. Há páginas para Brasil, Centro-Oeste, Nordeste, Norte, Sudeste e Sul.
 
 ---
 
 ## Página Principal — Home
 
-### Líderes Regionais
+A home em `src/pages/Index.tsx` apresenta a retrospectiva de 2026, a seção Sobre, o carrossel de fotos, a lista de edições anteriores e o rodapé existente.
 
-Os cards de líderes na home são **ordenados automaticamente**:
-1. Eventos futuros primeiro (por data crescente)
-2. Eventos passados ao final (por data decrescente)
-
-Eventos passados exibem:
-- Tag **"Realizado"** no canto superior direito
-- Botão **"Ver como foi →"** (em vez de "Ver evento →")
-- Opacidade levemente reduzida
-
-### Mapa e Navegação
-
-A legenda abaixo do mapa do Brasil usa **botões clicáveis** (em vez de bolinhas decorativas) que navegam para a página de cada região.
+`src/components/SeasonRetrospective.tsx` concentra o hero, os indicadores da temporada, os cards das cinco regiões com presença e organizadores, e a chamada para a temporada 2027. Ao atualizar a temporada, mantenha os números, fotos, datas, organizadores e links regionais desse componente consistentes.
 
 ---
 
@@ -200,7 +198,9 @@ Define nome, data, local, inscrição, redes sociais, grupos de usuários e dado
 | `registration.url` | `string` | ✅ | URL de inscrição (vazio se não disponível) |
 | `socialLinks` | `object` | ✅ | Links de redes sociais |
 | `userGroups` | `array` | ✅ | Lista de user groups com `name` e `url` |
+| `studentBuilderGroups` | `array` | ❌ | Grupos de estudantes/construtores com `name` e `url` |
 | `callForSpeakersUrl` | `string` | ❌ | URL do Call for Speakers (não exibido se evento passado) |
+| `callForSpeakersIcon` | `"mic" \| "mail"` | ❌ | Ícone usado na chamada para palestrantes |
 | `regionDateLimit` | `string` | ❌ | Data limite para submissão de propostas (ex: "31/08/2026"). Exibida na seção Call for Speakers |
 | `callForSponsorsUrl` | `string` | ❌ | URL do Call for Sponsors (não exibido se evento passado) |
 | `contact.email` | `string` | ✅ | Email de contato |
@@ -266,15 +266,16 @@ Lista de patrocinadores agrupados por tier. **Se o array estiver vazio (`[]`), a
 | `name` | `string` | ✅ | Nome do patrocinador |
 | `logo` | `string` | ✅ | Nome do arquivo do logo (resolvido via `logoMap`) |
 | `url` | `string` | ✅ | Site do patrocinador |
-| `tier` | `string` | ✅ | `"diamond"`, `"gold"`, `"silver"`, `"bronze"`, `"community"` ou `"support"` |
+| `tier` | `string` | ✅ | `"platinum"`, `"diamond"`, `"gold"`, `"silver"`, `"bronze"`, `"community"`, `"support"` ou `"partner"` |
 
 **Labels por tier:**
-- `diamond` → "Platina"
+- `platinum` e `diamond` → "Platina"
 - `gold` → "Ouro"
 - `silver` → "Prata"
 - `bronze` → "Bronze"
 - `community` → "Comunidade"
 - `support` → "Apoio"
+- `partner` → "Parceiro"
 
 **Notas:**
 - Logos devem ser importados no `index.tsx` e mapeados via `logoMap` (mesmo padrão dos organizadores)
@@ -343,7 +344,7 @@ const NovaRegiao = () => (
 export default NovaRegiao;
 ```
 
-> **Se houver fotos locais**, importe-as e crie maps para resolver os caminhos (veja `centro-oeste/index.tsx` como referência completa com `photoMap`, `speakerPhotoMap` e `logoMap`).
+> **Se houver fotos locais**, importe-as e crie maps para resolver os caminhos (veja `centro-oeste/index.tsx` como referência completa com `photoMap`, `speakerPhotoMap` e `logoMap`). Para exibir voluntários, crie `data/volunteers.json`, resolva as fotos no `index.tsx` e passe a lista pela prop `volunteers` de `RegionPage`.
 
 ### Passo 3: Registrar a rota no `App.tsx`
 
@@ -356,7 +357,7 @@ import NovaRegiao from "./regions/nova-regiao/index.tsx";
 
 ### Passo 4: Adicionar à página principal
 
-Atualize `src/components/LeadersSection.tsx` para incluir o card do líder da nova região (será ordenado automaticamente por data).
+Atualize a lista `editions` em `src/components/SeasonRetrospective.tsx` para incluir a nova região e seus dados de presença, imagem, organizador e rota.
 
 ---
 
@@ -371,6 +372,25 @@ npm run dev
 ```
 
 O site estará disponível em `http://localhost:8080`.
+
+### Gerar os cards de divulgação (`/mkt/`)
+
+A página `/mkt/` usa dados e cards pré-gerados em `public/mkt/`. Para atualizar esses arquivos localmente:
+
+Se o Chromium do Playwright ainda não estiver instalado, instale-o com `npx playwright install chromium`.
+
+```bash
+# Gere os dados, fotos e postcards a partir de src/regions/
+npm run build:mkt-data
+
+# Em um terminal, inicie o servidor Vite
+npm run dev
+
+# Em outro terminal, gere os cards pela página /mkt/ com Playwright
+npm run gen:mkt-cards
+```
+
+Depois, rode `npm run build` para incluir os arquivos atualizados no build. O workflow de deploy executa a geração de dados e cards antes do build de produção.
 
 ```bash
 # Build de produção
@@ -389,6 +409,7 @@ O deploy é feito automaticamente via **GitHub Actions** para GitHub Pages ao fa
 - Workflow: `.github/workflows/deploy.yml`
 - Node.js: 22
 - Domínio: `awscommunityday.com.br`
+- Antes do build, o workflow atualiza os dados e cards de divulgação em `/mkt/`.
 
 ---
 
