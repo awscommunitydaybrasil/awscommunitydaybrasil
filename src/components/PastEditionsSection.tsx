@@ -62,20 +62,20 @@ const PastEditionsSection = () => {
               href={ed.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-6 p-5 rounded-lg border border-border hover:border-primary/50 transition-all group ${listVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              className={`grid grid-cols-[auto_1fr_auto] items-center gap-x-3 gap-y-2 rounded-lg border border-border p-4 transition-all group hover:border-primary/50 sm:flex sm:gap-6 sm:p-5 ${listVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
               style={{
                 transitionDuration: "700ms",
                 transitionTimingFunction: "ease-out",
                 transitionDelay: `${i * 100}ms`,
               }}
             >
-              <span className="text-lg md:text-xl font-bold font-display text-primary whitespace-nowrap">
+              <span className="col-start-1 row-start-1 shrink-0 whitespace-nowrap font-display text-[0.72rem] font-bold text-primary sm:text-lg md:text-xl">
                 {ed.year}
               </span>
-              <div className="h-px flex-1 bg-border" />
-              <div className="text-right">
-                <p className="text-foreground font-medium">{ed.location}</p>
-                <p className="text-sm text-muted-foreground">{ed.description}</p>
+              <div className="hidden h-px flex-1 bg-border sm:block" />
+              <div className="col-span-3 row-start-2 min-w-0 text-left sm:col-auto sm:row-auto sm:flex-[0_1_270px] sm:text-right">
+                <p className="break-words text-sm font-medium text-foreground sm:text-base">{ed.location}</p>
+                <p className="break-words text-[0.65rem] text-muted-foreground sm:text-sm">{ed.description}</p>
               </div>
               <svg
                 width="16"
@@ -86,7 +86,7 @@ const PastEditionsSection = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0"
+                className="col-start-3 row-start-1 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
               >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

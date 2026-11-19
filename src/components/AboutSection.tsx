@@ -6,7 +6,7 @@ const AboutSection = () => {
   const { ref: textRef, isVisible: textVisible } = useScrollAnimation();
 
   return (
-    <section id="sobre" className="py-24 bg-secondary">
+    <section id="sobre" className="overflow-x-clip bg-secondary py-24">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div

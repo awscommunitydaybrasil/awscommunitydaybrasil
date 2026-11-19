@@ -1,25 +1,23 @@
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import UpcomingEventsSection from "@/components/UpcomingEventsSection";
+import SeasonRetrospective from "@/components/SeasonRetrospective";
 import AboutSection from "@/components/AboutSection";
-import RegionsSection from "@/components/RegionsSection";
-import LeadersSection from "@/components/LeadersSection";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import PastEditionsSection from "@/components/PastEditionsSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div
+      className="min-h-screen bg-background"
+      style={{ backgroundImage: "radial-gradient(ellipse at 78% 5%, rgba(255, 153, 0, 0.1), transparent 34rem)" }}
+    >
       <Header />
-      <HeroSection />
-      <UpcomingEventsSection />
-      <AboutSection />
-      <RegionsSection />
-      <LeadersSection />
-      <GalleryCarousel />
-      <PastEditionsSection />
-      <CTASection />
+      <main>
+        <SeasonRetrospective />
+        <AboutSection />
+        <GalleryCarousel />
+        <PastEditionsSection />
+      </main>
       <Footer />
     </div>
   );
