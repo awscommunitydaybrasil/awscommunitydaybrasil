@@ -26,7 +26,6 @@ const editions = [
     photo: publicAsset("centro-oeste/resultado/event-photo.jpg"),
     photoAlt: "Participantes do AWS Community Day Centro-Oeste reunidos em Brasília",
     attendance: 204,
-    percentage: 32.4,
     ordinal: "01",
     route: "/centro-oeste/",
     organizer: "Wagner Landim",
@@ -43,7 +42,6 @@ const editions = [
     photo: postcardBH,
     photoAlt: "Imagem da edição Sudeste do AWS Community Day em Belo Horizonte",
     attendance: 200,
-    percentage: 31.8,
     ordinal: "02",
     route: "/sudeste/",
     organizer: "Rafaela Vidotti",
@@ -60,7 +58,6 @@ const editions = [
     photo: publicAsset("sul/resultado/event-photo.jpg"),
     photoAlt: "Participantes do AWS Community Day Sul reunidos em Curitiba",
     attendance: 161,
-    percentage: 25.6,
     ordinal: "03",
     route: "/sul/",
     organizer: "Alceu Neto",
@@ -77,7 +74,6 @@ const editions = [
     photo: publicAsset("nordeste/resultado/event-photo.jpg"),
     photoAlt: "Público do AWS Community Day Nordeste reunido em Salvador",
     attendance: 629,
-    percentage: 100,
     ordinal: "04",
     route: "/nordeste/",
     organizer: "Caio Nunes",
@@ -94,7 +90,6 @@ const editions = [
     photo: publicAsset("prototipo/retrospectiva-2026/assets/norte-event.jpg"),
     photoAlt: "Participantes do AWS Community Day Norte reunidos em Belém",
     attendance: 354,
-    percentage: 56.3,
     ordinal: "05",
     route: "/norte/",
     organizer: "Thayana Mamoré",
@@ -205,7 +200,7 @@ const SeasonRetrospective = () => (
                   <h3 className="font-display text-lg font-bold text-foreground">{edition.name}</h3>
                   <div className="shrink-0 text-right font-display text-2xl font-extrabold leading-none text-primary">
                     {edition.attendance}
-                    <small className="mt-1 block font-body text-[0.65rem] font-semibold text-muted-foreground">presentes</small>
+                    <small className="mt-1 block font-body text-[0.65rem] font-semibold text-muted-foreground">participantes</small>
                   </div>
                 </div>
                 <p className="mb-4 mt-1 text-xs text-muted-foreground">{edition.city}, {edition.state} · {edition.date}</p>
@@ -227,14 +222,7 @@ const SeasonRetrospective = () => (
                   </span>
                 </a>
 
-                <div
-                  role="img"
-                  aria-label={`${edition.attendance} presentes${edition.percentage === 100 ? ", maior público regional" : `, ${Math.round(edition.percentage)} por cento do maior público regional`}`}
-                  className="h-1.5 overflow-hidden rounded-full bg-secondary"
-                >
-                  <span className="block h-full rounded-full bg-gradient-to-r from-primary to-amber-300" style={{ width: `${edition.percentage}%` }} />
-                </div>
-                <div className="mt-3 flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between gap-3">
                   <span className="text-[0.68rem] text-muted-foreground">Edição {edition.ordinal} de 05</span>
                   <Link to={edition.route} className="inline-flex items-center gap-1 text-xs font-extrabold text-primary transition hover:text-foreground">
                     Conheça a edição <ArrowRight aria-hidden="true" size={14} />
